@@ -2,8 +2,15 @@
 
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 import Image from 'next/image';
+import {FC} from "react";
 
-const Banner = () => {
+type BannerProps = {
+    name: string;
+    title: string;
+    summary: string;
+}
+
+const Banner : FC<BannerProps> = ({name, title, summary}) => {
     return (
         <section
             id="banner"
@@ -13,14 +20,13 @@ const Banner = () => {
                 {/* Text Content */}
                 <div className="max-w-2xl">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-                        Hi, I&#39;m <span className="text-blue-600">Donald Trump America</span>
+                        Hi, I&#39;m <span className="text-blue-600">{name}</span>
                     </h1>
                     <h2 className="text-xl md:text-2xl text-gray-700 mb-3">
-                        Front-End Developer • 6+ Years Experience • Based in Dhaka
+                        {title}
                     </h2>
                     <p className="text-md md:text-lg text-gray-600 mb-6">
-                        Passionate about crafting intuitive user interfaces using HTML, CSS, JavaScript, React, and Next.js.
-                        Experienced in Docker, AWS, and performance optimization. Let&#39;s build something amazing.
+                        {summary}
                     </p>
 
                     {/* Buttons */}
