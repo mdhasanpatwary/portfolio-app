@@ -23,6 +23,7 @@ import {
     SiWebpack,
     SiAdobephotoshop,
     SiAdobexd,
+    SiTypescript
 } from 'react-icons/si';
 
 const skills = [
@@ -32,10 +33,10 @@ const skills = [
             { name: 'HTML5', icon: <FaHtml5 className="text-orange-600" /> },
             { name: 'CSS3', icon: <FaCss3Alt className="text-blue-600" /> },
             { name: 'JavaScript', icon: <FaJs className="text-yellow-400" /> },
-            { name: 'TypeScript', icon: <SiNextdotjs className="text-gray-800" /> },
-            { name: 'React.js', icon: <FaReact className="text-blue-400" /> },
+            { name: 'TypeScript', icon: <SiTypescript className="text-gray-800 dark:text-gray-100" /> },
+            { name: 'React.js', icon: <FaReact className="text-blue-400 dark:text-blue-300" /> },
             { name: 'Vue.js', icon: <FaVuejs className="text-green-500" /> },
-            { name: 'Next.js', icon: <SiNextdotjs className="text-gray-800" /> },
+            { name: 'Next.js', icon: <SiNextdotjs className="text-gray-800 dark:text-gray-100" /> },
             { name: 'jQuery', icon: <SiJquery className="text-purple-500" /> },
             { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
         ],
@@ -47,21 +48,21 @@ const skills = [
             { name: 'SASS', icon: <FaSass className="text-pink-500" /> },
             { name: 'Bootstrap', icon: <FaBootstrap className="text-indigo-600" /> },
             { name: 'Material UI', icon: <FaReact className="text-blue-500" /> },
-            { name: 'Figma', icon: <FaFigma className="text-pink-400" /> },
+            { name: 'Figma', icon: <FaFigma className="text-pink-400 dark:text-pink-300" /> },
             { name: 'Adobe XD', icon: <SiAdobexd className="text-pink-500" /> },
-            { name: 'Photoshop', icon: <SiAdobephotoshop className="text-indigo-700" /> },
+            { name: 'Photoshop', icon: <SiAdobephotoshop className="text-indigo-700 dark:text-indigo-400" /> },
         ],
     },
     {
         title: 'Tools & DevOps',
         technologies: [
             { name: 'Git', icon: <FaGitAlt className="text-red-500" /> },
-            { name: 'GitHub', icon: <FaGitAlt className="text-black" /> },
+            { name: 'GitHub', icon: <FaGitAlt className="text-black dark:text-white" /> },
             { name: 'Gulp', icon: <FaGulp className="text-pink-600" /> },
-            { name: 'Webpack', icon: <SiWebpack className="text-slate-500" /> },
+            { name: 'Webpack', icon: <SiWebpack className="text-slate-500 dark:text-slate-300" /> },
             { name: 'Docker', icon: <FaDocker className="text-blue-400" /> },
             { name: 'AWS', icon: <FaAws className="text-orange-400" /> },
-            { name: 'Linux', icon: <FaLinux className="text-black" /> },
+            { name: 'Linux', icon: <FaLinux className="text-black dark:text-white" /> },
             { name: 'Automation', icon: <FaReact className="text-green-400" /> },
             { name: 'Animation', icon: <FaReact className="text-pink-300" /> },
         ],
@@ -69,16 +70,22 @@ const skills = [
 ];
 
 const Skills: React.FC = () => (
-    <section id="skills" className="w-full py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 px-6">
+    <section
+        id="skills"
+        className="w-full py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6 transition-colors duration-500"
+    >
         <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-12">Skills</h2>
+            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">Skills</h2>
+
             <div className="grid md:grid-cols-3 gap-8">
                 {skills.map((group, i) => (
                     <div
                         key={i}
-                        className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8"
+                        className="bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-shadow duration-300 p-8"
                     >
-                        <h3 className="text-xl font-semibold text-blue-600 mb-6">{group.title}</h3>
+                        <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-6">
+                            {group.title}
+                        </h3>
                         <div className="grid grid-cols-3 gap-6 justify-items-center">
                             {group.technologies.map((tech, idx) => (
                                 <div
@@ -86,7 +93,7 @@ const Skills: React.FC = () => (
                                     className="flex flex-col items-center transform hover:scale-110 transition-transform duration-300"
                                 >
                                     <div className="text-4xl mb-2">{tech.icon}</div>
-                                    <span className="text-sm text-gray-700">{tech.name}</span>
+                                    <span className="text-sm text-gray-700 dark:text-gray-300">{tech.name}</span>
                                 </div>
                             ))}
                         </div>
