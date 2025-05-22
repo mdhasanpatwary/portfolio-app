@@ -2,6 +2,7 @@ import Image from "next/image";
 import Banner from "@/components/banner/Banner";
 import Skills from "@/components/Skills";
 import About from "@/components/about/About";
+import Experience from "@/components/experiance/Experiance";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         />
         <About />
         <Skills />
+        <Experience />
         {/*<Image*/}
         {/*  className="dark:invert"*/}
         {/*  src="/next.svg"*/}

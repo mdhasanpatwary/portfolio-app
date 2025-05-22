@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280ba7b8-aab1-4760-8f1e-c13659590de0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/about/About.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/global/ThemeToggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/useTheme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hz-portfolio.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/experiance/Experiance.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Skills.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/banner/Banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/banner/Banner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +79,7 @@
       <workItem from="1747741623159" duration="9000" />
       <workItem from="1747741751927" duration="1140000" />
       <workItem from="1747797148858" duration="2170000" />
-      <workItem from="1747825988856" duration="9655000" />
+      <workItem from="1747825988856" duration="12021000" />
     </task>
     <servers />
   </component>
