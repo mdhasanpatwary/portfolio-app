@@ -83,7 +83,7 @@ const Contact: FC = () => {
 
                     <button
                         type="submit"
-                        className="w-full md:w-auto px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition duration-300"
+                        className="w-full md:w-auto cursor-pointer px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition duration-300"
                     >
                         Send Message
                     </button>
