@@ -2,7 +2,7 @@
 
 import React from 'react';
 import type { JSX } from 'react';
-import { FaBriefcase, FaHtml5, FaCss3Alt, FaGithub, FaDocker } from 'react-icons/fa';
+import { FaBriefcase, FaHtml5, FaCss3Alt, FaDocker } from 'react-icons/fa';
 import { SiReact, SiNextdotjs, SiTailwindcss, SiJquery, SiBootstrap } from 'react-icons/si';
 
 type ExperienceItem = {

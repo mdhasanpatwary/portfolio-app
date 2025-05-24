@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
 
 interface DevToPost {
     id: number;
@@ -96,11 +97,14 @@ const Blog: FC = () => {
                                 >
                                     {post.cover_image && (
                                         <div className="overflow-hidden rounded-t-xl">
-                                            <img
+                                            <Image
                                                 src={post.cover_image}
                                                 alt={post.title}
-                                                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                                                loading="lazy"
+                                                width={404}
+                                                height={192}
+                                                layout="responsive"
+                                                className="object-cover hover:scale-105 transition-transform duration-300"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>
                                     )}

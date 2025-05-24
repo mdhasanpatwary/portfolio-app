@@ -16,6 +16,7 @@ const About: React.FC = () => {
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TrumpPortrait.jpg/1200px-TrumpPortrait.jpg"
                         alt="MD Hasan Patwary"
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
                         style={{ objectFit: 'cover' }}
                         className="rounded-2xl grayscale hover:grayscale-0 transition duration-500"
                     />

@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image";
 
 interface Project {
     title: string;
@@ -55,9 +56,11 @@ const Projects: FC = () => {
                             className="relative bg-white/30 dark:bg-gray-800/40 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
                         >
                             <div className="relative overflow-hidden rounded-xl">
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.title}
+                                    width={376}
+                                    height={202}
                                     className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500"
                                 />
                                 <div className="absolute top-3 right-3 bg-white dark:bg-gray-900 p-2 rounded-full shadow-md text-indigo-600 dark:text-indigo-400">

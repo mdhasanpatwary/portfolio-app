@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
+import Image from "next/image";
 
 
 interface Testimonial {
@@ -103,9 +104,11 @@ const Testimonials: FC = () => {
                                         “{testimonial.message}”
                                     </p>
                                     <div className="flex items-center gap-4 mt-6">
-                                        <img
+                                        <Image
                                             src={testimonial.avatar}
                                             alt={testimonial.name}
+                                            width={48}
+                                            height={48}
                                             className="w-12 h-12 rounded-full border-2 border-indigo-500 object-cover"
                                         />
                                         <div>
