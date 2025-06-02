@@ -72,7 +72,7 @@ const skills = [
 const Skills: React.FC = () => (
     <section
         id="skills"
-        className="w-full py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6 transition-colors duration-500"
+        className="w-full py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6"
     >
         <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">Skills</h2>

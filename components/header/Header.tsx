@@ -12,11 +12,11 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "#about" },
+    { label: "Home", href: "#banner" },
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Service", href: "#services" },
     { label: "Education", href: "#education" },
     { label: "Hobby", href: "#hobby" },
     { label: "Contact", href: "#contact" },
@@ -46,10 +46,10 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-white dark:bg-black shadow sticky top-0 z-50">
+        <header className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">
-                    MyPortfolio
+                    MdHasan
                 </Link>
 
                 {/* Desktop */}
