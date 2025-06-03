@@ -2,6 +2,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 const ThemeToggle = () => {
     const [isDark, setIsDark] = useState(false);
@@ -32,9 +33,10 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="px-4 py-2 cursor-pointer rounded bg-gray-200 dark:bg-gray-800 text-black dark:text-white"
+            className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-indigo-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
+            aria-label="Toggle Theme"
         >
-            {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+            {isDark ? <FiSun className="text-xl" /> : <FiMoon className="text-xl" />}
         </button>
     );
 };

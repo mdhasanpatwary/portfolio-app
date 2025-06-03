@@ -53,7 +53,7 @@ const Blog: FC = () => {
     return (
         <section
             id="blog"
-            className="w-full py-24 px-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+            className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
         >
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight mb-4">
@@ -100,9 +100,9 @@ const Blog: FC = () => {
                                             <Image
                                                 src={post.cover_image}
                                                 alt={post.title}
-                                                width={404}
-                                                height={192}
-                                                className="object-cover hover:scale-105 transition-transform duration-300"
+                                                width={717}
+                                                height={302}
+                                                className="object-cover hover:scale-105 transition-transform duration-300 w-full"
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>

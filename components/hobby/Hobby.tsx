@@ -41,7 +41,7 @@ const Hobby: FC = () => {
     return (
         <section
             id="hobby"
-            className="w-full py-24 px-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+            className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
         >
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">

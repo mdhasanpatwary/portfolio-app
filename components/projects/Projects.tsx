@@ -36,7 +36,7 @@ const Projects: FC = () => {
     return (
         <section
             id="projects"
-            className="w-full py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6"
+            className="w-full py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6"
         >
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">

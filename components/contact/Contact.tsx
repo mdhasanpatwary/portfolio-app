@@ -14,10 +14,10 @@ const Contact: FC = () => {
 
         emailjs
             .sendForm(
-                "service_90axswo",      // replace with your actual Service ID
-                "template_znmpmjw",     // replace with your actual Template ID
+                "service_90axswo",
+                "template_znmpmjw",
                 form.current,
-                "e3p000moSeEYQGGdV"       // replace with your Public Key (User ID)
+                "e3p000moSeEYQGGdV"
             )
             .then(() => {
                 setStatus("Message sent successfully!");
@@ -32,7 +32,7 @@ const Contact: FC = () => {
     return (
         <section
             id="contact"
-            className="w-full py-24 px-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+            className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
         >
             <div className="max-w-3xl mx-auto text-center">
                 <div className="flex items-center justify-center gap-3 mb-3">

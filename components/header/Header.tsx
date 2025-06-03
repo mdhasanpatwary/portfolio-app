@@ -13,12 +13,9 @@ type NavItem = {
 
 const navItems: NavItem[] = [
     { label: "Home", href: "#banner" },
-    { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Service", href: "#services" },
-    { label: "Education", href: "#education" },
-    { label: "Hobby", href: "#hobby" },
     { label: "Contact", href: "#contact" },
 ];
 
@@ -46,10 +43,10 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow sticky top-0 z-50">
+        <header className="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">
-                    MdHasan
+                    &lt;MdHasanPatwary /&gt;
                 </Link>
 
                 {/* Desktop */}
@@ -93,7 +90,7 @@ const Header = () => {
                 leaveFrom="transform translate-y-0 opacity-100"
                 leaveTo="transform -translate-y-4 opacity-0"
             >
-                <nav className="xl:hidden bg-white dark:bg-gray-900 px-4 pb-4">
+                <nav className="xl:hidden bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 pb-4">
                     <ul className="flex flex-col space-y-3">
                         {navItems.map((item) => (
                             <li key={item.href}>

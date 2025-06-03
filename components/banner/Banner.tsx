@@ -12,13 +12,13 @@ const Banner : FC<BannerProps> = ({name, title, summary}) => {
     return (
         <section
             id="banner"
-            className="relative w-full bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-40 px-6"
+            className="relative w-full bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-40 px-6"
         >
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
                 {/* Text Content */}
                 <div className="max-w-2xl">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
-                        Hi, I&#39;m <span className="text-blue-600 dark:text-blue-400">{name}</span>
+                        Hi, I&#39;m <span className="text-indigo-600 dark:text-indigo-400">{name}</span>
                     </h1>
                     <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300 mb-4">
                         {title}
@@ -31,13 +31,13 @@ const Banner : FC<BannerProps> = ({name, title, summary}) => {
                     <div className="flex flex-wrap items-center gap-4 mb-6">
                         <a
                             href="#contact"
-                            className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 dark:hover:bg-blue-500 transition"
+                            className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 dark:hover:bg-indigo-500 transition"
                         >
                             Contact Me
                         </a>
                         <a
                             href="/resume.pdf"
-                            className="border border-blue-600 text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-gray-800 transition"
+                            className="border border-indigo-600 text-indigo-600 px-6 py-2 rounded-full font-medium hover:bg-indigo-50 dark:text-indigo-400 dark:border-indigo-400 dark:hover:bg-gray-800 transition"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -51,7 +51,7 @@ const Banner : FC<BannerProps> = ({name, title, summary}) => {
                             href="https://linkedin.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-blue-600 dark:hover:text-blue-400"
+                            className="hover:text-indigo-600 dark:hover:text-indigo-400"
                         >
                             <FaLinkedin />
                         </a>
@@ -75,7 +75,7 @@ const Banner : FC<BannerProps> = ({name, title, summary}) => {
                 </div>
 
                 {/* Profile Image */}
-                <div className="relative w-100 h-100 rounded-full overflow-hidden border-4 border-blue-100 dark:border-gray-700 shadow-lg">
+                <div className="relative w-80 h-80 md:w-100 md:h-100 rounded-full overflow-hidden border-4 border-indigo-100 dark:border-gray-700 shadow-lg">
                     <Image
                         src="/profile.png"
                         alt="MD Hasan Patwary"

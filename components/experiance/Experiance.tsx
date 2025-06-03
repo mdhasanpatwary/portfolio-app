@@ -45,7 +45,7 @@ const ProfessionalExperience: React.FC = () => {
     return (
         <section
             id="experience"
-            className="w-full py-24 px-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+            className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
         >
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-16">
@@ -60,7 +60,7 @@ const ProfessionalExperience: React.FC = () => {
                         >
                             <div className="flex items-center justify-between mb-4">
                                 <div>
-                                    <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">{exp.role}</h3>
+                                    <h3 className="text-xl font-semibold text-indigo-600 dark:text-indigo-400">{exp.role}</h3>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">
                                         {exp.company} — {exp.location}
                                     </p>
@@ -75,9 +75,9 @@ const ProfessionalExperience: React.FC = () => {
                                 ))}
                             </ul>
 
-                            <div className="flex flex-wrap gap-3 text-lg text-blue-600 dark:text-blue-400">
+                            <div className="flex flex-wrap gap-3 text-lg text-indigo-600 dark:text-indigo-400">
                                 {exp.techStack.map((icon, idx) => (
-                                    <span key={idx} className="hover:text-blue-700 dark:hover:text-blue-300 transition">
+                                    <span key={idx} className="hover:text-indigo-700 dark:hover:text-indigo-300 transition">
                     {icon}
                   </span>
                                 ))}

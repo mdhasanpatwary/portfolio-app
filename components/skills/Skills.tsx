@@ -31,10 +31,10 @@ const skills = [
         title: 'Languages & Frameworks',
         technologies: [
             { name: 'HTML5', icon: <FaHtml5 className="text-orange-600" /> },
-            { name: 'CSS3', icon: <FaCss3Alt className="text-blue-600" /> },
+            { name: 'CSS3', icon: <FaCss3Alt className="text-indigo-600" /> },
             { name: 'JavaScript', icon: <FaJs className="text-yellow-400" /> },
             { name: 'TypeScript', icon: <SiTypescript className="text-gray-800 dark:text-gray-100" /> },
-            { name: 'React.js', icon: <FaReact className="text-blue-400 dark:text-blue-300" /> },
+            { name: 'React.js', icon: <FaReact className="text-indigo-400 dark:text-indigo-300" /> },
             { name: 'Vue.js', icon: <FaVuejs className="text-green-500" /> },
             { name: 'Next.js', icon: <SiNextdotjs className="text-gray-800 dark:text-gray-100" /> },
             { name: 'jQuery', icon: <SiJquery className="text-purple-500" /> },
@@ -47,7 +47,7 @@ const skills = [
             { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" /> },
             { name: 'SASS', icon: <FaSass className="text-pink-500" /> },
             { name: 'Bootstrap', icon: <FaBootstrap className="text-indigo-600" /> },
-            { name: 'Material UI', icon: <FaReact className="text-blue-500" /> },
+            { name: 'Material UI', icon: <FaReact className="text-indigo-500" /> },
             { name: 'Figma', icon: <FaFigma className="text-pink-400 dark:text-pink-300" /> },
             { name: 'Adobe XD', icon: <SiAdobexd className="text-pink-500" /> },
             { name: 'Photoshop', icon: <SiAdobephotoshop className="text-indigo-700 dark:text-indigo-400" /> },
@@ -60,7 +60,7 @@ const skills = [
             { name: 'GitHub', icon: <FaGitAlt className="text-black dark:text-white" /> },
             { name: 'Gulp', icon: <FaGulp className="text-pink-600" /> },
             { name: 'Webpack', icon: <SiWebpack className="text-slate-500 dark:text-slate-300" /> },
-            { name: 'Docker', icon: <FaDocker className="text-blue-400" /> },
+            { name: 'Docker', icon: <FaDocker className="text-indigo-400" /> },
             { name: 'AWS', icon: <FaAws className="text-orange-400" /> },
             { name: 'Linux', icon: <FaLinux className="text-black dark:text-white" /> },
             { name: 'Automation', icon: <FaReact className="text-green-400" /> },
@@ -72,7 +72,7 @@ const skills = [
 const Skills: React.FC = () => (
     <section
         id="skills"
-        className="w-full py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6"
+        className="w-full py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6"
     >
         <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">Skills</h2>
@@ -83,7 +83,7 @@ const Skills: React.FC = () => (
                         key={i}
                         className="bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-shadow duration-300 p-8"
                     >
-                        <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-6">
+                        <h3 className="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-6">
                             {group.title}
                         </h3>
                         <div className="grid grid-cols-3 gap-6 justify-items-center">
