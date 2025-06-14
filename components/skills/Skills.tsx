@@ -25,6 +25,7 @@ import {
     SiAdobexd,
     SiTypescript
 } from 'react-icons/si';
+import React from "react";
 
 const skills = [
     {
@@ -75,7 +76,10 @@ const Skills: React.FC = () => (
         className="w-full py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6"
     >
         <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">Skills</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Skills</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
+                Technologies I use to build seamless, performant, and responsive web experiences.
+            </p>
 
             <div className="grid md:grid-cols-3 gap-8">
                 {skills.map((group, i) => (
