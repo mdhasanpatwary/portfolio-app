@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FaBriefcase, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt, FaMapMarkerAlt, FaCalendarAlt, FaExternalLinkAlt, FaChevronDown } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaDocker, FaGitAlt, FaMapMarkerAlt, FaCalendarAlt, FaExternalLinkAlt, FaChevronDown } from 'react-icons/fa';
 import {
     SiReact, SiNextdotjs, SiTailwindcss, SiJquery, SiBootstrap, SiJavascript, SiTypescript,
     SiSass, SiGithub, SiVuedotjs, SiMaterialdesignicons, SiAmazon, SiGulp, SiWebpack, SiFigma
