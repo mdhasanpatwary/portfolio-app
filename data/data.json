@@ -1,0 +1,65 @@
+{
+    "education": {
+        "title": "Education",
+        "subtitle": "My academic journey and qualifications that have shaped my professional path.",
+        "items": [
+            {
+                "id": "1",
+                "period": "2013 – 2017",
+                "gpa": "3.8/4.0",
+                "degree": "Bachelor of Honours in Accounting",
+                "institution": "Alhaj Abdul Hoque Chowdury Degree College, Bangladesh",
+                "description": "Focused on financial reporting, auditing, and taxation with consistent academic results.",
+                "keySkills": [
+                    "Financial Reporting",
+                    "Auditing",
+                    "Taxation",
+                    "Business Analysis"
+                ],
+                "achievements": [
+                    "Dean's List for Academic Excellence",
+                    "Senior Year Project Award",
+                    "Accounting Society Member"
+                ]
+            },
+            {
+                "id": "2",
+                "period": "2011 – 2013",
+                "gpa": "4.5/5.0",
+                "degree": "Higher Secondary Certificate (HSC)",
+                "institution": "Alhaj Abdul Hoque Chowdury Degree College, Bangladesh",
+                "description": "Completed HSC from Commerce group with emphasis on business studies and accounting.",
+                "keySkills": [
+                    "Business Studies",
+                    "Accounting",
+                    "Economics",
+                    "Mathematics"
+                ],
+                "achievements": [
+                    "Top 5% in Class",
+                    "Business Club President",
+                    "Academic Excellence Award"
+                ]
+            },
+            {
+                "id": "3",
+                "period": "2006 – 2011",
+                "gpa": "4.8/5.0",
+                "degree": "Secondary School Certificate (SSC)",
+                "institution": "Dharmapur Educational Estate, Bangladesh",
+                "description": "Graduated from Science group with strong results and co-curricular involvement.",
+                "keySkills": [
+                    "Science",
+                    "Mathematics",
+                    "English",
+                    "Bengali"
+                ],
+                "achievements": [
+                    "Science Olympiad Winner",
+                    "Student Council Member",
+                    "Sports Achievement Award"
+                ]
+            }
+        ]
+    }
+}

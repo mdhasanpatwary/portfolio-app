@@ -9,8 +9,12 @@ import Blog from "@/components/blog/Blog";
 import Funfact from "@/components/funfact/Funfact";
 import Contact from "@/components/contact/Contact";
 import Services from "@/components/services/Services";
+import data from "@/data/data.json";
+import { GlobalData } from "@/types/data";
 
 export default function Home() {
+  const { education } = data as GlobalData;
+
   return (
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <Banner
@@ -27,7 +31,7 @@ export default function Home() {
           <Testimonial />
 
           <Funfact />
-          <Education />
+          <Education educationData={education} />
           <Hobby />
           <Blog />
 
