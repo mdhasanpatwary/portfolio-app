@@ -1,7 +1,5 @@
 "use client";
 
-// components/Projects.tsx
-
 import { FC, useState } from "react";
 import {
   FaExternalLinkAlt,
@@ -11,9 +9,11 @@ import {
   FaRocket,
   FaLightbulb,
   FaTimes,
+  FaArrowLeft,
   FaFolderOpen,
 } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   title: string;
@@ -472,7 +472,7 @@ const projects: Project[] = [
   },
 ];
 
-const Projects: FC = () => {
+const ProjectsPage: FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -505,22 +505,18 @@ const Projects: FC = () => {
   const openModal = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
-    // Prevent body scroll when modal is open
     document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
-    // Restore body scroll
     document.body.style.overflow = "unset";
   };
 
   return (
     <>
-      <section
-        id="projects"
-        className="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+      <div className="relative w-full min-h-screen bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full blur-3xl animate-pulse"></div>
@@ -532,24 +528,31 @@ const Projects: FC = () => {
             style={{ animationDelay: "4s" }}></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
           {/* Header Section */}
           <div className="text-center mb-12 sm:mb-16">
+            <Link
+              href="/"
+              className="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full mb-6 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300">
+              <FaArrowLeft className="mr-2" size={16} />
+              Back to Home
+            </Link>
+
             <div className="flex items-center justify-center gap-3 mb-4">
               <FaFolderOpen className="text-indigo-600 dark:text-indigo-400 text-3xl" />
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
-                My Projects
-              </h2>
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
+                All Projects
+              </h1>
             </div>
             <p className="text-gray-600 dark:text-gray-400">
-              Creative, functional, and scalable – here are some highlights of
-              my work.
+              Explore my complete portfolio of projects across different
+              technologies and industries.
             </p>
           </div>
 
-          {/* Projects Masonry Grid */}
+          {/* Projects Grid */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 lg:gap-8 px-4">
-            {projects.slice(0, 6).map((project, index) => (
+            {projects.map((project, index) => (
               <div
                 key={index}
                 className="group relative cursor-pointer mb-4 sm:mb-6 lg:mb-8 break-inside-avoid transform transition-all duration-700 ease-out"
@@ -622,18 +625,8 @@ const Projects: FC = () => {
               </div>
             ))}
           </div>
-
-          {/* View All Projects Button */}
-          <div className="text-center mt-12">
-            <a
-              href="/projects"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              <span>View All Projects</span>
-              <FaExternalLinkAlt className="ml-3" size={18} />
-            </a>
-          </div>
         </div>
-      </section>
+      </div>
 
       {/* Project Details Modal */}
       {isModalOpen && selectedProject && (
@@ -796,4 +789,4 @@ const Projects: FC = () => {
   );
 };
 
-export default Projects;
+export default ProjectsPage;
