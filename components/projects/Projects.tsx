@@ -14,7 +14,7 @@ interface ProjectsProps {
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectsType['items'][number] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getStatusIcon = (status: string) => {
@@ -43,7 +43,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
     }
   };
 
-  const openModal = (project: any) => {
+  const openModal = (project: ProjectsType['items'][number]) => {
     setSelectedProject(project);
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
@@ -87,7 +87,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
 
           {/* Projects Masonry Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-4">
-            {(showAll ? projectsData.items : projectsData.items.slice(0, 6)).map((project, index) => (
+            {(showAll ? projectsData.items : projectsData.items.slice(0, 6)).map((project) => (
               <div
                 key={project.id}
                 className="group relative cursor-pointer break-inside-avoid transform transition-all duration-500 ease-in-out hover:shadow-xl rounded-2xl w-full"
