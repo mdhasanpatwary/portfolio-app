@@ -46,7 +46,7 @@ const Header = () => {
         <header className="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">
-                    &lt;MdHasanPatwary /&gt;
+                    &lt;MHP/&gt;
                 </Link>
 
                 {/* Desktop */}

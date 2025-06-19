@@ -3,15 +3,7 @@
 // components/Projects.tsx
 
 import { FC, useState } from "react";
-import {
-  FaExternalLinkAlt,
-  FaPlay,
-  FaCode,
-  FaRocket,
-  FaLightbulb,
-  FaTimes,
-  FaFolderOpen,
-} from "react-icons/fa";
+import { FaExternalLinkAlt, FaPlay, FaCode, FaRocket, FaLightbulb, FaTimes, FaFolderOpen } from "react-icons/fa";
 import Image from "next/image";
 import type { Projects as ProjectsType } from "@/types/data";
 import Link from "next/link";
@@ -88,31 +80,35 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                 {projectsData.title}
               </h2>
             </div>
-            <p className="text-gray-600 dark:text-gray-400">
-              {projectsData.subtitle}
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center">
+              {`Projects I contributed to as a Front End Developer at ThemeLooks and 6amTech, published on Themeforest or Codecanyon.`}
             </p>
           </div>
 
           {/* Projects Masonry Grid */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 lg:gap-8 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-4">
             {(showAll ? projectsData.items : projectsData.items.slice(0, 6)).map((project, index) => (
               <div
                 key={project.id}
-                className="group relative cursor-pointer mb-4 sm:mb-6 lg:mb-8 break-inside-avoid transform transition-all duration-500 ease-in-out hover:shadow-xl rounded-2xl"
+                className="group relative cursor-pointer break-inside-avoid transform transition-all duration-500 ease-in-out hover:shadow-xl rounded-2xl w-full"
                 onClick={() => openModal(project)}
-                style={{ animationDelay: `${index * 150}ms` }}>
+              >
                 {/* Project Image Card */}
-                <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 ease-in-out bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 ease-in-out bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 w-full aspect-[3/2]">
+                  {/* Marketplace Badge */}
+                  <span className="absolute top-3 right-3 z-30 px-3 py-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-semibold rounded-full shadow-md">
+                    {project.marketplace}
+                  </span>
                   {/* Gradient Overlay on Image */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-500 ease-in-out group-hover:opacity-80 rounded-2xl" />
 
                   <Image
-                    src={project.image}
+                    src={project.image || "/profile.png"}
                     alt={project.title}
-                    width={400}
-                    height={300}
-                    className="w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    style={{ aspectRatio: "4/3" }}
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    style={{ aspectRatio: "3/2" }}
                   />
 
                   {/* Hover Overlay with Content */}
@@ -335,10 +331,15 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                   <span>View Project</span>
                   <FaExternalLinkAlt className="ml-2" size={14} />
                 </a>
-                <button className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300">
+                <a
+                  href={selectedProject.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                >
                   <FaPlay className="mr-2" size={14} />
                   Live Demo
-                </button>
+                </a>
               </div>
             </div>
           </div>

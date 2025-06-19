@@ -70,6 +70,8 @@ export interface Projects {
         features?: string[];
         challenges?: string[];
         solutions?: string[];
+        marketplace: string;
+        demo?: string;
     }>;
 }
 
