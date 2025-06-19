@@ -13,7 +13,7 @@ import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
 
 export default function Home() {
-  const { education } = data as GlobalData;
+  const { education, projects } = data as GlobalData;
 
   return (
       <main className="flex flex-col row-start-2 items-center sm:items-start">
@@ -26,7 +26,7 @@ export default function Home() {
           <Skills />
           <Experience />
 
-          <Projects />
+          <Projects projectsData={projects} />
           <Services />
           <Testimonial />
 

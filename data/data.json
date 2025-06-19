@@ -61,5 +61,193 @@
                 ]
             }
         ]
+    },
+    "projects": {
+        "title": "Projects",
+        "subtitle": "Creative, functional, and scalable – here are some highlights of my work.",
+        "items": [
+            {
+                "id": "1",
+                "title": "6valley",
+                "description": "Multi-Vendor eCommerce CMS with advanced marketplace functionality.",
+                "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635457347/6valley%20Cover%206amTech.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=9ab205c47b54412a9013717f033536fa23ab7fd433b01ccb718b5415e35c3b37",
+                "link": "https://codecanyon.net/item/6valley-multivendor-ecommerce-complete-ecommerce-mobile-app-web-and-admin-panel/31448597?s_rank=1",
+                "category": "Laravel CMS",
+                "technologies": ["Laravel (PHP)", "Flutter (Dart)", "MySQL", "JavaScript", "HTML", "CSS"],
+                "status": "live",
+                "longDescription": "6valley is a modern and flexible multi-vendor e-commerce system where you can organize multiple shops and stores (digital, fashion, sports, home & living, health & beauty, and more) in one platform. It's ideal for eCommerce, electronics, online delivery, and multi/single-vendor businesses. The system is mobile-optimized, clean, and trendy, with a focus on conversion and user experience.",
+                "features": [
+                    "Complete multi-vendor eCommerce system",
+                    "Organize shops and stores under one system",
+                    "Admin & Seller web panels (Laravel)",
+                    "3 mobile apps: User, Seller, Deliveryman (Flutter)",
+                    "Multiple themes",
+                    "All apps available on PlayStore & AppStore",
+                    "Responsive design",
+                    "Admin dashboard",
+                    "Customer management",
+                    "Regular updates",
+                    "Clean, maintainable code",
+                    "Active customer support",
+                    "Flexible pricing"
+                ],
+                "challenges": [
+                    "Complex multi-vendor architecture",
+                    "Real-time inventory synchronization",
+                    "Payment gateway integration"
+                ],
+                "solutions": [
+                    "Implemented microservices architecture",
+                    "Used WebSocket for real-time updates",
+                    "Integrated multiple payment gateways"
+                ],
+                "github": ""
+            },
+            {
+                "id": "2",
+                "title": "DriveMond",
+                "description": "Complete Ride Sharing and Parcel Delivery Solution.",
+                "image": "https://thumbs.dreamstime.com/b/project-characters-show-venture-projects-tasks-showing-34213650.jpg",
+                "link": "https://drivemond.app",
+                "category": "React Template",
+                "technologies": ["React", "Node.js", "MongoDB", "Socket.io", "GPS"],
+                "status": "live",
+                "longDescription": "DriveMond is a comprehensive ride-sharing and parcel delivery platform that connects drivers with passengers and delivery requests. Features real-time tracking and secure payment processing.",
+                "features": [
+                    "Real-time ride booking",
+                    "Parcel delivery system",
+                    "Live GPS tracking",
+                    "Driver verification",
+                    "Secure payment processing"
+                ],
+                "challenges": [
+                    "Real-time location tracking",
+                    "Driver-passenger matching",
+                    "Payment security"
+                ],
+                "solutions": [
+                    "Implemented WebSocket for real-time updates",
+                    "Used geolocation APIs for tracking",
+                    "Integrated secure payment gateways"
+                ],
+                "github": ""
+            },
+            {
+                "id": "3",
+                "title": "Demandium",
+                "description": "Multi Provider On Demand admin panel for service management.",
+                "image": "https://thumbs.dreamstime.com/b/project-characters-show-venture-projects-tasks-showing-34213650.jpg",
+                "link": "https://demandium.app",
+                "category": "React Template",
+                "technologies": ["React", "Node.js", "MongoDB", "Socket.io", "Admin Panel"],
+                "status": "live",
+                "longDescription": "Demandium is an on-demand service marketplace that connects customers with qualified professionals for home services. The platform includes real-time booking, tracking, and payment systems.",
+                "features": [
+                    "Multi-provider management",
+                    "Real-time service booking",
+                    "Professional verification system",
+                    "Live tracking and notifications",
+                    "Secure payment processing"
+                ],
+                "challenges": [
+                    "Service provider verification",
+                    "Real-time booking system",
+                    "Payment dispute resolution"
+                ],
+                "solutions": [
+                    "Created comprehensive verification workflow",
+                    "Implemented real-time booking with WebSocket",
+                    "Built automated dispute resolution system"
+                ],
+                "github": ""
+            },
+            {
+                "id": "4",
+                "title": "DVPN",
+                "description": "Multipurpose VPN React JS Template with modern UI.",
+                "image": "https://thumbs.dreamstime.com/b/project-characters-show-venture-projects-tasks-showing-34213650.jpg",
+                "link": "https://react-dvpn.netlify.app",
+                "category": "React Template",
+                "technologies": ["React", "JavaScript", "CSS3", "Netlify", "VPN API"],
+                "status": "live",
+                "longDescription": "DVPN is a modern React-based VPN service template featuring sleek design and user-friendly interface for VPN service providers.",
+                "features": [
+                    "Modern React interface",
+                    "VPN service integration",
+                    "User authentication",
+                    "Service plans management",
+                    "Responsive design"
+                ],
+                "challenges": [
+                    "VPN API integration",
+                    "Real-time connection status",
+                    "Cross-platform compatibility"
+                ],
+                "solutions": [
+                    "Integrated VPN service APIs",
+                    "Implemented WebSocket for status updates",
+                    "Used responsive design principles"
+                ],
+                "github": ""
+            },
+            {
+                "id": "5",
+                "title": "Docland",
+                "description": "Multipurpose SaaS & Tech Startup Website Template.",
+                "image": "https://thumbs.dreamstime.com/b/project-characters-show-venture-projects-tasks-showing-34213650.jpg",
+                "link": "https://themelooks.com/demo/docland/html/",
+                "category": "HTML Template",
+                "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "SaaS"],
+                "status": "live",
+                "longDescription": "Docland is a comprehensive SaaS and tech startup website template designed for modern businesses with clean design and excellent user experience.",
+                "features": [
+                    "SaaS landing pages",
+                    "Tech startup design",
+                    "Modern UI/UX",
+                    "Responsive layout",
+                    "SEO optimized"
+                ],
+                "challenges": [
+                    "Creating modern SaaS design",
+                    "Ensuring cross-browser compatibility",
+                    "Optimizing for performance"
+                ],
+                "solutions": [
+                    "Used modern CSS techniques",
+                    "Implemented progressive enhancement",
+                    "Optimized images and assets"
+                ],
+                "github": ""
+            },
+            {
+                "id": "6",
+                "title": "Dashmin",
+                "description": "Modern Admin Dashboard Template with clean interface.",
+                "image": "https://thumbs.dreamstime.com/b/project-characters-show-venture-projects-tasks-showing-34213650.jpg",
+                "link": "https://themelooks.net/demo/dashmin/",
+                "category": "React Template",
+                "technologies": ["React", "TypeScript", "Tailwind CSS", "Chart.js", "Admin"],
+                "status": "live",
+                "longDescription": "Dashmin is a modern admin dashboard template built with React and TypeScript. It provides a comprehensive set of components and layouts for building powerful admin interfaces.",
+                "features": [
+                    "Responsive design system",
+                    "Dark/light theme support",
+                    "Interactive data visualizations",
+                    "Modular component architecture",
+                    "Comprehensive documentation"
+                ],
+                "challenges": [
+                    "Creating reusable component system",
+                    "Implementing theme switching",
+                    "Optimizing performance"
+                ],
+                "solutions": [
+                    "Built component library with Storybook",
+                    "Used CSS custom properties for theming",
+                    "Implemented code splitting and lazy loading"
+                ],
+                "github": ""
+            }
+        ]
     }
 }

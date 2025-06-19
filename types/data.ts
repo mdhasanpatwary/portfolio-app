@@ -64,6 +64,12 @@ export interface Projects {
         technologies: string[];
         link: string;
         github: string;
+        category: string;
+        status: "live" | "development" | "concept";
+        longDescription?: string;
+        features?: string[];
+        challenges?: string[];
+        solutions?: string[];
     }>;
 }
 
