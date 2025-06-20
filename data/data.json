@@ -1319,148 +1319,152 @@
     "summary": "Passionate about crafting intuitive user interfaces using HTML, CSS, JavaScript, React, and Next.js. Experienced in Docker, AWS, and performance optimization. Let's build something amazing.",
     "image": "/profile.png"
   },
-  "skills": [
-    {
-      "title": "Languages & Frameworks",
-      "technologies": [
-        {
-          "name": "HTML5",
-          "icon": "FaHtml5",
-          "docUrl": "https://developer.mozilla.org/docs/Web/HTML"
-        },
-        {
-          "name": "CSS3",
-          "icon": "FaCss3Alt",
-          "docUrl": "https://developer.mozilla.org/docs/Web/CSS"
-        },
-        {
-          "name": "JavaScript",
-          "icon": "FaJs",
-          "docUrl": "https://developer.mozilla.org/docs/Web/JavaScript"
-        },
-        {
-          "name": "TypeScript",
-          "icon": "SiTypescript",
-          "docUrl": "https://www.typescriptlang.org/docs/"
-        },
-        {
-          "name": "React.js",
-          "icon": "FaReact",
-          "docUrl": "https://react.dev/learn"
-        },
-        {
-          "name": "Vue.js",
-          "icon": "FaVuejs",
-          "docUrl": "https://vuejs.org/guide/introduction.html"
-        },
-        {
-          "name": "Next.js",
-          "icon": "SiNextdotjs",
-          "docUrl": "https://nextjs.org/docs"
-        },
-        {
-          "name": "jQuery",
-          "icon": "SiJquery",
-          "docUrl": "https://api.jquery.com/"
-        },
-        {
-          "name": "Node.js",
-          "icon": "FaNodeJs",
-          "docUrl": "https://nodejs.org/en/docs"
-        }
-      ]
-    },
-    {
-      "title": "Styling & UI",
-      "technologies": [
-        {
-          "name": "Tailwind CSS",
-          "icon": "SiTailwindcss",
-          "docUrl": "https://tailwindcss.com/docs"
-        },
-        {
-          "name": "SASS",
-          "icon": "FaSass",
-          "docUrl": "https://sass-lang.com/documentation/"
-        },
-        {
-          "name": "Bootstrap",
-          "icon": "FaBootstrap",
-          "docUrl": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
-        },
-        {
-          "name": "Material UI",
-          "icon": "FaReact",
-          "docUrl": "https://mui.com/material-ui/getting-started/overview/"
-        },
-        {
-          "name": "Figma",
-          "icon": "FaFigma",
-          "docUrl": "https://help.figma.com/hc/en-us"
-        },
-        {
-          "name": "Adobe XD",
-          "icon": "SiAdobexd",
-          "docUrl": "https://helpx.adobe.com/xd/user-guide.html"
-        },
-        {
-          "name": "Photoshop",
-          "icon": "SiAdobephotoshop",
-          "docUrl": "https://helpx.adobe.com/photoshop/user-guide.html"
-        }
-      ]
-    },
-    {
-      "title": "Tools & DevOps",
-      "technologies": [
-        {
-          "name": "Git",
-          "icon": "FaGitAlt",
-          "docUrl": "https://git-scm.com/doc"
-        },
-        {
-          "name": "GitHub",
-          "icon": "FaGitAlt",
-          "docUrl": "https://docs.github.com/en"
-        },
-        {
-          "name": "Gulp",
-          "icon": "FaGulp",
-          "docUrl": "https://gulpjs.com/docs/en/getting-started/quick-start"
-        },
-        {
-          "name": "Webpack",
-          "icon": "SiWebpack",
-          "docUrl": "https://webpack.js.org/concepts/"
-        },
-        {
-          "name": "Docker",
-          "icon": "FaDocker",
-          "docUrl": "https://docs.docker.com/"
-        },
-        {
-          "name": "AWS",
-          "icon": "FaAws",
-          "docUrl": "https://docs.aws.amazon.com/"
-        },
-        {
-          "name": "Linux",
-          "icon": "FaLinux",
-          "docUrl": "https://www.kernel.org/doc/html/latest/"
-        },
-        {
-          "name": "Automation",
-          "icon": "FaReact",
-          "docUrl": "https://en.wikipedia.org/wiki/Automation"
-        },
-        {
-          "name": "Animation",
-          "icon": "FaReact",
-          "docUrl": "https://developer.mozilla.org/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
-        }
-      ]
-    }
-  ],
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I use to build seamless, performant, and responsive web experiences.",
+    "groups": [
+      {
+        "title": "Languages & Frameworks",
+        "technologies": [
+          {
+            "name": "HTML5",
+            "icon": "FaHtml5",
+            "docUrl": "https://developer.mozilla.org/docs/Web/HTML"
+          },
+          {
+            "name": "CSS3",
+            "icon": "FaCss3Alt",
+            "docUrl": "https://developer.mozilla.org/docs/Web/CSS"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "FaJs",
+            "docUrl": "https://developer.mozilla.org/docs/Web/JavaScript"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "SiTypescript",
+            "docUrl": "https://www.typescriptlang.org/docs/"
+          },
+          {
+            "name": "React.js",
+            "icon": "FaReact",
+            "docUrl": "https://react.dev/learn"
+          },
+          {
+            "name": "Vue.js",
+            "icon": "FaVuejs",
+            "docUrl": "https://vuejs.org/guide/introduction.html"
+          },
+          {
+            "name": "Next.js",
+            "icon": "SiNextdotjs",
+            "docUrl": "https://nextjs.org/docs"
+          },
+          {
+            "name": "jQuery",
+            "icon": "SiJquery",
+            "docUrl": "https://api.jquery.com/"
+          },
+          {
+            "name": "Node.js",
+            "icon": "FaNodeJs",
+            "docUrl": "https://nodejs.org/en/docs"
+          }
+        ]
+      },
+      {
+        "title": "Styling & UI",
+        "technologies": [
+          {
+            "name": "Tailwind CSS",
+            "icon": "SiTailwindcss",
+            "docUrl": "https://tailwindcss.com/docs"
+          },
+          {
+            "name": "SASS",
+            "icon": "FaSass",
+            "docUrl": "https://sass-lang.com/documentation/"
+          },
+          {
+            "name": "Bootstrap",
+            "icon": "FaBootstrap",
+            "docUrl": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+          },
+          {
+            "name": "Material UI",
+            "icon": "FaReact",
+            "docUrl": "https://mui.com/material-ui/getting-started/overview/"
+          },
+          {
+            "name": "Figma",
+            "icon": "FaFigma",
+            "docUrl": "https://help.figma.com/hc/en-us"
+          },
+          {
+            "name": "Adobe XD",
+            "icon": "SiAdobexd",
+            "docUrl": "https://helpx.adobe.com/xd/user-guide.html"
+          },
+          {
+            "name": "Photoshop",
+            "icon": "SiAdobephotoshop",
+            "docUrl": "https://helpx.adobe.com/photoshop/user-guide.html"
+          }
+        ]
+      },
+      {
+        "title": "Tools & DevOps",
+        "technologies": [
+          {
+            "name": "Git",
+            "icon": "FaGitAlt",
+            "docUrl": "https://git-scm.com/doc"
+          },
+          {
+            "name": "GitHub",
+            "icon": "FaGitAlt",
+            "docUrl": "https://docs.github.com/en"
+          },
+          {
+            "name": "Gulp",
+            "icon": "FaGulp",
+            "docUrl": "https://gulpjs.com/docs/en/getting-started/quick-start"
+          },
+          {
+            "name": "Webpack",
+            "icon": "SiWebpack",
+            "docUrl": "https://webpack.js.org/concepts/"
+          },
+          {
+            "name": "Docker",
+            "icon": "FaDocker",
+            "docUrl": "https://docs.docker.com/"
+          },
+          {
+            "name": "AWS",
+            "icon": "FaAws",
+            "docUrl": "https://docs.aws.amazon.com/"
+          },
+          {
+            "name": "Linux",
+            "icon": "FaLinux",
+            "docUrl": "https://www.kernel.org/doc/html/latest/"
+          },
+          {
+            "name": "Automation",
+            "icon": "FaReact",
+            "docUrl": "https://en.wikipedia.org/wiki/Automation"
+          },
+          {
+            "name": "Animation",
+            "icon": "FaReact",
+            "docUrl": "https://developer.mozilla.org/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+          }
+        ]
+      }
+    ]
+  },
   "experiences": [
     {
       "company": "6amtech",
@@ -1480,16 +1484,56 @@
         "Wrote documentation and developer onboarding guides for internal use."
       ],
       "techStack": [
-        { "icon": "SiReact", "name": "React" },
-        { "icon": "SiNextdotjs", "name": "Next.js" },
-        { "icon": "SiMaterialdesignicons", "name": "Material UI" },
-        { "icon": "SiTailwindcss", "name": "Tailwind CSS" },
-        { "icon": "FaDocker", "name": "Docker" },
-        { "icon": "SiTypescript", "name": "TypeScript" },
-        { "icon": "SiGithub", "name": "GitHub" },
-        { "icon": "SiAmazon", "name": "AWS" },
-        { "icon": "FaGitAlt", "name": "Git" },
-        { "icon": "SiWebpack", "name": "Webpack" }
+        {
+          "icon": "SiReact",
+          "name": "React",
+          "docUrl": "https://react.dev/learn"
+        },
+        {
+          "icon": "SiNextdotjs",
+          "name": "Next.js",
+          "docUrl": "https://nextjs.org/docs"
+        },
+        {
+          "icon": "SiMaterialdesignicons",
+          "name": "Material UI",
+          "docUrl": "https://mui.com/material-ui/getting-started/overview/"
+        },
+        {
+          "icon": "SiTailwindcss",
+          "name": "Tailwind CSS",
+          "docUrl": "https://tailwindcss.com/docs"
+        },
+        {
+          "icon": "FaDocker",
+          "name": "Docker",
+          "docUrl": "https://docs.docker.com/"
+        },
+        {
+          "icon": "SiTypescript",
+          "name": "TypeScript",
+          "docUrl": "https://www.typescriptlang.org/docs/"
+        },
+        {
+          "icon": "SiGithub",
+          "name": "GitHub",
+          "docUrl": "https://docs.github.com/en"
+        },
+        {
+          "icon": "SiAmazon",
+          "name": "AWS",
+          "docUrl": "https://docs.aws.amazon.com/"
+        },
+        {
+          "icon": "FaGitAlt",
+          "name": "Git",
+          "docUrl": "https://git-scm.com/doc"
+        },
+        {
+          "icon": "SiWebpack",
+          "name": "Webpack",
+          "docUrl": "https://webpack.js.org/concepts/"
+        }
       ]
     },
     {
@@ -1510,15 +1554,51 @@
         "Provided after-sale support and customization help to clients."
       ],
       "techStack": [
-        { "icon": "FaHtml5", "name": "HTML5" },
-        { "icon": "FaCss3Alt", "name": "CSS3" },
-        { "icon": "SiJavascript", "name": "JavaScript" },
-        { "icon": "SiJquery", "name": "jQuery" },
-        { "icon": "SiBootstrap", "name": "Bootstrap" },
-        { "icon": "SiSass", "name": "SASS" },
-        { "icon": "SiVuedotjs", "name": "Vue.js" },
-        { "icon": "SiGulp", "name": "Gulp" },
-        { "icon": "SiFigma", "name": "Figma" }
+        {
+          "icon": "FaHtml5",
+          "name": "HTML5",
+          "docUrl": "https://developer.mozilla.org/docs/Web/HTML"
+        },
+        {
+          "icon": "FaCss3Alt",
+          "name": "CSS3",
+          "docUrl": "https://developer.mozilla.org/docs/Web/CSS"
+        },
+        {
+          "icon": "SiJavascript",
+          "name": "JavaScript",
+          "docUrl": "https://developer.mozilla.org/docs/Web/JavaScript"
+        },
+        {
+          "icon": "SiJquery",
+          "name": "jQuery",
+          "docUrl": "https://api.jquery.com/"
+        },
+        {
+          "icon": "SiBootstrap",
+          "name": "Bootstrap",
+          "docUrl": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+        },
+        {
+          "icon": "SiSass",
+          "name": "SASS",
+          "docUrl": "https://sass-lang.com/documentation/"
+        },
+        {
+          "icon": "SiVuedotjs",
+          "name": "Vue.js",
+          "docUrl": "https://vuejs.org/guide/introduction.html"
+        },
+        {
+          "icon": "SiGulp",
+          "name": "Gulp",
+          "docUrl": "https://gulpjs.com/docs/en/getting-started/quick-start"
+        },
+        {
+          "icon": "SiFigma",
+          "name": "Figma",
+          "docUrl": "https://help.figma.com/hc/en-us"
+        }
       ]
     }
   ],

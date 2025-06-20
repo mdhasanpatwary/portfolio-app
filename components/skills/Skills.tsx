@@ -27,6 +27,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import React from "react";
+import SectionTitle from "@/components/global/SectionTitle";
 
 const iconMap = {
   FaHtml5,
@@ -78,10 +79,14 @@ const brandColors: Record<string, string> = {
 };
 
 type SkillsProps = {
-  skills: Array<{
+  skills: {
     title: string;
-    technologies: Array<{ name: string; icon: string; docUrl: string }>;
-  }>;
+    subtitle: string;
+    groups: Array<{
+      title: string;
+      technologies: Array<{ name: string; icon: string; docUrl?: string }>;
+    }>;
+  };
 };
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => (
@@ -89,18 +94,15 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => (
     id="skills"
     className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-100 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
     <div className="relative max-w-7xl mx-auto text-center z-10">
-      <div className="flex items-center justify-center gap-3 mb-4">
-        <FaFolderOpen className="text-indigo-600 dark:text-indigo-400 text-3xl" />
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
-          Skills
-        </h2>
-      </div>
-      <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center mb-16">
-        Technologies I use to build seamless, performant, and responsive web
-        experiences.
-      </p>
+      <SectionTitle
+        title={skills.title}
+        icon={
+          <FaFolderOpen className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+        }>
+        {skills.subtitle}
+      </SectionTitle>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {skills.map((group, i) => (
+        {skills.groups.map((group, i) => (
           <div
             key={i}
             className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-200 dark:hover:border-indigo-500 p-0 flex flex-col items-stretch rounded-lg overflow-hidden">

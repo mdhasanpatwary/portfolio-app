@@ -15,6 +15,7 @@ export interface About {
 export interface SkillTechnology {
   name: string;
   icon: string;
+  docUrl?: string;
 }
 
 export interface SkillGroup {
@@ -22,7 +23,11 @@ export interface SkillGroup {
   technologies: SkillTechnology[];
 }
 
-export type Skills = SkillGroup[];
+export interface SkillsData {
+  title: string;
+  subtitle: string;
+  groups: SkillGroup[];
+}
 
 export interface ExperienceItem {
   company: string;
@@ -140,7 +145,7 @@ export interface GlobalData {
   education: Education;
   projects: Projects;
   banner: Banner;
-  skills: Skills;
+  skills: SkillsData;
   experiences: Experiences;
   services: Services;
   funFacts: FunFacts;
