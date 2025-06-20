@@ -5,6 +5,6 @@ import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
 
 export default function ProjectsPage() {
-  const { projects } = data as GlobalData;
+  const { projects } = data as any;
   return <Projects projectsData={projects} showAll={true} />;
 }

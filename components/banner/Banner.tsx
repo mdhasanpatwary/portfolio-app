@@ -6,10 +6,14 @@ import {
 } from "react-icons/fa";
 import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
 import Image from "next/image";
-import { FC } from "react";
+import React from "react";
 import { Banner as BannerType } from "@/types/data";
 
-const iconMap: Record<string, React.ReactNode> = {
+/**
+ * Banner component displays the main profile section with name, title, summary, social links, and profile image.
+ * @param banner - Banner data from data.json
+ */
+const iconMap: Readonly<Record<string, React.ReactNode>> = {
   FaGithub: <FaGithub />,
   FaLinkedin: <FaLinkedin />,
   FaStackOverflow: <FaStackOverflow />,
@@ -20,10 +24,10 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 type BannerProps = {
-  banner: BannerType;
+  readonly banner: BannerType;
 };
 
-const Banner: FC<BannerProps> = ({ banner }) => {
+const Banner: React.FC<BannerProps> = ({ banner }) => {
   const { name, title, summary, image, socialLinks } = banner;
   return (
     <section
@@ -62,7 +66,7 @@ const Banner: FC<BannerProps> = ({ banner }) => {
           {/* Social Links */}
           <div className="flex space-x-5 text-gray-600 dark:text-gray-300 text-xl">
             {socialLinks &&
-              socialLinks.map((link) => (
+              socialLinks.map((link: BannerType["socialLinks"][number]) => (
                 <a
                   key={link.name}
                   href={link.url}
@@ -70,7 +74,7 @@ const Banner: FC<BannerProps> = ({ banner }) => {
                   rel="noopener noreferrer"
                   className="hover:text-indigo-600 dark:hover:text-indigo-400"
                   title={link.name}>
-                  {iconMap[link.icon]}
+                  {iconMap[link.icon] ?? <span>{link.name[0]}</span>}
                 </a>
               ))}
           </div>
