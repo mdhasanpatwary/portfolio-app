@@ -34,7 +34,7 @@ const Footer: FC<FooterProps> = ({ name, description, socialLinks }) => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-white via-indigo-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-t border-gray-200 dark:border-gray-700 pt-10 pb-6 px-6 text-center">
+    <footer className="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-t border-gray-200 dark:border-gray-700 pt-10 pb-6 px-6 text-center">
       <div className="max-w-6xl mx-auto space-y-6">
         {/* Logo / Name */}
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
