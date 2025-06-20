@@ -13,7 +13,11 @@ import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
 
 export default function Home() {
-  const { education, projects, banner } = data as any as GlobalData;
+  const { education, projects, banner } = data as {
+    education: GlobalData["education"];
+    projects: GlobalData["projects"];
+    banner: GlobalData["banner"];
+  };
 
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">
