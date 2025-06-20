@@ -1,5 +1,4 @@
 import React from "react";
-import type { JSX } from "react";
 import {
   FaRocket,
   FaCogs,
@@ -14,21 +13,7 @@ import {
   FaTools,
   FaSearch,
 } from "react-icons/fa";
-
-const iconMap = {
-  FaRocket,
-  FaCogs,
-  FaCode,
-  FaPaintBrush,
-  FaChartLine,
-  FaMobileAlt,
-  FaMagic,
-  FaFigma,
-  FaAws,
-  FaDocker,
-  FaTools,
-  FaSearch,
-};
+import { iconMap } from "@/components/global/IconMap";
 
 type Service = {
   title: string;

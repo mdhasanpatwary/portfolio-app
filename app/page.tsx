@@ -24,7 +24,7 @@ export default function Home() {
     hobbies,
     testimonials,
     contact,
-  } = data as any;
+  } = data as GlobalData;
 
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">

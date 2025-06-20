@@ -4,13 +4,14 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import data from "@/data/data.json";
+import { GlobalData } from "@/types/data";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const { header, footer, contact } = data as any;
+const { header, footer, contact } = data as GlobalData;
 
 export const metadata: Metadata = {
   title: "Personal Portfolio",

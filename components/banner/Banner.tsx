@@ -65,18 +65,17 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
 
           {/* Social Links */}
           <div className="flex space-x-5 text-gray-600 dark:text-gray-300 text-xl">
-            {socialLinks &&
-              socialLinks.map((link: BannerType["socialLinks"][number]) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400"
-                  title={link.name}>
-                  {iconMap[link.icon] ?? <span>{link.name[0]}</span>}
-                </a>
-              ))}
+            {(socialLinks ?? []).map((link, idx) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-600 dark:hover:text-indigo-400"
+                title={link.name}>
+                {iconMap[link.icon] ?? <span>{link.name[0]}</span>}
+              </a>
+            ))}
           </div>
         </div>
 

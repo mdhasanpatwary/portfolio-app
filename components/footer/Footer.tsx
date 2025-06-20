@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaChevronUp,
 } from "react-icons/fa";
+import { iconMap } from "@/components/global/IconMap";
 
 type SocialLink = { name: string; url: string; icon: string };
 type FooterProps = {
@@ -15,7 +16,6 @@ type FooterProps = {
   description: string;
   socialLinks: SocialLink[];
 };
-const iconMap = { FaGithub, FaLinkedin, FaFacebook, FaEnvelope };
 
 const Footer: FC<FooterProps> = ({ name, description, socialLinks }) => {
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {

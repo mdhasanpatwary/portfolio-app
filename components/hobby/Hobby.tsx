@@ -8,8 +8,7 @@ import {
   FaGlobe,
   FaLightbulb,
 } from "react-icons/fa";
-
-const iconMap = { FaChessKnight, FaCamera, FaBookOpen, FaGlobe, FaLightbulb };
+import { iconMap } from "@/components/global/IconMap";
 
 type HobbyType = { title: string; description: string; icon: string };
 type HobbyProps = { hobbies: HobbyType[] };

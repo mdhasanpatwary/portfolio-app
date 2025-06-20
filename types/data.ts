@@ -12,31 +12,58 @@ export interface About {
   image: string;
 }
 
-export interface Skills {
-  title: string;
-  subtitle: string;
-  categories: Array<{
-    name: string;
-    skills: Array<{
-      name: string;
-      level: number;
-    }>;
-  }>;
+export interface SkillTechnology {
+  name: string;
+  icon: string;
 }
 
-export interface Experience {
+export interface SkillGroup {
   title: string;
-  subtitle: string;
-  items: Array<{
-    id: string;
-    role: string;
-    company: string;
-    period: string;
-    description: string;
-    responsibilities: string[];
-    technologies: string[];
-  }>;
+  technologies: SkillTechnology[];
 }
+
+export type Skills = SkillGroup[];
+
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  duration: string;
+  location: string;
+  website: string;
+  highlights: string[];
+  techStack: SkillTechnology[];
+}
+export type Experiences = ExperienceItem[];
+
+export interface Service {
+  title: string;
+  description: string;
+  tools: string[];
+  icon: string;
+}
+export type Services = Service[];
+
+export interface FunFact {
+  icon: string;
+  label: string;
+  value: string;
+}
+export type FunFacts = FunFact[];
+
+export interface Hobby {
+  title: string;
+  description: string;
+  icon: string;
+}
+export type Hobbies = Hobby[];
+
+export interface Testimonial {
+  name: string;
+  title: string;
+  message: string;
+  avatar: string;
+}
+export type Testimonials = Testimonial[];
 
 export interface Education {
   title: string;
@@ -75,13 +102,22 @@ export interface Projects {
   }>;
 }
 
+export interface Header {
+  navItems: Array<{ label: string; href: string }>;
+}
+
+export interface Footer {
+  name: string;
+  description: string;
+}
+
 export interface Contact {
   title: string;
   subtitle: string;
   email: string;
   phone: string;
   location: string;
-  social: Array<{
+  socialLinks: Array<{
     name: string;
     url: string;
     icon: string;
@@ -93,7 +129,7 @@ export interface Banner {
   title: string;
   summary: string;
   image: string;
-  socialLinks: Array<{
+  socialLinks?: Array<{
     name: string;
     url: string;
     icon: string;
@@ -101,12 +137,16 @@ export interface Banner {
 }
 
 export interface GlobalData {
-  hero: Hero;
-  about: About;
-  skills: Skills;
-  experience: Experience;
   education: Education;
   projects: Projects;
-  contact: Contact;
   banner: Banner;
+  skills: Skills;
+  experiences: Experiences;
+  services: Services;
+  funFacts: FunFacts;
+  hobbies: Hobbies;
+  testimonials: Testimonials;
+  contact: Contact;
+  header: Header;
+  footer: Footer;
 }
