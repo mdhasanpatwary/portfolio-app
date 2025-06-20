@@ -1,37 +1,44 @@
 import Banner from "@/components/banner/Banner";
 import Skills from "@/components/skills/Skills";
-import Experience from "@/components/experiance/Experiance";
+import ProfessionalExperience from "@/components/experiance/Experiance";
 import Projects from "@/components/projects/Projects";
-import Testimonial from "@/components/testimonial/Testimonial";
+import Testimonials from "@/components/testimonial/Testimonial";
 import Education from "@/components/education/Education";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
-import Funfact from "@/components/funfact/Funfact";
+import FunFact from "@/components/funfact/Funfact";
 import Contact from "@/components/contact/Contact";
 import Services from "@/components/services/Services";
 import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
 
 export default function Home() {
-  const { education, projects, banner } = data as {
-    education: GlobalData["education"];
-    projects: GlobalData["projects"];
-    banner: GlobalData["banner"];
-  };
+  const {
+    education,
+    projects,
+    banner,
+    skills,
+    experiences,
+    services,
+    funFacts,
+    hobbies,
+    testimonials,
+    contact,
+  } = data as any;
 
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">
-      <Banner banner={banner} />
-      <Skills />
-      <Experience />
+      <Banner banner={{ ...banner, socialLinks: contact.socialLinks }} />
+      <Skills skills={skills} />
+      <ProfessionalExperience experiences={experiences} />
 
       <Projects projectsData={projects} />
-      <Services />
-      <Testimonial />
+      <Services services={services} />
+      <Testimonials testimonials={testimonials} />
 
-      <Funfact />
+      <FunFact funFacts={funFacts} />
       <Education educationData={education} />
-      <Hobby />
+      <Hobby hobbies={hobbies} />
       <Blog />
 
       <Contact />

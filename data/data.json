@@ -1313,39 +1313,272 @@
     "name": "MD Hasan Patwary",
     "title": "Front-End Web Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS",
     "summary": "Passionate about crafting intuitive user interfaces using HTML, CSS, JavaScript, React, and Next.js. Experienced in Docker, AWS, and performance optimization. Let's build something amazing.",
-    "image": "/profile.png",
-    "socialLinks": [
-      {
-        "name": "LinkedIn",
-        "url": "https://linkedin.com",
-        "icon": "FaLinkedin"
-      },
-      { "name": "GitHub", "url": "https://github.com", "icon": "FaGithub" },
-      {
-        "name": "StackOverflow",
-        "url": "https://stackoverflow.com",
-        "icon": "FaStackOverflow"
-      },
-      {
-        "name": "Facebook",
-        "url": "https://facebook.com/mdhassanpatwary",
-        "icon": "FaFacebook"
-      },
-      {
-        "name": "Dev.to",
-        "url": "https://dev.to/mdhassanpatwary",
-        "icon": "SiDevdotto"
-      },
-      {
-        "name": "Daily.dev",
-        "url": "https://daily.dev",
-        "icon": "SiDailydotdev"
-      },
-      {
-        "name": "CodePen",
-        "url": "https://codepen.io/mdhassanpatwary",
-        "icon": "SiCodepen"
-      }
+    "image": "/profile.png"
+  },
+  "skills": [
+    {
+      "title": "Languages & Frameworks",
+      "technologies": [
+        { "name": "HTML5", "icon": "FaHtml5" },
+        { "name": "CSS3", "icon": "FaCss3Alt" },
+        { "name": "JavaScript", "icon": "FaJs" },
+        { "name": "TypeScript", "icon": "SiTypescript" },
+        { "name": "React.js", "icon": "FaReact" },
+        { "name": "Vue.js", "icon": "FaVuejs" },
+        { "name": "Next.js", "icon": "SiNextdotjs" },
+        { "name": "jQuery", "icon": "SiJquery" },
+        { "name": "Node.js", "icon": "FaNodeJs" }
+      ]
+    },
+    {
+      "title": "Styling & UI",
+      "technologies": [
+        { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
+        { "name": "SASS", "icon": "FaSass" },
+        { "name": "Bootstrap", "icon": "FaBootstrap" },
+        { "name": "Material UI", "icon": "FaReact" },
+        { "name": "Figma", "icon": "FaFigma" },
+        { "name": "Adobe XD", "icon": "SiAdobexd" },
+        { "name": "Photoshop", "icon": "SiAdobephotoshop" }
+      ]
+    },
+    {
+      "title": "Tools & DevOps",
+      "technologies": [
+        { "name": "Git", "icon": "FaGitAlt" },
+        { "name": "GitHub", "icon": "FaGitAlt" },
+        { "name": "Gulp", "icon": "FaGulp" },
+        { "name": "Webpack", "icon": "SiWebpack" },
+        { "name": "Docker", "icon": "FaDocker" },
+        { "name": "AWS", "icon": "FaAws" },
+        { "name": "Linux", "icon": "FaLinux" },
+        { "name": "Automation", "icon": "FaReact" },
+        { "name": "Animation", "icon": "FaReact" }
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "6amtech",
+      "role": "Front-End Developer",
+      "duration": "Jul 2022 – Present",
+      "location": "Dhaka, Bangladesh",
+      "website": "https://6amtech.com",
+      "highlights": [
+        "Developed scalable and performant frontend solutions for Demandium and Hexaride from scratch.",
+        "Redesigned core UI/UX for flagship products like 6valley and 6amMart based on customer feedback and user testing.",
+        "Built responsive layouts using Tailwind CSS and React components, ensuring accessibility and mobile-first designs.",
+        "Collaborated with backend team to optimize API performance and UI data handling using Axios and React hooks.",
+        "Integrated CI/CD pipelines and GitHub workflows for automatic linting and build checks.",
+        "Contributed to Docker-based local development environment setup for faster onboarding.",
+        "Worked with AWS services to deploy frontend builds and manage assets efficiently.",
+        "Participated in code reviews and introduced reusable component patterns to improve maintainability.",
+        "Wrote documentation and developer onboarding guides for internal use."
+      ],
+      "techStack": [
+        { "icon": "SiReact", "name": "React" },
+        { "icon": "SiNextdotjs", "name": "Next.js" },
+        { "icon": "SiMaterialdesignicons", "name": "Material UI" },
+        { "icon": "SiTailwindcss", "name": "Tailwind CSS" },
+        { "icon": "FaDocker", "name": "Docker" },
+        { "icon": "SiTypescript", "name": "TypeScript" },
+        { "icon": "SiGithub", "name": "GitHub" },
+        { "icon": "SiAmazon", "name": "AWS" },
+        { "icon": "FaGitAlt", "name": "Git" },
+        { "icon": "SiWebpack", "name": "Webpack" }
+      ]
+    },
+    {
+      "company": "Themelooks",
+      "role": "Front-End Developer",
+      "duration": "Aug 2019 – Jul 2022",
+      "location": "Dhaka, Bangladesh",
+      "website": "https://themelooks.com",
+      "highlights": [
+        "Developed over 10+ ThemeForest templates and Codecanyon web applications.",
+        "Created responsive multipurpose admin dashboards such as Dashmin and commercial landing pages.",
+        "Rewritten legacy jQuery projects using modern JavaScript and Bootstrap 5.",
+        "Implemented modern design systems and reusable UI kits using SASS and Gulp.",
+        "Collaborated with designers using Figma to translate design into pixel-perfect UI.",
+        "Worked on Vue and React-based single-page applications (SPAs).",
+        "Optimized assets and improved Lighthouse performance score by up to 40%.",
+        "Ensured full cross-browser support and maintained W3C-compliant markup.",
+        "Provided after-sale support and customization help to clients."
+      ],
+      "techStack": [
+        { "icon": "FaHtml5", "name": "HTML5" },
+        { "icon": "FaCss3Alt", "name": "CSS3" },
+        { "icon": "SiJavascript", "name": "JavaScript" },
+        { "icon": "SiJquery", "name": "jQuery" },
+        { "icon": "SiBootstrap", "name": "Bootstrap" },
+        { "icon": "SiSass", "name": "SASS" },
+        { "icon": "SiVuedotjs", "name": "Vue.js" },
+        { "icon": "SiGulp", "name": "Gulp" },
+        { "icon": "SiFigma", "name": "Figma" }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Project Modernization",
+      "description": "Upgrade legacy systems using React, Next.js, and modern styling libraries.",
+      "tools": ["React", "Next.js", "Tailwind CSS"],
+      "icon": "FaRocket"
+    },
+    {
+      "title": "Version Migration",
+      "description": "Safely migrate from older React/Next.js versions to latest stable releases.",
+      "tools": ["React 16 → 18", "Next.js 12 → 15"],
+      "icon": "FaCogs"
+    },
+    {
+      "title": "jQuery to React Conversion",
+      "description": "Rebuild jQuery-based UIs into scalable, component-driven React apps.",
+      "tools": ["JSX", "Hooks", "SPA Architecture"],
+      "icon": "FaCode"
+    },
+    {
+      "title": "Bootstrap Upgrade",
+      "description": "Transform Bootstrap 3/4 layouts into responsive modern Bootstrap 5+ designs.",
+      "tools": ["Bootstrap 3/4 → 5+", "Grid System", "Flexbox"],
+      "icon": "FaPaintBrush"
+    },
+    {
+      "title": "Codebase Refactoring",
+      "description": "Enhance readability, maintainability, and scalability of your frontend code.",
+      "tools": ["Clean Code", "ESLint", "Prettier"],
+      "icon": "FaChartLine"
+    },
+    {
+      "title": "UI/UX Redesign & Handoff",
+      "description": "Revamp user interfaces with modern, accessible, brand-aligned designs.",
+      "tools": ["Figma", "Responsive Design", "Accessibility"],
+      "icon": "FaMobileAlt"
+    },
+    {
+      "title": "Animation & Interaction",
+      "description": "Create engaging animations with CSS, GSAP, and Lottie for better user experience.",
+      "tools": ["CSS Animations", "GSAP", "Lottie"],
+      "icon": "FaMagic"
+    },
+    {
+      "title": "Figma to HTML/CSS",
+      "description": "Convert pixel-perfect Figma designs into clean, responsive HTML and CSS.",
+      "tools": ["Figma", "HTML5", "CSS3", "Responsive Design"],
+      "icon": "FaFigma"
+    },
+    {
+      "title": "SEO Best Practices",
+      "description": "Implement on-page SEO strategies to improve search engine visibility and ranking.",
+      "tools": ["Meta Tags", "Semantic HTML", "Performance Optimization"],
+      "icon": "FaSearch"
+    },
+    {
+      "title": "AWS Deployment & Management",
+      "description": "Deploy and manage web apps using AWS services like S3, CloudFront, and Lambda.",
+      "tools": ["AWS S3", "CloudFront", "Lambda"],
+      "icon": "FaAws"
+    },
+    {
+      "title": "Docker & Containerization",
+      "description": "Set up containerized development and deployment environments with Docker.",
+      "tools": ["Dockerfiles", "Docker Compose", "Containers"],
+      "icon": "FaDocker"
+    },
+    {
+      "title": "Website Automation",
+      "description": "Automate builds, deployments, and testing for efficient development workflows.",
+      "tools": ["CI/CD", "GitHub Actions", "Build Scripts"],
+      "icon": "FaTools"
+    }
+  ],
+  "funFacts": [
+    { "icon": "FaCode", "label": "Lines of Code", "value": "500K+" },
+    { "icon": "FaFolderOpen", "label": "Projects Completed", "value": "30+" },
+    { "icon": "FaGlobe", "label": "Countries Reached", "value": "15+" },
+    {
+      "icon": "FaGraduationCap",
+      "label": "Years of Experience",
+      "value": "6+"
+    },
+    { "icon": "FaChessKing", "label": "Chess Games Played", "value": "1000+" }
+  ],
+  "hobbies": [
+    {
+      "title": "Chess",
+      "description": "Enjoy strategic thinking and problem-solving through regular chess games.",
+      "icon": "FaChessKnight"
+    },
+    {
+      "title": "Photography",
+      "description": "Love capturing moments and telling stories through creative photography.",
+      "icon": "FaCamera"
+    },
+    {
+      "title": "Reading",
+      "description": "Always exploring new ideas, biographies, and technology books.",
+      "icon": "FaBookOpen"
+    },
+    {
+      "title": "Traveling",
+      "description": "Exploring new places and cultures fuels my creativity and curiosity.",
+      "icon": "FaGlobe"
+    },
+    {
+      "title": "Learning New Things",
+      "description": "Constantly expanding my knowledge in tech, design, and personal growth.",
+      "icon": "FaLightbulb"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Rahim Uddin",
+      "title": "Project Manager at 6amTech",
+      "message": "Hasan delivers clean, responsive, high-performing code. Highly reliable developer!",
+      "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "name": "Sadia Ahmed",
+      "title": "Team Lead at Themelooks",
+      "message": "Hasan's attention to detail and creative solutions made him a valuable team member.",
+      "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      "name": "Tanvir Hossain",
+      "title": "Co-founder at Demandium",
+      "message": "His frontend skills and design sense are excellent. He elevated our UI drastically.",
+      "avatar": "https://randomuser.me/api/portraits/men/76.jpg"
+    },
+    {
+      "name": "Fariha Nabila",
+      "title": "Designer at Anefty",
+      "message": "Creative and deadline-driven. Hasan is a dream to work with!",
+      "avatar": "https://randomuser.me/api/portraits/women/85.jpg"
+    },
+    {
+      "name": "Mahmudul Hasan",
+      "title": "Founder at Repserv",
+      "message": "He understands user-centric design like no one else. A joy to work with!",
+      "avatar": "https://randomuser.me/api/portraits/men/66.jpg"
+    },
+    {
+      "name": "Ayesha Noor",
+      "title": "Product Owner at Unihost",
+      "message": "Very professional, communicative, and great at frontend architecture.",
+      "avatar": "https://randomuser.me/api/portraits/women/70.jpg"
+    }
+  ],
+  "header": {
+    "navItems": [
+      { "label": "Home", "href": "#banner" },
+      { "label": "Experience", "href": "#experience" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Service", "href": "#services" },
+      { "label": "Contact", "href": "#contact" }
     ]
+  },
+  "footer": {
+    "name": "MD Hasan Patwary",
+    "description": "Front-end web developer passionate about building beautiful, fast, and accessible web apps."
   }
 }
