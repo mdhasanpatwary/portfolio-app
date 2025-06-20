@@ -8,7 +8,14 @@ import {
   FaGraduationCap,
   FaChessKing,
 } from "react-icons/fa";
-import { iconMap } from "@/components/global/IconMap";
+
+const iconMap = {
+  FaCode,
+  FaFolderOpen,
+  FaGlobe,
+  FaGraduationCap,
+  FaChessKing,
+};
 
 type Fact = { icon: string; label: string; value: string };
 type FunFactProps = { funFacts: Fact[] };

@@ -3,10 +3,18 @@
 // components/Projects.tsx
 
 import { FC, useState } from "react";
-import { FaExternalLinkAlt, FaPlay, FaCode, FaRocket, FaLightbulb, FaTimes, FaFolderOpen } from "react-icons/fa";
 import Image from "next/image";
 import type { Projects as ProjectsType } from "@/types/data";
 import Link from "next/link";
+import {
+  FaExternalLinkAlt,
+  FaPlay,
+  FaCode,
+  FaRocket,
+  FaLightbulb,
+  FaTimes,
+  FaFolderOpen,
+} from "react-icons/fa";
 
 interface ProjectsProps {
   projectsData: ProjectsType;
@@ -14,7 +22,9 @@ interface ProjectsProps {
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
-  const [selectedProject, setSelectedProject] = useState<ProjectsType['items'][number] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<
+    ProjectsType["items"][number] | null
+  >(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getStatusIcon = (status: string) => {
@@ -43,7 +53,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
     }
   };
 
-  const openModal = (project: ProjectsType['items'][number]) => {
+  const openModal = (project: ProjectsType["items"][number]) => {
     setSelectedProject(project);
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
@@ -87,12 +97,14 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
 
           {/* Projects Masonry Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-4">
-            {(showAll ? projectsData.items : projectsData.items.slice(0, 6)).map((project) => (
+            {(showAll
+              ? projectsData.items
+              : projectsData.items.slice(0, 6)
+            ).map((project) => (
               <div
                 key={project.id}
                 className="group relative cursor-pointer break-inside-avoid transform transition-all duration-500 ease-in-out hover:shadow-xl rounded-2xl w-full"
-                onClick={() => openModal(project)}
-              >
+                onClick={() => openModal(project)}>
                 {/* Project Image Card */}
                 <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 ease-in-out bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 w-full aspect-[3/2]">
                   {/* Marketplace Badge */}
@@ -119,8 +131,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                         <div
                           className={`flex items-center px-3 py-1.5 rounded-full border text-xs font-medium bg-white/95 backdrop-blur-md shadow-lg ${getStatusColor(
                             project.status
-                          )}`}
-                        >
+                          )}`}>
                           {getStatusIcon(project.status)}
                           <span className="ml-1.5 capitalize hidden sm:inline font-semibold">
                             {project.status}
@@ -146,13 +157,15 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
 
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                        {project.technologies.slice(0, 2).map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-2.5 sm:px-3 py-1 bg-white/95 backdrop-blur-md text-gray-800 text-xs font-semibold rounded-full shadow-md border border-white/20">
-                            {tech}
-                          </span>
-                        ))}
+                        {project.technologies
+                          .slice(0, 2)
+                          .map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="px-2.5 sm:px-3 py-1 bg-white/95 backdrop-blur-md text-gray-800 text-xs font-semibold rounded-full shadow-md border border-white/20">
+                              {tech}
+                            </span>
+                          ))}
                         {project.technologies.length > 2 && (
                           <span className="px-2.5 sm:px-3 py-1 bg-white/95 backdrop-blur-md text-gray-800 text-xs font-semibold rounded-full shadow-md border border-white/20">
                             +{project.technologies.length - 2}
@@ -184,12 +197,10 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
       {isModalOpen && selectedProject && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
-          onClick={closeModal}
-        >
+          onClick={closeModal}>
           <div
             className="bg-white dark:bg-gray-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transform animate-in zoom-in-95 duration-300"
-            onClick={e => e.stopPropagation()}
-          >
+            onClick={(e) => e.stopPropagation()}>
             {/* Modal Header */}
             <div className="relative p-4 sm:p-6 border-b border-gray-200/50 dark:border-gray-700/50 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-t-3xl">
               <button
@@ -203,8 +214,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                   <div
                     className={`flex items-center px-3 py-1.5 rounded-full border text-xs font-medium shadow-sm ${getStatusColor(
                       selectedProject.status
-                    )}`}
-                  >
+                    )}`}>
                     {getStatusIcon(selectedProject.status)}
                     <span className="ml-1.5 capitalize font-semibold">
                       {selectedProject.status}
@@ -249,14 +259,16 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                     Key Features
                   </h3>
                   <ul className="space-y-3">
-                    {selectedProject.features?.map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start">
-                        <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
+                    {selectedProject.features?.map(
+                      (feature: string, index: number) => (
+                        <li key={index} className="flex items-start">
+                          <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                          <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                            {feature}
+                          </span>
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
@@ -267,13 +279,15 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                     Technologies Used
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {selectedProject.technologies.map((tech: string, index: number) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-full border border-gray-200 dark:border-gray-600 shadow-sm hover:shadow-md transition-shadow duration-200">
-                        {tech}
-                      </span>
-                    ))}
+                    {selectedProject.technologies.map(
+                      (tech: string, index: number) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-full border border-gray-200 dark:border-gray-600 shadow-sm hover:shadow-md transition-shadow duration-200">
+                          {tech}
+                        </span>
+                      )
+                    )}
                   </div>
                 </div>
               </div>
@@ -288,14 +302,16 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                         Challenges
                       </h3>
                       <ul className="space-y-3">
-                        {selectedProject.challenges.map((challenge: string, index: number) => (
-                          <li key={index} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                              {challenge}
-                            </span>
-                          </li>
-                        ))}
+                        {selectedProject.challenges.map(
+                          (challenge: string, index: number) => (
+                            <li key={index} className="flex items-start">
+                              <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                                {challenge}
+                              </span>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
                   )}
@@ -307,14 +323,16 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                         Solutions
                       </h3>
                       <ul className="space-y-3">
-                        {selectedProject.solutions.map((solution: string, index: number) => (
-                          <li key={index} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                              {solution}
-                            </span>
-                          </li>
-                        ))}
+                        {selectedProject.solutions.map(
+                          (solution: string, index: number) => (
+                            <li key={index} className="flex items-start">
+                              <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                                {solution}
+                              </span>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
                   )}
@@ -335,8 +353,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
                   href={selectedProject.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
-                >
+                  className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300">
                   <FaPlay className="mr-2" size={14} />
                   Live Demo
                 </a>

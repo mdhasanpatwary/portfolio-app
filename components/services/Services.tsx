@@ -1,19 +1,33 @@
 import React from "react";
 import {
-  FaRocket,
-  FaCogs,
-  FaCode,
+  FaMagic,
+  FaTools,
   FaPaintBrush,
   FaChartLine,
   FaMobileAlt,
-  FaMagic,
+  FaRocket,
+  FaCogs,
+  FaCode,
   FaFigma,
+  FaSearch,
   FaAws,
   FaDocker,
-  FaTools,
-  FaSearch,
 } from "react-icons/fa";
-import { iconMap } from "@/components/global/IconMap";
+
+const iconMap = {
+  FaMagic,
+  FaTools,
+  FaPaintBrush,
+  FaChartLine,
+  FaMobileAlt,
+  FaRocket,
+  FaCogs,
+  FaCode,
+  FaFigma,
+  FaSearch,
+  FaAws,
+  FaDocker,
+};
 
 type Service = {
   title: string;

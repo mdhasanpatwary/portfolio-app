@@ -2,13 +2,23 @@
 
 import { FC } from "react";
 import {
+  FaChevronUp,
   FaGithub,
   FaLinkedin,
+  FaStackOverflow,
   FaFacebook,
-  FaEnvelope,
-  FaChevronUp,
 } from "react-icons/fa";
-import { iconMap } from "@/components/global/IconMap";
+import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
+
+const iconMap = {
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaFacebook,
+  SiDevdotto,
+  SiDailydotdev,
+  SiCodepen,
+};
 
 type SocialLink = { name: string; url: string; icon: string };
 type FooterProps = {

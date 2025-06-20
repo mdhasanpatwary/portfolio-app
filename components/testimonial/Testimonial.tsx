@@ -6,8 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 import Image from "next/image";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type Testimonial = {
   name: string;
@@ -25,7 +25,6 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
       className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex items-center justify-center gap-3 mb-4">
-          <FaQuoteLeft className="text-indigo-600 dark:text-indigo-400 text-3xl" />
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
             Testimonials
           </h2>

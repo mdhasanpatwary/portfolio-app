@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import ThemeToggle from "@/components/global/ThemeToggle";
 import { Transition } from "@headlessui/react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 type NavItem = {
   label: string;

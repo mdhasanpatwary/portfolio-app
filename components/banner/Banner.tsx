@@ -1,3 +1,6 @@
+import Image from "next/image";
+import React from "react";
+import { Banner as BannerType } from "@/types/data";
 import {
   FaGithub,
   FaLinkedin,
@@ -5,24 +8,21 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
-import Image from "next/image";
-import React from "react";
-import { Banner as BannerType } from "@/types/data";
+
+const iconMap = {
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaFacebook,
+  SiDevdotto,
+  SiDailydotdev,
+  SiCodepen,
+};
 
 /**
  * Banner component displays the main profile section with name, title, summary, social links, and profile image.
  * @param banner - Banner data from data.json
  */
-const iconMap: Readonly<Record<string, React.ReactNode>> = {
-  FaGithub: <FaGithub />,
-  FaLinkedin: <FaLinkedin />,
-  FaStackOverflow: <FaStackOverflow />,
-  FaFacebook: <FaFacebook />,
-  SiDevdotto: <SiDevdotto />,
-  SiDailydotdev: <SiDailydotdev />,
-  SiCodepen: <SiCodepen />,
-};
-
 type BannerProps = {
   readonly banner: BannerType;
 };
@@ -65,17 +65,20 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
 
           {/* Social Links */}
           <div className="flex space-x-5 text-gray-600 dark:text-gray-300 text-xl">
-            {(socialLinks ?? []).map((link, idx) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-indigo-600 dark:hover:text-indigo-400"
-                title={link.name}>
-                {iconMap[link.icon] ?? <span>{link.name[0]}</span>}
-              </a>
-            ))}
+            {(socialLinks ?? []).map((link) => {
+              const Icon = iconMap[link.icon as keyof typeof iconMap];
+              return (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400"
+                  title={link.name}>
+                  {Icon ? <Icon /> : <span>{link.name[0]}</span>}
+                </a>
+              );
+            })}
           </div>
         </div>
 
