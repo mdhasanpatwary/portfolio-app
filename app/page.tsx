@@ -13,29 +13,24 @@ import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
 
 export default function Home() {
-  const { education, projects } = data as GlobalData;
+  const { education, projects, banner } = data as any as GlobalData;
 
   return (
-      <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <Banner
-            name="MD Hasan Patwary"
-            title="Front-End Web Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS"
-            summary="Passionate about crafting intuitive user interfaces using HTML, CSS, JavaScript, React, and Next.js.
-          Experienced in Docker, AWS, and performance optimization. Let's build something amazing."
-        />
-          <Skills />
-          <Experience />
+    <main className="flex flex-col row-start-2 items-center sm:items-start">
+      <Banner banner={banner} />
+      <Skills />
+      <Experience />
 
-          <Projects projectsData={projects} />
-          <Services />
-          <Testimonial />
+      <Projects projectsData={projects} />
+      <Services />
+      <Testimonial />
 
-          <Funfact />
-          <Education educationData={education} />
-          <Hobby />
-          <Blog />
+      <Funfact />
+      <Education educationData={education} />
+      <Hobby />
+      <Blog />
 
-          <Contact />
-      </main>
+      <Contact />
+    </main>
   );
 }
