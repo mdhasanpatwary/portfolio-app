@@ -1621,80 +1621,84 @@
       }
     ]
   },
-  "services": [
-    {
-      "title": "Project Modernization",
-      "description": "Upgrade legacy systems using React, Next.js, and modern styling libraries.",
-      "tools": ["React", "Next.js", "Tailwind CSS"],
-      "icon": "FaRocket"
-    },
-    {
-      "title": "Version Migration",
-      "description": "Safely migrate from older React/Next.js versions to latest stable releases.",
-      "tools": ["React 16 → 18", "Next.js 12 → 15"],
-      "icon": "FaCogs"
-    },
-    {
-      "title": "jQuery to React Conversion",
-      "description": "Rebuild jQuery-based UIs into scalable, component-driven React apps.",
-      "tools": ["JSX", "Hooks", "SPA Architecture"],
-      "icon": "FaCode"
-    },
-    {
-      "title": "Bootstrap Upgrade",
-      "description": "Transform Bootstrap 3/4 layouts into responsive modern Bootstrap 5+ designs.",
-      "tools": ["Bootstrap 3/4 → 5+", "Grid System", "Flexbox"],
-      "icon": "FaPaintBrush"
-    },
-    {
-      "title": "Codebase Refactoring",
-      "description": "Enhance readability, maintainability, and scalability of your frontend code.",
-      "tools": ["Clean Code", "ESLint", "Prettier"],
-      "icon": "FaChartLine"
-    },
-    {
-      "title": "UI/UX Redesign & Handoff",
-      "description": "Revamp user interfaces with modern, accessible, brand-aligned designs.",
-      "tools": ["Figma", "Responsive Design", "Accessibility"],
-      "icon": "FaMobileAlt"
-    },
-    {
-      "title": "Animation & Interaction",
-      "description": "Create engaging animations with CSS, GSAP, and Lottie for better user experience.",
-      "tools": ["CSS Animations", "GSAP", "Lottie"],
-      "icon": "FaMagic"
-    },
-    {
-      "title": "Figma to HTML/CSS",
-      "description": "Convert pixel-perfect Figma designs into clean, responsive HTML and CSS.",
-      "tools": ["Figma", "HTML5", "CSS3", "Responsive Design"],
-      "icon": "FaFigma"
-    },
-    {
-      "title": "SEO Best Practices",
-      "description": "Implement on-page SEO strategies to improve search engine visibility and ranking.",
-      "tools": ["Meta Tags", "Semantic HTML", "Performance Optimization"],
-      "icon": "FaSearch"
-    },
-    {
-      "title": "AWS Deployment & Management",
-      "description": "Deploy and manage web apps using AWS services like S3, CloudFront, and Lambda.",
-      "tools": ["AWS S3", "CloudFront", "Lambda"],
-      "icon": "FaAws"
-    },
-    {
-      "title": "Docker & Containerization",
-      "description": "Set up containerized development and deployment environments with Docker.",
-      "tools": ["Dockerfiles", "Docker Compose", "Containers"],
-      "icon": "FaDocker"
-    },
-    {
-      "title": "Website Automation",
-      "description": "Automate builds, deployments, and testing for efficient development workflows.",
-      "tools": ["CI/CD", "GitHub Actions", "Build Scripts"],
-      "icon": "FaTools"
-    }
-  ],
+  "services": {
+    "title": "Services",
+    "subtitle": "What I offer: modern frontend solutions, migrations, redesigns, and more.",
+    "items": [
+      {
+        "title": "Project Modernization",
+        "description": "Upgrade legacy systems using React, Next.js, and modern styling libraries.",
+        "tools": ["React", "Next.js", "Tailwind CSS"],
+        "icon": "FaRocket"
+      },
+      {
+        "title": "Version Migration",
+        "description": "Safely migrate from older React/Next.js versions to latest stable releases.",
+        "tools": ["React 16 → 18", "Next.js 12 → 15"],
+        "icon": "FaCogs"
+      },
+      {
+        "title": "jQuery to React Conversion",
+        "description": "Rebuild jQuery-based UIs into scalable, component-driven React apps.",
+        "tools": ["JSX", "Hooks", "SPA Architecture"],
+        "icon": "FaCode"
+      },
+      {
+        "title": "Bootstrap Upgrade",
+        "description": "Transform Bootstrap 3/4 layouts into responsive modern Bootstrap 5+ designs.",
+        "tools": ["Bootstrap 3/4 → 5+", "Grid System", "Flexbox"],
+        "icon": "FaPaintBrush"
+      },
+      {
+        "title": "Codebase Refactoring",
+        "description": "Enhance readability, maintainability, and scalability of your frontend code.",
+        "tools": ["Clean Code", "ESLint", "Prettier"],
+        "icon": "FaChartLine"
+      },
+      {
+        "title": "UI/UX Redesign & Handoff",
+        "description": "Revamp user interfaces with modern, accessible, brand-aligned designs.",
+        "tools": ["Figma", "Responsive Design", "Accessibility"],
+        "icon": "FaMobileAlt"
+      },
+      {
+        "title": "Animation & Interaction",
+        "description": "Create engaging animations with CSS, GSAP, and Lottie for better user experience.",
+        "tools": ["CSS Animations", "GSAP", "Lottie"],
+        "icon": "FaMagic"
+      },
+      {
+        "title": "Figma to HTML/CSS",
+        "description": "Convert pixel-perfect Figma designs into clean, responsive HTML and CSS.",
+        "tools": ["Figma", "HTML5", "CSS3", "Responsive Design"],
+        "icon": "FaFigma"
+      },
+      {
+        "title": "SEO Best Practices",
+        "description": "Implement on-page SEO strategies to improve search engine visibility and ranking.",
+        "tools": ["Meta Tags", "Semantic HTML", "Performance Optimization"],
+        "icon": "FaSearch"
+      },
+      {
+        "title": "AWS Deployment & Management",
+        "description": "Deploy and manage web apps using AWS services like S3, CloudFront, and Lambda.",
+        "tools": ["AWS S3", "CloudFront", "Lambda"],
+        "icon": "FaAws"
+      },
+      {
+        "title": "Docker & Containerization",
+        "description": "Set up containerized development and deployment environments with Docker.",
+        "tools": ["Dockerfiles", "Docker Compose", "Containers"],
+        "icon": "FaDocker"
+      },
+      {
+        "title": "Website Automation",
+        "description": "Automate builds, deployments, and testing for efficient development workflows.",
+        "tools": ["CI/CD", "GitHub Actions", "Build Scripts"],
+        "icon": "FaTools"
+      }
+    ]
+  },
   "funFacts": [
     { "icon": "FaCode", "label": "Lines of Code", "value": "500K+" },
     { "icon": "FaFolderOpen", "label": "Projects Completed", "value": "30+" },

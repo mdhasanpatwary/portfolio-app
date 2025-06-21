@@ -51,7 +51,12 @@ export interface Service {
   tools: string[];
   icon: string;
 }
-export type Services = Service[];
+
+export interface Services {
+  title: string;
+  subtitle: string;
+  items: Service[];
+}
 
 export interface FunFact {
   icon: string;
