@@ -13,7 +13,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   children,
   className = "",
 }) => (
-  <div className={`text-center mb-12 sm:mb-16 ${className}`}>
+  <div className={`text-center mb-8 sm:mb-10 ${className}`}>
     <div className="flex items-center justify-center gap-3 mb-4">
       {icon}
       <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">

@@ -38,7 +38,12 @@ export interface ExperienceItem {
   highlights: string[];
   techStack: SkillTechnology[];
 }
-export type Experiences = ExperienceItem[];
+
+export interface Experiences {
+  title: string;
+  subtitle: string;
+  items: ExperienceItem[];
+}
 
 export interface Service {
   title: string;
