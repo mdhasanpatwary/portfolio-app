@@ -1623,79 +1623,43 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "What I offer: modern frontend solutions, migrations, redesigns, and more.",
+    "subtitle": "What I offer: modern frontend solutions, performance, and integrations.",
     "items": [
       {
-        "title": "Project Modernization",
-        "description": "Upgrade legacy systems using React, Next.js, and modern styling libraries.",
-        "tools": ["React", "Next.js", "Tailwind CSS"],
-        "icon": "FaRocket"
-      },
-      {
-        "title": "Version Migration",
-        "description": "Safely migrate from older React/Next.js versions to latest stable releases.",
-        "tools": ["React 16 → 18", "Next.js 12 → 15"],
-        "icon": "FaCogs"
-      },
-      {
-        "title": "jQuery to React Conversion",
-        "description": "Rebuild jQuery-based UIs into scalable, component-driven React apps.",
-        "tools": ["JSX", "Hooks", "SPA Architecture"],
-        "icon": "FaCode"
-      },
-      {
-        "title": "Bootstrap Upgrade",
-        "description": "Transform Bootstrap 3/4 layouts into responsive modern Bootstrap 5+ designs.",
-        "tools": ["Bootstrap 3/4 → 5+", "Grid System", "Flexbox"],
-        "icon": "FaPaintBrush"
-      },
-      {
-        "title": "Codebase Refactoring",
-        "description": "Enhance readability, maintainability, and scalability of your frontend code.",
-        "tools": ["Clean Code", "ESLint", "Prettier"],
+        "title": "Website Optimization & Performance",
+        "description": "Boost site speed, Core Web Vitals, and Lighthouse scores for better UX and SEO.",
+        "tools": ["Lighthouse", "WebPageTest", "Next.js", "React"],
         "icon": "FaChartLine"
       },
       {
-        "title": "UI/UX Redesign & Handoff",
-        "description": "Revamp user interfaces with modern, accessible, brand-aligned designs.",
-        "tools": ["Figma", "Responsive Design", "Accessibility"],
-        "icon": "FaMobileAlt"
+        "title": "Landing Page & Portfolio Development",
+        "description": "Design and build high-converting landing pages and personal portfolios with modern UI/UX.",
+        "tools": ["React", "Next.js", "Tailwind CSS", "Figma"],
+        "icon": "FaPaintBrush"
       },
       {
-        "title": "Animation & Interaction",
-        "description": "Create engaging animations with CSS, GSAP, and Lottie for better user experience.",
-        "tools": ["CSS Animations", "GSAP", "Lottie"],
-        "icon": "FaMagic"
+        "title": "Headless CMS Integration with React/Next.js",
+        "description": "Connect and build dynamic sites using headless CMSs like Strapi, Sanity, or Contentful.",
+        "tools": ["Strapi", "Sanity", "Contentful", "Next.js"],
+        "icon": "FaCogs"
       },
       {
-        "title": "Figma to HTML/CSS",
-        "description": "Convert pixel-perfect Figma designs into clean, responsive HTML and CSS.",
-        "tools": ["Figma", "HTML5", "CSS3", "Responsive Design"],
+        "title": "Figma/Adobe XD to HTML & React Conversion",
+        "description": "Transforming modern UI designs into responsive, pixel-perfect code using HTML, CSS, and React.js.",
+        "tools": ["Figma", "Adobe XD", "HTML5", "CSS3", "React.js"],
         "icon": "FaFigma"
       },
       {
-        "title": "SEO Best Practices",
-        "description": "Implement on-page SEO strategies to improve search engine visibility and ranking.",
-        "tools": ["Meta Tags", "Semantic HTML", "Performance Optimization"],
-        "icon": "FaSearch"
+        "title": "Business Website Development",
+        "description": "Building clean, fast, and scalable business websites tailored to your brand and goals.",
+        "tools": ["React", "Next.js", "Tailwind CSS", "SEO"],
+        "icon": "FaRocket"
       },
       {
-        "title": "AWS Deployment & Management",
-        "description": "Deploy and manage web apps using AWS services like S3, CloudFront, and Lambda.",
-        "tools": ["AWS S3", "CloudFront", "Lambda"],
-        "icon": "FaAws"
-      },
-      {
-        "title": "Docker & Containerization",
-        "description": "Set up containerized development and deployment environments with Docker.",
-        "tools": ["Dockerfiles", "Docker Compose", "Containers"],
-        "icon": "FaDocker"
-      },
-      {
-        "title": "Website Automation",
-        "description": "Automate builds, deployments, and testing for efficient development workflows.",
-        "tools": ["CI/CD", "GitHub Actions", "Build Scripts"],
-        "icon": "FaTools"
+        "title": "Interactive UI & Animation Development",
+        "description": "Enhancing user experience with smooth, engaging animations using CSS, GSAP, or libraries like Framer Motion.",
+        "tools": ["CSS Animations", "GSAP", "Framer Motion", "React"],
+        "icon": "FaMagic"
       }
     ]
   },
