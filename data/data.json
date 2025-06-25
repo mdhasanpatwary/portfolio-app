@@ -1701,13 +1701,10 @@
       "icon": "FaLightbulb"
     }
   ],
-  "testimonials": [
-    {
-      "name": "Rahim Uddin",
-      "title": "Project Manager at 6amTech",
-      "message": "Hasan delivers clean, responsive, high-performing code. Highly reliable developer!",
-      "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
-    },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What others say about working with me.",
+    "items": [
     {
       "name": "Sadia Ahmed",
       "title": "Team Lead at Themelooks",
@@ -1738,7 +1735,8 @@
       "message": "Very professional, communicative, and great at frontend architecture.",
       "avatar": "https://randomuser.me/api/portraits/women/70.jpg"
     }
-  ],
+    ]
+  },
   "header": {
     "navItems": [
       { "label": "Home", "href": "#banner" },
