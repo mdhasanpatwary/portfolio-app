@@ -151,6 +151,12 @@ export interface Banner {
   }>;
 }
 
+export interface TestimonialsData {
+  title: string;
+  subtitle: string;
+  items: Testimonial[];
+}
+
 export interface GlobalData {
   education: Education;
   projects: Projects;
@@ -160,7 +166,7 @@ export interface GlobalData {
   services: Services;
   funFacts: FunFacts;
   hobbies: Hobbies;
-  testimonials: Testimonials;
+  testimonials: TestimonialsData;
   contact: Contact;
   header: Header;
   footer: Footer;

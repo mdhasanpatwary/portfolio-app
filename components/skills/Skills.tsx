@@ -29,6 +29,7 @@ import {
 import React from "react";
 import SectionTitle from "@/components/global/SectionTitle";
 import SkillCard from "./SkillCard";
+import { SkillsData } from "../../types/data";
 
 const iconMap = {
   FaHtml5,
@@ -80,14 +81,7 @@ const brandColors: Record<string, string> = {
 };
 
 type SkillsProps = {
-  skills: {
-    title: string;
-    subtitle: string;
-    groups: Array<{
-      title: string;
-      technologies: Array<{ name: string; icon: string; docUrl?: string }>;
-    }>;
-  };
+  skills: SkillsData;
 };
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => (

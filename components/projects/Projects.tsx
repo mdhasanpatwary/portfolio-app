@@ -16,12 +16,11 @@ interface ProjectsProps {
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
-  const [selectedProject, setSelectedProject] = useState<
-    ProjectsType["items"][number] | null
-  >(null);
+  type Project = ProjectsType["items"][number];
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (project: ProjectsType["items"][number]) => {
+  const openModal = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -43,8 +42,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
             icon={
               <FaFolderOpen className="text-indigo-600 dark:text-indigo-400 text-3xl" />
             }>
-            Projects I contributed to as a Front End Developer at ThemeLooks and
-            6amTech, published on Themeforest or Codecanyon.
+            {projectsData.subtitle}
           </SectionTitle>
 
           {/* Projects Grid */}
@@ -56,7 +54,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
               <ProjectCard
                 key={project.id}
                 project={project}
-                onClick={openModal}
+                openModal={openModal}
               />
             ))}
           </div>

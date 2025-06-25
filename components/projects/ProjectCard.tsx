@@ -7,14 +7,14 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface ProjectCardProps {
   project: ProjectsType["items"][number];
-  onClick: (project: ProjectsType["items"][number]) => void;
+  openModal: (project: ProjectsType["items"][number]) => void;
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
   return (
     <div
       className="group relative cursor-pointer bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col hover:border-indigo-400"
-      onClick={() => onClick(project)}>
+      onClick={() => openModal(project)}>
       {/* Project Image */}
       <div className="relative w-full aspect-[59/30] overflow-hidden">
         {/* Category Badge Only */}

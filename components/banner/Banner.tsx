@@ -4,10 +4,6 @@ import { Banner as BannerType } from "@/types/data";
 import SocialLinks from "./SocialLinks";
 import BannerButtons from "./BannerButtons";
 
-/**
- * Banner component displays the main profile section with name, title, summary, social links, and profile image.
- * @param banner - Banner data from data.json
- */
 type BannerProps = {
   readonly banner: BannerType;
 };

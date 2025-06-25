@@ -4,26 +4,9 @@ import React from "react";
 import { FaBriefcase } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
 import ExperienceCard from "./ExperienceCard";
+import type { Experiences as ExperiencesType } from "@/types/data";
 
-type ExperienceItem = {
-  company: string;
-  role: string;
-  duration: string;
-  location: string;
-  website: string;
-  highlights: string[];
-  techStack: { icon: string; name: string }[];
-};
-
-type ExperienceData = {
-  title: string;
-  subtitle: string;
-  items: ExperienceItem[];
-};
-
-const ProfessionalExperience: React.FC<{ experiences: ExperienceData }> = ({
-  experiences,
-}) => (
+const ProfessionalExperience: React.FC<{ experiences: ExperiencesType }> = ({ experiences }) => (
   <section
     id="experience"
     className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-100 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
