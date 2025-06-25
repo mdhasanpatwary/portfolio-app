@@ -1,4 +1,5 @@
 import React from "react";
+import { SkillGroup } from "../../types/data";
 
 const SkillCard = ({
   group,
@@ -6,10 +7,7 @@ const SkillCard = ({
   brandColors,
   index,
 }: {
-  group: {
-    title: string;
-    technologies: Array<{ name: string; icon: string; docUrl?: string }>;
-  };
+  group: SkillGroup;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   iconMap: Record<string, React.ComponentType<any>>;
   brandColors: Record<string, string>;

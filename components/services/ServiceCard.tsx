@@ -13,6 +13,7 @@ import {
   FaAws,
   FaDocker,
 } from "react-icons/fa";
+import { Service } from "../../types/data";
 
 const iconMap = {
   FaMagic,
@@ -27,13 +28,6 @@ const iconMap = {
   FaSearch,
   FaAws,
   FaDocker,
-};
-
-type Service = {
-  title: string;
-  description: string;
-  tools: string[];
-  icon: string;
 };
 
 type ServiceCardProps = {

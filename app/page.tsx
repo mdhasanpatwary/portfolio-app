@@ -23,12 +23,11 @@ export default function Home() {
     funFacts,
     hobbies,
     testimonials,
-    contact,
   } = data as GlobalData;
 
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">
-      <Banner banner={{ ...banner, socialLinks: contact.socialLinks }} />
+      <Banner banner={banner} />
       <Skills skills={skills} />
       <ProfessionalExperience experiences={experiences} />
 

@@ -2,20 +2,10 @@ import React from "react";
 import { FaFolderOpen } from "react-icons/fa";
 import SectionTitle from "../global/SectionTitle";
 import ServiceCard from "./ServiceCard";
-
-type Service = {
-  title: string;
-  description: string;
-  tools: string[];
-  icon: string;
-};
+import { Services as ServicesType } from "../../types/data";
 
 type ServicesProps = {
-  services: {
-    title: string;
-    subtitle: string;
-    items: Service[];
-  };
+  services: ServicesType;
 };
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
