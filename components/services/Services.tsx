@@ -2,20 +2,10 @@ import React from "react";
 import { FaFolderOpen } from "react-icons/fa";
 import SectionTitle from "../global/SectionTitle";
 import ServiceCard from "./ServiceCard";
-
-type Service = {
-  title: string;
-  description: string;
-  tools: string[];
-  icon: string;
-};
+import type { Services as ServicesType } from "../../types/data";
 
 type ServicesProps = {
-  services: {
-    title: string;
-    subtitle: string;
-    items: Service[];
-  };
+  services: ServicesType;
 };
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
@@ -23,7 +13,7 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
     <section
       id="services"
       className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={services.title}
           icon={
@@ -32,7 +22,7 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
           {services.subtitle}
         </SectionTitle>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 divide-x divide-y divide-gray-200 dark:divide-gray-700 border border-gray-200 dark:border-gray-700">
           {services.items.map((service, idx) => (
             <ServiceCard key={idx} service={service} idx={idx} />
           ))}

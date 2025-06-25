@@ -13,6 +13,7 @@ import {
   FaAws,
   FaDocker,
 } from "react-icons/fa";
+import type { Service } from "../../types/data";
 
 const iconMap = {
   FaMagic,
@@ -29,13 +30,6 @@ const iconMap = {
   FaDocker,
 };
 
-type Service = {
-  title: string;
-  description: string;
-  tools: string[];
-  icon: string;
-};
-
 type ServiceCardProps = {
   service: Service;
   idx: number;
@@ -46,26 +40,31 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, idx }) => {
   return (
     <div
       key={idx}
-      className="text-left group relative bg-white/70 dark:bg-gray-800/90 backdrop-blur-xl border border-gray-300 dark:border-gray-700 rounded-2xl p-8 transition duration-300 ease-in-out hover:border-indigo-500">
-      <div className="absolute -top-6 left-6 bg-white dark:bg-gray-900 border border-indigo-500 p-3 rounded-full text-indigo-600 dark:text-indigo-400 text-xl shadow-lg transition-transform duration-300 group-hover:scale-105">
-        {Icon ? <Icon /> : null}
-      </div>
-      <div className="pt-6">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+      className="p-5 sm:p-8 flex flex-col items-stretch overflow-hidden transition-colors duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/40">
+      {/* Row 1: Icon and Title */}
+      <div className="flex items-center gap-4 w-full mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+        <div className="flex items-center justify-center w-14 h-14 bg-indigo-50 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_4px_rgba(99,102,241,0.18)]">
+          {Icon ? <Icon /> : null}
+        </div>
+        <h3 className="text-lg md:text-xl font-semibold text-indigo-600 dark:text-indigo-400">
           {service.title}
         </h3>
-        <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">
+      </div>
+      {/* Row 2: Description */}
+      <div className="w-full mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+        <p className="text-gray-700 dark:text-gray-300 text-sm">
           {service.description}
         </p>
-        <div className="flex flex-wrap gap-2 mt-4">
-          {service.tools.map((tool, i) => (
-            <span
-              key={i}
-              className="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-white text-xs font-medium px-3 py-1 rounded-full">
-              {tool}
-            </span>
-          ))}
-        </div>
+      </div>
+      {/* Row 3: Tags */}
+      <div className="flex flex-wrap gap-2 w-full">
+        {service.tools.map((tool, i) => (
+          <span
+            key={i}
+            className="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-white text-xs font-medium px-3 py-1 rounded-full">
+            {tool}
+          </span>
+        ))}
       </div>
     </div>
   );
