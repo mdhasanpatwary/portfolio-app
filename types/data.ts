@@ -75,7 +75,12 @@ export interface Hobby {
   description: string;
   icon: string;
 }
-export type Hobbies = Hobby[];
+
+export interface HobbiesSection {
+  title: string;
+  subtitle: string;
+  items: Hobby[];
+}
 
 export interface Testimonial {
   name: string;
@@ -170,7 +175,7 @@ export interface GlobalData {
   experiences: Experiences;
   services: Services;
   funFacts: FunFacts;
-  hobbies: Hobbies;
+  hobbies: HobbiesSection;
   testimonials: TestimonialsData;
   contact: Contact;
   header: Header;

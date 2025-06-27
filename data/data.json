@@ -1699,33 +1699,42 @@
       }
     ]
   },
-  "hobbies": [
-    {
-      "title": "Chess",
-      "description": "Enjoy strategic thinking and problem-solving through regular chess games.",
-      "icon": "FaChessKnight"
-    },
-    {
-      "title": "Photography",
-      "description": "Love capturing moments and telling stories through creative photography.",
-      "icon": "FaCamera"
-    },
-    {
-      "title": "Reading",
-      "description": "Always exploring new ideas, biographies, and technology books.",
-      "icon": "FaBookOpen"
-    },
-    {
-      "title": "Traveling",
-      "description": "Exploring new places and cultures fuels my creativity and curiosity.",
-      "icon": "FaGlobe"
-    },
-    {
-      "title": "Learning New Things",
-      "description": "Constantly expanding my knowledge in tech, design, and personal growth.",
-      "icon": "FaLightbulb"
-    }
-  ],
+  "hobbies": {
+    "title": "Hobbies & Interests",
+    "subtitle": "Outside of development, these activities keep me balanced, curious, and creatively inspired.",
+    "items": [
+      {
+        "title": "Chess",
+        "description": "Strategic thinking and problem-solving through regular games.",
+        "icon": "FaChessKnight"
+      },
+      {
+        "title": "Photography",
+        "description": "Capturing stories, moments, and moods through the lens.",
+        "icon": "FaCamera"
+      },
+      {
+        "title": "Reading",
+        "description": "Constantly exploring ideas through biographies, tech, and self-growth books.",
+        "icon": "FaBookOpen"
+      },
+      {
+        "title": "Traveling",
+        "description": "Discovering new cultures and environments fuels my creativity.",
+        "icon": "FaGlobe"
+      },
+      {
+        "title": "Learning New Things",
+        "description": "Always diving into new tools, designs, and personal development topics.",
+        "icon": "FaLightbulb"
+      },
+      {
+        "title": "Watching Tech Talks & Documentaries",
+        "description": "Staying inspired and informed through real-world stories and innovations.",
+        "icon": "FaVideo"
+      }
+    ]
+  },
   "testimonials": {
     "title": "Testimonials",
     "subtitle": "What others say about working with me.",

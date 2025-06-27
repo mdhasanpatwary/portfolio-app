@@ -3,8 +3,8 @@
 import { FC } from "react";
 import { FunFacts } from "@/types/data";
 import SectionTitle from "@/components/global/SectionTitle";
-import FunfactCard from "./FunfactCard";
 import { FaChessKing } from "react-icons/fa";
+import FunfactCard from "./FunfactCard";
 
 type FunFactProps = { funFacts: FunFacts };
 

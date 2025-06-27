@@ -7,7 +7,11 @@ import {
   FaBookOpen,
   FaGlobe,
   FaLightbulb,
+  FaVideo,
 } from "react-icons/fa";
+import HobbyCard from "./HobbyCard";
+import SectionTitle from "../global/SectionTitle";
+import type { HobbiesSection, Hobby } from "../../types/data";
 
 const iconMap = {
   FaChessKnight,
@@ -15,44 +19,31 @@ const iconMap = {
   FaBookOpen,
   FaGlobe,
   FaLightbulb,
+  FaVideo,
 };
 
-type HobbyType = { title: string; description: string; icon: string };
-type HobbyProps = { hobbies: HobbyType[] };
+type HobbyProps = { hobbiesData: HobbiesSection };
 
-const Hobby: FC<HobbyProps> = ({ hobbies }) => {
+const Hobby: FC<HobbyProps> = ({ hobbiesData }) => {
+  const { title, subtitle, items } = hobbiesData;
   return (
     <section
       id="hobby"
-      className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Hobbies & Interests
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-12">
-          Outside of development, these activities help me stay creative and
-          balanced.
-        </p>
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {hobbies.map((hobby, index) => {
-            const Icon = iconMap[hobby.icon as keyof typeof iconMap];
-            return (
-              <div
-                key={index}
-                className="group rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 shadow-md hover:shadow-xl transition duration-300 text-left">
-                <div className="text-3xl text-indigo-600 dark:text-indigo-400 mb-4">
-                  {Icon ? <Icon /> : null}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-indigo-500 transition-colors">
-                  {hobby.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  {hobby.description}
-                </p>
-              </div>
-            );
-          })}
+        <SectionTitle
+          title={title}
+          icon={
+            <span className="text-3xl text-indigo-600 dark:text-indigo-400">
+              <FaLightbulb />
+            </span>
+          }>
+          {subtitle}
+        </SectionTitle>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((hobby: Hobby, index: number) => (
+            <HobbyCard key={index} hobby={hobby} iconMap={iconMap} />
+          ))}
         </div>
       </div>
     </section>

@@ -37,7 +37,7 @@ export default function Home() {
 
       <FunFact funFacts={funFacts} />
       <Education educationData={education} />
-      <Hobby hobbies={hobbies} />
+      <Hobby hobbiesData={hobbies} />
       <Blog />
 
       <Contact />
