@@ -1663,17 +1663,21 @@
       }
     ]
   },
-  "funFacts": [
-    { "icon": "FaCode", "label": "Lines of Code", "value": "500K+" },
-    { "icon": "FaFolderOpen", "label": "Projects Completed", "value": "30+" },
-    { "icon": "FaGlobe", "label": "Countries Reached", "value": "15+" },
-    {
-      "icon": "FaGraduationCap",
-      "label": "Years of Experience",
-      "value": "6+"
-    },
-    { "icon": "FaChessKing", "label": "Chess Games Played", "value": "1000+" }
-  ],
+  "funFacts": {
+    "title": "Fun Facts",
+    "subtitle": "Some cool stats and facts about my journey so far.",
+    "items": [
+      { "icon": "FaCode", "label": "Lines of Code", "value": "500K+" },
+      { "icon": "FaFolderOpen", "label": "Projects Completed", "value": "30+" },
+      { "icon": "FaGlobe", "label": "Countries Reached", "value": "15+" },
+      {
+        "icon": "FaGraduationCap",
+        "label": "Years of Experience",
+        "value": "6+"
+      },
+      { "icon": "FaChessKing", "label": "Chess Games Played", "value": "1000+" }
+    ]
+  },
   "hobbies": [
     {
       "title": "Chess",

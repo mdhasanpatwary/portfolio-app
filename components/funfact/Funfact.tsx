@@ -8,6 +8,8 @@ import {
   FaGraduationCap,
   FaChessKing,
 } from "react-icons/fa";
+import { FunFacts } from "@/types/data";
+import SectionTitle from "@/components/global/SectionTitle";
 
 const iconMap = {
   FaCode,
@@ -17,31 +19,53 @@ const iconMap = {
   FaChessKing,
 };
 
-type Fact = { icon: string; label: string; value: string };
-type FunFactProps = { funFacts: Fact[] };
+const brandColors: Record<string, string> = {
+  FaCode: "#6366F1",
+  FaFolderOpen: "#10B981",
+  FaGlobe: "#F59E42",
+  FaGraduationCap: "#F43F5E",
+  FaChessKing: "#FBBF24",
+};
+
+type FunFactProps = { funFacts: FunFacts };
 
 const FunFact: FC<FunFactProps> = ({ funFacts }) => {
   return (
     <section
       id="funfact"
-      className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight mb-4">
-          Fun Facts
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-12">
-          Some cool stats and facts about my journey so far.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {funFacts.map((fact, index) => {
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <div className="max-w-7xl mx-auto">
+        <SectionTitle
+          title={funFacts.title}
+          icon={
+            <FaChessKing className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          }>
+          {funFacts.subtitle}
+        </SectionTitle>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:overflow-x-auto">
+          {funFacts.items.map((fact, index) => {
             const Icon = iconMap[fact.icon as keyof typeof iconMap];
             return (
               <div
                 key={index}
-                className="flex flex-col items-center bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow hover:shadow-lg transition">
+                tabIndex={0}
+                aria-label={`${fact.value} ${fact.label}`}
+                className="flex flex-col items-center bg-white dark:bg-gray-900 border-2 border-transparent hover:border-indigo-400 dark:hover:border-indigo-500 focus:border-indigo-500 dark:focus:border-indigo-400 rounded-lg md:rounded-xl p-6 shadow hover:shadow-lg transition outline-none focus:ring-2 focus:ring-indigo-400 dark:focus:ring-indigo-500"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(99,102,241,0.04) 0%, rgba(255,255,255,0.9) 100%)",
+                }}>
                 {Icon ? (
-                  <Icon className="text-indigo-600 dark:text-indigo-400 text-3xl mb-2" />
+                  <Icon
+                    className="mb-2 text-3xl"
+                    aria-label={fact.label}
+                    title={fact.label}
+                    style={{
+                      color:
+                        brandColors[fact.icon as keyof typeof brandColors] ||
+                        "#6366F1",
+                    }}
+                  />
                 ) : null}
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">
                   {fact.value}

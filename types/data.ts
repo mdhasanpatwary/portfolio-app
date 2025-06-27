@@ -63,7 +63,11 @@ export interface FunFact {
   label: string;
   value: string;
 }
-export type FunFacts = FunFact[];
+export interface FunFacts {
+  title: string;
+  subtitle: string;
+  items: FunFact[];
+}
 
 export interface Hobby {
   title: string;

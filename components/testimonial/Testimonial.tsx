@@ -23,7 +23,9 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={testimonials.title}
-          icon={<FaQuoteLeft className="text-indigo-600 dark:text-indigo-400 text-3xl" />}>
+          icon={
+            <FaQuoteLeft className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          }>
           {testimonials.subtitle}
         </SectionTitle>
         <div className="relative group">
@@ -48,13 +50,14 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
                 slidesPerView: 3,
               },
             }}
-            className="!pb-6 md:!pb-12"
-          >
-            {testimonials.items.map((testimonial: Testimonial, index: number) => (
-              <SwiperSlide key={index}>
-                <TestimonialCard testimonial={testimonial} />
-              </SwiperSlide>
-            ))}
+            className="!pb-10 md:!pb-12">
+            {testimonials.items.map(
+              (testimonial: Testimonial, index: number) => (
+                <SwiperSlide key={index}>
+                  <TestimonialCard testimonial={testimonial} />
+                </SwiperSlide>
+              )
+            )}
             {/* Navigation Buttons */}
             <button
               aria-label="Previous"
