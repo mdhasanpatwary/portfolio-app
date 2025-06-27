@@ -60,8 +60,9 @@ export interface Services {
 
 export interface FunFact {
   icon: string;
-  label: string;
   value: string;
+  title: string;
+  description: string;
 }
 export interface FunFacts {
   title: string;
