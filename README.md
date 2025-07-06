@@ -109,7 +109,7 @@ DEALINGS IN THE SOFTWARE.
 ## 🙋‍♂️ Author
 
 **MD Hasan Patwary**  
-Frontend Developer | React & Next.js Specialist  
+Frontend Developer | React & Next.js  
 📧 [patwary.dev@gmail.com](mailto:patwary.dev@gmail.com)  
 🌐 [Portfolio](https://patwary.vercel.app) • [LinkedIn](https://linkedin.com/in/mdhasanpatwary) • [GitHub](https://github.com/mdhasanpatwary)
 
