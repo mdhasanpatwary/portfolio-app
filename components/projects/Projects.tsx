@@ -9,6 +9,7 @@ import { FaExternalLinkAlt, FaFolderOpen } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
+import Pagination from "@/components/global/Pagination";
 
 interface ProjectsProps {
   projectsData: ProjectsType;
@@ -19,6 +20,18 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
   type Project = ProjectsType["items"][number];
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 8;
+  const totalPages = Math.ceil(projectsData.items.length / projectsPerPage);
+  const startIdx = (currentPage - 1) * projectsPerPage;
+  const endIdx = startIdx + projectsPerPage;
+  const currentProjects = showAll
+    ? projectsData.items.slice(startIdx, endIdx)
+    : projectsData.items.slice(0, 8);
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
 
   const openModal = (project: Project) => {
     setSelectedProject(project);
@@ -47,10 +60,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(showAll
-              ? projectsData.items
-              : projectsData.items.slice(0, 8)
-            ).map((project) => (
+            {currentProjects.map((project) => (
               <ProjectCard
                 key={project.id}
                 project={project}
@@ -58,6 +68,14 @@ const Projects: FC<ProjectsProps> = ({ projectsData, showAll = false }) => {
               />
             ))}
           </div>
+          {/* Pagination Controls (only if showAll) */}
+          {showAll && totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          )}
 
           {/* View All Projects Button */}
           {!showAll && (
