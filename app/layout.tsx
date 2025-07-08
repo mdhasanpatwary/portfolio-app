@@ -5,6 +5,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
+import { AppProvider } from "@/context/BlogContext";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -28,13 +29,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
-        <Header navItems={header.navItems} />
-        {children}
-        <Footer
-          name={footer.name}
-          description={footer.description}
-          socialLinks={contact.socialLinks}
-        />
+        <AppProvider>
+          <Header navItems={header.navItems} />
+          {children}
+          <Footer
+            name={footer.name}
+            description={footer.description}
+            socialLinks={contact.socialLinks}
+          />
+        </AppProvider>
       </body>
     </html>
   );

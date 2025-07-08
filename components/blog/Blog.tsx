@@ -1,31 +1,21 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight, FaPenNib, FaExternalLinkAlt } from "react-icons/fa";
-import BlogCard, { DevToPost } from "./BlogCard";
+import BlogCard from "./BlogCard";
 import SectionTitle from "../global/SectionTitle";
 import Link from "next/link";
+import { useAppContext } from "@/context/BlogContext";
 
 const MAX_POSTS = 9; // limit posts to 9 for slider
 
 const Blog: FC = () => {
-  const [posts, setPosts] = useState<DevToPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("https://dev.to/api/articles?username=mdhassanpatwary")
-      .then((res) => res.json())
-      .then((data) => {
-        setPosts(data.slice(0, MAX_POSTS)); // limit number of posts shown
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
+  const { posts, loading } = useAppContext();
 
   if (!loading && !posts.length) return null;
 
@@ -67,7 +57,7 @@ const Blog: FC = () => {
               }}
               className="!pb-12"
             >
-              {posts.map((post) => (
+              {posts.slice(0, MAX_POSTS).map((post) => (
                 <SwiperSlide key={post.id}>
                   <BlogCard post={post} loading={false} />
                 </SwiperSlide>

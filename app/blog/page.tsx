@@ -1,25 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import BlogCard, { DevToPost } from "@/components/blog/BlogCard";
+import BlogCard from "@/components/blog/BlogCard";
 import SectionTitle from "@/components/global/SectionTitle";
 import { FaPenNib } from "react-icons/fa";
+import { useAppContext } from "@/context/BlogContext";
 
 export default function BlogPage() {
-  const [posts, setPosts] = useState<DevToPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("https://dev.to/api/articles?username=mdhassanpatwary")
-      .then((res) => res.json())
-      .then((data) => {
-        setPosts(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(false);
-      });
-  }, []);
+  const { posts, loading } = useAppContext();
 
   return (
     <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
