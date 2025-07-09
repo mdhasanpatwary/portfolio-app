@@ -23,6 +23,7 @@ export default function Home() {
     funFacts,
     hobbies,
     testimonials,
+    contact,
   } = data as GlobalData;
 
   return (
@@ -40,7 +41,7 @@ export default function Home() {
       <Hobby hobbiesData={hobbies} />
       <Blog />
 
-      <Contact />
+      <Contact contact={contact} />
     </main>
   );
 }

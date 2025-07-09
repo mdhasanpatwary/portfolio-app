@@ -1,33 +1,15 @@
 "use client";
 
 import { FC } from "react";
-import {
-  FaChevronUp,
-  FaGithub,
-  FaLinkedin,
-  FaStackOverflow,
-  FaFacebook,
-} from "react-icons/fa";
-import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
+import { FaChevronUp } from "react-icons/fa";
+import SocialLinks from "../global/SocialLinks";
 
-const iconMap = {
-  FaGithub,
-  FaLinkedin,
-  FaStackOverflow,
-  FaFacebook,
-  SiDevdotto,
-  SiDailydotdev,
-  SiCodepen,
-};
-
-type SocialLink = { name: string; url: string; icon: string };
 type FooterProps = {
   name: string;
   description: string;
-  socialLinks: SocialLink[];
 };
 
-const Footer: FC<FooterProps> = ({ name, description, socialLinks }) => {
+const Footer: FC<FooterProps> = ({ name, description }) => {
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -45,19 +27,8 @@ const Footer: FC<FooterProps> = ({ name, description, socialLinks }) => {
         </p>
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-5 text-xl text-gray-600 dark:text-gray-400">
-          {socialLinks.map((link) => {
-            const Icon = iconMap[link.icon as keyof typeof iconMap];
-            return (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                className="hover:text-indigo-500 transition">
-                {Icon ? <Icon /> : null}
-              </a>
-            );
-          })}
+        <div className="flex justify-center">
+          <SocialLinks />
         </div>
 
         <div>

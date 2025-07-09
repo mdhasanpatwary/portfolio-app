@@ -1,102 +1,47 @@
 "use client";
 
-import { FC, FormEvent, useRef, useState } from "react";
-import { FiSend } from "react-icons/fi";
-import emailjs from "@emailjs/browser";
+import React from "react";
+import SectionTitle from "../global/SectionTitle";
+import ContactInfoCard from "./ContactInfoCard";
+import ContactForm from "./ContactForm";
 
-const Contact: FC = () => {
-    const form = useRef<HTMLFormElement>(null);
-    const [status, setStatus] = useState<string | null>(null);
+interface ContactProps {
+  contact: {
+    name: string;
+    title: string;
+    subtitle: string;
+    email: string;
+    phone: string;
+    location: string;
+    summary: string;
+    socialLinks: unknown[];
+  };
+}
 
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        if (!form.current) return;
-
-        emailjs
-            .sendForm(
-                "service_90axswo",
-                "template_znmpmjw",
-                form.current,
-                "e3p000moSeEYQGGdV"
-            )
-            .then(() => {
-                setStatus("Message sent successfully!");
-                form.current?.reset();
-            })
-            .catch((error) => {
-                setStatus("Failed to send message.");
-                console.error("EmailJS Error:", error);
-            });
-    };
-
-    return (
-        <section
-            id="contact"
-            className="w-full py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+const Contact: React.FC<ContactProps> = ({ contact }) => {
+  return (
+    <section
+      id="contact"
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+    >
+      <div className="max-w-7xl mx-auto">
+        <SectionTitle
+          title={contact.title}
+          icon={<i className="text-indigo-600 dark:text-indigo-400 text-3xl" />}
         >
-            <div className="max-w-3xl mx-auto text-center">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                    <FiSend className="text-indigo-600 dark:text-indigo-400 text-3xl" />
-                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
-                        Get In Touch
-                    </h2>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-12">
-                    Drop a message and I’ll get back to you via email.
-                </p>
-
-                <form
-                    ref={form}
-                    onSubmit={handleSubmit}
-                    className="bg-white/30 dark:bg-gray-800/40 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-lg space-y-6"
-                >
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <input
-                            type="text"
-                            name="user_name"
-                            placeholder="Your Name"
-                            required
-                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border text-gray-800 dark:text-white outline-none"
-                        />
-                        <input
-                            type="email"
-                            name="user_email"
-                            placeholder="Your Email"
-                            required
-                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border text-gray-800 dark:text-white outline-none"
-                        />
-                    </div>
-
-                    <input
-                        type="text"
-                        name="subject"
-                        placeholder="Subject"
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border text-gray-800 dark:text-white outline-none"
-                    />
-
-                    <textarea
-                        name="message"
-                        placeholder="Your Message"
-                        rows={5}
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border text-gray-800 dark:text-white outline-none resize-none"
-                    />
-
-                    <button
-                        type="submit"
-                        className="w-full md:w-auto cursor-pointer px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition duration-300"
-                    >
-                        Send Message
-                    </button>
-
-                    {status && (
-                        <p className="text-sm text-green-600 dark:text-green-400 mt-4">
-                            {status}
-                        </p>
-                    )}
-                </form>
-            </div>
-        </section>
-    );
+          {contact.subtitle}
+        </SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="md:col-span-4 mb-8 md:mb-0">
+            <ContactInfoCard contact={contact} />
+          </div>
+          <div className="md:col-span-8">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;

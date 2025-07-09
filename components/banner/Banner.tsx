@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Banner as BannerType } from "@/types/data";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "../global/SocialLinks";
 import BannerButtons from "./BannerButtons";
 
 type BannerProps = {
@@ -9,7 +9,7 @@ type BannerProps = {
 };
 
 const Banner: React.FC<BannerProps> = ({ banner }) => {
-  const { name, title, summary, image, socialLinks } = banner;
+  const { name, title, summary, image } = banner;
   return (
     <section
       id="banner"
@@ -31,7 +31,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
           {/* Buttons */}
           <BannerButtons />
           {/* Social Links */}
-          <SocialLinks links={socialLinks} />
+          <SocialLinks />
         </div>
         {/* Profile Image */}
         <div

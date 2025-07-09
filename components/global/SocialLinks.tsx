@@ -1,5 +1,4 @@
 import React from "react";
-import { Banner as BannerType } from "@/types/data";
 import {
   FaGithub,
   FaLinkedin,
@@ -7,6 +6,10 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
+import data from "@/data/data.json";
+
+export type SocialLink = { name: string; url: string; icon: string };
+type ContactData = { socialLinks: SocialLink[] };
 
 const iconMap = {
   FaGithub,
@@ -18,11 +21,12 @@ const iconMap = {
   SiCodepen,
 };
 
-const SocialLinks: React.FC<{ links: BannerType["socialLinks"] }> = ({
-  links,
-}) => (
+const contact = (data as { contact: ContactData }).contact;
+const links = contact?.socialLinks || [];
+
+const SocialLinks: React.FC = () => (
   <div className="flex space-x-5 text-gray-600 dark:text-gray-300 text-xl">
-    {(links ?? []).map((link) => {
+    {links.map((link) => {
       const Icon = iconMap[link.icon as keyof typeof iconMap];
       return (
         <a

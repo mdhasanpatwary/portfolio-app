@@ -1273,10 +1273,10 @@
   },
   "contact": {
     "name": "MD Hasan Patwary",
-    "title": "Front-End Web Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS",
-    "subtitle": "Let's connect and build something amazing!",
-    "email": "hasan@example.com",
-    "phone": "+8801234567890",
+    "title": "Get In Touch",
+    "subtitle": "Drop a message and I’ll get back to you via email.",
+    "email": "patwary.dev@gmail.com",
+    "phone": "+8801783721411",
     "location": "Dhaka, Bangladesh",
     "summary": "Passionate about crafting intuitive user interfaces using HTML, CSS, JavaScript, React, and Next.js. Experienced in Docker, AWS, and performance optimization. Let's build something amazing.",
     "socialLinks": [
