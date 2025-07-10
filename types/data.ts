@@ -137,11 +137,13 @@ export interface Footer {
 }
 
 export interface Contact {
+  name: string;
   title: string;
   subtitle: string;
   email: string;
   phone: string;
   location: string;
+  summary: string;
   socialLinks: Array<{
     name: string;
     url: string;

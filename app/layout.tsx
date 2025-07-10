@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const { header, footer, contact } = data as GlobalData;
+const { header, footer } = data as GlobalData;
 
 export const metadata: Metadata = {
   title: "Personal Portfolio",
@@ -35,7 +35,6 @@ export default function RootLayout({
           <Footer
             name={footer.name}
             description={footer.description}
-            socialLinks={contact.socialLinks}
           />
         </AppProvider>
       </body>
