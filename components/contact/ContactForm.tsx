@@ -1,5 +1,6 @@
 import React, { FC, FormEvent, useRef, useState } from "react";
 import { FiSend } from "react-icons/fi";
+import { FiRotateCcw } from "react-icons/fi";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
@@ -69,10 +70,17 @@ const ContactForm: FC = () => {
       .finally(() => setLoading(false));
   };
 
+  const handleReset = () => {
+    form.current?.reset();
+    setErrors({});
+    setTouched({});
+  };
+
   return (
     <form
       ref={form}
       onSubmit={handleSubmit}
+      onReset={handleReset}
       className="bg-white/80 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-lg space-y-6"
       noValidate
     >
@@ -150,10 +158,18 @@ const ContactForm: FC = () => {
           <p id="message-error" className="text-xs text-red-600 dark:text-red-400 mt-1 font-medium">{errors.message}</p>
         )}
       </div>
-      <div className="flex w-full">
+      <div className="flex w-full flex-col md:flex-row md:justify-end gap-3 items-stretch md:items-center">
+        <button
+          type="reset"
+          className="w-full md:w-auto cursor-pointer px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium rounded-xl transition duration-300 flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          disabled={loading}
+        >
+          <FiRotateCcw className="inline-block mr-2" /> Reset
+        </button>
+
         <button
           type="submit"
-          className="w-full md:w-auto cursor-pointer px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition duration-300 flex items-center justify-center gap-2 disabled:opacity-60 md:ml-auto focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full md:w-auto cursor-pointer px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition duration-300 flex items-center justify-center gap-2 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           disabled={loading}
           aria-busy={loading}
         >
@@ -161,7 +177,7 @@ const ContactForm: FC = () => {
             <span>Sending...</span>
           ) : (
             <>
-              Send Message <FiSend className="inline-block mr-2" />
+              <FiSend className="inline-block mr-2" /> Send Message
             </>
           )}
         </button>

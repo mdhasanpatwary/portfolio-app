@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import SocialLinks from "../global/SocialLinks";
 
@@ -40,15 +40,14 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
         <FaMapMarkerAlt className="text-gray-600 dark:text-gray-300" />
         <span className="text-gray-700 dark:text-gray-300">{contact.location}</span>
       </div>
-      {/* Summary/Description */}
-      {contact.summary && (
-        <div className="mt-4">
-          <div className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-1 uppercase tracking-wide">Let’s Connect</div>
-          <div className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-            {contact.summary}
-          </div>
+      {/* Availability & Note */}
+      <div className="mt-4">
+        <div className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-1 uppercase tracking-wide">Availability</div>
+        <div className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+          Available for freelance & collaboration.<br />
+          <span className="italic">Let’s build something great together!</span>
         </div>
-      )}
+      </div>
     </div>
     {/* Social Links */}
     <div>
