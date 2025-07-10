@@ -1,23 +1,15 @@
 import React, { FC, FormEvent, useRef, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const ContactForm: FC = () => {
   const form = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
-
-  // Hide status after 4 seconds
-  React.useEffect(() => {
-    if (status) {
-      const timer = setTimeout(() => setStatus(null), 4000);
-      return () => clearTimeout(timer);
-    }
-  }, [status]);
 
   const validate = (formData: FormData) => {
     const newErrors: { [key: string]: string } = {};
@@ -67,11 +59,11 @@ const ContactForm: FC = () => {
         "e3p000moSeEYQGGdV"
       )
       .then(() => {
-        setStatus("Message sent successfully!");
+        toast.success("Message sent successfully!");
         form.current?.reset();
       })
       .catch((error) => {
-        setStatus("Failed to send message.");
+        toast.error("Failed to send message.");
         console.error("EmailJS Error:", error);
       })
       .finally(() => setLoading(false));
@@ -169,17 +161,10 @@ const ContactForm: FC = () => {
             <span>Sending...</span>
           ) : (
             <>
-              <FiSend className="inline-block mr-2" /> Send Message
+              Send Message <FiSend className="inline-block mr-2" />
             </>
           )}
         </button>
-      </div>
-      <div aria-live="polite" className="min-h-[24px]">
-        {status && (
-          <p className={`text-sm mt-4 font-medium ${status.includes("success") ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}>
-            {status}
-          </p>
-        )}
       </div>
     </form>
   );

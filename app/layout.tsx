@@ -6,6 +6,7 @@ import Footer from "@/components/footer/Footer";
 import data from "@/data/data.json";
 import { GlobalData } from "@/types/data";
 import { AppProvider } from "@/context/BlogContext";
+import { Toaster } from "react-hot-toast";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
         <AppProvider>
+          <Toaster position="top-right" />
           <Header navItems={header.navItems} />
           {children}
           <Footer
