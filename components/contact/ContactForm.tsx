@@ -81,106 +81,124 @@ const ContactForm: FC = () => {
       ref={form}
       onSubmit={handleSubmit}
       onReset={handleReset}
-      className="bg-white/80 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-lg space-y-6"
+      className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700"
       noValidate
     >
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="text-left">
-          <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="user_name"
-            type="text"
-            name="user_name"
-            placeholder="Your Name"
-            required
-            aria-required="true"
-            aria-invalid={!!errors.user_name}
-            aria-describedby={errors.user_name ? "user_name-error" : undefined}
-            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-            onBlur={handleBlur}
-          />
-          {touched.user_name && errors.user_name && (
-            <p id="user_name-error" className="text-xs text-red-600 dark:text-red-400 mt-1 font-medium">{errors.user_name}</p>
-          )}
-        </div>
-        <div className="text-left">
-          <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Email <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="user_email"
-            type="email"
-            name="user_email"
-            placeholder="Your Email"
-            required
-            aria-required="true"
-            aria-invalid={!!errors.user_email}
-            aria-describedby={errors.user_email ? "user_email-error" : undefined}
-            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-            onBlur={handleBlur}
-          />
-          {touched.user_email && errors.user_email && (
-            <p id="user_email-error" className="text-xs text-red-600 dark:text-red-400 mt-1 font-medium">{errors.user_email}</p>
-          )}
-        </div>
-      </div>
-      <div className="text-left">
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          Subject
-        </label>
-        <input
-          id="subject"
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-        />
-      </div>
-      <div className="text-left">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          Message <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message"
-          rows={5}
-          required
-          aria-required="true"
-          aria-invalid={!!errors.message}
-          aria-describedby={errors.message ? "message-error" : undefined}
-          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white outline-none resize-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-          onBlur={handleBlur}
-        />
-        {touched.message && errors.message && (
-          <p id="message-error" className="text-xs text-red-600 dark:text-red-400 mt-1 font-medium">{errors.message}</p>
-        )}
-      </div>
-      <div className="flex w-full flex-col md:flex-row md:justify-end gap-3 items-stretch md:items-center">
-        <button
-          type="reset"
-          className="w-full md:w-auto cursor-pointer px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium rounded-xl transition duration-300 flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-          disabled={loading}
-        >
-          <FiRotateCcw className="inline-block mr-2" /> Reset
-        </button>
+      <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
+        Send Message
+      </h3>
 
-        <button
-          type="submit"
-          className="w-full md:w-auto cursor-pointer px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition duration-300 flex items-center justify-center gap-2 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          disabled={loading}
-          aria-busy={loading}
-        >
-          {loading ? (
-            <span>Sending...</span>
-          ) : (
-            <>
-              <FiSend className="inline-block mr-2" /> Send Message
-            </>
+      <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="user_name" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+              Name <span className="text-red-600 dark:text-red-400">*</span>
+            </label>
+            <input
+              id="user_name"
+              type="text"
+              name="user_name"
+              placeholder="Your name"
+              required
+              aria-required="true"
+              aria-invalid={!!errors.user_name}
+              aria-describedby={errors.user_name ? "user_name-error" : undefined}
+              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+              onBlur={handleBlur}
+            />
+            {touched.user_name && errors.user_name && (
+              <p id="user_name-error" className="text-sm text-red-700 dark:text-red-300 mt-1">
+                {errors.user_name}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label htmlFor="user_email" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+              Email <span className="text-red-600 dark:text-red-400">*</span>
+            </label>
+            <input
+              id="user_email"
+              type="email"
+              name="user_email"
+              placeholder="your.email@example.com"
+              required
+              aria-required="true"
+              aria-invalid={!!errors.user_email}
+              aria-describedby={errors.user_email ? "user_email-error" : undefined}
+              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+              onBlur={handleBlur}
+            />
+            {touched.user_email && errors.user_email && (
+              <p id="user_email-error" className="text-sm text-red-700 dark:text-red-300 mt-1">
+                {errors.user_email}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+            Subject
+          </label>
+          <input
+            id="subject"
+            type="text"
+            name="subject"
+            placeholder="What's this about?"
+            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+            Message <span className="text-red-600 dark:text-red-400">*</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell me about your project or idea..."
+            rows={5}
+            required
+            aria-required="true"
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : undefined}
+            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white resize-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+            onBlur={handleBlur}
+          />
+          {touched.message && errors.message && (
+            <p id="message-error" className="text-sm text-red-700 dark:text-red-300 mt-1">
+              {errors.message}
+            </p>
           )}
-        </button>
+        </div>
+
+        <div className="flex justify-end gap-3 pt-4">
+          <button
+            type="reset"
+            className="px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+            disabled={loading}
+          >
+            <FiRotateCcw className="text-sm" />
+            Reset
+          </button>
+
+          <button
+            type="submit"
+            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+            disabled={loading}
+            aria-busy={loading}
+          >
+            {loading ? (
+              <span>Sending...</span>
+            ) : (
+              <>
+                <FiSend className="text-sm" />
+                Send Message
+              </>
+            )}
+          </button>
+        </div>
       </div>
     </form>
   );
