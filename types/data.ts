@@ -39,7 +39,7 @@ export interface ExperienceItem {
   techStack: SkillTechnology[];
 }
 
-export interface Experiences {
+export interface Experience {
   title: string;
   subtitle: string;
   items: ExperienceItem[];
@@ -201,7 +201,7 @@ export interface GlobalData {
   projects: Projects;
   banner: Banner;
   skills: SkillsData;
-  experiences: Experiences;
+  experiences: Experience;
   services: Services;
   funFacts: FunFacts;
   hobbies: HobbiesSection;

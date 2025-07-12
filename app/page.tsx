@@ -1,6 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import Skills from "@/components/skills/Skills";
-import ProfessionalExperience from "@/components/experiance/Experiance";
+import ProfessionalExperience from "@/components/experience/Experience";
 import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
 import Education from "@/components/education/Education";

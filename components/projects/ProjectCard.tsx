@@ -4,6 +4,7 @@ import { FC } from "react";
 import Image from "next/image";
 import type { Projects as ProjectsType } from "@/types/data";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Card from "@/components/global/Card";
 
 interface ProjectCardProps {
   project: ProjectsType["items"][number];
@@ -12,8 +13,8 @@ interface ProjectCardProps {
 
 const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
   return (
-    <div
-      className="group relative cursor-pointer bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col hover:border-indigo-400"
+    <Card
+      className="group relative flex flex-col"
       onClick={() => openModal(project)}>
       {/* Project Image */}
       <div className="relative w-full aspect-[59/30] overflow-hidden">
@@ -51,7 +52,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
           </span>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -14,7 +14,7 @@ const Education: FC<EducationProps> = ({ educationData }) => {
   return (
     <section
       id="education"
-      className="w-full py-12 md:py-16 px-6 bg-gradient-to-br from-indigo-100 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={educationData.title}
@@ -24,7 +24,7 @@ const Education: FC<EducationProps> = ({ educationData }) => {
           {educationData.subtitle}
         </SectionTitle>
 
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid lg:grid-cols-2 gap-6">
           {educationData.items.map((item) => (
             <EducationCard key={item.id} item={item} />
           ))}

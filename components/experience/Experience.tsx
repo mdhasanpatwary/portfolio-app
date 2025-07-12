@@ -4,12 +4,12 @@ import React from "react";
 import { FaBriefcase } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
 import ExperienceCard from "./ExperienceCard";
-import type { Experiences as ExperiencesType } from "@/types/data";
+import type { Experience as ExperienceType } from "@/types/data";
 
-const ProfessionalExperience: React.FC<{ experiences: ExperiencesType }> = ({ experiences }) => (
+const ProfessionalExperience: React.FC<{ experiences: ExperienceType }> = ({ experiences }) => (
   <section
     id="experience"
-    className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-100 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
     <div className="max-w-7xl mx-auto">
       {/* Section Header */}
       <SectionTitle

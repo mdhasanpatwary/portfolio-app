@@ -12,7 +12,7 @@ const FunFact: FC<FunFactProps> = ({ funFacts }) => {
   return (
     <section
       id="funfact"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:bg-gradient-to-br dark:from-gray-950 dark:via-gray-900 dark:to-gray-800">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={funFacts.title}

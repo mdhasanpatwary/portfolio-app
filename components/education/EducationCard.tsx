@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { FaCalendarAlt, FaStar } from "react-icons/fa";
 import type { Education } from "@/types/data";
+import Card from "@/components/global/Card";
 
 interface EducationCardProps {
   item: Education["items"][number];
@@ -8,7 +9,7 @@ interface EducationCardProps {
 
 const EducationCard: FC<EducationCardProps> = ({ item }) => {
   return (
-    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-200 dark:hover:border-indigo-500 overflow-hidden">
+    <Card className="group">
       {/* Header with combined info */}
       <div className="p-4 border-b border-gray-100 dark:border-gray-700">
         <div className="flex items-start justify-between gap-3">
@@ -73,7 +74,7 @@ const EducationCard: FC<EducationCardProps> = ({ item }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
