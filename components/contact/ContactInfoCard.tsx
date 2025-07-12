@@ -12,6 +12,7 @@ interface ContactInfoCardProps {
     phone: string;
     location: string;
     summary: string;
+    availability: string;
     socialLinks: unknown[];
   };
 }
@@ -26,7 +27,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
           Let&apos;s Connect
         </h4>
         <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-          I&apos;m always open to meaningful conversations—whether you&apos;re looking to collaborate, have a project in mind, or just want to say hi.
+          {contact.summary}
         </p>
       </div>
 
@@ -83,7 +84,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
           Availability
         </h5>
         <p className="text-gray-800 dark:text-gray-200 text-sm">
-          Available for freelance & collaboration
+          {contact.availability}
         </p>
       </div>
     </div>

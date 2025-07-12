@@ -144,6 +144,33 @@ export interface Contact {
   phone: string;
   location: string;
   summary: string;
+  availability: string;
+  formLabels: {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    required: string;
+    sendMessage: string;
+    reset: string;
+    sending: string;
+  };
+  placeholders: {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  };
+  validation: {
+    nameRequired: string;
+    emailRequired: string;
+    emailInvalid: string;
+    messageRequired: string;
+  };
+  messages: {
+    success: string;
+    error: string;
+  };
   socialLinks: Array<{
     name: string;
     url: string;

@@ -15,6 +15,33 @@ interface ContactProps {
     phone: string;
     location: string;
     summary: string;
+    availability: string;
+    formLabels: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+      required: string;
+      sendMessage: string;
+      reset: string;
+      sending: string;
+    };
+    placeholders: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+    };
+    validation: {
+      nameRequired: string;
+      emailRequired: string;
+      emailInvalid: string;
+      messageRequired: string;
+    };
+    messages: {
+      success: string;
+      error: string;
+    };
     socialLinks: unknown[];
   };
 }
@@ -36,7 +63,7 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
         {/* Contact content grid - Form first for better CTA hierarchy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-12">
           <div className="lg:col-span-7 lg:order-2">
-            <ContactForm />
+            <ContactForm contact={contact} />
           </div>
           <div className="lg:col-span-5 lg:order-1">
             <ContactInfoCard contact={contact} />

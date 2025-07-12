@@ -6,7 +6,47 @@ import toast from "react-hot-toast";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const ContactForm: FC = () => {
+interface ContactFormProps {
+  contact: {
+    name: string;
+    title: string;
+    subtitle: string;
+    email: string;
+    phone: string;
+    location: string;
+    summary: string;
+    availability: string;
+    formLabels: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+      required: string;
+      sendMessage: string;
+      reset: string;
+      sending: string;
+    };
+    placeholders: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+    };
+    validation: {
+      nameRequired: string;
+      emailRequired: string;
+      emailInvalid: string;
+      messageRequired: string;
+    };
+    messages: {
+      success: string;
+      error: string;
+    };
+    socialLinks: unknown[];
+  };
+}
+
+const ContactForm: FC<ContactFormProps> = ({ contact }) => {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -17,22 +57,22 @@ const ContactForm: FC = () => {
     const name = formData.get("user_name") as string;
     const email = formData.get("user_email") as string;
     const message = formData.get("message") as string;
-    if (!name) newErrors.user_name = "Name is required.";
-    if (!email) newErrors.user_email = "Email is required.";
-    else if (!EMAIL_REGEX.test(email)) newErrors.user_email = "Invalid email format.";
-    if (!message || message.trim().length < 10) newErrors.message = "Message must be at least 10 characters.";
+    if (!name) newErrors.user_name = contact.validation.nameRequired;
+    if (!email) newErrors.user_email = contact.validation.emailRequired;
+    else if (!EMAIL_REGEX.test(email)) newErrors.user_email = contact.validation.emailInvalid;
+    if (!message || message.trim().length < 10) newErrors.message = contact.validation.messageRequired;
     return newErrors;
   };
 
   const validateField = (field: string, value: string) => {
     let error = "";
     if (field === "user_name") {
-      if (!value) error = "Name is required.";
+      if (!value) error = contact.validation.nameRequired;
     } else if (field === "user_email") {
-      if (!value) error = "Email is required.";
-      else if (!EMAIL_REGEX.test(value)) error = "Invalid email format.";
+      if (!value) error = contact.validation.emailRequired;
+      else if (!EMAIL_REGEX.test(value)) error = contact.validation.emailInvalid;
     } else if (field === "message") {
-      if (!value || value.trim().length < 10) error = "Message must be at least 10 characters.";
+      if (!value || value.trim().length < 10) error = contact.validation.messageRequired;
     }
     setErrors((prev) => ({ ...prev, [field]: error }));
   };
@@ -60,11 +100,11 @@ const ContactForm: FC = () => {
         "e3p000moSeEYQGGdV"
       )
       .then(() => {
-        toast.success("Message sent successfully!");
+        toast.success(contact.messages.success);
         form.current?.reset();
       })
       .catch((error) => {
-        toast.error("Failed to send message.");
+        toast.error(contact.messages.error);
         console.error("EmailJS Error:", error);
       })
       .finally(() => setLoading(false));
@@ -85,20 +125,20 @@ const ContactForm: FC = () => {
       noValidate
     >
       <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
-        Send Message
+        {contact.title}
       </h3>
 
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="user_name" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-              Name <span className="text-red-600 dark:text-red-400">*</span>
+              {contact.formLabels.name} <span className="text-red-600 dark:text-red-400">{contact.formLabels.required}</span>
             </label>
             <input
               id="user_name"
               type="text"
               name="user_name"
-              placeholder="Your name"
+              placeholder={contact.placeholders.name}
               required
               aria-required="true"
               aria-invalid={!!errors.user_name}
@@ -115,13 +155,13 @@ const ContactForm: FC = () => {
 
           <div>
             <label htmlFor="user_email" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-              Email <span className="text-red-600 dark:text-red-400">*</span>
+              {contact.formLabels.email} <span className="text-red-600 dark:text-red-400">{contact.formLabels.required}</span>
             </label>
             <input
               id="user_email"
               type="email"
               name="user_email"
-              placeholder="your.email@example.com"
+              placeholder={contact.placeholders.email}
               required
               aria-required="true"
               aria-invalid={!!errors.user_email}
@@ -139,25 +179,25 @@ const ContactForm: FC = () => {
 
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-            Subject
+            {contact.formLabels.subject}
           </label>
           <input
             id="subject"
             type="text"
             name="subject"
-            placeholder="What's this about?"
+            placeholder={contact.placeholders.subject}
             className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
           />
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-            Message <span className="text-red-600 dark:text-red-400">*</span>
+            {contact.formLabels.message} <span className="text-red-600 dark:text-red-400">{contact.formLabels.required}</span>
           </label>
           <textarea
             id="message"
             name="message"
-            placeholder="Tell me about your project or idea..."
+            placeholder={contact.placeholders.message}
             rows={5}
             required
             aria-required="true"
@@ -180,7 +220,7 @@ const ContactForm: FC = () => {
             disabled={loading}
           >
             <FiRotateCcw className="text-sm" />
-            Reset
+            {contact.formLabels.reset}
           </button>
 
           <button
@@ -190,11 +230,11 @@ const ContactForm: FC = () => {
             aria-busy={loading}
           >
             {loading ? (
-              <span>Sending...</span>
+              <span>{contact.formLabels.sending}</span>
             ) : (
               <>
                 <FiSend className="text-sm" />
-                Send Message
+                {contact.formLabels.sendMessage}
               </>
             )}
           </button>

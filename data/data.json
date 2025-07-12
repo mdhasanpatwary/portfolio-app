@@ -1274,11 +1274,38 @@
   "contact": {
     "name": "MD Hasan Patwary",
     "title": "Get In Touch",
-    "subtitle": "Drop a message and I’ll get back to you via email.",
+    "subtitle": "Drop a message and I'll get back to you via email.",
     "email": "patwary.dev@gmail.com",
     "phone": "+8801783721411",
     "location": "Dhaka, Bangladesh",
-    "summary": "I’m always open to meaningful conversations—whether you’re looking to collaborate, have a project in mind, or just want to connect. Feel free to reach out anytime.",
+    "summary": "I'm always open to meaningful conversations—whether you're looking to collaborate, have a project in mind, or just want to connect. Feel free to reach out anytime.",
+    "availability": "Available for freelance & collaboration",
+    "formLabels": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "required": "*",
+      "sendMessage": "Send Message",
+      "reset": "Reset",
+      "sending": "Sending..."
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your.email@example.com",
+      "subject": "What's this about?",
+      "message": "Tell me about your project or idea..."
+    },
+    "validation": {
+      "nameRequired": "Name is required.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Invalid email format.",
+      "messageRequired": "Message must be at least 10 characters."
+    },
+    "messages": {
+      "success": "Message sent successfully!",
+      "error": "Failed to send message."
+    },
     "socialLinks": [
       {
         "name": "LinkedIn",
