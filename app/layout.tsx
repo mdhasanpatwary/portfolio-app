@@ -3,17 +3,17 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import data from "@/data/data.json";
-import { GlobalData } from "@/types/data";
+import { header, footer } from "@/data";
 import { AppProvider } from "@/context/BlogContext";
 import { Toaster } from "react-hot-toast";
+import ErrorBoundary from "@/components/global/ErrorBoundary";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const { header, footer } = data as GlobalData;
+
 
 export const metadata: Metadata = {
   title: "Personal Portfolio",
@@ -30,15 +30,17 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
-        <AppProvider>
-          <Toaster position="top-right" />
-          <Header navItems={header.navItems} />
-          {children}
-          <Footer
-            name={footer.name}
-            description={footer.description}
-          />
-        </AppProvider>
+        <ErrorBoundary>
+          <AppProvider>
+            <Toaster position="top-right" />
+            <Header navItems={header.navItems} />
+            {children}
+            <Footer
+              name={footer.name}
+              description={footer.description}
+            />
+          </AppProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

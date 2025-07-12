@@ -1,0 +1,36 @@
+{
+  "title": "Fun Facts",
+  "subtitle": "Some cool stats and facts about my journey so far.",
+  "items": [
+    {
+      "icon": "FaLaptop",
+      "value": "1M+",
+      "title": "Lines of Code",
+      "description": "That's a lot of typing — and debugging!"
+    },
+    {
+      "icon": "FaFolderOpen",
+      "value": "50+",
+      "title": "Projects Completed",
+      "description": "From personal ideas to production-level platforms."
+    },
+    {
+      "icon": "FaGlobe",
+      "value": "30+",
+      "title": "Countries Reached",
+      "description": "My code has gone more places than I have!"
+    },
+    {
+      "icon": "FaGraduationCap",
+      "value": "6+",
+      "title": "Years of Experience",
+      "description": "Still learning, still building, still loving it."
+    },
+    {
+      "icon": "FaChessKing",
+      "value": "900+",
+      "title": "Chess Games Played",
+      "description": "Strategy fuels both my code and my game."
+    }
+  ]
+}

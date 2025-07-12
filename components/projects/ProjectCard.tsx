@@ -15,6 +15,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
   return (
     <Card
       className="group relative flex flex-col"
+      padding="none"
       onClick={() => openModal(project)}>
       {/* Project Image */}
       <div className="relative w-full aspect-[59/30] overflow-hidden">

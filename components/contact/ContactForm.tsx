@@ -93,11 +93,10 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
     setLoading(true);
     emailjs
       .sendForm(
-        // TODO: Move these keys to environment variables for security
-        "service_90axswo",
-        "template_znmpmjw",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         form.current,
-        "e3p000moSeEYQGGdV"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       .then(() => {
         toast.success(contact.messages.success);
@@ -105,7 +104,10 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
       })
       .catch((error) => {
         toast.error(contact.messages.error);
-        console.error("EmailJS Error:", error);
+        // Log error for debugging but don't expose sensitive info
+        if (process.env.NODE_ENV === 'development') {
+          console.error("EmailJS Error:", error);
+        }
       })
       .finally(() => setLoading(false));
   };

@@ -9,22 +9,20 @@ import Blog from "@/components/blog/Blog";
 import FunFact from "@/components/funfact/Funfact";
 import Contact from "@/components/contact/Contact";
 import Services from "@/components/services/Services";
-import data from "@/data/data.json";
-import { GlobalData } from "@/types/data";
+import {
+  education,
+  projects,
+  banner,
+  skills,
+  experiences,
+  services,
+  funFacts,
+  hobbies,
+  testimonials,
+  contact,
+} from "@/data";
 
 export default function Home() {
-  const {
-    education,
-    projects,
-    banner,
-    skills,
-    experiences,
-    services,
-    funFacts,
-    hobbies,
-    testimonials,
-    contact,
-  } = data as GlobalData;
 
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">

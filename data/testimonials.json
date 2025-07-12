@@ -1,0 +1,36 @@
+{
+  "title": "Testimonials",
+  "subtitle": "What others say about working with me.",
+  "items": [
+    {
+      "name": "Sadia Ahmed",
+      "title": "Team Lead at Themelooks",
+      "message": "Hasan's attention to detail and creative solutions made him a valuable team member.",
+      "avatar": "/testimonials/sadia.jpg"
+    },
+    {
+      "name": "Tanvir Hossain",
+      "title": "Co-founder at Demandium",
+      "message": "His frontend skills and design sense are excellent. He elevated our UI drastically.",
+      "avatar": "/testimonials/tanvir.jpg"
+    },
+    {
+      "name": "Fariha Nabila",
+      "title": "Designer at Anefty",
+      "message": "Creative and deadline-driven. Hasan is a dream to work with!",
+      "avatar": "/testimonials/fariha.jpg"
+    },
+    {
+      "name": "Mahmudul Hasan",
+      "title": "Founder at Repserv",
+      "message": "He understands user-centric design like no one else. A joy to work with!",
+      "avatar": "/testimonials/mahmudul.jpg"
+    },
+    {
+      "name": "Ayesha Noor",
+      "title": "Product Owner at Unihost",
+      "message": "Very professional, communicative, and great at frontend architecture.",
+      "avatar": "/testimonials/ayesha.jpg"
+    }
+  ]
+}

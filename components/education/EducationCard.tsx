@@ -9,7 +9,7 @@ interface EducationCardProps {
 
 const EducationCard: FC<EducationCardProps> = ({ item }) => {
   return (
-    <Card className="group">
+    <Card className="group" padding="none">
       {/* Header with combined info */}
       <div className="p-4 border-b border-gray-100 dark:border-gray-700">
         <div className="flex items-start justify-between gap-3">

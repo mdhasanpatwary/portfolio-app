@@ -1,0 +1,146 @@
+{
+  "title": "Skills",
+  "subtitle": "Technologies I use to build seamless, performant, and responsive web experiences.",
+  "groups": [
+    {
+      "title": "Languages & Frameworks",
+      "technologies": [
+        {
+          "name": "HTML5",
+          "icon": "FaHtml5",
+          "docUrl": "https://developer.mozilla.org/docs/Web/HTML"
+        },
+        {
+          "name": "CSS3",
+          "icon": "FaCss3Alt",
+          "docUrl": "https://developer.mozilla.org/docs/Web/CSS"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "FaJs",
+          "docUrl": "https://developer.mozilla.org/docs/Web/JavaScript"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "SiTypescript",
+          "docUrl": "https://www.typescriptlang.org/docs/"
+        },
+        {
+          "name": "React.js",
+          "icon": "FaReact",
+          "docUrl": "https://react.dev/learn"
+        },
+        {
+          "name": "Vue.js",
+          "icon": "FaVuejs",
+          "docUrl": "https://vuejs.org/guide/introduction.html"
+        },
+        {
+          "name": "Next.js",
+          "icon": "SiNextdotjs",
+          "docUrl": "https://nextjs.org/docs"
+        },
+        {
+          "name": "jQuery",
+          "icon": "SiJquery",
+          "docUrl": "https://api.jquery.com/"
+        },
+        {
+          "name": "Node.js",
+          "icon": "FaNodeJs",
+          "docUrl": "https://nodejs.org/en/docs"
+        }
+      ]
+    },
+    {
+      "title": "Styling & UI",
+      "technologies": [
+        {
+          "name": "Tailwind CSS",
+          "icon": "SiTailwindcss",
+          "docUrl": "https://tailwindcss.com/docs"
+        },
+        {
+          "name": "SASS",
+          "icon": "FaSass",
+          "docUrl": "https://sass-lang.com/documentation/"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "FaBootstrap",
+          "docUrl": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+        },
+        {
+          "name": "Material UI",
+          "icon": "FaReact",
+          "docUrl": "https://mui.com/material-ui/getting-started/overview/"
+        },
+        {
+          "name": "Figma",
+          "icon": "FaFigma",
+          "docUrl": "https://help.figma.com/hc/en-us"
+        },
+        {
+          "name": "Adobe XD",
+          "icon": "SiAdobexd",
+          "docUrl": "https://helpx.adobe.com/xd/user-guide.html"
+        },
+        {
+          "name": "Photoshop",
+          "icon": "SiAdobephotoshop",
+          "docUrl": "https://helpx.adobe.com/photoshop/user-guide.html"
+        }
+      ]
+    },
+    {
+      "title": "Tools & DevOps",
+      "technologies": [
+        {
+          "name": "Git",
+          "icon": "FaGitAlt",
+          "docUrl": "https://git-scm.com/doc"
+        },
+        {
+          "name": "GitHub",
+          "icon": "FaGitAlt",
+          "docUrl": "https://docs.github.com/en"
+        },
+        {
+          "name": "Gulp",
+          "icon": "FaGulp",
+          "docUrl": "https://gulpjs.com/docs/en/getting-started/quick-start"
+        },
+        {
+          "name": "Webpack",
+          "icon": "SiWebpack",
+          "docUrl": "https://webpack.js.org/concepts/"
+        },
+        {
+          "name": "Docker",
+          "icon": "FaDocker",
+          "docUrl": "https://docs.docker.com/"
+        },
+        {
+          "name": "AWS",
+          "icon": "FaAws",
+          "docUrl": "https://docs.aws.amazon.com/"
+        },
+        {
+          "name": "Linux",
+          "icon": "FaLinux",
+          "docUrl": "https://www.kernel.org/doc/html/latest/"
+        },
+        {
+          "name": "Automation",
+          "icon": "FaReact",
+          "docUrl": "https://en.wikipedia.org/wiki/Automation"
+        },
+        {
+          "name": "Animation",
+          "icon": "FaReact",
+          "docUrl": "https://developer.mozilla.org/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+        }
+      ]
+    }
+  ]
+}

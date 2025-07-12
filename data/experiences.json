@@ -1,0 +1,156 @@
+{
+  "title": "Professional Journey",
+  "subtitle": "A timeline of my professional growth and achievements in the tech industry.",
+  "items": [
+    {
+      "company": "6amtech",
+      "role": "Front-End Developer",
+      "duration": "Jul 2022 – Present",
+      "location": "Dhaka, Bangladesh",
+      "website": "https://6amtech.com",
+      "highlights": [
+        "Developed scalable and performant frontend solutions for Demandium and Hexaride from scratch.",
+        "Redesigned core UI/UX for flagship products like 6valley and 6amMart based on customer feedback and user testing.",
+        "Built responsive layouts using Tailwind CSS and React components, ensuring accessibility and mobile-first designs.",
+        "Collaborated with backend team to optimize API performance and UI data handling using Axios and React hooks.",
+        "Integrated CI/CD pipelines and GitHub workflows for automatic linting and build checks.",
+        "Contributed to Docker-based local development environment setup for faster onboarding.",
+        "Worked with AWS services to deploy frontend builds and manage assets efficiently.",
+        "Participated in code reviews and introduced reusable component patterns to improve maintainability.",
+        "Wrote documentation and developer onboarding guides for internal use."
+      ],
+      "techStack": [
+        {
+          "icon": "SiReact",
+          "name": "React",
+          "docUrl": "https://react.dev/learn"
+        },
+        {
+          "icon": "SiNextdotjs",
+          "name": "Next.js",
+          "docUrl": "https://nextjs.org/docs"
+        },
+        {
+          "icon": "SiMaterialdesignicons",
+          "name": "Material UI",
+          "docUrl": "https://mui.com/material-ui/getting-started/overview/"
+        },
+        {
+          "icon": "SiTailwindcss",
+          "name": "Tailwind CSS",
+          "docUrl": "https://tailwindcss.com/docs"
+        },
+        {
+          "icon": "FaDocker",
+          "name": "Docker",
+          "docUrl": "https://docs.docker.com/"
+        },
+        {
+          "icon": "SiTypescript",
+          "name": "TypeScript",
+          "docUrl": "https://www.typescriptlang.org/docs/"
+        },
+        {
+          "icon": "SiGithub",
+          "name": "GitHub",
+          "docUrl": "https://docs.github.com/en"
+        },
+        {
+          "icon": "SiAmazon",
+          "name": "AWS",
+          "docUrl": "https://docs.aws.amazon.com/"
+        },
+        {
+          "icon": "FaGitAlt",
+          "name": "Git",
+          "docUrl": "https://git-scm.com/doc"
+        },
+        {
+          "icon": "SiWebpack",
+          "name": "Webpack",
+          "docUrl": "https://webpack.js.org/concepts/"
+        },
+        {
+          "icon": "SiFigma",
+          "name": "Figma",
+          "docUrl": "https://help.figma.com/hc/en-us"
+        }
+      ]
+    },
+    {
+      "company": "Themelooks",
+      "role": "Front-End Developer",
+      "duration": "Aug 2019 – Jul 2022",
+      "location": "Dhaka, Bangladesh",
+      "website": "https://themelooks.com",
+      "highlights": [
+        "Developed over 10+ ThemeForest templates and Codecanyon web applications.",
+        "Created responsive multipurpose admin dashboards such as Dashmin and commercial landing pages.",
+        "Rewritten legacy jQuery projects using modern JavaScript and Bootstrap 5.",
+        "Implemented modern design systems and reusable UI kits using SASS and Gulp.",
+        "Collaborated with designers using Figma to translate design into pixel-perfect UI.",
+        "Worked on Vue and React-based single-page applications (SPAs).",
+        "Optimized assets and improved Lighthouse performance score by up to 40%.",
+        "Ensured full cross-browser support and maintained W3C-compliant markup.",
+        "Provided after-sale support and customization help to clients."
+      ],
+      "techStack": [
+        {
+          "icon": "FaHtml5",
+          "name": "HTML5",
+          "docUrl": "https://developer.mozilla.org/docs/Web/HTML"
+        },
+        {
+          "icon": "FaCss3Alt",
+          "name": "CSS3",
+          "docUrl": "https://developer.mozilla.org/docs/Web/CSS"
+        },
+        {
+          "icon": "SiJavascript",
+          "name": "JavaScript",
+          "docUrl": "https://developer.mozilla.org/docs/Web/JavaScript"
+        },
+        {
+          "icon": "SiJquery",
+          "name": "jQuery",
+          "docUrl": "https://api.jquery.com/"
+        },
+        {
+          "icon": "SiBootstrap",
+          "name": "Bootstrap",
+          "docUrl": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+        },
+        {
+          "icon": "SiSass",
+          "name": "SASS",
+          "docUrl": "https://sass-lang.com/documentation/"
+        },
+        {
+          "icon": "SiVuedotjs",
+          "name": "Vue.js",
+          "docUrl": "https://vuejs.org/guide/introduction.html"
+        },
+        {
+          "icon": "FaReact",
+          "name": "React.js",
+          "docUrl": "https://react.dev/learn"
+        },
+        {
+          "icon": "SiGulp",
+          "name": "Gulp",
+          "docUrl": "https://gulpjs.com/docs/en/getting-started/quick-start"
+        },
+        {
+          "icon": "SiAdobexd",
+          "name": "Adobe XD",
+          "docUrl": "https://helpx.adobe.com/xd/user-guide.html"
+        },
+        {
+          "icon": "SiAdobephotoshop",
+          "name": "Adobe Photoshop",
+          "docUrl": "https://helpx.adobe.com/photoshop/user-guide.html"
+        }
+      ]
+    }
+  ]
+}

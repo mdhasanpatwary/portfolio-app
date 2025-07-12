@@ -1,0 +1,44 @@
+import educationData from './education.json';
+import projectsData from './projects.json';
+import contactData from './contact.json';
+import bannerData from './banner.json';
+import skillsData from './skills.json';
+import experiencesData from './experiences.json';
+import servicesData from './services.json';
+import funFactsData from './funFacts.json';
+import hobbiesData from './hobbies.json';
+import testimonialsData from './testimonials.json';
+import headerData from './header.json';
+import footerData from './footer.json';
+
+// Export individual sections for better tree-shaking
+export const education = educationData;
+export const projects = projectsData;
+export const contact = contactData;
+export const banner = bannerData;
+export const skills = skillsData;
+export const experiences = experiencesData;
+export const services = servicesData;
+export const funFacts = funFactsData;
+export const hobbies = hobbiesData;
+export const testimonials = testimonialsData;
+export const header = headerData;
+export const footer = footerData;
+
+// Export combined data for backward compatibility
+export const mainData = {
+  education,
+  projects,
+  contact,
+  banner,
+  skills,
+  experiences,
+  services,
+  funFacts,
+  hobbies,
+  testimonials,
+  header,
+  footer
+};
+
+export default mainData;

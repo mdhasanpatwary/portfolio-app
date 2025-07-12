@@ -6,10 +6,9 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
-import data from "@/data/data.json";
+import { contact } from "@/data";
 
 export type SocialLink = { name: string; url: string; icon: string };
-type ContactData = { socialLinks: SocialLink[] };
 
 const iconMap = {
   FaGithub,
@@ -32,7 +31,6 @@ const brandColors = {
   SiCodepen: "hover:text-black dark:hover:text-white",
 };
 
-const contact = (data as { contact: ContactData }).contact;
 const links = contact?.socialLinks || [];
 
 const SocialLinks: React.FC = () => (

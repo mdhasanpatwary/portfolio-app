@@ -1,0 +1,9 @@
+{
+  "navItems": [
+    { "label": "Home", "href": "#banner" },
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Service", "href": "#services" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}

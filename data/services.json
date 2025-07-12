@@ -1,0 +1,42 @@
+{
+  "title": "Services",
+  "subtitle": "What I offer: modern frontend solutions, performance, and integrations.",
+  "items": [
+    {
+      "title": "Website Optimization & Performance",
+      "description": "Boost site speed, Core Web Vitals, and Lighthouse scores for better UX and SEO.",
+      "tools": ["Lighthouse", "WebPageTest", "Next.js", "React"],
+      "icon": "FaChartLine"
+    },
+    {
+      "title": "Landing Page & Portfolio Development",
+      "description": "Design and build high-converting landing pages and personal portfolios with modern UI/UX.",
+      "tools": ["React", "Next.js", "Tailwind CSS", "Figma"],
+      "icon": "FaPaintBrush"
+    },
+    {
+      "title": "Headless CMS Integration with React/Next.js",
+      "description": "Connect and build dynamic sites using headless CMSs like Strapi, Sanity, or Contentful.",
+      "tools": ["Strapi", "Sanity", "Contentful", "Next.js"],
+      "icon": "FaCogs"
+    },
+    {
+      "title": "Figma/Adobe XD to HTML & React Conversion",
+      "description": "Transforming modern UI designs into responsive, pixel-perfect code using HTML, CSS, and React.js.",
+      "tools": ["Figma", "Adobe XD", "HTML5", "CSS3", "React.js"],
+      "icon": "FaFigma"
+    },
+    {
+      "title": "Business Website Development",
+      "description": "Building clean, fast, and scalable business websites tailored to your brand and goals.",
+      "tools": ["React", "Next.js", "Tailwind CSS", "SEO"],
+      "icon": "FaRocket"
+    },
+    {
+      "title": "Interactive UI & Animation Development",
+      "description": "Enhancing user experience with smooth, engaging animations using CSS, GSAP, or libraries like Framer Motion.",
+      "tools": ["CSS Animations", "GSAP", "Framer Motion", "React"],
+      "icon": "FaMagic"
+    }
+  ]
+}

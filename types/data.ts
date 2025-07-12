@@ -117,7 +117,7 @@ export interface Projects {
     link: string;
     github: string;
     category: string;
-    status: "live" | "development" | "concept";
+    status: string;
     longDescription?: string;
     features?: string[];
     challenges?: string[];
