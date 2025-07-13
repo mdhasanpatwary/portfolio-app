@@ -42,9 +42,10 @@ import { marked } from "marked";
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) return notFound();
 
   const date = new Date(post.published_at).toLocaleDateString(undefined, {
