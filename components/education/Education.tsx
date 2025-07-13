@@ -24,9 +24,12 @@ const Education: FC<EducationProps> = ({ educationData }) => {
           {educationData.subtitle}
         </SectionTitle>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6 mt-12">
           {educationData.items.map((item) => (
-            <EducationCard key={item.id} item={item} />
+            <EducationCard
+              key={item.id}
+              item={item}
+            />
           ))}
         </div>
       </div>

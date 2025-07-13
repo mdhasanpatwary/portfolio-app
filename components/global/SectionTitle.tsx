@@ -16,7 +16,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   <div className={`text-center mb-8 sm:mb-10 ${className}`}>
     <div className="flex items-center justify-center gap-3 mb-4">
       {icon}
-      <h2 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
         {title}
       </h2>
     </div>

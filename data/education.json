@@ -5,74 +5,26 @@
     {
       "id": "1",
       "period": "2018",
-      "gpa": "Competent",
       "degree": "Web Design (SEIP)",
-      "institution": "Feni Computer Institute, Bangladesh",
-      "description": "Completed specialized web design training program under the SEIP project, focusing on practical web development skills and industry-relevant technologies.",
-      "keySkills": [
-        "Web Design",
-        "HTML/CSS",
-        "JavaScript",
-        "Responsive Design",
-        "UI/UX Principles"
-      ],
-      "achievements": [
-        "SEIP Project Completion",
-        "Web Design Certification",
-        "Industry-Ready Skills Development"
-      ]
+      "institution": "Feni Computer Institute, Bangladesh"
     },
     {
-      "id": "2",
-      "period": "2013 – 2017",
-      "gpa": "3.8/4.0",
-      "degree": "Bachelor of Honours in Accounting",
-      "institution": "Alhaj Abdul Hoque Chowdury Degree College, Bangladesh",
-      "description": "Focused on financial reporting, auditing, and taxation with consistent academic results.",
-      "keySkills": [
-        "Financial Reporting",
-        "Auditing",
-        "Taxation",
-        "Business Analysis"
-      ],
-      "achievements": [
-        "Dean's List for Academic Excellence",
-        "Senior Year Project Award",
-        "Accounting Society Member"
-      ]
+      "id": "0",
+      "period": "2013–2017",
+      "degree": "BBA (Honours) in Accounting",
+      "institution": "Alhaj Abdul Hoque Chowdhury Degree College"
     },
     {
       "id": "3",
       "period": "2011 – 2013",
-      "gpa": "4.5/5.0",
       "degree": "Higher Secondary Certificate (HSC)",
-      "institution": "Alhaj Abdul Hoque Chowdury Degree College, Bangladesh",
-      "description": "Completed HSC from Commerce group with emphasis on business studies and accounting.",
-      "keySkills": [
-        "Business Studies",
-        "Accounting",
-        "Economics",
-        "Mathematics"
-      ],
-      "achievements": [
-        "Top 5% in Class",
-        "Business Club President",
-        "Academic Excellence Award"
-      ]
+      "institution": "Alhaj Abdul Hoque Chowdury Degree College, Bangladesh"
     },
     {
       "id": "4",
       "period": "2006 – 2011",
-      "gpa": "4.8/5.0",
       "degree": "Secondary School Certificate (SSC)",
-      "institution": "Dharmapur Educational Estate, Bangladesh",
-      "description": "Graduated from Commerce group with strong results and co-curricular involvement.",
-      "keySkills": ["Commerce", "Mathematics", "English", "Bengali"],
-      "achievements": [
-        "Commerce Olympiad Winner",
-        "Student Council Member",
-        "Sports Achievement Award"
-      ]
+      "institution": "Dharmapur Educational Estate, Bangladesh"
     }
   ]
 }
