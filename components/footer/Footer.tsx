@@ -9,7 +9,11 @@ type FooterProps = {
   description: string;
 };
 
-const Footer: FC<FooterProps> = ({ name, description }) => {
+const Footer: FC<FooterProps & { copyrightText?: string }> = ({
+  name,
+  description,
+  copyrightText,
+}) => {
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -27,14 +31,15 @@ const Footer: FC<FooterProps> = ({ name, description }) => {
         </p>
 
         {/* Social Icons */}
-        <div className="flex justify-center">
+        <nav aria-label="Social media links" className="flex justify-center">
           <SocialLinks />
-        </div>
+        </nav>
 
         <div>
           <a
             href="#top"
             onClick={handleScrollToTop}
+            aria-label="Scroll back to top"
             className="inline-flex items-center gap-1 text-sm text-indigo-600 hover:underline">
             <FaChevronUp className="animate-bounce" /> Back to top
           </a>
@@ -42,7 +47,9 @@ const Footer: FC<FooterProps> = ({ name, description }) => {
 
         {/* Copyright */}
         <p className="text-xs text-gray-500 dark:text-gray-600">
-          &copy; {new Date().getFullYear()} {name}. All rights reserved.
+          {copyrightText
+            ? copyrightText
+            : `© ${new Date().getFullYear()} ${name}. All rights reserved.`}
         </p>
       </div>
     </footer>

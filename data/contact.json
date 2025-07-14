@@ -36,18 +36,22 @@
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "url": "https://linkedin.com",
+      "url": "https://www.linkedin.com/in/mdhasanpatwary/",
       "icon": "FaLinkedin"
     },
-    { "name": "GitHub", "url": "https://github.com", "icon": "FaGithub" },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/mdhasanpatwary",
+      "icon": "FaGithub"
+    },
     {
       "name": "StackOverflow",
-      "url": "https://stackoverflow.com",
+      "url": "https://stackoverflow.com/users/11076109/patwary",
       "icon": "FaStackOverflow"
     },
     {
       "name": "Facebook",
-      "url": "https://facebook.com/mdhassanpatwary",
+      "url": "https://www.facebook.com/mdhasanpatwaryweb",
       "icon": "FaFacebook"
     },
     {
@@ -56,13 +60,13 @@
       "icon": "SiDevdotto"
     },
     {
-      "name": "Daily.dev",
-      "url": "https://daily.dev",
+      "name": "daily.dev",
+      "url": "https://app.daily.dev/mdhassanpatwary",
       "icon": "SiDailydotdev"
     },
     {
       "name": "CodePen",
-      "url": "https://codepen.io/mdhassanpatwary",
+      "url": "https://codepen.io/MD-Hasan-Patwary",
       "icon": "SiCodepen"
     }
   ]

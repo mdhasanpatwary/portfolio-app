@@ -13,8 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
 export const metadata: Metadata = {
   title: "Personal Portfolio",
   description:
@@ -30,15 +28,31 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (
+                    theme === 'dark' ||
+                    (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                  ) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <ErrorBoundary>
           <AppProvider>
             <Toaster position="top-right" />
             <Header navItems={header.navItems} />
             {children}
-            <Footer
-              name={footer.name}
-              description={footer.description}
-            />
+            <Footer name={footer.name} description={footer.description} />
           </AppProvider>
         </ErrorBoundary>
       </body>
