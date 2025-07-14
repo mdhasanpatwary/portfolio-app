@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import CssTipCard from "./CssTipCard";
 import SectionTitle from "../global/SectionTitle";
-import { FaCss3Alt, FaTimes } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
 import Modal from "../global/Modal";
 import { CodeBlock } from "../global";
 import Pagination from "../global/Pagination";
@@ -99,14 +99,21 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
         />
         <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedTip?.title}>
           {selectedTip && (
-            <div className="prose dark:prose-invert max-w-none px-2 py-2 md:px-6 md:py-6 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800">
+            <div className="prose dark:prose-invert max-w-none max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800">
               {parseDescription(selectedTip.description).map((part, idx) =>
                 part.type === "code" ? (
                   <div key={idx} className="my-6">
                     <CodeBlock code={part.content} language={part.language} className="rounded-lg" />
                   </div>
                 ) : (
-                  <span key={idx} dangerouslySetInnerHTML={{ __html: highlightCssProperties(part.content).map((el) => (typeof el === 'string' ? el : (el as any).props.children)).join('') }} />
+                  <span key={idx} dangerouslySetInnerHTML={{ __html: highlightCssProperties(part.content).map((el) => {
+                    if (typeof el === 'string') return el;
+                    if (React.isValidElement(el)) {
+                      const element = el as React.ReactElement<{ children: string }>;
+                      if (typeof element.props.children === 'string') return element.props.children;
+                    }
+                    return '';
+                  }).join('') }} />
                 )
               )}
             </div>
