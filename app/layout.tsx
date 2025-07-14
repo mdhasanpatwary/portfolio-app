@@ -7,6 +7,7 @@ import { header, footer } from "@/data";
 import { AppProvider } from "@/context/BlogContext";
 import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -28,33 +29,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (
-                    theme === 'dark' ||
-                    (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                  ) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-        <ErrorBoundary>
-          <AppProvider>
-            <Toaster position="top-right" />
-            <Header navItems={header.navItems} />
-            {children}
-            <Footer name={footer.name} description={footer.description} />
-          </AppProvider>
-        </ErrorBoundary>
+        <ThemeProvider>
+          <ErrorBoundary>
+            <AppProvider>
+              <Toaster position="top-right" />
+              <Header navItems={header.navItems} />
+              {children}
+              <Footer name={footer.name} description={footer.description} />
+            </AppProvider>
+          </ErrorBoundary>
+        </ThemeProvider>
       </body>
     </html>
   );
