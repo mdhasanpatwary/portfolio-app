@@ -26,21 +26,3 @@ export const testimonials = testimonialsData;
 export const header = headerData;
 export const footer = footerData;
 export const cssTips = cssTipsData;
-
-// Export combined data for backward compatibility
-export const mainData = {
-  education,
-  projects,
-  contact,
-  banner,
-  skills,
-  experiences,
-  services,
-  funFacts,
-  hobbies,
-  testimonials,
-  header,
-  footer
-};
-
-export default mainData;
