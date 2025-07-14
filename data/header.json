@@ -1,9 +1,9 @@
 {
   "navItems": [
-    { "label": "Home", "href": "#banner" },
-    { "label": "Experience", "href": "#experience" },
-    { "label": "Projects", "href": "#projects" },
-    { "label": "Service", "href": "#services" },
+    { "label": "Home", "href": "/" },
+    { "label": "Portfolio", "href": "/projects" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "CSS-Tips", "href": "/css-tips" },
     { "label": "Contact", "href": "#contact" }
   ]
 }

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/global/ThemeToggle";
 import { Transition } from "@headlessui/react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 type NavItem = {
   label: string;
@@ -18,11 +19,12 @@ type HeaderProps = {
 const Header = ({ navItems }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
 
-  // Detect screen size < 1200px (equivalent to Tailwind's xl breakpoint)
+  // Detect screen size < 992px (mobile breakpoint at 991px and below)
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1200);
+      setIsMobile(window.innerWidth < 992);
     };
     handleResize(); // check on mount
     window.addEventListener("resize", handleResize);
@@ -31,11 +33,13 @@ const Header = ({ navItems }: HeaderProps) => {
 
   // Smooth scroll
   const handleNavClick = (href: string) => {
-    const section = document.querySelector(href);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (href.startsWith('#')) {
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      setIsOpen(false); // close mobile menu
     }
-    setIsOpen(false); // close mobile menu
   };
 
   return (
@@ -49,15 +53,37 @@ const Header = ({ navItems }: HeaderProps) => {
 
         {/* Desktop */}
         {!isMobile && (
-          <nav className="flex items-center space-x-6">
+          <nav className="flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition">
-                {item.label}
-              </button>
+              item.href.startsWith("/") ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition cursor-pointer ${
+                    pathname === item.href ? "text-indigo-600 dark:text-indigo-400 font-semibold underline" : ""
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition border border-indigo-500 rounded px-3 py-1 ml-2 text-sm font-medium"
+            >
+              Resume
+            </a>
             <ThemeToggle />
           </nav>
         )}
@@ -65,6 +91,14 @@ const Header = ({ navItems }: HeaderProps) => {
         {/* Mobile */}
         {isMobile && (
           <div className="flex items-center gap-3">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition border border-indigo-500 rounded px-3 py-1 text-sm font-medium"
+            >
+              Resume
+            </a>
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -89,11 +123,24 @@ const Header = ({ navItems }: HeaderProps) => {
           <ul className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <li key={item.href}>
-                <button
-                  onClick={() => handleNavClick(item.href)}
-                  className="block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-indigo-100 dark:hover:bg-gray-800 transition">
-                  {item.label}
-                </button>
+                {item.href.startsWith("/") ? (
+                  <Link
+                    href={item.href}
+                    className={`block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-indigo-100 dark:hover:bg-gray-800 transition cursor-pointer ${
+                      pathname === item.href ? "text-indigo-600 dark:text-indigo-400 font-semibold underline" : ""
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => handleNavClick(item.href)}
+                    className="block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-indigo-100 dark:hover:bg-gray-800 transition cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                )}
               </li>
             ))}
           </ul>
