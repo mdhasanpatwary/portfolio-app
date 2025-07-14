@@ -1,0 +1,40 @@
+import React from "react";
+import Card from "../global/Card";
+import { FaArrowRight, FaCss3Alt } from "react-icons/fa";
+
+interface CssTip {
+  id: number;
+  title: string;
+  description: string;
+}
+
+interface CssTipCardProps {
+  tip: CssTip;
+  onClick?: () => void;
+}
+
+const CssTipCard: React.FC<CssTipCardProps> = ({ tip, onClick }) => (
+  <Card
+    className="relative h-full flex flex-col cursor-pointer rounded-2xl p-7 bg-white/70 dark:bg-gray-900/60 backdrop-blur-md border border-gray-200/60 dark:border-gray-800/60 shadow-xl hover:shadow-2xl hover:scale-[1.035] transition-all duration-200 group overflow-hidden"
+    variant="elevated"
+    padding="none"
+    onClick={onClick}
+  >
+    {/* Accent bar */}
+    <span className="absolute top-0 left-0 h-1.5 w-12 bg-gradient-to-r from-indigo-500 via-blue-400 to-blue-300 rounded-tr-xl" />
+    {/* Subtle CSS icon */}
+    <FaCss3Alt className="absolute top-4 right-4 text-blue-400 dark:text-blue-500 text-2xl opacity-20 pointer-events-none" />
+    <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white tracking-tight leading-snug">
+      {tip.title}
+    </h3>
+    <p className="text-gray-600 dark:text-gray-200 whitespace-pre-line flex-1 line-clamp-5 mb-6 text-base leading-relaxed">
+      {tip.description}
+    </p>
+    <div className="flex items-center gap-2 mt-auto text-indigo-600 dark:text-indigo-300 opacity-90 group-hover:opacity-100 transition-opacity text-base font-semibold select-none">
+      <FaArrowRight className="text-lg" />
+      View Details
+    </div>
+  </Card>
+);
+
+export default CssTipCard;
