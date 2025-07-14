@@ -77,7 +77,7 @@ const Modal: React.FC<ModalProps> = ({
         )}
 
         {/* Modal Content */}
-        <div className="p-8">{children}</div>
+        <div className="p-8 text-gray-900 dark:text-gray-100 bg-white/95 dark:bg-gray-900/95">{children}</div>
       </div>
     </div>
   );
