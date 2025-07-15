@@ -1,11 +1,11 @@
 "use client";
 
 import BlogCard from "@/components/blog/BlogCard";
-import SectionTitle from "@/components/global/SectionTitle";
 import { FaPenNib } from "react-icons/fa";
 import { useAppContext } from "@/context/BlogContext";
 import { useState } from "react";
 import Pagination from "@/components/global/Pagination";
+import PageTitle from "@/components/global/PageTitle";
 
 export default function BlogPage() {
   const { posts, loading } = useAppContext();
@@ -24,17 +24,19 @@ export default function BlogPage() {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <SectionTitle
-          title="All Blog Posts"
-          icon={
-            <FaPenNib className="text-indigo-600 dark:text-indigo-400 text-3xl" />
-          }>
-          Explore all my articles, tutorials, and insights.
-        </SectionTitle>
+    <>
+      <PageTitle
+        title="Latest Blog Posts"
+        subtitle="Explore all my articles, tutorials, and insights."
+        icon={<FaPenNib className="text-indigo-600 dark:text-indigo-400 text-3xl" />}
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Blog" }
+        ]}
+      />
+      <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 mt-10">
         {!loading && !posts.length ? (
-          <div className="bg-white dark:bg-gray-900 w-full py-24 px-6 text-center">
+          <div className="bg-white dark:bg-gray-900 w-full py-24 px-6 text-center rounded-lg shadow">
             <div className="flex flex-col items-center justify-center gap-4">
               <span className="text-6xl text-indigo-400">
                 <FaPenNib />
@@ -69,6 +71,6 @@ export default function BlogPage() {
           </>
         )}
       </div>
-    </section>
+    </>
   );
 }

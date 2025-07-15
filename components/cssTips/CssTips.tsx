@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import CssTipCard from "./CssTipCard";
-import SectionTitle from "../global/SectionTitle";
+import PageTitle from "../global/PageTitle";
 import { FaCss3Alt } from "react-icons/fa";
 import Modal from "../global/Modal";
 import { CodeBlock } from "../global";
@@ -79,15 +79,18 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <SectionTitle
-          title="CSS Tips & Tricks"
-          icon={<FaCss3Alt className="text-blue-600 dark:text-blue-400 text-3xl" />}
-        >
-          Discover modern, practical CSS tips to improve your workflow and UI.
-        </SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+    <>
+      <PageTitle
+        title="CSS Tips & Tricks"
+        subtitle="Discover modern, practical CSS tips to improve your workflow and UI."
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "CSS Tips" }
+        ]}
+        icon={<FaCss3Alt className="text-blue-600 dark:text-blue-400 text-3xl" />}
+      />
+      <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {paginatedTips.map((tip) => (
             <CssTipCard key={tip.id} tip={tip} onClick={() => handleCardClick(tip)} />
           ))}
@@ -120,7 +123,7 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
           )}
         </Modal>
       </div>
-    </section>
+    </>
   );
 };
 
