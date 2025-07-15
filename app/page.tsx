@@ -3,13 +3,11 @@ import Skills from "@/components/skills/Skills";
 import ProfessionalExperience from "@/components/experience/Experience";
 import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
-import Education from "@/components/education/Education";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
 import FunFact from "@/components/funfact/Funfact";
 import Services from "@/components/services/Services";
 import {
-  education,
   projects,
   banner,
   skills,
@@ -33,7 +31,6 @@ export default function Home() {
       <Testimonials testimonials={testimonials} />
 
       <FunFact funFacts={funFacts} />
-      <Education educationData={education} />
       <Hobby hobbiesData={hobbies} />
       <Blog />
     </main>
