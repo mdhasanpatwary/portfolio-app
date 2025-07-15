@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, FormEvent, useRef, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { FiRotateCcw } from "react-icons/fi";

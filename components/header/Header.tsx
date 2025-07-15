@@ -76,14 +76,12 @@ const Header = ({ navItems }: HeaderProps) => {
                 </button>
               )
             ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition border border-indigo-500 rounded px-3 py-1 ml-2 text-sm font-medium"
             >
-              Resume
-            </a>
+              Hire Me!
+            </Link>
             <ThemeToggle />
           </nav>
         )}
@@ -91,14 +89,12 @@ const Header = ({ navItems }: HeaderProps) => {
         {/* Mobile */}
         {isMobile && (
           <div className="flex items-center gap-3">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition border border-indigo-500 rounded px-3 py-1 text-sm font-medium"
             >
-              Resume
-            </a>
+              Hire Me!
+            </Link>
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}

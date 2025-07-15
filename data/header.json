@@ -4,6 +4,6 @@
     { "label": "Portfolio", "href": "/projects" },
     { "label": "Blog", "href": "/blog" },
     { "label": "CSS-Tips", "href": "/css-tips" },
-    { "label": "Contact", "href": "#contact" }
+    { "label": "Contact", "href": "/contact" }
   ]
 }

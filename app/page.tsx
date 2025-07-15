@@ -7,7 +7,6 @@ import Education from "@/components/education/Education";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
 import FunFact from "@/components/funfact/Funfact";
-import Contact from "@/components/contact/Contact";
 import Services from "@/components/services/Services";
 import {
   education,
@@ -19,7 +18,6 @@ import {
   funFacts,
   hobbies,
   testimonials,
-  contact,
 } from "@/data";
 
 export default function Home() {
@@ -38,8 +36,6 @@ export default function Home() {
       <Education educationData={education} />
       <Hobby hobbiesData={hobbies} />
       <Blog />
-
-      <Contact contact={contact} />
     </main>
   );
 }
