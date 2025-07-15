@@ -30,7 +30,7 @@ export default function Home() {
       <Skills skills={skills} />
       <ProfessionalExperience experiences={experiences} />
 
-      <Projects projectsData={projects} />
+      <Projects projectsData={{ ...projects, items: projects.items.slice(0, 8) }} />
       <Services services={services} />
       <Testimonials testimonials={testimonials} />
 
