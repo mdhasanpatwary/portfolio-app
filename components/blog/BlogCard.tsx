@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface DevToPost {
   id: number;
@@ -8,6 +9,7 @@ export interface DevToPost {
   published_at: string;
   cover_image: string | null;
   url: string;
+  slug: string; // Added slug to the interface
   tag_list?: string[] | string;
   reading_time_minutes?: number;
   user: {
@@ -39,57 +41,76 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
   const excerpt = post && post.description ? post.description.slice(0, 120) + (post.description.length > 120 ? "..." : "") : "";
 
   return (
-    <a
-      href={post?.url || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-indigo-400"
-      tabIndex={0}
-    >
-      {/* Image at top with overlay */}
-      <div className="relative w-full aspect-[5/2.3] overflow-hidden">
-        {loading ? (
+    loading ? (
+      <div
+        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        tabIndex={0}
+      >
+        {/* Image at top with overlay */}
+        <div className="relative w-full aspect-[5/2.3] overflow-hidden">
           <div className="w-full h-full bg-gray-200 dark:bg-gray-700 animate-pulse rounded-t-xl" />
-        ) : post?.cover_image ? (
-          <>
-            <Image
-              src={post.cover_image}
-              alt={post.title}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover rounded-t-xl transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              priority
-            />
-            {/* Soft overlay for contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-          </>
-        ) : null}
+        </div>
+        {/* Card Content */}
+        <div className="flex-1 flex flex-col px-4 md:px-7 py-4 md:py-6">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-3 min-h-[28px]">
+            <span className="w-14 h-6 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+            <span className="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+          </div>
+          {/* Title */}
+          <div className="w-3/4 h-7 bg-gray-200 dark:bg-gray-700 rounded mb-2 animate-pulse" />
+          {/* Meta info */}
+          <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
+            <span className="w-24 h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+          </div>
+          {/* Excerpt with fade-out */}
+          <div className="relative mb-6 min-h-[38px]">
+            <div className="w-full h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+          </div>
+          {/* Read more link */}
+          <div>
+            <span className="w-20 h-5 bg-gray-200 dark:bg-gray-700 rounded animate-pulse inline-block" />
+          </div>
+        </div>
       </div>
-      {/* Card Content */}
-      <div className="flex-1 flex flex-col px-4 md:px-7 py-4 md:py-6">
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-3 min-h-[28px]">
-          {loading ? (
+    ) : (
+      <Link
+        href={post ? `/blog/${post.id}` : "#"}
+        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        tabIndex={0}
+      >
+        {/* Image at top with overlay */}
+        <div className="relative w-full aspect-[5/2.3] overflow-hidden">
+          {post?.cover_image ? (
             <>
-              <span className="w-14 h-6 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-              <span className="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+              <Image
+                src={post.cover_image}
+                alt={post.title}
+                width={600}
+                height={400}
+                className="w-full h-full object-cover rounded-t-xl transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority
+              />
+              {/* Soft overlay for contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
             </>
-          ) : (
-            tags.slice(0, 3).map((tag, i) => (
+          ) : null}
+        </div>
+        {/* Card Content */}
+        <div className="flex-1 flex flex-col px-4 md:px-7 py-4 md:py-6">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-3 min-h-[28px]">
+            {tags.slice(0, 3).map((tag, i) => (
               <span
                 key={i}
                 className="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded-full"
               >
                 #{tag}
               </span>
-            ))
-          )}
-        </div>
-        {/* Title */}
-        {loading ? (
-          <div className="w-3/4 h-7 bg-gray-200 dark:bg-gray-700 rounded mb-2 animate-pulse" />
-        ) : (
+            ))}
+          </div>
+          {/* Title */}
           <h3
             className="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-2 transition-all line-clamp-2"
             title={post?.title}
@@ -98,37 +119,21 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
           >
             {post?.title}
           </h3>
-        )}
-        {/* Meta info */}
-        <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
-          {loading ? (
-            <span className="w-24 h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
-          ) : (
-            <>
-              <span>by {post?.user?.name || post?.user?.username}</span>
-              <span>• {date}</span>
-              {readingTime && <span>{readingTime}</span>}
-            </>
-          )}
-        </div>
-        {/* Excerpt with fade-out */}
-        <div className="relative mb-6 min-h-[38px]">
-          {loading ? (
-            <div className="w-full h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
-          ) : (
-            <>
-              <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2 pr-8">
-                {excerpt}
-              </p>
-              <div className="absolute right-0 bottom-0 w-16 h-6 bg-gradient-to-l from-white/80 dark:from-gray-900/80 to-transparent pointer-events-none" />
-            </>
-          )}
-        </div>
-        {/* Read more link */}
-        <div>
-          {loading ? (
-            <span className="w-20 h-5 bg-gray-200 dark:bg-gray-700 rounded animate-pulse inline-block" />
-          ) : (
+          {/* Meta info */}
+          <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
+            <span>by {post?.user?.name || post?.user?.username}</span>
+            <span>• {date}</span>
+            {readingTime && <span>{readingTime}</span>}
+          </div>
+          {/* Excerpt with fade-out */}
+          <div className="relative mb-6 min-h-[38px]">
+            <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2 pr-8">
+              {excerpt}
+            </p>
+            <div className="absolute right-0 bottom-0 w-16 h-6 bg-gradient-to-l from-white/80 dark:from-gray-900/80 to-transparent pointer-events-none" />
+          </div>
+          {/* Read more link */}
+          <div>
             <span
               className="text-indigo-600 capitalize dark:text-indigo-400 text-sm font-semibold transition-colors cursor-pointer bg-gradient-to-r from-indigo-400 to-indigo-400 bg-no-repeat transition-[background-size] duration-300"
               style={{
@@ -142,10 +147,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
             >
               Read more →
             </span>
-          )}
+          </div>
         </div>
-      </div>
-    </a>
+      </Link>
+    )
   );
 };
 

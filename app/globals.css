@@ -13,3 +13,16 @@
 body {
   font-family: var(--font-geist-mono);
 }
+
+.prose :is(h2, h3, h4, h5, h6) {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.prose :is(h2, h3, h4, h5, h6, p, hr, ul, ol) {
+  margin-bottom: 1rem;
+}
+
+.prose :is(a) {
+  color: blue;
+}
