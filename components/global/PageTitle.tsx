@@ -16,35 +16,37 @@ interface PageTitleProps {
 }
 
 const PageTitle: React.FC<PageTitleProps> = ({ title, subtitle, breadcrumb, className = "" }) => (
-  <div className={`max-w-7xl mx-auto mt-8 md:mt-12 mb-4 px-0 sm:px-4 text-center ${className}`}>
-    {/* Centered Breadcrumb */}
-    <nav className="mb-2 flex justify-center" aria-label="Breadcrumb">
-      <ol className="flex flex-wrap items-center gap-1 text-xs sm:text-sm text-gray-400 dark:text-gray-500">
-        {breadcrumb.map((item, idx) => (
-          <li key={idx} className="flex items-center">
-            {item.href ? (
-              <Link href={item.href} className="hover:underline text-gray-500 dark:text-gray-400">
-                {item.label}
-              </Link>
-            ) : (
-              <span className="text-gray-700 dark:text-gray-200 font-semibold">{item.label}</span>
-            )}
-            {idx < breadcrumb.length - 1 && (
-              <FaChevronRight className="mx-1 text-xs" />
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
-    {/* Centered Title */}
-    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">
-      {title}
-    </h1>
-    {subtitle && (
-      <div className="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mt-0 mx-auto">
-        {subtitle}
-      </div>
-    )}
+  <div className="bg-indigo-50 dark:bg-gray-900 w-full">
+    <div className={`max-w-7xl mx-auto py-8 md:py-12 px-4 text-center ${className}`}>
+      {/* Centered Breadcrumb */}
+      <nav className="mb-2 flex justify-center" aria-label="Breadcrumb">
+        <ol className="flex flex-wrap items-center gap-1 text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+          {breadcrumb.map((item, idx) => (
+            <li key={idx} className="flex items-center">
+              {item.href ? (
+                <Link href={item.href} className="hover:underline text-gray-500 dark:text-gray-400">
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-gray-700 dark:text-gray-200 font-semibold">{item.label}</span>
+              )}
+              {idx < breadcrumb.length - 1 && (
+                <FaChevronRight className="mx-1 text-xs" />
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+      {/* Centered Title */}
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">
+        {title}
+      </h1>
+      {subtitle && (
+        <div className="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mt-0 mx-auto">
+          {subtitle}
+        </div>
+      )}
+    </div>
   </div>
 );
 
