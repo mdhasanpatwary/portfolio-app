@@ -1,6 +1,6 @@
 import About from "@/components/about/About";
 import Education from "@/components/education/Education";
-import { education } from "@/data";
+import { education, about } from "@/data";
 import PageTitle from "@/components/global/PageTitle";
 import { FaUser } from "react-icons/fa";
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
           { label: "About" }
         ]}
       />
-      <About />
+      <About about={about} />
       <Education educationData={education} />
     </>
   );

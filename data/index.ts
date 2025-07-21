@@ -11,6 +11,7 @@ import testimonialsData from './testimonials.json';
 import headerData from './header.json';
 import footerData from './footer.json';
 import cssTipsData from './css-tips.json';
+import aboutData from './about.json';
 
 // Export individual sections for better tree-shaking
 export const education = educationData;
@@ -26,3 +27,4 @@ export const testimonials = testimonialsData;
 export const header = headerData;
 export const footer = footerData;
 export const cssTips = cssTipsData;
+export const about = aboutData;

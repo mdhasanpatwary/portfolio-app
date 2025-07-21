@@ -1,0 +1,26 @@
+{
+  "name": "MD Hasan Patwary",
+  "title": "About Me",
+  "subtitle": "Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer",
+  "highlights": [
+    "Leader in Scalable Web Apps",
+    "Docker & AWS",
+    "6+ Years Exp.",
+    "Delivered for 30K+ Global Clients",
+    "Open to Remote/Relocation"
+  ],
+  "description": [
+    "I specialize in building robust, scalable, and beautiful web applications using React, Next.js, and TypeScript. My focus is on clean code, performance, and delightful user experiences. Experienced with Docker, AWS, and modern development workflows.",
+    "I thrive in collaborative teams, mentor juniors, and stay ahead of UI/UX trends. Let’s build something amazing together."
+  ],
+  "traits": [
+    "🎯 Problem Solver",
+    "💡 Fast Learner",
+    "🧩 Team Player",
+    "🌍 Global Impact"
+  ],
+  "image": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TrumpPortrait.jpg/1200px-TrumpPortrait.jpg",
+    "alt": "MD Hasan Patwary"
+  }
+}
