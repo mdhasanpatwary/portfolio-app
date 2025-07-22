@@ -13,6 +13,7 @@
     "@headlessui/react": "^2.2.4",
     "marked": "^16.0.0",
     "next": "15.3.2",
+    "next-sitemap": "^4.2.3",
     "next-theme": "^0.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

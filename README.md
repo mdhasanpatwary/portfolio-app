@@ -2,7 +2,7 @@
 
 This is my personal portfolio website built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**. It showcases my professional experience, skills, hobbies, and projects in a clean, modern, and responsive layout.
 
-🔗 **Live Website**: [https://patwary.vercel.app](https://patwary.vercel.app)  
+🔗 **Live Website**: [https://patwary.vercel.app](https://patwary.vercel.app)
 📁 **GitHub Repo**: [github.com/mdhasanpatwary/portfolio-app](https://github.com/mdhasanpatwary/portfolio-app)
 
 ---
@@ -93,8 +93,8 @@ MIT License
 
 Copyright (c) 2025 MD Hasan Patwary
 
-Permission is hereby granted, free of charge, to any person obtaining a copy  
-of this software and associated documentation files (the "Software"), to deal  
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction...
 ```
 
@@ -102,7 +102,7 @@ in the Software without restriction...
 
 ## 🙋‍♂️ Author
 
-**MD Hasan Patwary**  
-Frontend Developer | React & Next.js Specialist  
-📧 [patwary.dev@gmail.com](mailto:patwary.dev@gmail.com)  
+**MD Hasan Patwary**
+Frontend Developer | React & Next.js Specialist
+📧 [patwary.dev@gmail.com](mailto:patwary.dev@gmail.com)
 🌐 [Portfolio](https://patwary.vercel.app) • [LinkedIn](https://linkedin.com/in/mdhasanpatwary) • [GitHub](https://github.com/mdhasanpatwary)
