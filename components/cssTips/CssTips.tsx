@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import CssTipCard from "./CssTipCard";
-import PageTitle from "../global/PageTitle";
-import { FaCss3Alt } from "react-icons/fa";
 import Modal from "../global/Modal";
 import { CodeBlock } from "../global";
 import Pagination from "../global/Pagination";
@@ -79,51 +77,40 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
   };
 
   return (
-    <>
-      <PageTitle
-        title="CSS Tips & Tricks"
-        subtitle="Discover modern, practical CSS tips to improve your workflow and UI."
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "CSS Tips" }
-        ]}
-        icon={<FaCss3Alt className="text-blue-600 dark:text-blue-400 text-3xl" />}
-      />
-      <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 mt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {paginatedTips.map((tip) => (
-            <CssTipCard key={tip.id} tip={tip} onClick={() => handleCardClick(tip)} />
-          ))}
-        </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
-        <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedTip?.title}>
-          {selectedTip && (
-            <div className="prose dark:prose-invert max-w-none max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800">
-              {parseDescription(selectedTip.description).map((part, idx) =>
-                part.type === "code" ? (
-                  <div key={idx} className="my-6">
-                    <CodeBlock code={part.content} language={part.language} className="rounded-lg" />
-                  </div>
-                ) : (
-                  <span key={idx} dangerouslySetInnerHTML={{ __html: highlightCssProperties(part.content).map((el) => {
-                    if (typeof el === 'string') return el;
-                    if (React.isValidElement(el)) {
-                      const element = el as React.ReactElement<{ children: string }>;
-                      if (typeof element.props.children === 'string') return element.props.children;
-                    }
-                    return '';
-                  }).join('') }} />
-                )
-              )}
-            </div>
-          )}
-        </Modal>
+    <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {paginatedTips.map((tip) => (
+          <CssTipCard key={tip.id} tip={tip} onClick={() => handleCardClick(tip)} />
+        ))}
       </div>
-    </>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedTip?.title}>
+        {selectedTip && (
+          <div className="prose dark:prose-invert max-w-none max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800">
+            {parseDescription(selectedTip.description).map((part, idx) =>
+              part.type === "code" ? (
+                <div key={idx} className="my-6">
+                  <CodeBlock code={part.content} language={part.language} className="rounded-lg" />
+                </div>
+              ) : (
+                <span key={idx} dangerouslySetInnerHTML={{ __html: highlightCssProperties(part.content).map((el) => {
+                  if (typeof el === 'string') return el;
+                  if (React.isValidElement(el)) {
+                    const element = el as React.ReactElement<{ children: string }>;
+                    if (typeof element.props.children === 'string') return element.props.children;
+                  }
+                  return '';
+                }).join('') }} />
+              )
+            )}
+          </div>
+        )}
+      </Modal>
+    </div>
   );
 };
 
