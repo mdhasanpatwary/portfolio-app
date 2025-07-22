@@ -16,7 +16,14 @@ body {
 
 .prose :is(h2, h3, h4, h5, h6) {
   font-weight: bold;
-  font-size: 1.5em;
+}
+
+.prose :is(h2) {
+  font-size: 1.4em;
+}
+
+.prose :is(h3, h4, h5, h6) {
+  font-size: 1.2em;
 }
 
 .prose :is(h2, h3, h4, h5, h6, p, hr, ul, ol) {
