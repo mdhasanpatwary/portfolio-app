@@ -1,11 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import {
   FaMapMarkerAlt,
   FaCalendarAlt,
   FaExternalLinkAlt,
-  FaChevronDown,
   FaHtml5,
   FaCss3Alt,
   FaDocker,
@@ -31,6 +28,7 @@ import {
   SiAdobexd,
   SiAdobephotoshop,
 } from "react-icons/si";
+import ExperienceAchievements from "./ExperienceAchievements";
 
 const iconMap = {
   FaHtml5,
@@ -95,8 +93,6 @@ type ExperienceItem = {
 const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
   experience,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   const AchievementItem = ({ point }: { point: string }) => (
     <li className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex">
       <span className="text-xs leading-relaxed">{point}</span>
@@ -169,32 +165,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
       {/* Achievements */}
       <div className="p-3 sm:p-4 bg-white dark:bg-gray-800">
         {/* Mobile - Expandable */}
-        <div className="sm:hidden">
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between text-left text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-            <span>Key Achievements</span>
-            <FaChevronDown
-              className={`transform transition-transform duration-200 ${
-                isExpanded ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-          <div
-            className={`grid gap-2 mt-2 transition-all duration-200 ${
-              isExpanded
-                ? "grid-rows-[1fr] opacity-100"
-                : "grid-rows-[0fr] opacity-0"
-            }`}>
-            <div className="overflow-hidden">
-              <ul className="grid grid-cols-1 gap-2">
-                {experience.highlights.map((point, idx) => (
-                  <AchievementItem key={idx} point={point} />
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+        <ExperienceAchievements highlights={experience.highlights} />
 
         {/* Desktop - Always Visible */}
         <div className="hidden sm:block">
