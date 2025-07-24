@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { FunFacts } from "@/types/data";
 import SectionTitle from "@/components/global/SectionTitle";
