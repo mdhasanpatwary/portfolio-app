@@ -24,32 +24,41 @@ const About: React.FC<AboutProps> = ({ about }) => {
   return (
     <section
       id="about"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="w-full py-20 md:py-32 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
         {/* Image */}
-        <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl md:col-span-5">
-          <Image
-            src={about.image.src}
-            alt={about.image.alt}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-            style={{ objectFit: 'cover' }}
-            className="rounded-2xl grayscale hover:grayscale-0 transition duration-500"
-          />
+        <div className="flex justify-center md:justify-end md:col-span-5">
+          <div className="relative w-[260px] h-[480px] md:w-[320px] md:h-[600px] overflow-hidden border border-gray-200 dark:border-gray-700 bg-white/40 dark:bg-gray-900/40">
+            <Image
+              src={about.image.src}
+              alt={about.image.alt}
+              fill
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 320px, 320px"
+              style={{ objectFit: 'cover', objectPosition: 'top center' }}
+              className="select-none"
+              priority
+            />
+          </div>
         </div>
+        {/* Divider for desktop */}
+        <div className="hidden md:block md:col-span-1 h-[480px] md:h-[600px] border-l border-gray-200 dark:border-gray-700 mx-2" aria-hidden="true"></div>
         {/* Text */}
-        <div className="md:col-span-7">
-          <h2 className="text-4xl font-extrabold mb-4">{about.title}</h2>
-          <h3 className="text-xl md:text-2xl font-bold text-indigo-700 dark:text-indigo-400 mb-3">
+        <div className="md:col-span-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight">
+            {about.title}
+          </h2>
+          <h3 className="text-lg md:text-2xl font-semibold text-indigo-700 dark:text-indigo-400 mb-3">
             {about.subtitle}
           </h3>
-          <div className="text-md md:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <div className="text-base md:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
             {about.highlights.slice(0, 3).join(' • ')}
           </div>
-          <div className="text-md md:text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">
-            {about.highlights.slice(3).join(' • ')}
-          </div>
+          {about.highlights.length > 3 && (
+            <div className="text-base md:text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">
+              {about.highlights.slice(3).join(' • ')}
+            </div>
+          )}
           {about.description.map((desc, idx) => (
             <p
               key={idx}
@@ -58,9 +67,9 @@ const About: React.FC<AboutProps> = ({ about }) => {
               {desc}
             </p>
           ))}
-          <ul className="grid grid-cols-2 gap-4 text-sm text-gray-700 dark:text-gray-300">
+          <ul className="grid grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300 mt-4">
             {about.traits.map((trait, idx) => (
-              <li key={idx}>{trait}</li>
+              <li key={idx} className="before:content-['–'] before:mr-2">{trait}</li>
             ))}
           </ul>
         </div>
