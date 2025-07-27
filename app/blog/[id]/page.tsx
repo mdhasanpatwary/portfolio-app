@@ -66,11 +66,27 @@ function MarkdownRenderer({ content }: { content: string }) {
   );
 }
 
-export default async function BlogDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+// Enable Incremental Static Generation with 1 day revalidation
+export const revalidate = 86400; // 24 hours in seconds
+
+// Pre-generate some popular blog posts at build time
+export async function generateStaticParams() {
+  try {
+    // Fetch recent articles to pre-generate
+    const res = await fetch('https://dev.to/api/articles?username=mdhassanpatwary&per_page=10');
+    if (!res.ok) return [];
+
+    const articles = await res.json();
+    return articles.map((article: DevToPost) => ({
+      id: article.id.toString(),
+    }));
+  } catch (error) {
+    console.warn('Failed to generate static params for blog posts:', error);
+    return [];
+  }
+}
+
+export default async function BlogDetailPage({ params, }: { params: Promise<{ id: string }>; }) {
   const { id } = await params;
   const post = await getPostById(id);
   if (!post) return notFound();
