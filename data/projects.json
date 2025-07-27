@@ -46,7 +46,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6valley.app/"
     },
     {
       "id": "2",
@@ -87,7 +87,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6ammart.app/"
     },
     {
       "id": "3",
@@ -128,7 +128,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://stackfood.app/"
     },
     {
       "id": "4",
@@ -169,7 +169,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://efood.pro/"
     },
     {
       "id": "5",
@@ -210,7 +210,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6amtech.com/grofresh/"
     },
     {
       "id": "6",
@@ -251,7 +251,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://demandium.app/"
     },
     {
       "id": "7",
@@ -285,7 +285,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6ammart-react.6amtech.com/"
     },
     {
       "id": "8",
@@ -328,7 +328,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6amtech.com/hexacom/"
     },
     {
       "id": "9",
@@ -371,7 +371,7 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6amtech.com/6cash/"
     },
     {
       "id": "10",
@@ -405,10 +405,53 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://stackfood-react.6amtech.com/"
     },
     {
       "id": "11",
+      "title": "6valley Aster",
+      "description": "Modern multi-vendor eCommerce demo showcasing 6valley platform capabilities.",
+      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635457347/6valley%20Cover%206amTech.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=9ab205c47b54412a9013717f033536fa23ab7fd433b01ccb718b5415e35c3b37",
+      "link": "https://codecanyon.net/item/6valley-multivendor-ecommerce-complete-ecommerce-mobile-app-web-and-admin-panel/31448597?s_rank=1",
+      "category": "Laravel CMS",
+      "technologies": [
+        "Laravel (PHP)",
+        "Flutter (Dart)",
+        "MySQL",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "status": "live",
+      "longDescription": "6valley Aster is a comprehensive demo showcasing the full capabilities of the 6valley multi-vendor eCommerce platform. It demonstrates advanced marketplace functionality, product management, vendor features, and modern eCommerce solutions for various business types including electronics, fashion, home & living, and more.",
+      "features": [
+        "Complete multi-vendor eCommerce demo",
+        "Advanced product catalog and search",
+        "Vendor management and storefronts",
+        "Real-time inventory and pricing",
+        "Multiple payment gateways",
+        "Responsive and modern UI design",
+        "Comprehensive admin dashboard",
+        "Mobile-optimized experience",
+        "Multi-language and currency support",
+        "Regular updates and maintenance"
+      ],
+      "challenges": [
+        "Complex multi-vendor architecture demonstration",
+        "Real-time inventory and pricing synchronization",
+        "Scalable product catalog management"
+      ],
+      "solutions": [
+        "Implemented robust multi-vendor system",
+        "Used WebSocket for real-time updates",
+        "Optimized database for large product catalogs"
+      ],
+      "github": "",
+      "marketplace": "Codecanyon",
+      "demo": "https://6valley-aster.6amtech.com/"
+    },
+    {
+      "id": "13",
       "title": "6valley LifeStyle Theme Addon",
       "description": "Modern lifestyle theme addon for 6valley multi-vendor eCommerce system.",
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635456978/6valley%20LifeStyle%20Theme.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=8a379d5fb3dffe574fa9809619ca86e48899dcbbd4f28ece95eaf2725c000653",
@@ -445,10 +488,10 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6valley-lifestyle.6amtech.com/"
     },
     {
-      "id": "12",
+      "id": "14",
       "title": "6POS - The Ultimate POS Solution",
       "description": "Comprehensive POS solution with Laravel admin panel and modern features.",
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633493880/6POS.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=a5f8c1edd0092ad3af0946bbab16d9861b89bcd6c24b952c9b5d3f5b5e73c2c0",
@@ -480,10 +523,10 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://6amtech.com/6pos/"
     },
     {
-      "id": "13",
+      "id": "15",
       "title": "TLCOMMERCE SaaS",
       "description": "Laravel & Vue.js powered multivendor eCommerce SaaS CMS.",
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/637589930/inline-preview-image.jpg?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1c1175b48869e64d077727fc5a1685b5e57e87a008271adb259c89d8b939d21c",
@@ -523,10 +566,10 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://themelooks.com/tlcommerce-saas/"
     },
     {
-      "id": "14",
+      "id": "16",
       "title": "FoodBook - Online Food Ordering System for WordPress",
       "description": "Online food ordering and delivery system plugin for WordPress.",
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/637590525/inline-preview-image.jpg?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=7e7ae683ebe100940f1c46077516a8f4b7eecd0296fc72adbdd8a344fc67370b",
@@ -565,10 +608,10 @@
       ],
       "github": "",
       "marketplace": "Codecanyon",
-      "demo": ""
+      "demo": "https://foodbook.info/"
     },
     {
-      "id": "15",
+      "id": "17",
       "title": "Anefty - NFT Marketplace HTML5 Template",
       "description": "Modern HTML5 template for NFT marketplace websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481329998/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=dbb3ba1c92af3c73aab65bc9972b7a7d30584046e49202f2634de7d6e095cc3c",
@@ -600,10 +643,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.biz/demo/anefty/html/"
     },
     {
-      "id": "16",
+      "id": "18",
       "title": "Repserv - Multipurpose Servicing and Repairing HTML5 Template",
       "description": "Modern HTML5 template for servicing and repair business websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481329462/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=e40e8ed7cdda3721a2ad21292b826227ce10447b24c2fd8f75c2b32da36e4ac6",
@@ -635,10 +678,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://www.themelooks.biz/demo/repserv/html/"
     },
     {
-      "id": "17",
+      "id": "19",
       "title": "dVPN - Multipurpose VPN React JS Template",
       "description": "Modern React JS template for VPN and proxy service websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479718432/01_dvpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=358b4f165b4211601595e219c33860a6e4a98c3de705991dc81e142c4f101c39",
@@ -669,10 +712,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://react-dvpn.netlify.app/"
     },
     {
-      "id": "18",
+      "id": "20",
       "title": "Hostpack - Responsive Hosting HTML Template",
       "description": "Modern HTML template for web hosting and domain service websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479718868/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b7b3f81b32c07a41d83b3ec17473d8dc46be91e578b2a9621eb8b04c14ebf10",
@@ -703,10 +746,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://www.themelooks.biz/demo/hostpack/html/"
     },
     {
-      "id": "19",
+      "id": "21",
       "title": "Beautain - Multipurpose Beauty Salon and Spa HTML5 Template",
       "description": "Modern HTML5 template for beauty salon, spa, and wellness business websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481330818/01_beautain.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=2fb1c56e9bfa9e34ac42e4e726f3065cecda586c07d19a025a46634079ab71f5",
@@ -738,10 +781,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://www.themelooks.biz/demo/beautain/html/"
     },
     {
-      "id": "20",
+      "id": "22",
       "title": "Unihost - Multipurpose Hosting WordPress Theme",
       "description": "Modern WordPress theme for web hosting, domain, and SaaS business websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/637989114/theme-preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=af8de6dbe28bda8b8a757390947ad1ccf8779b5095fde655a2f8ed6b437a175d",
@@ -772,10 +815,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/unihost/wordpress/"
     },
     {
-      "id": "21",
+      "id": "23",
       "title": "Socibook - Multipurpose Social Network HTML5 Template",
       "description": "Modern HTML5 template for social network and community websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481333936/theme-preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=0d70ac6bccaf90e019968e2faca095e2af64fdd9b030f96f2ffe004e9cb4c9e5",
@@ -806,10 +849,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.biz/demo/socibook/html/"
     },
     {
-      "id": "22",
+      "id": "24",
       "title": "ProVPN - Multipurpose VPN HTML Template with WHMCS",
       "description": "Modern HTML template for VPN, proxy, and hosting service websites with WHMCS integration.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479747370/theme_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=0d78dea64b62850ba4265d33421a5416a12259576e0550a29b2cf75464e9fd72",
@@ -848,10 +891,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/provpn/html/"
     },
     {
-      "id": "23",
+      "id": "25",
       "title": "GoVPN - Responsive VPN Website Template",
       "description": "Modern HTML template for VPN, proxy, and cybersecurity service websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479751936/01_govpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=4d93b963f25dc6c345934a0a483e571ad6344d3cc9cc797562008b8421c0c3b0",
@@ -881,10 +924,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/govpn/html/"
     },
     {
-      "id": "24",
+      "id": "26",
       "title": "Unihost - Responsive Web Hosting and WHMCS Template",
       "description": "Modern HTML template for web hosting, domain, and SaaS business websites with WHMCS integration.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479752343/01_unihost.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=ce23f04c1a290434a3321d82e811f0411fa063146b59dfe6047102cc7bdec3f9",
@@ -922,10 +965,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/unihost/html/"
     },
     {
-      "id": "25",
+      "id": "27",
       "title": "dVPN - Multipurpose VPN and Cloud Service HTML Template",
       "description": "Modern HTML template for VPN, cloud, and proxy service websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479753022/01_dvpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=a85416a6789a750ff33c1bbb0512e65ae3c0254e34ac3f3e0fdba826546b95cd",
@@ -954,10 +997,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/dvpn/html/"
     },
     {
-      "id": "26",
+      "id": "28",
       "title": "Hosttop - Responsive Hosting with WHMCS Template",
       "description": "Modern HTML template for web hosting, domain, and WHMCS service websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479753379/01_hosttop.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=8f5f329e46ed8750370534475af0743faf7a9c614b1e49fdfafd17004434a9ef",
@@ -993,10 +1036,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/hosttop/html/"
     },
     {
-      "id": "28",
+      "id": "30",
       "title": "Karton - Multipurpose WooCommerce Theme",
       "description": "Modern WooCommerce theme for multipurpose eCommerce websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/503605226/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=ce38a2b2d01e347744c7036088cfbb86837d781d892d8568023c92093538c615",
@@ -1033,10 +1076,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://www.themelooks.com/demo/karton/"
     },
     {
-      "id": "29",
+      "id": "31",
       "title": "Woolea - Minimal WooCommerce Theme",
       "description": "Minimal WooCommerce theme for modern eCommerce websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/506347394/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=ad383c18ff73ad0b31d151b5c07b689f0e51113473e346357adf5210fc292f1f",
@@ -1073,10 +1116,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://www.themelooks.org/demo/woolea/"
     },
     {
-      "id": "30",
+      "id": "32",
       "title": "Dashmin - Responsive Admin Dashboard Template",
       "description": "Modern HTML template for admin dashboards and web applications.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481328291/Theme-Preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=2883a22af651d0de8658a770a915b05655bdb2db926f6dc28c7fe00eaf14c00f",
@@ -1105,10 +1148,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/dashmin/"
     },
     {
-      "id": "31",
+      "id": "33",
       "title": "Docland - Multipurpose SaaS & Tech Startup Landing Page Templates",
       "description": "Modern HTML templates for SaaS, tech startups, and landing pages.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/480480973/01_docland.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=8aaa3cbef404c604bd633cc06929f938b2a446fb0e8a87a1e219416fad0a6f91",
@@ -1137,10 +1180,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.com/demo/docland/html/"
     },
     {
-      "id": "32",
+      "id": "34",
       "title": "dVPN - Multipurpose VPN WordPress Theme",
       "description": "Modern WordPress theme for VPN, proxy, and cybersecurity service websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/504748322/theme_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=46504e298b2cef91bc77a4aa3b2f245e5a60433b6100fa32bde9dd4c8b8181c8",
@@ -1176,10 +1219,10 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "https://themelooks.net/demo/dvpn/"
     },
     {
-      "id": "33",
+      "id": "35",
       "title": "Dentzone - Dentist Medical HTML5 Template",
       "description": "Modern HTML5 template for dental clinics, medical, and healthcare websites.",
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/271172301/01_dentzone.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=18dc7d2348580659c378872d2ad4a7d327eb02b708999b7d1bbda8e02afe3fd5",
@@ -1208,7 +1251,7 @@
       ],
       "github": "",
       "marketplace": "Themeforest",
-      "demo": ""
+      "demo": "http://themelooks.org/demo/dentzone/html/"
     }
   ]
 }
