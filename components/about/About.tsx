@@ -35,7 +35,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
               alt={about.image.alt}
               fill
               sizes="(max-width: 768px) 80vw, (max-width: 1200px) 320px, 320px"
-              style={{ objectFit: 'cover', objectPosition: 'top center' }}
+              style={{ objectFit: 'cover', objectPosition: 'top center', transform: 'scaleX(-1)' }}
               className="select-none"
               priority
             />

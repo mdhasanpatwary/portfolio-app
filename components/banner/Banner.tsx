@@ -35,7 +35,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
         </div>
         {/* Profile Image */}
         <div
-          className="relative w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full overflow-hidden border-4 border-indigo-100 dark:border-gray-700 shadow-lg"
+          className="relative w-80 h-80 md:w-[30rem] md:h-[30rem] rounded-full overflow-hidden border-4 border-indigo-100 dark:border-gray-700 shadow-lg"
           aria-label={`Profile image of ${name}`}>
           <Image
             src={image}
@@ -43,7 +43,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             fill
             priority={true}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "top" }}
           />
         </div>
       </div>

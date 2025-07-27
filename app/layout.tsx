@@ -89,6 +89,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <meta name="google-site-verification" content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4" />
       </head>
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
