@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Skeleton from "../global/Skeleton";
 
 export interface DevToPost {
   id: number;
@@ -48,28 +49,28 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
       >
         {/* Image at top with overlay */}
         <div className="relative w-full aspect-[5/2.3] overflow-hidden">
-          <div className="w-full h-full bg-gray-200 dark:bg-gray-700 animate-pulse rounded-t-xl" />
+          <Skeleton className="w-full h-full rounded-t-xl" height="h-full" />
         </div>
         {/* Card Content */}
         <div className="flex-1 flex flex-col px-4 md:px-7 py-4 md:py-6">
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-3 min-h-[28px]">
-            <span className="w-14 h-6 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-            <span className="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+            <Skeleton className="w-14 rounded-full" height="h-6" />
+            <Skeleton className="w-10 rounded-full" height="h-6" />
           </div>
           {/* Title */}
-          <div className="w-3/4 h-7 bg-gray-200 dark:bg-gray-700 rounded mb-2 animate-pulse" />
+          <Skeleton className="w-3/4 mb-2" height="h-7" />
           {/* Meta info */}
           <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
-            <span className="w-24 h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+            <Skeleton className="w-24" height="h-4" />
           </div>
           {/* Excerpt with fade-out */}
           <div className="relative mb-6 min-h-[38px]">
-            <div className="w-full h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+            <Skeleton className="w-full" height="h-4" />
           </div>
           {/* Read more link */}
           <div>
-            <span className="w-20 h-5 bg-gray-200 dark:bg-gray-700 rounded animate-pulse inline-block" />
+            <Skeleton className="w-20" height="h-5" />
           </div>
         </div>
       </div>
