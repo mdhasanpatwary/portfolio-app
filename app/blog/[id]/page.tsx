@@ -132,7 +132,7 @@ export default async function BlogDetailPage({ params, }: { params: Promise<{ id
                 />
               </div>
             )}
-            <div className="px-6 md:px-8 pb-8">
+            <div className="sm:px-6 md:px-8 pb-8">
               <div className="flex items-center gap-4 mb-6 mt-2">
                 {post.user.profile_image && (
                   <a

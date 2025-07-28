@@ -21,7 +21,7 @@ export default function ProjectsList() {
   const paginatedProjects = projects.items.slice(startIdx, endIdx);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 mt-10">
+    <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {paginatedProjects.map((project) => (
           <ProjectCard key={project.id} project={project} openModal={openModal} />

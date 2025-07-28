@@ -23,7 +23,7 @@ export default function BlogList() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 mt-10">
+    <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
       {!loading && !posts.length ? (
         <div className="bg-white dark:bg-gray-900 w-full py-24 px-6 text-center rounded-lg shadow">
           <div className="flex flex-col items-center justify-center gap-4">

@@ -31,5 +31,5 @@ body {
 }
 
 .prose :is(a) {
-  color: blue;
+  color: #4f39f6;
 }
