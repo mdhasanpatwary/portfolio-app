@@ -12,6 +12,7 @@ interface PageTitleProps {
   subtitle?: string;
   breadcrumb: BreadcrumbItem[];
   className?: string;
+  titleClassName?: string;
   icon?: React.ReactNode;
 }
 
@@ -20,6 +21,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
   subtitle,
   breadcrumb,
   className = "",
+  titleClassName = "",
 }) => (
   <div className="bg-indigo-50 dark:bg-gray-800 w-full">
     <div
@@ -48,7 +50,10 @@ const PageTitle: React.FC<PageTitleProps> = ({
         </ol>
       </nav>
       {/* Centered Title */}
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">
+      <h1
+        className={`${
+          titleClassName || "text-3xl md:text-4xl"
+        } font-bold text-gray-900 dark:text-white mb-1`}>
         {title}
       </h1>
       {subtitle && (
