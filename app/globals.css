@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-
-
 /*@media (prefers-color-scheme: dark) {*/
 /*  :root {*/
 /*    --background: #0a0a0a;*/
@@ -32,4 +30,35 @@ body {
 
 .prose :is(a) {
   color: #4f39f6;
+}
+
+/* Basic syntax highlighting for code blocks */
+pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+code {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+/* Inline code styling */
+.prose code:not(pre code) {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.dark .prose code:not(pre code) {
+  background-color: #374151;
+  color: #f9fafb;
 }
