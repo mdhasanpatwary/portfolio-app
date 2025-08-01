@@ -18,7 +18,7 @@ interface ContactInfoCardProps {
 }
 
 const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
-  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-8 h-full flex flex-col shadow-sm border border-gray-200 dark:border-gray-700">
+  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 sm:p-8 h-full flex flex-col shadow-sm border border-gray-200 dark:border-gray-700">
     {/* Main content */}
     <div className="flex-1">
       {/* Introduction */}
@@ -42,8 +42,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
             <FaEnvelope className="text-blue-600 dark:text-blue-400 text-lg" />
             <a
               href={`mailto:${contact.email}`}
-              className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-            >
+              className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
               {contact.email}
             </a>
           </div>
@@ -53,8 +52,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
             <div className="flex items-center gap-3">
               <a
                 href={`tel:${contact.phone}`}
-                className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
+                className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 {contact.phone}
               </a>
               <a
@@ -62,8 +60,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 transition-colors"
-                title="WhatsApp"
-              >
+                title="WhatsApp">
                 <FaWhatsapp className="text-lg" />
               </a>
             </div>

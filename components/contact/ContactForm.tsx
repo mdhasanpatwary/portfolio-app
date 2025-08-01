@@ -61,8 +61,10 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
     const message = formData.get("message") as string;
     if (!name) newErrors.user_name = contact.validation.nameRequired;
     if (!email) newErrors.user_email = contact.validation.emailRequired;
-    else if (!EMAIL_REGEX.test(email)) newErrors.user_email = contact.validation.emailInvalid;
-    if (!message || message.trim().length < 10) newErrors.message = contact.validation.messageRequired;
+    else if (!EMAIL_REGEX.test(email))
+      newErrors.user_email = contact.validation.emailInvalid;
+    if (!message || message.trim().length < 10)
+      newErrors.message = contact.validation.messageRequired;
     return newErrors;
   };
 
@@ -72,14 +74,18 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
       if (!value) error = contact.validation.nameRequired;
     } else if (field === "user_email") {
       if (!value) error = contact.validation.emailRequired;
-      else if (!EMAIL_REGEX.test(value)) error = contact.validation.emailInvalid;
+      else if (!EMAIL_REGEX.test(value))
+        error = contact.validation.emailInvalid;
     } else if (field === "message") {
-      if (!value || value.trim().length < 10) error = contact.validation.messageRequired;
+      if (!value || value.trim().length < 10)
+        error = contact.validation.messageRequired;
     }
     setErrors((prev) => ({ ...prev, [field]: error }));
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
     validateField(name, value);
@@ -107,7 +113,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
       .catch((error) => {
         toast.error(contact.messages.error);
         // Log error for debugging but don't expose sensitive info
-        if (process.env.NODE_ENV === 'development') {
+        if (process.env.NODE_ENV === "development") {
           console.error("EmailJS Error:", error);
         }
       })
@@ -125,9 +131,8 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
       ref={form}
       onSubmit={handleSubmit}
       onReset={handleReset}
-      className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700"
-      noValidate
-    >
+      className="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700"
+      noValidate>
       <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
         {contact.title}
       </h3>
@@ -135,8 +140,13 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="user_name" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-              {contact.formLabels.name} <span className="text-red-600 dark:text-red-400">{contact.formLabels.required}</span>
+            <label
+              htmlFor="user_name"
+              className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+              {contact.formLabels.name}{" "}
+              <span className="text-red-600 dark:text-red-400">
+                {contact.formLabels.required}
+              </span>
             </label>
             <input
               id="user_name"
@@ -146,20 +156,29 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
               required
               aria-required="true"
               aria-invalid={!!errors.user_name}
-              aria-describedby={errors.user_name ? "user_name-error" : undefined}
+              aria-describedby={
+                errors.user_name ? "user_name-error" : undefined
+              }
               className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
               onBlur={handleBlur}
             />
             {touched.user_name && errors.user_name && (
-              <p id="user_name-error" className="text-sm text-red-700 dark:text-red-300 mt-1">
+              <p
+                id="user_name-error"
+                className="text-sm text-red-700 dark:text-red-300 mt-1">
                 {errors.user_name}
               </p>
             )}
           </div>
 
           <div>
-            <label htmlFor="user_email" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-              {contact.formLabels.email} <span className="text-red-600 dark:text-red-400">{contact.formLabels.required}</span>
+            <label
+              htmlFor="user_email"
+              className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+              {contact.formLabels.email}{" "}
+              <span className="text-red-600 dark:text-red-400">
+                {contact.formLabels.required}
+              </span>
             </label>
             <input
               id="user_email"
@@ -169,12 +188,16 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
               required
               aria-required="true"
               aria-invalid={!!errors.user_email}
-              aria-describedby={errors.user_email ? "user_email-error" : undefined}
+              aria-describedby={
+                errors.user_email ? "user_email-error" : undefined
+              }
               className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
               onBlur={handleBlur}
             />
             {touched.user_email && errors.user_email && (
-              <p id="user_email-error" className="text-sm text-red-700 dark:text-red-300 mt-1">
+              <p
+                id="user_email-error"
+                className="text-sm text-red-700 dark:text-red-300 mt-1">
                 {errors.user_email}
               </p>
             )}
@@ -182,7 +205,9 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+          <label
+            htmlFor="subject"
+            className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
             {contact.formLabels.subject}
           </label>
           <input
@@ -195,8 +220,13 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
-            {contact.formLabels.message} <span className="text-red-600 dark:text-red-400">{contact.formLabels.required}</span>
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+            {contact.formLabels.message}{" "}
+            <span className="text-red-600 dark:text-red-400">
+              {contact.formLabels.required}
+            </span>
           </label>
           <textarea
             id="message"
@@ -211,7 +241,9 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
             onBlur={handleBlur}
           />
           {touched.message && errors.message && (
-            <p id="message-error" className="text-sm text-red-700 dark:text-red-300 mt-1">
+            <p
+              id="message-error"
+              className="text-sm text-red-700 dark:text-red-300 mt-1">
               {errors.message}
             </p>
           )}
@@ -221,8 +253,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
           <button
             type="reset"
             className="px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-            disabled={loading}
-          >
+            disabled={loading}>
             <FiRotateCcw className="text-sm" />
             {contact.formLabels.reset}
           </button>
@@ -231,8 +262,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
             type="submit"
             className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
             disabled={loading}
-            aria-busy={loading}
-          >
+            aria-busy={loading}>
             {loading ? (
               <span>{contact.formLabels.sending}</span>
             ) : (

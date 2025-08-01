@@ -44,7 +44,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ contact }) => {
   return (
-    <div className="max-w-6xl mx-auto px-0 sm:px-4 my-16 md:my-24">
+    <div className="max-w-6xl mx-auto px-4 my-16 md:my-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-7 lg:order-2">
           <ContactForm contact={contact} />
