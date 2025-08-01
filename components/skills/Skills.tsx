@@ -16,6 +16,8 @@ import {
   FaBootstrap,
   FaFigma,
   FaFolderOpen,
+  FaPlay,
+  FaCogs,
 } from "react-icons/fa";
 import {
   SiJquery,
@@ -25,6 +27,8 @@ import {
   SiAdobephotoshop,
   SiAdobexd,
   SiTypescript,
+  SiFirebase,
+  SiMui,
 } from "react-icons/si";
 import React from "react";
 import SectionTitle from "@/components/global/SectionTitle";
@@ -46,6 +50,8 @@ const iconMap = {
   FaLinux,
   FaBootstrap,
   FaFigma,
+  FaPlay,
+  FaCogs,
   SiJquery,
   SiNextdotjs,
   SiTailwindcss,
@@ -53,6 +59,8 @@ const iconMap = {
   SiAdobephotoshop,
   SiAdobexd,
   SiTypescript,
+  SiFirebase,
+  SiMui,
 };
 
 // Brand colors for each technology icon
@@ -71,6 +79,8 @@ const brandColors: Record<string, string> = {
   FaLinux: "#FCC624",
   FaBootstrap: "#7952B3",
   FaFigma: "#F24E1E",
+  FaPlay: "#4CAF50",
+  FaCogs: "#607D8B",
   SiJquery: "#0769AD",
   SiNextdotjs: "#000000",
   SiTailwindcss: "#06B6D4",
@@ -78,6 +88,8 @@ const brandColors: Record<string, string> = {
   SiAdobephotoshop: "#31A8FF",
   SiAdobexd: "#FF61F6",
   SiTypescript: "#3178C6",
+  SiFirebase: "#FFCA28",
+  SiMui: "#0081CB",
 };
 
 type SkillsProps = {
