@@ -1,7 +1,6 @@
 import PageTitle from "@/components/global/PageTitle";
 import { FaPenNib } from "react-icons/fa";
 import BlogList from "./BlogList";
-import Blog from "@/components/blog/Blog";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
