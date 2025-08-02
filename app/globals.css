@@ -1,12 +1,13 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --background: #0a0a0a;*/
-/*    --foreground: #ededed;*/
-/*  }*/
-/*}*/
+@theme {
+  --color-primary: red;
+}
+
+.dark {
+  --color-primary: green;
+}
 
 body {
   font-family: var(--font-geist-mono);
