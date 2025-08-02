@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Blog",
     "JavaScript",
     "HTML",
-    "CSS"
+    "CSS",
   ],
   openGraph: {
     title: "MD Hasan Patwary | Portfolio",
@@ -72,9 +72,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "MD Hasan Patwary",
-              "url": "https://patwary.vercel.app",
-              "sameAs": [
+              name: "MD Hasan Patwary",
+              url: "https://patwary.vercel.app",
+              sameAs: [
                 "https://github.com/mdhasanpatwary",
                 "https://www.linkedin.com/in/mdhasanpatwary/",
                 "https://stackoverflow.com/users/11076109/patwary",
@@ -83,13 +83,64 @@ export default function RootLayout({
                 "https://app.daily.dev/mdhassanpatwary",
                 "https://codepen.io/MD-Hasan-Patwary",
               ],
-              "jobTitle": "Front-End Developer",
-              "image": "/profile.png",
-              "description": "MD Hasan Patwary - Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Open to Remote/Relocation"
+              jobTitle: "Front-End Developer",
+              image: "/profile.png",
+              description:
+                "MD Hasan Patwary - Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Open to Remote/Relocation",
+              knowsAbout: [
+                "React.js",
+                "Next.js",
+                "TypeScript",
+                "JavaScript",
+                "HTML5",
+                "CSS3",
+                "Docker",
+                "AWS",
+                "UI/UX Design",
+                "Web Development",
+                "Front-End Development",
+              ],
+              worksFor: {
+                "@type": "Organization",
+                name: "Freelance/Remote",
+              },
+              hasOccupation: {
+                "@type": "Occupation",
+                name: "Front-End Developer",
+                description:
+                  "Specializing in React, Next.js, and modern web technologies",
+              },
             }),
           }}
         />
-        <meta name="google-site-verification" content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4" />
+        <meta
+          name="google-site-verification"
+          content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4"
+        />
+        <link rel="canonical" href="https://patwary.vercel.app" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "MD Hasan Patwary Portfolio",
+              url: "https://patwary.vercel.app",
+              description:
+                "Front-End Developer Portfolio showcasing React, Next.js, TypeScript projects and web development expertise",
+              author: {
+                "@type": "Person",
+                name: "MD Hasan Patwary",
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target:
+                  "https://patwary.vercel.app/search?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
