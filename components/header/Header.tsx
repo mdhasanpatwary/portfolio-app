@@ -98,7 +98,7 @@ const Header = ({ navItems }: HeaderProps) => {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300"
+              className="text-gray-700 dark:text-gray-300 cursor-pointer"
               aria-label="Toggle menu">
               {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
             </button>

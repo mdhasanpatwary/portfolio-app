@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Skeleton from "../global/Skeleton";
+import { CustomImage } from "@/components/global";
 
 export interface DevToPost {
   id: number;
@@ -84,13 +84,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
         <div className="relative w-full aspect-[5/2.3] overflow-hidden">
           {post?.cover_image ? (
             <>
-              <Image
+              <CustomImage
                 src={post.cover_image}
                 alt={post.title}
                 width={600}
                 height={400}
                 className="w-full h-full object-cover rounded-t-xl transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                blurType="default"
                 priority
               />
               {/* Soft overlay for contrast */}

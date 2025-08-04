@@ -1,5 +1,6 @@
-import Image from "next/image";
+import React from "react";
 import { FaQuoteLeft } from "react-icons/fa";
+import { CustomImage } from "@/components/global";
 import type { Testimonial } from "@/types/data";
 
 interface TestimonialCardProps {
@@ -25,11 +26,13 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
     <div className="border-t border-gray-100 dark:border-gray-700 my-4" />
     <div className="flex items-center gap-5 mt-2">
       <div className="transition-transform duration-300 group-hover:scale-105">
-        <Image
+        <CustomImage
           src={testimonial.avatar}
           alt={testimonial.name}
           width={64}
           height={64}
+          sizes="64px"
+          blurType="avatar"
           className="w-16 h-16 rounded-full border-4 border-indigo-500 object-cover shadow-lg"
         />
       </div>

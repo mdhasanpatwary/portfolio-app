@@ -71,7 +71,7 @@ A modern, responsive, and feature-rich personal portfolio website built with **N
 ## 📁 Project Structure
 
 ```plaintext
-hz-portfolio/
+portfolio-app/
 ├── app/                          # Next.js App Router
 │   ├── about/                    # About page
 │   ├── blog/                     # Blog pages with dynamic routing
@@ -304,7 +304,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙋‍♂️ Author
 
 **MD Hasan Patwary**  
-Frontend Developer | React & Next.js Specialist
+Frontend Developer | HTML, CSS, JavaScript, jQuery, React, Vue, Next.js, Docker, AWS
 
 📧 [patwary.dev@gmail.com](mailto:patwary.dev@gmail.com)  
 🌐 [Portfolio](https://patwary.vercel.app) • [LinkedIn](https://linkedin.com/in/mdhasanpatwary) • [GitHub](https://github.com/mdhasanpatwary)

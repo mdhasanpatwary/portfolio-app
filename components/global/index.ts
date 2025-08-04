@@ -10,3 +10,4 @@ export { default as Skeleton } from "./Skeleton";
 export { default as CodeBlock } from "./CodeBlock";
 export { default as InstallPrompt } from "./InstallPrompt";
 export { default as ServiceWorkerRegistration } from "./ServiceWorkerRegistration";
+export { default as CustomImage } from "./CustomImage";

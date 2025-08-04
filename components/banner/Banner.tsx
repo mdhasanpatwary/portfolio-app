@@ -1,8 +1,8 @@
-import Image from "next/image";
 import React from "react";
 import { Banner as BannerType } from "@/types/data";
 import SocialLinks from "../global/SocialLinks";
 import BannerButtons from "./BannerButtons";
+import { CustomImage } from "@/components/global";
 
 type BannerProps = {
   readonly banner: BannerType;
@@ -37,12 +37,13 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
         <div
           className="relative w-80 h-80 md:w-[30rem] md:h-[30rem] rounded-full overflow-hidden border-4 border-indigo-100 dark:border-gray-700 shadow-lg"
           aria-label={`Profile image of ${name}`}>
-          <Image
+          <CustomImage
             src={image}
             alt={`Profile picture of ${name}`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             fill
             priority={true}
+            blurType="profile"
             style={{ objectFit: "cover", objectPosition: "top" }}
           />
         </div>

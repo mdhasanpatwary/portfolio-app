@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import PageTitle from "@/components/global/PageTitle";
 import SectionTitle from "@/components/global/SectionTitle";
 import { FaPenNib } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
+import { CustomImage } from "@/components/global";
 
 interface DevToPost {
   id: number;
@@ -124,12 +124,13 @@ export default async function BlogDetailPage({
         <div className="max-w-4xl mx-auto">
           {post.cover_image && (
             <div className="mb-6 mt-0">
-              <Image
+              <CustomImage
                 src={post.cover_image}
                 alt={post.title}
                 width={800}
                 height={400}
                 className="w-full h-auto rounded-t-lg object-cover shadow-md"
+                blurType="default"
                 priority
               />
             </div>
@@ -143,12 +144,13 @@ export default async function BlogDetailPage({
                   rel="noopener noreferrer"
                   className="focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded-full"
                   aria-label={`View ${post.user.name}'s profile on Dev.to`}>
-                  <Image
+                  <CustomImage
                     src={post.user.profile_image}
                     alt={post.user.name}
                     width={40}
                     height={40}
                     className="rounded-full border-2 border-indigo-200 dark:border-indigo-700 shadow-sm"
+                    blurType="avatar"
                   />
                 </a>
               )}

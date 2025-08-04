@@ -1,10 +1,10 @@
 "use client";
 
 import { FC } from "react";
-import Image from "next/image";
 import type { Projects as ProjectsType } from "@/types/data";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Card from "@/components/global/Card";
+import { CustomImage } from "@/components/global";
 
 interface ProjectCardProps {
   project: ProjectsType["items"][number];
@@ -25,11 +25,13 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
             {project.category}
           </span>
         </div>
-        <Image
+        <CustomImage
           src={project.image || "/profile.png"}
           alt={project.title}
           width={600}
           height={400}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          blurType="project"
           className="w-full h-full object-cover transition-transform duration-500"
         />
       </div>

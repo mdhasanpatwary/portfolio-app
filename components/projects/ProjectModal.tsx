@@ -1,10 +1,10 @@
 "use client";
 
 import { FC } from "react";
-import Image from "next/image";
 import type { Projects as ProjectsType } from "@/types/data";
 import { FaExternalLinkAlt, FaPlay, FaTimes } from "react-icons/fa";
 import Modal from "@/components/global/Modal";
+import { CustomImage } from "@/components/global";
 
 interface ProjectModalProps {
   project: ProjectsType["items"][number] | null;
@@ -31,11 +31,13 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
 
       {/* Hero Image */}
       <div className="relative mb-6 rounded-lg overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700">
-        <Image
+        <CustomImage
           src={project.image}
           alt={project.title}
           width={900}
           height={450}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+          blurType="project"
           className="w-full object-contain"
         />
         {/* Category badge matches card */}

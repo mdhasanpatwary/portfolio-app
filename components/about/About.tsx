@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
+import { CustomImage } from '@/components/global';
 
 export interface AboutData {
   name: string;
@@ -30,7 +30,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
         {/* Image */}
         <div className="flex justify-center md:justify-end md:col-span-5">
           <div className="relative w-[260px] h-[480px] md:w-[320px] md:h-[600px] overflow-hidden border border-gray-200 dark:border-gray-700 bg-white/40 dark:bg-gray-900/40">
-            <Image
+            <CustomImage
               src={about.image.src}
               alt={about.image.alt}
               fill
@@ -38,6 +38,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
               style={{ objectFit: 'cover', objectPosition: 'top center', transform: 'scaleX(-1)' }}
               className="select-none"
               priority
+              blurType="profile"
             />
           </div>
         </div>
