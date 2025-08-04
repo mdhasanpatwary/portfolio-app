@@ -8,6 +8,8 @@ import { AppProvider } from "@/context/BlogContext";
 import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
+import InstallPrompt from "@/components/global/InstallPrompt";
+import NotificationTest from "@/components/global/NotificationTest";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -16,9 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://patwary.vercel.app"),
-  title: "MD Hasan Patwary | Portfolio",
+  title: "MD Hasan Patwary | Front-End Developer Portfolio",
   description:
-    "MD Hasan Patwary - Front-End Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS. Explore projects, skills, experience, and more.",
+    "MD Hasan Patwary - Front-End Web Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS. Leader in Scalable Web Apps. Delivered for 30K+ Global Clients. Available for freelance & collaboration.",
   keywords: [
     "MD Hasan Patwary",
     "Portfolio",
@@ -26,24 +28,29 @@ export const metadata: Metadata = {
     "Web Developer",
     "React",
     "Next.js",
-    "Projects",
-    "Blog",
+    "TypeScript",
     "JavaScript",
     "HTML",
     "CSS",
+    "Docker",
+    "AWS",
+    "UI/UX Engineer",
+    "Freelance Developer",
+    "Dhaka",
+    "Bangladesh",
   ],
   openGraph: {
-    title: "MD Hasan Patwary | Portfolio",
+    title: "MD Hasan Patwary | Front-End Developer Portfolio",
     description:
-      "Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Open to Remote/Relocation",
+      "Front-End Web Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Available for freelance & collaboration",
     url: "https://patwary.vercel.app",
     siteName: "MD Hasan Patwary Portfolio",
     images: [
       {
-        url: "/profile.png",
+        url: "/profile.webp",
         width: 800,
         height: 600,
-        alt: "MD Hasan Patwary Profile",
+        alt: "MD Hasan Patwary - Front-End Developer",
       },
     ],
     locale: "en_US",
@@ -51,10 +58,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MD Hasan Patwary | Portfolio",
+    title: "MD Hasan Patwary | Front-End Developer Portfolio",
     description:
-      "Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Open to Remote/Relocation",
-    images: ["/profile.png"],
+      "Front-End Web Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Available for freelance & collaboration",
+    images: ["/profile.webp"],
   },
 };
 
@@ -169,6 +176,8 @@ export default function RootLayout({
               <Header navItems={header.navItems} />
               {children}
               <Footer name={footer.name} description={footer.description} />
+              <InstallPrompt />
+              {process.env.NODE_ENV === "development" && <NotificationTest />}
             </AppProvider>
           </ErrorBoundary>
         </ThemeProvider>
