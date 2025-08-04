@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
 import InstallPrompt from "@/components/global/InstallPrompt";
-import NotificationTest from "@/components/global/NotificationTest";
+import ServiceWorkerRegistration from "@/components/global/ServiceWorkerRegistration";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -177,7 +177,7 @@ export default function RootLayout({
               {children}
               <Footer name={footer.name} description={footer.description} />
               <InstallPrompt />
-              {process.env.NODE_ENV === "development" && <NotificationTest />}
+              <ServiceWorkerRegistration />
             </AppProvider>
           </ErrorBoundary>
         </ThemeProvider>

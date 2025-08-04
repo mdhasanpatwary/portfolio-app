@@ -9,4 +9,4 @@ export { default as LoadingSpinner } from "./LoadingSpinner";
 export { default as Skeleton } from "./Skeleton";
 export { default as CodeBlock } from "./CodeBlock";
 export { default as InstallPrompt } from "./InstallPrompt";
-export { default as NotificationTest } from "./NotificationTest";
+export { default as ServiceWorkerRegistration } from "./ServiceWorkerRegistration";
