@@ -8,7 +8,7 @@ export interface Hero {
 export interface About {
   title: string;
   subtitle: string;
-  description: string;
+  description: string | string[];
   image: string;
 }
 

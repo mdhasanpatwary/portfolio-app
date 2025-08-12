@@ -4,6 +4,7 @@ import { education, about } from "@/data";
 import PageTitle from "@/components/global/PageTitle";
 import { FaUser } from "react-icons/fa";
 import type { Metadata } from "next";
+import { FAQ } from "@/components/global";
 
 export const metadata: Metadata = {
   title: "About MD Hasan Patwary | Front-End Developer Portfolio",
@@ -25,9 +26,13 @@ export const metadata: Metadata = {
       "Learn about MD Hasan Patwary, a 6+ years experienced Front-End Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
     url: "https://patwary.vercel.app/about",
   },
+  alternates: { canonical: "https://patwary.vercel.app/about" },
 };
 
 export default function AboutPage() {
+  const aboutDescription = Array.isArray(about.description)
+    ? about.description.join(" ")
+    : about.description;
   return (
     <>
       <PageTitle
@@ -40,6 +45,42 @@ export default function AboutPage() {
       />
       <About about={about} />
       <Education educationData={education} />
+      <FAQ
+        items={[
+          {
+            question: "Who is MD Hasan Patwary?",
+            answer: aboutDescription,
+          },
+          {
+            question: "What is your background?",
+            answer: education.subtitle,
+          },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Who is MD Hasan Patwary?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: aboutDescription,
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is your background?",
+                acceptedAnswer: { "@type": "Answer", text: education.subtitle },
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

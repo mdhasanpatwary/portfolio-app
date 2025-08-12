@@ -5,6 +5,7 @@ import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
+import { FAQ } from "@/components/global";
 import FunFact from "@/components/funfact/Funfact";
 import Services from "@/components/services/Services";
 import {
@@ -40,6 +41,7 @@ export const metadata: Metadata = {
       "Experienced Front-End Developer with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies.",
     url: "https://patwary.vercel.app",
   },
+  alternates: { canonical: "https://patwary.vercel.app" },
 };
 
 export default function Home() {
@@ -58,6 +60,41 @@ export default function Home() {
       <FunFact funFacts={funFacts} />
       <Hobby hobbiesData={hobbies} />
       <Blog />
+      <FAQ
+        items={[
+          {
+            question: "What services do you offer?",
+            answer:
+              services.subtitle,
+          },
+          {
+            question: "What technologies do you specialize in?",
+            answer:
+              skills.subtitle,
+          },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What services do you offer?",
+                acceptedAnswer: { "@type": "Answer", text: services.subtitle },
+              },
+              {
+                "@type": "Question",
+                name: "What technologies do you specialize in?",
+                acceptedAnswer: { "@type": "Answer", text: skills.subtitle },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

@@ -61,6 +61,21 @@ const PageTitle: React.FC<PageTitleProps> = ({
           {subtitle}
         </div>
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: breadcrumb.map((b, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: b.label,
+              item: b.href ? `https://patwary.vercel.app${b.href}` : undefined,
+            })),
+          }),
+        }}
+      />
     </div>
   </div>
 );
