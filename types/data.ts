@@ -192,6 +192,12 @@ export interface TestimonialsData {
   items: Testimonial[];
 }
 
+export interface FAQsData {
+  title: string;
+  subtitle?: string;
+  items: Array<{ question: string; answer: string }>;
+}
+
 export interface GlobalData {
   education: Education;
   projects: Projects;

@@ -4,6 +4,8 @@ import { contact } from "@/data";
 import Contact from "@/components/contact/Contact";
 import type { Metadata } from "next";
 import FAQ from "@/components/faq/FAQ";
+import { faqs } from "@/data";
+import type { FAQsData } from "@/types/data";
 
 export const metadata: Metadata = {
   title: "Contact MD Hasan Patwary | Front-End Developer",
@@ -26,6 +28,15 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactFaqs: FAQsData = {
+    title: faqs.title,
+    subtitle: faqs.subtitle,
+    items: faqs.items.filter((i) =>
+      ["contact", "email", "phone", "freelance", "available"].some((k) =>
+        (i.question + i.answer).toLowerCase().includes(k)
+      )
+    ),
+  };
   return (
     <>
       <PageTitle
@@ -37,17 +48,20 @@ export default function ContactPage() {
         breadcrumb={[{ label: "Home", href: "/" }, { label: "contact" }]}
       />
       <Contact contact={contact} />
-      <FAQ
-        items={[
-          {
-            question: "How can I contact you?",
-            answer: contact.summary,
-          },
-          {
-            question: "Are you available for freelance work?",
-            answer: contact.availability,
-          },
-        ]}
+      <FAQ faqData={contactFaqs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: contactFaqs.items.map((i) => ({
+              "@type": "Question",
+              name: i.question,
+              acceptedAnswer: { "@type": "Answer", text: i.answer },
+            })),
+          }),
+        }}
       />
       <script
         type="application/ld+json"

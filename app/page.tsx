@@ -6,6 +6,8 @@ import Testimonials from "@/components/testimonial/Testimonial";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
 import FAQ from "@/components/faq/FAQ";
+import { faqs } from "@/data";
+import type { FAQsData } from "@/types/data";
 import FunFact from "@/components/funfact/Funfact";
 import Services from "@/components/services/Services";
 import {
@@ -45,6 +47,22 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const homeFaqs: FAQsData = {
+    title: faqs.title,
+    subtitle: faqs.subtitle,
+    items: faqs.items.filter((i) =>
+      [
+        "services",
+        "technolog",
+        "projects",
+        "performance",
+        "headless",
+        "figma",
+        "business",
+        "animation",
+      ].some((k) => (i.question + i.answer).toLowerCase().includes(k))
+    ),
+  };
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />
@@ -60,19 +78,20 @@ export default function Home() {
       <FunFact funFacts={funFacts} />
       <Hobby hobbiesData={hobbies} />
       <Blog />
-      <FAQ
-        items={[
-          {
-            question: "What services do you offer?",
-            answer:
-              services.subtitle,
-          },
-          {
-            question: "What technologies do you specialize in?",
-            answer:
-              skills.subtitle,
-          },
-        ]}
+      <FAQ faqData={homeFaqs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: homeFaqs.items.map((i) => ({
+              "@type": "Question",
+              name: i.question,
+              acceptedAnswer: { "@type": "Answer", text: i.answer },
+            })),
+          }),
+        }}
       />
       <script
         type="application/ld+json"

@@ -1,0 +1,56 @@
+{
+  "title": "Frequently Asked Questions",
+  "subtitle": "Answers based on my real services, skills, and contact details.",
+  "items": [
+    {
+      "question": "What services do you offer?",
+      "answer": "Website Optimization & Performance; Landing Page & Portfolio Development; Headless CMS Integration with React/Next.js; Figma/Adobe XD to HTML & React Conversion; Business Website Development; Interactive UI & Animation Development."
+    },
+    {
+      "question": "Which technologies do you specialize in?",
+      "answer": "HTML5, CSS3, JavaScript, TypeScript, React.js, Vue.js, Next.js, jQuery, Node.js; Tailwind CSS, SASS, Bootstrap, Material UI, Figma, Adobe XD, Photoshop; Git, GitHub, Gulp, Webpack, Docker, AWS, Linux, Automation, Firebase."
+    },
+    {
+      "question": "Are you available for freelance work?",
+      "answer": "Available for freelance & collaboration."
+    },
+    {
+      "question": "How can I contact you?",
+      "answer": "Email: patwary.dev@gmail.com • Phone: +8801783721411"
+    },
+    {
+      "question": "Where are you located?",
+      "answer": "Dhaka, Bangladesh. Remote-friendly."
+    },
+    {
+      "question": "Do you work remotely or consider relocation?",
+      "answer": "Yes—open to Remote/Relocation."
+    },
+    {
+      "question": "What kinds of projects have you worked on?",
+      "answer": "Projects at ThemeLooks and 6amTech, published on Themeforest and Codecanyon: multi‑vendor eCommerce, delivery systems, POS, SaaS, hosting, VPN, social, admin dashboards, and more."
+    },
+    {
+      "question": "Do you provide performance optimization?",
+      "answer": "Yes—Core Web Vitals, Lighthouse, and real‑world speed improvements using Next.js, React, and modern best practices."
+    },
+    {
+      "question": "Do you build with headless CMS?",
+      "answer": "Yes—Strapi, Sanity, Contentful with React/Next.js."
+    },
+    {
+      "question": "Can you convert Figma/Adobe XD to code?",
+      "answer": "Yes—responsive, pixel‑perfect HTML/CSS/React implementations."
+    },
+    {
+      "question": "Do you build business websites?",
+      "answer": "Yes—clean, fast, scalable sites tailored to brand and goals."
+    },
+    {
+      "question": "Do you implement UI animations and interactions?",
+      "answer": "Yes—CSS animations, GSAP, and modern interaction patterns."
+    }
+  ]
+}
+
+
