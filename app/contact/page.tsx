@@ -3,7 +3,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import { contact } from "@/data";
 import Contact from "@/components/contact/Contact";
 import type { Metadata } from "next";
-import { FAQ } from "@/components/global";
+import FAQ from "@/components/faq/FAQ";
 
 export const metadata: Metadata = {
   title: "Contact MD Hasan Patwary | Front-End Developer",

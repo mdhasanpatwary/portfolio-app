@@ -11,4 +11,4 @@ export { default as CodeBlock } from "./CodeBlock";
 export { default as InstallPrompt } from "./InstallPrompt";
 export { default as ServiceWorkerRegistration } from "./ServiceWorkerRegistration";
 export { default as CustomImage } from "./CustomImage";
-export { default as FAQ } from "./FAQ";
+export { default as FAQ } from "../faq/FAQ";

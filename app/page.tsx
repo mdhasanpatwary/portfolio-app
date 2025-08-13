@@ -5,7 +5,7 @@ import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
-import { FAQ } from "@/components/global";
+import FAQ from "@/components/faq/FAQ";
 import FunFact from "@/components/funfact/Funfact";
 import Services from "@/components/services/Services";
 import {

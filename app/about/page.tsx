@@ -4,7 +4,7 @@ import { education, about } from "@/data";
 import PageTitle from "@/components/global/PageTitle";
 import { FaUser } from "react-icons/fa";
 import type { Metadata } from "next";
-import { FAQ } from "@/components/global";
+import FAQ from "@/components/faq/FAQ";
 
 export const metadata: Metadata = {
   title: "About MD Hasan Patwary | Front-End Developer Portfolio",
