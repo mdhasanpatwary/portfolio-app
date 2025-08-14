@@ -78,26 +78,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "MD Hasan Patwary Portfolio",
-              url: "https://patwary.vercel.app",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://patwary.vercel.app/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-              speakable: {
-                "@type": "SpeakableSpecification",
-                cssSelector: ["h1", "h2", "p"],
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
               "@type": "Person",
               "@id": "https://patwary.vercel.app/#person",
               name: "MD Hasan Patwary",
@@ -167,29 +147,27 @@ export default function RootLayout({
           href="/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "MD Hasan Patwary Portfolio",
-              url: "https://patwary.vercel.app",
-              description:
-                "Front-End Developer Portfolio showcasing React, Next.js, TypeScript projects and web development expertise",
-              author: {
-                "@type": "Person",
-                name: "MD Hasan Patwary",
-              },
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://patwary.vercel.app/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
+        {/* Development-only cache clearing script */}
+        {process.env.NODE_ENV === 'development' && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                // Gentle cache clearing in development - only clear service worker
+                console.log('Development mode detected - clearing service workers');
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(registrations => {
+                    console.log('Found service workers:', registrations.length);
+                    registrations.forEach(registration => {
+                      registration.unregister();
+                      console.log('Unregistered service worker');
+                    });
+                  });
+                }
+                console.log('Development setup complete');
+              `,
+            }}
+          />
+        )}
       </head>
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>

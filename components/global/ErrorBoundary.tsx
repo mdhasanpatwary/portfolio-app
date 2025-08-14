@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { FaExclamationTriangle, FaRedo } from 'react-icons/fa';
 
 interface Props {
@@ -23,11 +23,7 @@ class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorBoundary caught an error:', error, errorInfo);
-    }
-  }
+  componentDidCatch(): void {}
 
   handleRetry = () => {
     this.setState({ hasError: false, error: undefined });

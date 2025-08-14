@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import type { Education } from "@/types/data";
 import { FaGraduationCap } from "react-icons/fa";

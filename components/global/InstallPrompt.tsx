@@ -18,6 +18,9 @@ export default function InstallPrompt() {
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && localStorage.getItem('hideInstallPrompt') === '1') {
+      return; // user dismissed previously
+    }
     const handler = (e: Event) => {
       e.preventDefault();
       const beforeInstallPromptEvent = e as BeforeInstallPromptEvent;
@@ -36,13 +39,7 @@ export default function InstallPrompt() {
     if (!deferredPrompt) return;
 
     deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-
-    if (outcome === "accepted") {
-      console.log("User accepted the install prompt");
-    } else {
-      console.log("User dismissed the install prompt");
-    }
+    await deferredPrompt.userChoice;
 
     setDeferredPrompt(null);
     setShowInstallPrompt(false);
@@ -51,6 +48,9 @@ export default function InstallPrompt() {
   const handleDismiss = () => {
     setShowInstallPrompt(false);
     setDeferredPrompt(null);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('hideInstallPrompt', '1');
+    }
   };
 
   if (!showInstallPrompt) {

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { FaBriefcase } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";

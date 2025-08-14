@@ -4,8 +4,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/global/ThemeToggle";
 import { Transition } from "@headlessui/react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import SearchOverlay from "@/components/global/SearchOverlay";
 
 type NavItem = {
   label: string;
@@ -18,6 +19,7 @@ type HeaderProps = {
 
 const Header = ({ navItems }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
@@ -29,6 +31,20 @@ const Header = ({ navItems }: HeaderProps) => {
     handleResize(); // check on mount
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Global shortcut: Cmd/Ctrl+K or '/'
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const isCmdK = (e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K');
+      const isSlash = !e.ctrlKey && !e.metaKey && e.key === '/';
+      if (isCmdK || isSlash) {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
   // Smooth scroll
@@ -76,6 +92,13 @@ const Header = ({ navItems }: HeaderProps) => {
                 </button>
               )
             ))}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition cursor-pointer"
+              aria-label="Open search"
+            >
+              <FaSearch />
+            </button>
             <Link
               href="/contact"
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition border border-indigo-500 rounded px-3 py-1 ml-2 text-sm font-medium"
@@ -96,6 +119,13 @@ const Header = ({ navItems }: HeaderProps) => {
               Hire Me!
             </Link>
             <ThemeToggle />
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="text-gray-700 dark:text-gray-300 cursor-pointer"
+              aria-label="Open search"
+            >
+              <FaSearch />
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 dark:text-gray-300 cursor-pointer"
@@ -142,6 +172,7 @@ const Header = ({ navItems }: HeaderProps) => {
           </ul>
         </nav>
       </Transition>
+      {isSearchOpen && <SearchOverlay onClose={() => setIsSearchOpen(false)} />}
     </header>
   );
 };

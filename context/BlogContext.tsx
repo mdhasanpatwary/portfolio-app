@@ -18,19 +18,19 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        console.log('Fetching Dev.to articles...');
+
         const response = await fetch("https://dev.to/api/articles?username=mdhassanpatwary");
-        
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
-        console.log('Successfully fetched articles:', data.length);
+
         setPosts(data);
         setError(null);
       } catch (err) {
-        console.error('Error fetching Dev.to articles:', err);
+
         setError(err instanceof Error ? err.message : 'Failed to fetch articles');
         setPosts([]);
       } finally {

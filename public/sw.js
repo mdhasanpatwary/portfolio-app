@@ -1,7 +1,11 @@
 // Service Worker for PWA functionality - Offline Caching
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const CACHE_NAME = `hasan-portfolio-${CACHE_VERSION}`;
 const API_CACHE_NAME = `hasan-portfolio-api-${CACHE_VERSION}`;
+const DEV_MODE = self.location.hostname === 'localhost' ||
+                 self.location.hostname === '127.0.0.1' ||
+                 self.location.hostname.includes('localhost');
+
 // Pre-cache immutable/static assets and key HTML routes. Network-first is enforced for HTML.
 const urlsToCache = [
   '/',
@@ -26,6 +30,12 @@ const urlsToCache = [
 
 // Install event - cache resources
 self.addEventListener('install', function (event) {
+  // Skip everything in development mode
+  if (DEV_MODE) {
+    self.skipWaiting();
+    return;
+  }
+
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(urlsToCache);
@@ -37,6 +47,11 @@ self.addEventListener('install', function (event) {
 
 // Fetch event - serve from cache when offline
 self.addEventListener('fetch', function (event) {
+  // Skip service worker in development mode for better DX
+  if (DEV_MODE) {
+    return;
+  }
+
   // Network-first for navigations/HTML
   const acceptHeader = event.request.headers.get('accept') || '';
   const isNavigation = event.request.mode === 'navigate' || acceptHeader.includes('text/html');
@@ -89,6 +104,12 @@ self.addEventListener('fetch', function (event) {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', function (event) {
+  // Skip cache cleanup in development mode
+  if (DEV_MODE) {
+    self.clients.claim();
+    return;
+  }
+
   const validCaches = [CACHE_NAME, API_CACHE_NAME];
 
   event.waitUntil(
@@ -107,6 +128,11 @@ self.addEventListener('activate', function (event) {
 
 // Background sync for offline functionality
 self.addEventListener('sync', function (event) {
+  // Skip background sync in development mode
+  if (DEV_MODE) {
+    return;
+  }
+
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
   }
@@ -114,6 +140,11 @@ self.addEventListener('sync', function (event) {
 
 // Handle blog API requests with cache-first strategy
 async function handleBlogApiRequest(request) {
+  // Skip API caching in development mode
+  if (DEV_MODE) {
+    return fetch(request);
+  }
+
   const cache = await caches.open(API_CACHE_NAME);
   const cachedResponse = await cache.match(request);
 
@@ -136,7 +167,6 @@ async function handleBlogApiRequest(request) {
   } catch (error) {
     // Network failed, try to serve from cache
     if (cachedResponse) {
-      console.log('Serving cached blog data (offline)');
       return cachedResponse;
     }
 
@@ -150,5 +180,8 @@ async function handleBlogApiRequest(request) {
 
 function doBackgroundSync() {
   // Implement background sync logic here if needed
+  if (DEV_MODE) {
+    return Promise.resolve();
+  }
   return Promise.resolve();
 }

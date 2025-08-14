@@ -110,12 +110,8 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
         toast.success(contact.messages.success);
         form.current?.reset();
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error(contact.messages.error);
-        // Log error for debugging but don't expose sensitive info
-        if (process.env.NODE_ENV === "development") {
-          console.error("EmailJS Error:", error);
-        }
       })
       .finally(() => setLoading(false));
   };

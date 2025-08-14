@@ -114,8 +114,8 @@ export async function generateStaticParams() {
     return articles.map((article: DevToPost) => ({
       id: article.id.toString(),
     }));
-  } catch (error) {
-    console.warn("Failed to generate static params for blog posts:", error);
+  } catch {
+
     return [];
   }
 }
