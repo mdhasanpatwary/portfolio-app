@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Explore MD Hasan Patwary's web development projects built with React, Next.js, TypeScript, and modern technologies.",
     url: "https://patwary.vercel.app/projects",
   },
+  alternates: { canonical: "https://patwary.vercel.app/projects" },
 };
 
 export default function ProjectsPage() {
@@ -36,6 +37,28 @@ export default function ProjectsPage() {
         breadcrumb={[{ label: "Home", href: "/" }, { label: projects.title }]}
       />
       <ProjectsList />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: projects.items.map((p, i) => ({
+              "@type": p.github ? "SoftwareSourceCode" : "CreativeWork",
+              position: i + 1,
+              name: p.title,
+              description: p.description,
+              url: p.link || p.demo,
+              codeRepository: p.github || undefined,
+              programmingLanguage: Array.isArray(p.technologies)
+                ? p.technologies.join(", ")
+                : undefined,
+              image: p.image ? `https://patwary.vercel.app${p.image}` : undefined,
+              author: { "@type": "Person", name: "MD Hasan Patwary" },
+            })),
+          }),
+        }}
+      />
     </>
   );
 }

@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Read MD Hasan Patwary's web development blog featuring articles on React, Next.js, TypeScript, CSS tips, and modern web development best practices.",
     url: "https://patwary.vercel.app/blog",
   },
+  alternates: { canonical: "https://patwary.vercel.app/blog" },
 };
 
 export default function BlogPage() {

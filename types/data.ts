@@ -8,7 +8,7 @@ export interface Hero {
 export interface About {
   title: string;
   subtitle: string;
-  description: string;
+  description: string | string[];
   image: string;
 }
 
@@ -190,6 +190,12 @@ export interface TestimonialsData {
   title: string;
   subtitle: string;
   items: Testimonial[];
+}
+
+export interface FAQsData {
+  title: string;
+  subtitle?: string;
+  items: Array<{ question: string; answer: string }>;
 }
 
 export interface GlobalData {

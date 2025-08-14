@@ -28,6 +28,45 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
           }>
           {testimonials.subtitle}
         </SectionTitle>
+        {/* Aggregate review count without fabricating ratings */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://patwary.vercel.app/#person",
+              name: "MD Hasan Patwary",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                reviewCount: testimonials.items.length,
+                ratingCount: testimonials.items.length,
+                worstRating: 1,
+                bestRating: 5,
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              itemListElement: testimonials.items.map((t, i) => ({
+                "@type": "Review",
+                position: i + 1,
+                reviewBody: t.message,
+                author: { "@type": "Person", name: t.name },
+                itemReviewed: {
+                  "@type": "Person",
+                  "@id": "https://patwary.vercel.app/#person",
+                  name: "MD Hasan Patwary",
+                },
+              })),
+            }),
+          }}
+        />
         <div className="relative group">
           <Swiper
             modules={[Navigation, Pagination]}

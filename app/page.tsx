@@ -5,6 +5,9 @@ import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
+import FAQ from "@/components/faq/FAQ";
+import { faqs } from "@/data";
+import type { FAQsData } from "@/types/data";
 import FunFact from "@/components/funfact/Funfact";
 import Services from "@/components/services/Services";
 import {
@@ -40,9 +43,26 @@ export const metadata: Metadata = {
       "Experienced Front-End Developer with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies.",
     url: "https://patwary.vercel.app",
   },
+  alternates: { canonical: "https://patwary.vercel.app" },
 };
 
 export default function Home() {
+  const homeFaqs: FAQsData = {
+    title: faqs.title,
+    subtitle: faqs.subtitle,
+    items: faqs.items.filter((i) =>
+      [
+        "services",
+        "technolog",
+        "projects",
+        "performance",
+        "headless",
+        "figma",
+        "business",
+        "animation",
+      ].some((k) => (i.question + i.answer).toLowerCase().includes(k))
+    ),
+  };
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />
@@ -58,6 +78,42 @@ export default function Home() {
       <FunFact funFacts={funFacts} />
       <Hobby hobbiesData={hobbies} />
       <Blog />
+      <FAQ faqData={homeFaqs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: homeFaqs.items.map((i) => ({
+              "@type": "Question",
+              name: i.question,
+              acceptedAnswer: { "@type": "Answer", text: i.answer },
+            })),
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What services do you offer?",
+                acceptedAnswer: { "@type": "Answer", text: services.subtitle },
+              },
+              {
+                "@type": "Question",
+                name: "What technologies do you specialize in?",
+                acceptedAnswer: { "@type": "Answer", text: skills.subtitle },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

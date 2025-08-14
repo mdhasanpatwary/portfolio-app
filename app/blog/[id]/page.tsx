@@ -6,6 +6,7 @@ import SectionTitle from "@/components/global/SectionTitle";
 import { FaPenNib } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import { CustomImage } from "@/components/global";
+import type { Metadata } from "next";
 
 interface DevToPost {
   id: number;
@@ -18,6 +19,7 @@ interface DevToPost {
   tag_list?: string[] | string;
   reading_time_minutes?: number;
   body_markdown?: string;
+  edited_at?: string;
   user: {
     name: string;
     username: string;
@@ -30,6 +32,43 @@ async function getPostById(id: string): Promise<DevToPost | null> {
   const res = await fetch(`https://dev.to/api/articles/${id}`);
   if (!res.ok) return null;
   return await res.json();
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  try {
+    const { id } = await params;
+    const res = await fetch(`https://dev.to/api/articles/${id}`, {
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return {};
+    const post: DevToPost = await res.json();
+    return {
+      title: post.title,
+      description: post.description,
+      alternates: {
+        canonical: `https://patwary.vercel.app/blog/${id}`,
+      },
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        url: `https://patwary.vercel.app/blog/${id}`,
+        images: post.cover_image ? [{ url: post.cover_image }] : undefined,
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+        images: post.cover_image ? [post.cover_image] : undefined,
+      },
+    };
+  } catch {
+    return {};
+  }
 }
 
 // MarkdownRenderer component for proper headings and code highlighting
@@ -122,6 +161,31 @@ export default async function BlogDetailPage({
 
       <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="max-w-4xl mx-auto">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                headline: post.title,
+                description: post.description,
+                image: post.cover_image ? [post.cover_image] : undefined,
+                datePublished: post.published_at,
+                dateModified: post.edited_at || post.published_at,
+                author: {
+                  "@type": "Person",
+                  name: post.user?.name || "MD Hasan Patwary",
+                  url: "https://patwary.vercel.app",
+                },
+                publisher: { "@type": "Person", name: "MD Hasan Patwary" },
+                mainEntityOfPage: `https://patwary.vercel.app/blog/${post.id}`,
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", "p"],
+                },
+              }),
+            }}
+          />
           {post.cover_image && (
             <div className="mb-6 mt-0">
               <CustomImage

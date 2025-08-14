@@ -79,7 +79,28 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "MD Hasan Patwary Portfolio",
+              url: "https://patwary.vercel.app",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://patwary.vercel.app/search?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["h1", "h2", "p"],
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
               "@type": "Person",
+              "@id": "https://patwary.vercel.app/#person",
               name: "MD Hasan Patwary",
               url: "https://patwary.vercel.app",
               sameAs: [
@@ -92,7 +113,7 @@ export default function RootLayout({
                 "https://codepen.io/MD-Hasan-Patwary",
               ],
               jobTitle: "Front-End Developer",
-              image: "/profile.png",
+              image: "/profile.webp",
               description:
                 "MD Hasan Patwary - Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Open to Remote/Relocation",
               knowsAbout: [
@@ -126,6 +147,9 @@ export default function RootLayout({
           content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4"
         />
         <link rel="canonical" href="https://patwary.vercel.app" />
+        <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary RSS" href="/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary Projects RSS" href="/projects.xml" />
+        <link rel="preconnect" href="https://dev.to" crossOrigin="" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
