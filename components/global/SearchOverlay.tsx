@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FaSearch, FaTimes } from "react-icons/fa";
 import { projects as projectsData, cssTips as cssTipsData } from "@/data";
+import { useRouter } from "next/navigation";
 
 type Project = {
   id: string;
@@ -13,6 +14,7 @@ type Project = {
 };
 
 type Tip = {
+  id?: number;
   title?: string;
   description?: string;
 };
@@ -21,6 +23,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const projects: Project[] = useMemo(
     () => (projectsData.items as unknown as Project[]) || [],
@@ -30,7 +33,8 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
 
   const tips: Tip[] = useMemo(() => {
     if (!Array.isArray(cssTipsData)) return [];
-    return (cssTipsData as Array<{ title?: string; description?: string }>).map((t) => ({
+    return (cssTipsData as Array<{ id?: number; title?: string; description?: string }>).map((t) => ({
+      id: t.id,
       title: t.title,
       description: t.description,
     }));
@@ -93,13 +97,26 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
         setActiveIndex((i) => Math.max(i - 1, 0));
       }
       if (e.key === "Enter") {
-        const items = [
+        const items: Array<
+          | { type: "project"; href?: string; title: string }
+          | { type: "tip"; tip: Tip }
+        > = [
           ...projectHits.map((p) => ({ type: "project" as const, href: p.link || p.demo, title: p.title })),
-          ...tipHits.map((t) => ({ type: "tip" as const, href: "/css-tips", title: t.title || "" })),
+          ...tipHits.map((t) => ({ type: "tip" as const, tip: t })),
         ];
         const item = items[activeIndex];
-        if (item?.href) {
+        if (!item) return;
+        if (item.type === "project" && item.href) {
           window.open(item.href, "_blank", "noopener,noreferrer");
+          return;
+        }
+        if (item.type === "tip" && item.tip) {
+          const all = tips;
+          const idx = all.findIndex((x) => x.title === item.tip.title);
+          const page = idx >= 0 ? Math.floor(idx / 6) + 1 : 1; // 6 per page
+          const tipId = item.tip.id ?? undefined;
+          onClose();
+          router.push(`/css-tips?page=${page}${tipId ? `&tipId=${tipId}` : ""}`);
         }
       }
     };
@@ -109,7 +126,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [onClose, projectHits, tipHits, activeIndex]);
+  }, [onClose, projectHits, tipHits, activeIndex, router, tips]);
 
   // Reset selection when query or results change
   useEffect(() => {
@@ -189,10 +206,21 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                     const isActive = activeIndex === globalIndex;
                     return (
                       <li key={i}>
-                        <a href="/css-tips" className={`block rounded px-2 py-2 ${isActive ? "bg-indigo-50 dark:bg-indigo-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800"}`}>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const all = tips;
+                            const idx = all.findIndex((x) => x.title === t.title);
+                            const page = idx >= 0 ? Math.floor(idx / 6) + 1 : 1; // 6 per page
+                            const tipId = t.id ?? undefined;
+                            onClose();
+                            router.push(`/css-tips?page=${page}${tipId ? `&tipId=${tipId}` : ""}`);
+                          }}
+                          className={`w-full text-left block rounded px-2 py-2 ${isActive ? "bg-indigo-50 dark:bg-indigo-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"}`}
+                        >
                           <div className="text-gray-800 dark:text-gray-200 font-medium">{highlightMatch(t.title || "")}</div>
                           <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{highlightMatch(t.description || "")}</p>
-                        </a>
+                        </button>
                       </li>
                     );
                   })}

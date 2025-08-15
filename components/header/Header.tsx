@@ -92,19 +92,20 @@ const Header = ({ navItems }: HeaderProps) => {
                 </button>
               )
             ))}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition cursor-pointer"
-              aria-label="Open search"
-            >
-              <FaSearch />
-            </button>
             <Link
               href="/contact"
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition border border-indigo-500 rounded px-3 py-1 ml-2 text-sm font-medium"
             >
               Hire Me!
             </Link>
+            {/* Search button styled like ThemeToggle and placed left of it */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-indigo-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
+              aria-label="Open search"
+            >
+              <FaSearch className="text-base" />
+            </button>
             <ThemeToggle />
           </nav>
         )}
@@ -118,14 +119,15 @@ const Header = ({ navItems }: HeaderProps) => {
             >
               Hire Me!
             </Link>
-            <ThemeToggle />
+            {/* Search button styled like ThemeToggle and placed left of it */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="text-gray-700 dark:text-gray-300 cursor-pointer"
+              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-indigo-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
               aria-label="Open search"
             >
-              <FaSearch />
+              <FaSearch className="text-base" />
             </button>
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 dark:text-gray-300 cursor-pointer"

@@ -166,5 +166,47 @@
     "title": "perspective: 3D CSS Effect",
     "description": "perspective — এটা এমন একটা CSS প্রপার্টি, যেটা আপনার element-কে 3D লুক দিতে সাহায্য করে। মানে, আপনি কোনো একটা element বা তার child কে ঘুরালে বা rotate করলে সেটা যেন বাস্তব জীবনের মতই একটু depth বা দূরত্ব নিয়ে ঘোরে — ঠিক সেখানেই কাজ করে perspective।\nধরুন আপনি একটা কার্ড Rotate করতে চান, যাতে মনে হয় সামনে থেকে ধীরে ধীরে পিছনে ঘুরে গেল — flat 2D না, বরং 3D-র মত। তখন আপনি parent element-এ perspective সেট করবেন:\n.card-wrapper {\n  perspective: 1000px;\n}\nএখানে 1000px মানে viewer আর object-এর মাঝের hypothetical দূরত্ব। যত ছোট সংখ্যা, তত বেশি dramatic 3D effect; যত বড় সংখ্যা, তত subtle — কম চোখে পড়ে।\nএটা শুধু parent element-এ প্রয়োগ হয় — মানে যেটা ঘোরানো হবে না, কিন্তু যার ভেতরের item Rotate করা হবে।\n.card {\n  transform: rotateY(30deg);\n  transition: transform 0.3s ease;\n}\nএই rotateY  তখন perspective এর context অনুযায়ী এমনভাবে ঘুরবে, যেন সেটা বাস্তবে 3D দৃশ্যের মত দেখায়।\nবিশেষ করে আপনি যদি card flip animation, product showcase বা interactive UI বানাতে চান — perspective একদম key concept।",
     "category": "Animation & Effects"
+  },
+  {
+    "id": 29,
+    "title": "backface-visibility",
+    "description": "যখন আপনি CSS 3D transform ব্যবহার করেন, তখন কোনো একটা element এর সামনে-পেছনের পার্থক্য বোঝা গুরুত্বপূর্ণ হয়ে ওঠে। ধরুন, আপনি rotateY(180deg) দিয়ে কোনো box ঘোরালেন — তখন আসলে আমরা সেই element এর \"পেছনের দিকটা\" দেখতে পাচ্ছি। ঠিক এই পেছনের দিকটা দেখতে দেবেন কিনা, সেটা নিয়ন্ত্রণ করে backface-visibility।\nডিফল্টভাবে backface-visibility: visible; থাকে — মানে, element ঘুরে গেলে তার পেছনের দিকও দেখা যাবে। কিন্তু আপনি যদি চান পেছনের দিকটা লুকানো থাকুক, যেন ঘুরে গেলে সেটা হঠাৎ অদৃশ্য হয়ে যায়, তাহলে backface-visibility: hidden; সেট করলেই হবে।\n```css\n.card {\n  transform: rotateY(180deg);\n  backface-visibility: hidden;\n}\n```\nএইটা বিশেষ করে কাজের যখন আপনি flip animation বানাচ্ছেন — যেমন একটা card-এর সামনে-পেছনের দুই দিক আছে, আর আপনি hover করলে সেটা ঘুরে যায়। তখন চাইবেন, যেটা দেখানো উচিত না, সেটা যেন অদৃশ্য থাকে — মানে পেছনের দিকটা যেন দেখা না যায়। তখন backface-visibility: hidden; দিয়ে আপনি সেটা handle করতে পারেন।\nএটা ছোট একটা জিনিস হলেও 3D animation বা flip UI তৈরি করতে গেলে এটা না জানলে অনেক সময় ভুল result দেখা যায়। তাই CSS এর 3D দুনিয়ায় কাজ করতে হলে এটা must-know জিনিস।",
+    "category": "Animation & Effects"
+  },
+  {
+    "id": 30,
+    "title": "transform-style",
+    "description": "আপনি যখন কোনো parent element-কে 3D transform করেন, তখন তার child element গুলো সেই 3D space-এ behave করবে কিনা — এটা নির্ধারণ করে transform-style। সহজ করে বললে, এটা ঠিক করে দেয় আপনার container-এর ভিতরের জিনিসগুলো “থ্রিডি ভাব” নেবে, নাকি দুই-মাত্রিকভাবে flat হয়েই থাকবে।\nডিফল্টভাবে transform-style: flat; থাকে — মানে child element গুলো নিজেদের মতো করে 3D behave করবে না, সবকিছু একসাথে একটা flat পৃষ্ঠে দেখে মনে হবে। কিন্তু আপনি যদি চান child element গুলোও independently 3D space-এ কাজ করুক, তাহলে transform-style: preserve-3d; ব্যবহার করতে হবে।\n```css\n.scene {\n  transform-style: preserve-3d;\n}\n```\nএইটা তখনই দরকার হয় যখন আপনি nested transform করছেন — যেমন একটা cube বানাতে চান যেটার ৬টা side আছে, প্রতিটা side আলাদা করে rotate করা আছে। তখন parent-এ preserve-3d না দিলে child গুলো 3D ভিউ তৈরি করতে পারবে না — তারা সব flat হয়ে এক জায়গায় overlap করে যাবে।\nএখানে একটা বাস্তব উদাহরণ হতে পারে 3D flip card — আপনি যদি front এবং back আলাদা DOM element হিসেবে রাখেন এবং rotate করেন, তখন এই property না থাকলে তারা “লেয়ার” হিসেবে কাজ করবে না।\nএইটা মূলত 3D layout বানানোর advanced techniques গুলোর ভিতরে পড়ে, কিন্তু একবার বুঝে গেলে খুব সহজ, আর powerful।",
+    "category": "Animation & Effects"
+  },
+  {
+    "id": 31,
+    "title": "mix-blend-mode",
+    "description": "mix-blend-mode হলো CSS-এর এক ধরনের ভিজুয়াল ম্যাজিক — এটা বলে দেয় একটা এলিমেন্টের রঙ পেছনের এলিমেন্টের সাথে কীভাবে মিশবে। অনেকটা ফটোশপের blending mode-এর মতো। আপনি যদি চান, কোনো টেক্সট বা ইমেজ ব্যাকগ্রাউন্ডের সাথে মিশে একেবারে artistic কিছু দেখাক, তাহলে mix-blend-mode একদম সঠিক জায়গা।\nধরুন আপনার একটা টেক্সট আছে যেটা ব্যাকগ্রাউন্ড ইমেজ বা রঙের texture অনুযায়ী হালকা বা গাঢ় (visually darker) দেখাতে চান — তখন আপনি ব্যবহার করতে পারেন:\n```css\n.text {\n  mix-blend-mode: multiply;\n}\n```\nএখানে multiply মানে হলো, টেক্সট আর ব্যাকগ্রাউন্ড একে অপরের সাথে গুণ (blend) হয়ে যায় — ফলে গাঢ়, contrast-heavy visual তৈরি হয়। আবার screen, overlay, difference, lighten, darken — এদের প্রত্যেকটা blend mode ভিন্ন ধরনের visual ফ্লেভার দেয়।\nএই জিনিসটা সবচেয়ে ভালো কাজ করে semi-transparent এলিমেন্ট বা background image এর উপর। Creative UI design, hover effect, hero section — যেখানেই ভিজুয়াল ফোকাস দরকার, সেখানে এটি দারুণ কাজ দেয়।\nসব আধুনিক ব্রাউজারই সাপোর্ট করে, তবে blend result একেক ব্রাউজারে একটু আলাদা লাগতে পারে। তাই mix-blend-mode আর background-blend-mode একসাথে ব্যবহার করলে কেমন দেখাচ্ছে — সেটা সবসময় ভালোভাবে দেখে নেওয়া উচিত।",
+    "category": "Animation & Effects"
+  },
+  {
+    "id": 32,
+    "title": "background-blend-mode",
+    "description": "background-blend-mode একদম নামের মতোই — এটা বলে দেয়, ব্যাকগ্রাউন্ডে যদি একাধিক লেয়ার থাকে (যেমন gradient + image), সেগুলোর রঙ কীভাবে একে অপরের সাথে মিশবে। অনেকটা ডিজাইনারদের ফটোশপের blending layer concept-এর মতো — কিন্তু এবার ব্রাউজারেই।\nধরুন আপনি একটা ইমেজের উপরে একটা semi-transparent কালার ওভারলে দিতে চান, কিন্তু সেটাকে boring না বানিয়ে একটু artistic blend করতে চান — তখন আপনি ব্যবহার করতে পারেন:\n```css\n.hero {\n  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner.jpg');\n  background-blend-mode: overlay;\n}\n```\nএখানে overlay মানে হলো, গ্র্যাডিয়েন্ট আর ইমেজ একসাথে blend হয়ে একটা richer, contrasty লুক তৈরি করে।\nচাইলে multiply, screen, darken, lighten, difference — এদেরও ব্যবহার করতে পারেন। প্রত্যেকটার visual feel একেক রকম।\nযেখানে dark ইমেজের উপরে light text রাখতে চান, অথবা image tone adjust করতে চান background এর ভেতরেই — সেখানে background-blend-mode খুব দরকারি। বিশেষ করে hero sections, banners, CTA backgrounds, বা dark mode UI তে চমৎকার কাজ দেয়।\nসতর্কতা: ইমেজ আর color বা gradient আলাদা লেয়ারে set করতে হবে background-image-এর ভেতরে। আর এটি পুরো ব্যাকগ্রাউন্ডেই প্রভাব ফেলে — child element নয়।",
+    "category": "Animation & Effects"
+  },
+  {
+    "id": 33,
+    "title": "filter",
+    "description": "filter হচ্ছে CSS-এর একটা powerful visual tool — আপনি চাইলে কোনো ইমেজ, টেক্সট বা এলিমেন্টের উপর blur, brightness, contrast, grayscale, sepia, hue shift ইত্যাদি effect একেবারে সহজে apply করতে পারেন। এটা এক কথায় বলতে গেলে — CSS-এর Instagram-like effect system।\nধরুন আপনি কোনো ইমেজ হালকা blur করে background হিসেবে রাখতে চান:\n```css\n.bg {\n  filter: blur(4px);\n}\n```\nঅথবা আপনি একটা div-এর contrast আর brightness বাড়াতে চান:\n```css\n.card {\n  filter: brightness(1.2) contrast(1.1);\n}\n```\nআপনি একইসাথে একাধিক filter stack করে দিতে পারেন, ঠিক যেভাবে Photoshop বা Instagram-এ করে থাকি।\nআর যদি টেক্সটের উপর একটু grayscale или hue rotation দিয়ে এক্সপেরিমেন্ট করতে চান, সেটাও সম্ভব:\n```css\n.heading {\n  filter: grayscale(80%) hue-rotate(45deg);\n}\n```\nএটা hover effect, background enhancements বা UI feel dramatic করার জন্য দারুণ কাজ দেয়।\nতবে মনে রাখবেন — heavy filter effects performance এ প্রভাব ফেলতে পারে, বিশেষ করে animations এর সময়।",
+    "category": "Animation & Effects"
+  },
+  {
+    "id": 34,
+    "title": "backdrop-filter",
+    "description": "backdrop-filter হলো CSS-এর একটা ভিজ্যুয়াল ফিল্টার টুল, যেটা কোনো এলিমেন্টের পেছনের জগতে blur, brightness, contrast, grayscale ইত্যাদি ইফেক্ট তৈরি করে। এটাকে ভাবুন একধরনের “ফ্রস্টেড গ্লাস” ইফেক্টের মতো — যেখানে সামনে কোনো কাঁচের মতো স্বচ্ছ কিছু আছে, আর তার পেছনের জিনিসগুলো হালকা ঝাপসা বা আলো-ছায়ায় ভরপুর।\nধরুন আপনি একটা semi-transparent box তৈরি করেছেন, যার নিচে একটা ব্যাকগ্রাউন্ড ইমেজ বা অন্য কিছু আছে। আপনি চান সেই পেছনের অংশটা blur হয়ে যাক — ঠিক তখন আপনি ব্যবহার করবেন:\n```css\n.glass {\n  backdrop-filter: blur(10px);\n  background-color: rgba(255, 255, 255, 0.1);\n}\n```\nএখানে blur(10px) মানে, .glass এলিমেন্টের পিছনের দুনিয়া ১০ পিক্সেল ঝাপসা হবে। কিন্তু .glass নিজে পরিষ্কার থাকবে — যেন কাঁচের ওপর দিয়ে দেখছেন।\nbackdrop-filter শুধু blur না, আরও অনেক ইফেক্ট দিতে পারে — যেমন:\n```css\nbackdrop-filter: brightness(1.2) contrast(90%) grayscale(0.2);\n```\nএই ইফেক্টগুলো একসাথে চেইন করে ব্যবহার করতে পারেন।\nএকটা ব্যাপার মনে রাখবেন — এটা কাজ করার জন্য দরকার semi-transparent background এবং browser সাপোর্ট (Chrome, Edge, Safari ভালোভাবে সাপোর্ট করে, Firefox-এ কিছু ক্ষেত্রে about:config থেকে enable করতে হয়)।\nআধুনিক UI ডিজাইন, modal, hero section বা floating glass effect-এর জন্য এটা একদম পারফেক্ট!",
+    "category": "Animation & Effects"
+  },
+  {
+    "id": 35,
+    "title": "appearance",
+    "description": "appearance হচ্ছে CSS-এর এমন একটা প্রপার্টি, যেটা দিয়ে আপনি ব্রাউজার-কন্ট্রোল্ড ডিফল্ট স্টাইলিং বন্ধ করে দিতে পারেন। ধরুন একটা <input type=\"range\">, ব্রাউজার এটাকে নিজে নিজে একটা স্লাইডার বানিয়ে দেয় — কিন্তু আপনি যদি চান সেটা নিজের মতো করে ডিজাইন করবেন, তাহলে প্রথমেই appearance: none; লিখতে হবে। তখন ব্রাউজার আর তার নিজস্ব ডিজাইন প্রয়োগ করবে না — আপনি পুরোটা কাস্টম করে ফেলতে পারবেন।\nএটা শুধু রেঞ্জ ইনপুটে না — বাটন, চেকবক্স, রেডিও, এমনকি ফর্ম এলিমেন্টেও প্রযোজ্য। মানে, যখন আপনি চাচ্ছেন ব্রাউজারের পুরনো বা বিরক্তিকর ডিফল্ট লুক বাদ দিয়ে নিজের হাতে সব তৈরি করবেন — তখন appearance দিয়েই শুরু করতে হবে।\nআর হ্যাঁ, আলাদা আলাদা ব্রাউজারে ভালো কাস্টম ডিজাইন আনতে -webkit-appearance বা -moz-appearance ও কখনও কখনও দরকার হয়।",
+    "category": "Utility & Shorthand"
   }
 ]
