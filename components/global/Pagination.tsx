@@ -38,9 +38,10 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <div className="flex justify-center items-center gap-2 mt-10 select-none">
       <button
-        className={`flex items-center px-3 py-1 rounded-full bg-indigo-100 dark:bg-gray-700 text-indigo-600 dark:text-indigo-300 transition hover:bg-indigo-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:opacity-50 ${
+        className={`flex items-center px-2 py-1 rounded-full bg-indigo-100 dark:bg-gray-700 text-indigo-600 dark:text-indigo-300 transition hover:bg-indigo-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:opacity-50 ${
           currentPage === 1 ? "cursor-default" : "cursor-pointer"
         }`}
+        type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         aria-label="Previous page">
@@ -56,12 +57,13 @@ const Pagination: React.FC<PaginationProps> = ({
         ) : (
           <button
             key={item}
-            className={`relative px-4 py-1 rounded-full transition font-semibold overflow-hidden ${
+            className={`relative text-xs px-2 py-1 rounded-full transition font-semibold overflow-hidden ${
               currentPage === item
                 ? "bg-indigo-600 text-white shadow-lg cursor-default"
                 : "bg-indigo-50 dark:bg-gray-800 text-indigo-600 dark:text-indigo-300 hover:bg-indigo-200 dark:hover:bg-gray-700 cursor-pointer"
             }`}
-            style={{ minWidth: 40 }}
+            type="button"
+            style={{ minWidth: 24 }}
             onClick={() => onPageChange(item as number)}
             aria-current={currentPage === item ? "page" : undefined}
             disabled={currentPage === item}>
@@ -73,9 +75,10 @@ const Pagination: React.FC<PaginationProps> = ({
         )
       )}
       <button
-        className={`flex items-center px-3 py-1 rounded-full bg-indigo-100 dark:bg-gray-700 text-indigo-600 dark:text-indigo-300 transition hover:bg-indigo-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:opacity-50 ${
+        className={`flex items-center px-2 py-1 rounded-full bg-indigo-100 dark:bg-gray-700 text-indigo-600 dark:text-indigo-300 transition hover:bg-indigo-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:opacity-50 ${
           currentPage === totalPages ? "cursor-default" : "cursor-pointer"
         }`}
+        type="button"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         aria-label="Next page">
