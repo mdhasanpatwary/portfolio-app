@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({
     lg: "p-6"
   };
 
-  const hoverClasses = hover ? "hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-500 transition-all duration-300" : "";
+  const hoverClasses = hover ? "hover:shadow-md hover:border-primary-200 dark:hover:border-primary-500 transition-all duration-300" : "";
   const clickClasses = onClick ? "cursor-pointer" : "";
 
   return (

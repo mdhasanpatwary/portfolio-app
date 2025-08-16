@@ -112,7 +112,7 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
       />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedTip?.title}>
         {selectedTip && (
-          <div className="prose dark:prose-invert max-w-none max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800">
+          <div className="prose dark:prose-invert max-w-none max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary-200 dark:scrollbar-thumb-primary-800">
             {parseDescription(selectedTip.description).map((part, idx) =>
               part.type === "code" ? (
                 <div key={idx} className="my-6">

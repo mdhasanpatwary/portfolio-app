@@ -36,7 +36,7 @@ class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
           <div className="max-w-md mx-auto text-center p-8">
             <div className="mb-6">
               <FaExclamationTriangle className="text-6xl text-red-500 mx-auto mb-4" />
@@ -51,7 +51,7 @@ class ErrorBoundary extends Component<Props, State> {
             <div className="space-y-4">
               <button
                 onClick={this.handleRetry}
-                className="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                className="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 <FaRedo className="text-sm" />
                 Try Again

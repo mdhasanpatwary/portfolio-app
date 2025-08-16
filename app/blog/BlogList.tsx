@@ -27,7 +27,7 @@ export default function BlogList() {
       {!loading && !posts.length ? (
         <div className="bg-white dark:bg-gray-900 w-full py-24 px-6 text-center rounded-lg shadow">
           <div className="flex flex-col items-center justify-center gap-4">
-            <span className="text-6xl text-indigo-400">
+            <span className="text-6xl text-primary-400">
               <FaPenNib />
             </span>
             <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">

@@ -32,7 +32,7 @@ export default function BlogPage() {
         title="Latest Blog Posts"
         subtitle="Explore all my articles, tutorials, and insights."
         icon={
-          <FaPenNib className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          <FaPenNib className="text-primary-600 dark:text-primary-400 text-3xl" />
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Blog" }]}
       />

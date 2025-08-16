@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
       <div className="relative w-full aspect-[59/30] overflow-hidden">
         {/* Category Badge Only */}
         <div className="absolute top-3 left-3 flex gap-2 z-20">
-          <span className="px-2.5 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full shadow">
+          <span className="px-2.5 py-1 bg-primary-600 text-white text-xs font-semibold rounded-full shadow">
             {project.category}
           </span>
         </div>
@@ -50,7 +50,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
         </div>
         <div className="flex items-center justify-between mt-2">
           <span className="text-xs text-gray-400">{project.marketplace}</span>
-          <span className="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 text-xs font-medium group-hover:underline">
+          <span className="inline-flex items-center gap-1 text-primary-600 dark:text-primary-400 text-xs font-medium group-hover:underline">
             View <FaExternalLinkAlt className="ml-1" size={12} />
           </span>
         </div>

@@ -50,7 +50,7 @@ export default function AboutPage() {
         title="About Me"
         subtitle="Learn more about my background, skills, and education."
         icon={
-          <FaUser className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          <FaUser className="text-primary-600 dark:text-primary-400 text-3xl" />
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
       />

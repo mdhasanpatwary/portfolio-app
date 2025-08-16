@@ -2,11 +2,27 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: red;
+  /* Primary color scale */
+  --color-primary-50:  #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+
+  /* Base primary maps to 500 to support utilities like text-primary */
+  --color-primary: var(--color-primary-500);
+  /* RGB helper for alpha usage in rgba() */
+  --color-primary-500-rgb: 99, 102, 241;
 }
 
 .dark {
-  --color-primary: green;
+  --color-primary: var(--color-primary-500);
 }
 
 body {
@@ -30,7 +46,25 @@ body {
 }
 
 .prose :is(a) {
-  color: #4f39f6;
+  color: var(--color-primary);
+}
+
+.prose :is(a:hover) {
+  color: var(--color-primary-600);
+}
+
+.prose :is(a:focus-visible) {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+.dark .prose :is(a:hover) {
+  color: var(--color-primary-400);
+}
+
+.dark .prose :is(a:focus-visible) {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 2px;
 }
 
 /* Basic syntax highlighting for code blocks */

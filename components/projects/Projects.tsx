@@ -22,12 +22,12 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
     <>
       <section
         id="projects"
-        className="w-full py-16 md:py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6">
+        className="w-full py-16 md:py-24 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             title={projectsData.title}
             icon={
-              <FaFolderOpen className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+              <FaFolderOpen className="text-primary-600 dark:text-primary-400 text-3xl" />
             }>
             {projectsData.subtitle}
           </SectionTitle>
@@ -47,7 +47,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
           <div className="text-center mt-12">
             <Link
               href="/projects"
-              className="inline-flex items-center px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-700 dark:hover:bg-indigo-500 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-indigo-500">
+              className="inline-flex items-center px-6 py-2 bg-primary-600 text-white text-sm font-medium rounded hover:bg-primary-700 dark:hover:bg-primary-500 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
               <span>View All Projects</span>
               <FaExternalLinkAlt size={14} />
             </Link>

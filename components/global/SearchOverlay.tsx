@@ -152,7 +152,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search projects and CSS tips... (Press Esc to close)"
-              className="w-full px-10 py-4 sm:py-5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-10 py-4 sm:py-5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-label="Search"
             />
             <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:flex gap-1 text-xs text-gray-500">
@@ -181,12 +181,12 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                     return (
                       <li key={p.id}>
                         <a
-                          className={`block rounded px-2 py-2 transition ${isActive ? "bg-indigo-50 dark:bg-indigo-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800"}`}
+                          className={`block rounded px-2 py-2 transition ${isActive ? "bg-primary-50 dark:bg-primary-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800"}`}
                           href={p.link || p.demo}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <div className="text-indigo-600 dark:text-indigo-400 font-medium">{highlightMatch(p.title)}</div>
+                          <div className="text-primary-600 dark:text-primary-400 font-medium">{highlightMatch(p.title)}</div>
                           <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{p.description}</p>
                         </a>
                       </li>
@@ -216,7 +216,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                             onClose();
                             router.push(`/css-tips?page=${page}${tipId ? `&tipId=${tipId}` : ""}`);
                           }}
-                          className={`w-full text-left block rounded px-2 py-2 ${isActive ? "bg-indigo-50 dark:bg-indigo-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"}`}
+                          className={`w-full text-left block rounded px-2 py-2 ${isActive ? "bg-primary-50 dark:bg-primary-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"}`}
                         >
                           <div className="text-gray-800 dark:text-gray-200 font-medium">{highlightMatch(t.title || "")}</div>
                           <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{highlightMatch(t.description || "")}</p>

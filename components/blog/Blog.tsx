@@ -27,12 +27,12 @@ const Blog: FC = () => {
   return (
     <section
       id="blog"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title="Latest Blog Posts"
           icon={
-            <FaPenNib className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+            <FaPenNib className="text-primary-600 dark:text-primary-400 text-3xl" />
           }>
           Insights, tutorials, and tips from my frontend development journey.
         </SectionTitle>
@@ -70,12 +70,12 @@ const Blog: FC = () => {
               {/* Navigation Buttons */}
               <button
                 aria-label="Previous"
-                className="prev-btn absolute top-1/2 left-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
+                className="prev-btn absolute top-1/2 left-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
                 <FaChevronLeft size={20} />
               </button>
               <button
                 aria-label="Next"
-                className="next-btn absolute top-1/2 right-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
+                className="next-btn absolute top-1/2 right-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
                 <FaChevronRight size={20} />
               </button>
             </Swiper>
@@ -86,7 +86,7 @@ const Blog: FC = () => {
         <div className="text-center mt-6">
           <Link
             href="/blog"
-            className="inline-flex items-center px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-700 dark:hover:bg-indigo-500 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-indigo-500">
+            className="inline-flex items-center px-6 py-2 bg-primary-600 text-white text-sm font-medium rounded hover:bg-primary-700 dark:hover:bg-primary-500 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
             <span>View All Posts</span>
             <FaExternalLinkAlt size={14} />
           </Link>

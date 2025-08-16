@@ -100,13 +100,13 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
   );
 
   return (
-    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-200 dark:hover:border-indigo-500 overflow-hidden">
+    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 overflow-hidden">
       {/* Header */}
       <div className="p-3 sm:p-4 border-b border-gray-100 dark:border-gray-700">
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-baseline gap-1.5">
-              <h3 className="text-base sm:text-lg font-semibold text-indigo-600 dark:text-indigo-400 truncate group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 truncate group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
                 {experience.role}
               </h3>
               <span className="text-xs text-gray-500 dark:text-gray-400">
@@ -118,11 +118,11 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
             </div>
             <div className="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="flex items-center gap-1">
-                <FaCalendarAlt className="text-indigo-500 dark:text-indigo-400 text-xs" />
+                <FaCalendarAlt className="text-primary-500 dark:text-primary-400 text-xs" />
                 <span>{experience.duration}</span>
               </div>
               <div className="flex items-center gap-1">
-                <FaMapMarkerAlt className="text-indigo-500 dark:text-indigo-400 text-xs" />
+                <FaMapMarkerAlt className="text-primary-500 dark:text-primary-400 text-xs" />
                 <span>{experience.location}</span>
               </div>
             </div>
@@ -131,7 +131,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
             href={experience.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+            className="flex items-center gap-1 text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
             <span className="hidden sm:inline">Visit</span>
             <FaExternalLinkAlt className="text-xs" />
           </a>
@@ -150,7 +150,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
                 style={{
                   color:
                     brandColors[tech.icon as keyof typeof brandColors] ||
-                    "#6366F1",
+                    "var(--color-primary-500)",
                 }}>
                 {Icon && <Icon />}
                 <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white dark:text-gray-100 text-xs rounded-md opacity-0 group-hover/tech:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none shadow-lg">

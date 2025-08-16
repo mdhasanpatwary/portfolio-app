@@ -148,7 +148,7 @@ export default async function BlogDetailPage({
         title={post.title}
         subtitle={post.description}
         icon={
-          <FaPenNib className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          <FaPenNib className="text-primary-600 dark:text-primary-400 text-3xl" />
         }
         breadcrumb={[
           { label: "Home", href: "/" },
@@ -159,7 +159,7 @@ export default async function BlogDetailPage({
         titleClassName="text-2xl md:text-3xl"
       />
 
-      <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="max-w-4xl mx-auto">
           <script
             type="application/ld+json"
@@ -206,14 +206,14 @@ export default async function BlogDetailPage({
                   href={`https://dev.to/${post.user.username}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded-full"
+                  className="focus:outline-none focus:ring-2 focus:ring-primary-400 rounded-full"
                   aria-label={`View ${post.user.name}'s profile on Dev.to`}>
                   <CustomImage
                     src={post.user.profile_image}
                     alt={post.user.name}
                     width={40}
                     height={40}
-                    className="rounded-full border-2 border-indigo-200 dark:border-indigo-700 shadow-sm"
+                    className="rounded-full border-2 border-primary-200 dark:border-primary-700 shadow-sm"
                     blurType="avatar"
                   />
                 </a>
@@ -244,27 +244,27 @@ export default async function BlogDetailPage({
                   href={`https://dev.to/t/${encodeURIComponent(tag)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded-full hover:bg-indigo-200 dark:hover:bg-indigo-800 transition focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition focus:outline-none focus:ring-2 focus:ring-primary-400"
                   aria-label={`View tag ${tag} on Dev.to`}>
                   #{tag}
                 </a>
               ))}
             </div>
-            <hr className="my-6 border-indigo-100 dark:border-indigo-800" />
+            <hr className="my-6 border-primary-100 dark:border-primary-800" />
             <SectionTitle
               title="Article"
               icon={
-                <FaPenNib className="text-indigo-600 dark:text-indigo-400 text-xl" />
+                <FaPenNib className="text-primary-600 dark:text-primary-400 text-xl" />
               }
               className="mb-4 text-left text-2xl md:text-3xl">
               <span className="sr-only">Article content</span>
             </SectionTitle>
             <MarkdownRenderer content={post.body_markdown || ""} />
-            <hr className="my-8 border-indigo-100 dark:border-indigo-800" />
+            <hr className="my-8 border-primary-100 dark:border-primary-800" />
             <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
               <Link
                 href="/blog"
-                className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold text-sm flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded px-2 py-1 bg-indigo-50 dark:bg-gray-800 hover:bg-indigo-100 dark:hover:bg-gray-700 transition"
+                className="text-primary-600 dark:text-primary-400 hover:underline font-semibold text-sm flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary-400 rounded px-2 py-1 bg-primary-50 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-gray-700 transition"
                 aria-label="Back to Blog">
                 ← Back to Blog
               </Link>
@@ -272,7 +272,7 @@ export default async function BlogDetailPage({
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold text-base focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded px-2 py-1 bg-indigo-50 dark:bg-gray-800 hover:bg-indigo-100 dark:hover:bg-gray-700 transition"
+                className="text-primary-600 dark:text-primary-400 hover:underline font-semibold text-base focus:outline-none focus:ring-2 focus:ring-primary-400 rounded px-2 py-1 bg-primary-50 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-gray-700 transition"
                 aria-label="View this post on Dev.to">
                 View on Dev.to →
               </a>

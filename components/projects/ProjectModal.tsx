@@ -25,7 +25,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
       {/* Floating Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 p-2.5 bg-white dark:bg-gray-900 text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-full shadow transition hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+        className="absolute top-4 right-4 z-50 p-2.5 bg-white dark:bg-gray-900 text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 rounded-full shadow transition hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
         <FaTimes size={18} />
       </button>
 
@@ -41,7 +41,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
           className="w-full object-contain"
         />
         {/* Category badge matches card */}
-        <span className="absolute top-4 left-4 px-3 py-1.5 bg-indigo-600 text-white text-xs font-semibold rounded-full shadow">
+        <span className="absolute top-4 left-4 px-3 py-1.5 bg-primary-600 text-white text-xs font-semibold rounded-full shadow">
           {project.category}
         </span>
       </div>
@@ -56,7 +56,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500 transition gap-2 focus-visible:ring-2 focus-visible:ring-indigo-500">
+            className="inline-flex items-center px-6 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-primary-700 dark:hover:bg-primary-500 transition gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
             <span>View Project</span>
             <FaExternalLinkAlt size={15} />
           </a>
@@ -64,7 +64,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2 border border-indigo-600 text-indigo-600 text-sm font-medium rounded-lg hover:bg-indigo-50 dark:text-indigo-400 dark:border-indigo-400 dark:hover:bg-gray-800 transition gap-2 focus-visible:ring-2 focus-visible:ring-indigo-500">
+            className="inline-flex items-center px-6 py-2 border border-primary-600 text-primary-600 text-sm font-medium rounded-lg hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-800 transition gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
             <FaPlay size={15} />
             <span>Live Demo</span>
           </a>
@@ -83,13 +83,13 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
           {/* Features */}
           <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 shadow-sm">
             <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
+              <span className="w-2 h-2 bg-primary-600 rounded-full"></span>
               Key Features
             </h3>
             <ul className="space-y-3">
               {project.features?.map((feature: string, index: number) => (
                 <li key={index} className="flex items-start">
-                  <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   <span className="text-sm text-gray-700 dark:text-gray-300">
                     {feature}
                   </span>

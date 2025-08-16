@@ -19,12 +19,12 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
   return (
     <section
       id="testimonials"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={testimonials.title}
           icon={
-            <FaQuoteLeft className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+            <FaQuoteLeft className="text-primary-600 dark:text-primary-400 text-3xl" />
           }>
           {testimonials.subtitle}
         </SectionTitle>
@@ -100,12 +100,12 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
             {/* Navigation Buttons */}
             <button
               aria-label="Previous"
-              className="prev-btn absolute top-1/2 left-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
+              className="prev-btn absolute top-1/2 left-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
               <FaChevronLeft size={20} />
             </button>
             <button
               aria-label="Next"
-              className="next-btn absolute top-1/2 right-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
+              className="next-btn absolute top-1/2 right-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
               <FaChevronRight size={20} />
             </button>
           </Swiper>

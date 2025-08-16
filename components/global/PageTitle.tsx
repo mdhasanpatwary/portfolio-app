@@ -23,7 +23,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
   className = "",
   titleClassName = "",
 }) => (
-  <div className="bg-indigo-50 dark:bg-gray-800 w-full">
+  <div className="bg-primary-50 dark:bg-gray-800 w-full">
     <div
       className={`max-w-7xl mx-auto py-8 md:py-12 px-4 text-center ${className}`}>
       {/* Centered Breadcrumb */}

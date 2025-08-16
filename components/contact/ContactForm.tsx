@@ -155,7 +155,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
               aria-describedby={
                 errors.user_name ? "user_name-error" : undefined
               }
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
               onBlur={handleBlur}
             />
             {touched.user_name && errors.user_name && (
@@ -187,7 +187,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
               aria-describedby={
                 errors.user_email ? "user_email-error" : undefined
               }
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
               onBlur={handleBlur}
             />
             {touched.user_email && errors.user_email && (
@@ -211,7 +211,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
             type="text"
             name="subject"
             placeholder={contact.placeholders.subject}
-            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
           />
         </div>
 
@@ -233,7 +233,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
             aria-required="true"
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "message-error" : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white resize-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
             onBlur={handleBlur}
           />
           {touched.message && errors.message && (
@@ -256,7 +256,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
 
           <button
             type="submit"
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+            className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
             disabled={loading}
             aria-busy={loading}>
             {loading ? (

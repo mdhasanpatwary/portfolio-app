@@ -27,12 +27,12 @@ const Hobby: FC<HobbyProps> = ({ hobbiesData }) => {
   return (
     <section
       id="hobby"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto text-center">
         <SectionTitle
           title={title}
           icon={
-            <span className="text-3xl text-indigo-600 dark:text-indigo-400">
+            <span className="text-3xl text-primary-600 dark:text-primary-400">
               <FaLightbulb />
             </span>
           }>

@@ -9,7 +9,7 @@ const ExperienceAchievements = ({ highlights }: { highlights: string[] }) => {
     <div className="sm:hidden">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between text-left text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+        className="w-full flex items-center justify-between text-left text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
         <span>Key Achievements</span>
         <FaChevronDown
           className={`transform transition-transform duration-200 ${

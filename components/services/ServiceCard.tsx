@@ -40,13 +40,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, idx }) => {
   return (
     <div
       key={idx}
-      className="p-5 sm:p-8 flex flex-col items-stretch overflow-hidden transition-colors duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/40">
+      className="p-5 sm:p-8 flex flex-col items-stretch overflow-hidden transition-colors duration-200 hover:bg-primary-50 dark:hover:bg-primary-900/40">
       {/* Row 1: Icon and Title */}
       <div className="flex items-center gap-4 w-full mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
-        <div className="flex items-center justify-center w-14 h-14 bg-indigo-50 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_4px_rgba(99,102,241,0.18)]">
+        <div className="flex items-center justify-center w-14 h-14 bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_4px_rgba(var(--color-primary-500-rgb),0.18)]">
           {Icon ? <Icon /> : null}
         </div>
-        <h3 className="text-lg md:text-xl font-semibold text-indigo-600 dark:text-indigo-400">
+        <h3 className="text-lg md:text-xl font-semibold text-primary-600 dark:text-primary-400">
           {service.title}
         </h3>
       </div>
@@ -61,7 +61,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, idx }) => {
         {service.tools.map((tool, i) => (
           <span
             key={i}
-            className="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-white text-xs font-medium px-3 py-1 rounded-full">
+            className="bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-white text-xs font-medium px-3 py-1 rounded-full">
             {tool}
           </span>
         ))}

@@ -56,7 +56,7 @@ export default function CssTipsPage() {
         title="CSS Tips & Tricks"
         subtitle="Discover modern CSS techniques and best practices to enhance your web development skills."
         icon={
-          <FaCode className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          <FaCode className="text-primary-600 dark:text-primary-400 text-3xl" />
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "CSS Tips" }]}
       />

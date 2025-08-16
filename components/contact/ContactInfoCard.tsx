@@ -39,10 +39,10 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
 
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <FaEnvelope className="text-blue-600 dark:text-blue-400 text-lg" />
+            <FaEnvelope className="text-primary-600 dark:text-primary-400 text-lg" />
             <a
               href={`mailto:${contact.email}`}
-              className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+              className="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
               {contact.email}
             </a>
           </div>
@@ -52,7 +52,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
             <div className="flex items-center gap-3">
               <a
                 href={`tel:${contact.phone}`}
-                className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                className="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 {contact.phone}
               </a>
               <a

@@ -44,7 +44,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
   return (
     loading ? (
       <div
-        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
         tabIndex={0}
       >
         {/* Image at top with overlay */}
@@ -77,7 +77,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
     ) : (
       <Link
         href={post ? `/blog/${post.id}` : "#"}
-        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
         tabIndex={0}
       >
         {/* Image at top with overlay */}
@@ -106,7 +106,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
             {tags.slice(0, 3).map((tag, i) => (
               <span
                 key={i}
-                className="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded-full"
+                className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full"
               >
                 #{tag}
               </span>
@@ -137,7 +137,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
           {/* Read more link */}
           <div>
             <span
-              className="text-indigo-600 capitalize dark:text-indigo-400 text-sm font-semibold transition-colors cursor-pointer bg-gradient-to-r from-indigo-400 to-indigo-400 bg-no-repeat transition-[background-size] duration-300"
+              className="text-primary-600 capitalize dark:text-primary-400 text-sm font-semibold transition-colors cursor-pointer bg-gradient-to-r from-primary-400 to-primary-400 bg-no-repeat transition-[background-size] duration-300"
               style={{
                 backgroundSize: '0% 2px',
                 backgroundPosition: 'left bottom',

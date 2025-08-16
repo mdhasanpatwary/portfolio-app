@@ -43,7 +43,7 @@ export default function ContactPage() {
         title={contact.title}
         subtitle={contact.subtitle}
         icon={
-          <FaPaperPlane className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          <FaPaperPlane className="text-primary-600 dark:text-primary-400 text-3xl" />
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "contact" }]}
       />

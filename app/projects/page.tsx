@@ -32,7 +32,7 @@ export default function ProjectsPage() {
         title={projects.title}
         subtitle={projects.subtitle}
         icon={
-          <FaFolderOpen className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+          <FaFolderOpen className="text-primary-600 dark:text-primary-400 text-3xl" />
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: projects.title }]}
       />

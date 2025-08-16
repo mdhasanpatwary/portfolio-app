@@ -22,7 +22,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
   return (
     <section
       id="about"
-      className="w-full py-20 md:py-32 px-6 bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="w-full py-20 md:py-32 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
         {/* Image */}
@@ -47,7 +47,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight">
             {about.title}
           </h2>
-          <h3 className="text-lg md:text-2xl font-semibold text-indigo-700 dark:text-indigo-400 mb-3">
+          <h3 className="text-lg md:text-2xl font-semibold text-primary-700 dark:text-primary-400 mb-3">
             {about.subtitle}
           </h3>
           <div className="text-base md:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
