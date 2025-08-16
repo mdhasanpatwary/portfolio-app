@@ -10,6 +10,7 @@ import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
 import InstallPrompt from "@/components/global/InstallPrompt";
 import ServiceWorkerRegistration from "@/components/global/ServiceWorkerRegistration";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -183,6 +184,7 @@ export default function RootLayout({
             </AppProvider>
           </ErrorBoundary>
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );
