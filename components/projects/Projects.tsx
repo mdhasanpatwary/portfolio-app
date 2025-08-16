@@ -1,23 +1,17 @@
-"use client";
-
-// components/Projects.tsx
+// components/Projects.tsx (Server wrapper)
 
 import { FC } from "react";
 import type { Projects as ProjectsType } from "@/types/data";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaFolderOpen } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
-import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
-import useProjectModal from "@/hooks/useProjectModal";
+import ProjectsClient from "./ProjectsClient";
 
 interface ProjectsProps {
   projectsData: ProjectsType;
 }
 
 const Projects: FC<ProjectsProps> = ({ projectsData }) => {
-  const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();
-
   return (
     <>
       <section
@@ -33,15 +27,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
           </SectionTitle>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projectsData.items.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                openModal={openModal}
-              />
-            ))}
-          </div>
+          <ProjectsClient items={projectsData.items} />
 
           {/* View All Projects Button */}
           <div className="text-center mt-12">
@@ -54,11 +40,6 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
           </div>
         </div>
       </section>
-      <ProjectModal
-        project={selectedProject}
-        isOpen={isOpen}
-        onClose={closeModal}
-      />
     </>
   );
 };

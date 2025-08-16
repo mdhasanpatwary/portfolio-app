@@ -2,6 +2,7 @@ import PageTitle from "@/components/global/PageTitle";
 import { FaPenNib } from "react-icons/fa";
 import BlogList from "./BlogList";
 import type { Metadata } from "next";
+import type { DevToPost } from "@/components/blog/BlogCard";
 
 export const metadata: Metadata = {
   title: "Blog | MD Hasan Patwary - Web Development Articles",
@@ -25,7 +26,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://patwary.vercel.app/blog" },
 };
 
-export default function BlogPage() {
+async function fetchDevToPosts(): Promise<DevToPost[]> {
+  try {
+    const res = await fetch("https://dev.to/api/articles?username=mdhassanpatwary", {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const posts = await fetchDevToPosts();
+  const sp = await searchParams;
+  const page = Number(sp?.page || 1) || 1;
   return (
     <>
       <PageTitle
@@ -36,7 +56,7 @@ export default function BlogPage() {
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Blog" }]}
       />
-      <BlogList />
+      <BlogList posts={posts} page={page} />
     </>
   );
 }

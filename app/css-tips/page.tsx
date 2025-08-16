@@ -1,8 +1,9 @@
 import { cssTips } from "@/data";
-import { CssTips } from "@/components";
+import CssTipsClient from "@/components/cssTips/CssTipsClient";
 import PageTitle from "@/components/global/PageTitle";
 import { FaCode } from "react-icons/fa";
 import type { Metadata } from "next";
+import PaginationLinks from "@/components/global/PaginationLinks";
 
 export const metadata: Metadata = {
   title: "CSS Tips & Tricks | MD Hasan Patwary - Front-End Developer",
@@ -26,8 +27,20 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://patwary.vercel.app/css-tips" },
 };
 
-export default function CssTipsPage() {
-  const tips = (cssTips as unknown as { items?: Array<{ id: number; title: string; description: string }> }).items || [];
+export default async function CssTipsPage({ searchParams }: { searchParams: Promise<{ page?: string; tipId?: string }> }) {
+  const sp = await searchParams;
+  // cssTips is a JSON array (see data/css-tips.json), not an object with `items`
+  const tips: Array<{ id: number; title: string; description: string }> = Array.isArray(cssTips)
+    ? (cssTips as Array<{ id: number; title: string; description: string }>)
+    : ((cssTips as unknown as { items?: Array<{ id: number; title: string; description: string }> }).items || []);
+  const PAGE_SIZE = 6;
+  const page = Math.max(1, Number(sp?.page || 1) || 1);
+  const totalPages = Math.max(1, Math.ceil(tips.length / PAGE_SIZE));
+  const startIdx = (page - 1) * PAGE_SIZE;
+  const endIdx = startIdx + PAGE_SIZE;
+  const pageTips = tips.slice(startIdx, endIdx);
+  const initialTipId = sp?.tipId ? Number(sp.tipId) : undefined;
+  const initialTipData = typeof initialTipId === 'number' ? (tips.find(t => t.id === initialTipId) || null) : null;
   const howToCandidates = tips.filter((t) =>
     [
       "scroll-behavior",
@@ -60,16 +73,24 @@ export default function CssTipsPage() {
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "CSS Tips" }]}
       />
-      <CssTips tips={cssTips} />
+      <CssTipsClient tips={pageTips} initialTipId={initialTipId} initialTipData={initialTipData} />
+      {/* Wrapper adds consistent bottom spacing from footer */}
+      <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24">
+        <PaginationLinks
+          currentPage={page}
+          totalPages={totalPages}
+          makeHref={(p) => `/css-tips?page=${p}`}
+        />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            itemListElement: tips.map((t, i: number) => ({
+            itemListElement: pageTips.map((t, i: number) => ({
               "@type": "CreativeWork",
-              position: i + 1,
+              position: startIdx + i + 1,
               name: t.title,
               description: t.description,
             })) || [],

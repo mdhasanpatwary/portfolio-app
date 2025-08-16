@@ -1,8 +1,6 @@
-"use client";
-
 import { FC } from "react";
-import { FaChevronUp } from "react-icons/fa";
 import SocialLinks from "../global/SocialLinks";
+import ScrollToTopLink from "./ScrollToTopLink";
 
 type FooterProps = {
   name: string;
@@ -14,11 +12,6 @@ const Footer: FC<FooterProps & { copyrightText?: string }> = ({
   description,
   copyrightText,
 }) => {
-  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-t border-gray-200 dark:border-gray-700 pt-10 pb-6 px-6 text-center">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -36,13 +29,7 @@ const Footer: FC<FooterProps & { copyrightText?: string }> = ({
         </nav>
 
         <div>
-          <a
-            href="#top"
-            onClick={handleScrollToTop}
-            aria-label="Scroll back to top"
-            className="inline-flex items-center gap-1 text-sm text-primary-600 hover:underline">
-            <FaChevronUp className="animate-bounce" /> Back to top
-          </a>
+          <ScrollToTopLink />
         </div>
 
         {/* Copyright */}

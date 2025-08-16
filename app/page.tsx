@@ -5,6 +5,7 @@ import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
 import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
+import type { DevToPost } from "@/components/blog/BlogCard";
 import FAQ from "@/components/faq/FAQ";
 import { faqs } from "@/data";
 import type { FAQsData } from "@/types/data";
@@ -46,7 +47,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://patwary.vercel.app" },
 };
 
-export default function Home() {
+async function fetchDevToPosts(): Promise<DevToPost[]> {
+  try {
+    const res = await fetch("https://dev.to/api/articles?username=mdhassanpatwary", {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+
+export default async function Home() {
   const homeFaqs: FAQsData = {
     title: faqs.title,
     subtitle: faqs.subtitle,
@@ -63,6 +76,7 @@ export default function Home() {
       ].some((k) => (i.question + i.answer).toLowerCase().includes(k))
     ),
   };
+  const posts = await fetchDevToPosts();
   return (
     <main className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />
@@ -77,7 +91,7 @@ export default function Home() {
 
       <FunFact funFacts={funFacts} />
       <Hobby hobbiesData={hobbies} />
-      <Blog />
+      <Blog posts={posts} />
       <FAQ faqData={homeFaqs} />
       <script
         type="application/ld+json"

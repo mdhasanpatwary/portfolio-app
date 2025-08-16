@@ -1,8 +1,9 @@
 import PageTitle from "@/components/global/PageTitle";
 import { FaFolderOpen } from "react-icons/fa";
 import { projects } from "@/data";
-import ProjectsList from "./ProjectsList";
 import type { Metadata } from "next";
+import ProjectsGrid from "./ProjectsGrid";
+import PaginationLinks from "@/components/global/PaginationLinks";
 
 export const metadata: Metadata = {
   title: "Projects | MD Hasan Patwary - Front-End Developer Portfolio",
@@ -25,7 +26,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://patwary.vercel.app/projects" },
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+  const sp = await searchParams;
+  const PAGE_SIZE = 8;
+  const page = Math.max(1, Number(sp?.page || 1) || 1);
+  const totalProjects = projects.items.length;
+  const totalPages = Math.max(1, Math.ceil(totalProjects / PAGE_SIZE));
+  const startIdx = (page - 1) * PAGE_SIZE;
+  const endIdx = startIdx + PAGE_SIZE;
+  const pageItems = projects.items.slice(startIdx, endIdx);
+
   return (
     <>
       <PageTitle
@@ -36,16 +46,23 @@ export default function ProjectsPage() {
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: projects.title }]}
       />
-      <ProjectsList />
+      <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
+        <ProjectsGrid items={pageItems} />
+        <PaginationLinks
+          currentPage={page}
+          totalPages={totalPages}
+          makeHref={(p) => `/projects?page=${p}`}
+        />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            itemListElement: projects.items.map((p, i) => ({
+            itemListElement: pageItems.map((p, i) => ({
               "@type": p.github ? "SoftwareSourceCode" : "CreativeWork",
-              position: i + 1,
+              position: startIdx + i + 1,
               name: p.title,
               description: p.description,
               url: p.link || p.demo,

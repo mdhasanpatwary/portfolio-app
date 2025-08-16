@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";

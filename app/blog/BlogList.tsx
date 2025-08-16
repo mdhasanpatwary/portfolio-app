@@ -1,30 +1,25 @@
-"use client";
-
-import BlogCard from "@/components/blog/BlogCard";
+import BlogCard, { DevToPost } from "@/components/blog/BlogCard";
 import { FaPenNib } from "react-icons/fa";
-import { useAppContext } from "@/context/BlogContext";
-import { useState } from "react";
-import Pagination from "@/components/global/Pagination";
+import PaginationLinks from "@/components/global/PaginationLinks";
 
-export default function BlogList() {
-  const { posts, loading } = useAppContext();
-  const [currentPage, setCurrentPage] = useState(1);
+interface BlogListProps {
+  posts: DevToPost[];
+  page?: number;
+}
+
+export default function BlogList({ posts, page = 1 }: BlogListProps) {
   const postsPerPage = 6;
 
   // Calculate pagination
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const totalPages = Math.max(1, Math.ceil(posts.length / postsPerPage));
+  const currentPage = Math.min(Math.max(1, page), totalPages);
   const startIdx = (currentPage - 1) * postsPerPage;
   const endIdx = startIdx + postsPerPage;
   const currentPosts = posts.slice(startIdx, endIdx);
 
-  const handlePageChange = (page: number) => {
-    if (page < 1 || page > totalPages) return;
-    setCurrentPage(page);
-  };
-
   return (
     <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
-      {!loading && !posts.length ? (
+      {!posts.length ? (
         <div className="bg-white dark:bg-gray-900 w-full py-24 px-6 text-center rounded-lg shadow">
           <div className="flex flex-col items-center justify-center gap-4">
             <span className="text-6xl text-primary-400">
@@ -38,24 +33,18 @@ export default function BlogList() {
             </p>
           </div>
         </div>
-      ) : loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {[...Array(3)].map((_, i) => (
-            <BlogCard key={i} loading={true} />
-          ))}
-        </div>
       ) : (
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {currentPosts.map((post) => (
-              <BlogCard key={post.id} post={post} loading={loading} />
+              <BlogCard key={post.id} post={post} loading={false} />
             ))}
           </div>
-          {/* Creative Pagination Controls */}
-          <Pagination
+          {/* Pagination with links */}
+          <PaginationLinks
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={handlePageChange}
+            makeHref={(p) => `/blog?page=${p}`}
           />
         </>
       )}

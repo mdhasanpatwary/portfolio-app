@@ -1,19 +1,18 @@
-"use client";
-
 import { FC } from "react";
 import { FaPenNib, FaExternalLinkAlt } from "react-icons/fa";
-import BlogCard from "./BlogCard";
+import BlogCard, { DevToPost } from "./BlogCard";
 import SectionTitle from "../global/SectionTitle";
 import Link from "next/link";
-import { useAppContext } from "@/context/BlogContext";
 import Carousel from "@/components/global/Carousel";
 
 const MAX_POSTS = 9; // limit posts to 9 for slider
 
-const Blog: FC = () => {
-  const { posts, loading } = useAppContext();
+interface BlogProps {
+  posts: DevToPost[];
+}
 
-  if (!loading && !posts.length) return null;
+const Blog: FC<BlogProps> = ({ posts }) => {
+  if (!posts.length) return null;
 
   return (
     <section
@@ -29,26 +28,18 @@ const Blog: FC = () => {
         </SectionTitle>
 
         {/* Blog Carousel */}
-        {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {[...Array(3)].map((_, i) => (
-              <BlogCard key={i} loading={true} />
-            ))}
-          </div>
-        ) : (
-          <Carousel
+        <Carousel
             breakpoints={{ 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
             spaceBetween={30}
             className="pb-12"
             navigation
             pagination>
-            {posts.slice(0, MAX_POSTS).map((post) => (
-              <div key={post.id}>
-                <BlogCard post={post} loading={false} />
-              </div>
-            ))}
-          </Carousel>
-        )}
+          {posts.slice(0, MAX_POSTS).map((post) => (
+            <div key={post.id}>
+              <BlogCard post={post} loading={false} />
+            </div>
+          ))}
+        </Carousel>
 
         {/* View All Button */}
         <div className="text-center mt-6">

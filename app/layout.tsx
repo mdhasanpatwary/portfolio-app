@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { header, footer } from "@/data";
-import { AppProvider } from "@/context/BlogContext";
 import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -174,14 +173,12 @@ export default function RootLayout({
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
         <ThemeProvider>
           <ErrorBoundary>
-            <AppProvider>
-              <Toaster position="top-right" />
-              <Header navItems={header.navItems} />
-              {children}
-              <Footer name={footer.name} description={footer.description} />
-              <InstallPrompt />
-              <ServiceWorkerRegistration />
-            </AppProvider>
+            <Toaster position="top-right" />
+            <Header navItems={header.navItems} />
+            {children}
+            <Footer name={footer.name} description={footer.description} />
+            <InstallPrompt />
+            <ServiceWorkerRegistration />
           </ErrorBoundary>
         </ThemeProvider>
         <Analytics/>

@@ -137,15 +137,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
           {/* Read more link */}
           <div>
             <span
-              className="text-primary-600 capitalize dark:text-primary-400 text-sm font-semibold transition-colors cursor-pointer bg-gradient-to-r from-primary-400 to-primary-400 bg-no-repeat transition-[background-size] duration-300"
-              style={{
-                backgroundSize: '0% 2px',
-                backgroundPosition: 'left bottom',
-                backgroundRepeat: 'no-repeat',
-                transition: 'background-size 0.3s',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundSize = '74% 2px')}
-              onMouseLeave={e => (e.currentTarget.style.backgroundSize = '0% 2px')}
+              className="text-primary-600 dark:text-primary-400 text-sm font-semibold hover:underline underline-offset-4 cursor-pointer"
             >
               Read more →
             </span>
