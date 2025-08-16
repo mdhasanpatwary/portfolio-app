@@ -1,15 +1,11 @@
 "use client";
 
 import { FC } from "react";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
 import type { Testimonial, TestimonialsData } from "@/types/data";
 import TestimonialCard from "./TestimonialCard";
+import Carousel from "@/components/global/Carousel";
 
 type TestimonialProps = {
   testimonials: TestimonialsData;
@@ -67,49 +63,18 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
             }),
           }}
         />
-        <div className="relative group">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            slidesPerView={1}
-            spaceBetween={30}
-            pagination={{ clickable: true }}
-            navigation={{
-              prevEl: ".prev-btn",
-              nextEl: ".next-btn",
-              disabledClass: "opacity-50 cursor-not-allowed",
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1200: {
-                slidesPerView: 3,
-              },
-            }}
-            className="!pb-10 md:!pb-12">
-            {testimonials.items.map(
-              (testimonial: Testimonial, index: number) => (
-                <SwiperSlide key={index}>
-                  <TestimonialCard testimonial={testimonial} />
-                </SwiperSlide>
-              )
-            )}
-            {/* Navigation Buttons */}
-            <button
-              aria-label="Previous"
-              className="prev-btn absolute top-1/2 left-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
-              <FaChevronLeft size={20} />
-            </button>
-            <button
-              aria-label="Next"
-              className="next-btn absolute top-1/2 right-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
-              <FaChevronRight size={20} />
-            </button>
-          </Swiper>
-        </div>
+        <Carousel
+          breakpoints={{ 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1200: { slidesPerView: 3 } }}
+          spaceBetween={30}
+          className="pb-10 md:pb-12"
+          navigation
+          pagination>
+          {testimonials.items.map((testimonial: Testimonial, index: number) => (
+            <div key={index}>
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </Carousel>
       </div>
     </section>
   );

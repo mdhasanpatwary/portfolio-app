@@ -1,21 +1,12 @@
 "use client";
 
 import { FC } from "react";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaPenNib,
-  FaExternalLinkAlt,
-} from "react-icons/fa";
+import { FaPenNib, FaExternalLinkAlt } from "react-icons/fa";
 import BlogCard from "./BlogCard";
 import SectionTitle from "../global/SectionTitle";
 import Link from "next/link";
 import { useAppContext } from "@/context/BlogContext";
+import Carousel from "@/components/global/Carousel";
 
 const MAX_POSTS = 9; // limit posts to 9 for slider
 
@@ -45,41 +36,18 @@ const Blog: FC = () => {
             ))}
           </div>
         ) : (
-          <div className="relative group">
-            <Swiper
-              modules={[Navigation, Pagination]}
-              slidesPerView={1}
-              spaceBetween={30}
-              pagination={{ clickable: true }}
-              navigation={{
-                prevEl: ".prev-btn",
-                nextEl: ".next-btn",
-                disabledClass: "opacity-50 cursor-not-allowed",
-              }}
-              breakpoints={{
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              className="!pb-12">
-              {posts.slice(0, MAX_POSTS).map((post) => (
-                <SwiperSlide key={post.id}>
-                  <BlogCard post={post} loading={false} />
-                </SwiperSlide>
-              ))}
-              {/* Navigation Buttons */}
-              <button
-                aria-label="Previous"
-                className="prev-btn absolute top-1/2 left-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
-                <FaChevronLeft size={20} />
-              </button>
-              <button
-                aria-label="Next"
-                className="next-btn absolute top-1/2 right-2 -translate-y-1/2 bg-white dark:bg-gray-800 border border-primary-500 text-primary-600 hover:bg-primary-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-20 opacity-0 group-hover:opacity-100 cursor-pointer">
-                <FaChevronRight size={20} />
-              </button>
-            </Swiper>
-          </div>
+          <Carousel
+            breakpoints={{ 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
+            spaceBetween={30}
+            className="pb-12"
+            navigation
+            pagination>
+            {posts.slice(0, MAX_POSTS).map((post) => (
+              <div key={post.id}>
+                <BlogCard post={post} loading={false} />
+              </div>
+            ))}
+          </Carousel>
         )}
 
         {/* View All Button */}
