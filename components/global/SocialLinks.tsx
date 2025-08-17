@@ -5,7 +5,7 @@ import {
   FaStackOverflow,
   FaFacebook,
 } from "react-icons/fa";
-import { SiDevdotto, SiDailydotdev, SiCodepen } from "react-icons/si";
+import { SiDevdotto, SiDailydotdev, SiCodepen, SiUpwork } from "react-icons/si";
 import { contact } from "@/data";
 
 export type SocialLink = { name: string; url: string; icon: string };
@@ -18,6 +18,7 @@ const iconMap = {
   SiDevdotto,
   SiDailydotdev,
   SiCodepen,
+  SiUpwork,
 };
 
 // Brand colors for each social platform
@@ -29,6 +30,7 @@ const brandColors = {
   SiDevdotto: "hover:text-black dark:hover:text-white",
   SiDailydotdev: "hover:text-primary-600 dark:hover:text-primary-400",
   SiCodepen: "hover:text-black dark:hover:text-white",
+  SiUpwork: "hover:text-green-600 dark:hover:text-green-400",
 };
 
 const links = contact?.socialLinks || [];

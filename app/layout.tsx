@@ -91,6 +91,7 @@ export default function RootLayout({
                 "https://dev.to/mdhassanpatwary",
                 "https://app.daily.dev/mdhassanpatwary",
                 "https://codepen.io/MD-Hasan-Patwary",
+                "https://www.upwork.com/freelancers/~01edc329725caf7992",
               ],
               jobTitle: "Front-End Developer",
               image: "/profile.webp",
