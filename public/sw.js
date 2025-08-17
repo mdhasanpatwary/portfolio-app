@@ -52,6 +52,12 @@ self.addEventListener('fetch', function (event) {
     return;
   }
 
+  // Only handle caching for GET requests; pass through others (POST/PUT/etc.)
+  if (event.request.method !== 'GET') {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   // Network-first for navigations/HTML
   const acceptHeader = event.request.headers.get('accept') || '';
   const isNavigation = event.request.mode === 'navigate' || acceptHeader.includes('text/html');
@@ -85,6 +91,7 @@ self.addEventListener('fetch', function (event) {
         const shouldCache =
           fetchResponse &&
           fetchResponse.status === 200 &&
+          event.request.method === 'GET' &&
           event.request.url.startsWith(self.location.origin) &&
           !(acceptHeader.includes('text/html'));
         if (shouldCache) {
