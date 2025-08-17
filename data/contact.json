@@ -68,6 +68,11 @@
       "name": "CodePen",
       "url": "https://codepen.io/MD-Hasan-Patwary",
       "icon": "SiCodepen"
+    },
+    {
+      "name": "Upwork",
+      "url": "https://www.upwork.com/freelancers/~01edc329725caf7992",
+      "icon": "SiUpwork"
     }
   ]
 }
