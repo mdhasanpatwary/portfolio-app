@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ["@headlessui/react", "react-icons"],
+  },
   images: {
     remotePatterns: [
       {

@@ -15,6 +15,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {
@@ -131,6 +134,9 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary RSS" href="/rss.xml" />
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary Projects RSS" href="/projects.xml" />
         <link rel="preconnect" href="https://dev.to" crossOrigin="" />
+        {/* CSS preload optimization */}
+        <link rel="preload" href="/globals.css" as="style" />
+        <noscript><link rel="stylesheet" href="/globals.css" /></noscript>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
