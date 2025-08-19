@@ -24,7 +24,7 @@ export default function PortfolioChatWidget() {
             id: crypto.randomUUID(),
             role: 'assistant',
             content:
-              "Hi! I'm your Portfolio AI Chat. Ask me anything about Hasan's skills, projects, experience, education, services, or contact info from this site.",
+              "Hi! I’m Hasan. Ask me anything about my skills, projects, experience, education, services, or how to contact me.",
           },
         ])
       }
@@ -48,11 +48,15 @@ export default function PortfolioChatWidget() {
       const res = await fetch('/api/portfolio-ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: question }),
+        body: JSON.stringify({
+          message: question,
+          // send last 10 turns to give server conversation context
+          history: messages.slice(-10).map(({ role, content }) => ({ role, content })),
+        }),
       })
       if (!res.ok || !res.body) {
         // Attempt to parse an error message
-        let fallback = 'Sorry, I don’t have that information in my portfolio.'
+        let fallback = "I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help."
         try {
           const data = await res.json()
           if (data?.error) fallback = String(data.error)
@@ -84,7 +88,7 @@ export default function PortfolioChatWidget() {
       const botMsg: Message = {
         id: crypto.randomUUID(),
         role: 'assistant',
-        content: 'Sorry, I don’t have that information in my portfolio.',
+        content: "I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help.",
       }
       setMessages((prev) => [...prev, botMsg])
     } finally {

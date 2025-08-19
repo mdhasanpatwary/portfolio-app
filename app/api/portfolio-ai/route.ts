@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as portfolio from '@/data';
 
-// Ensure this route runs in the Node.js runtime (OpenAI SDK requires Node, not Edge)
+// Ensure this route runs in the Node.js runtime (Gemini server SDK uses Node runtime here)
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-// Keep the full dataset in memory at module load
+// Keep selected portfolio data in memory at module load
 const fullData = {
   about: portfolio.about,
   skills: portfolio.skills,
@@ -20,13 +20,15 @@ const fullData = {
   contact: portfolio.contact,
   header: portfolio.header,
   footer: portfolio.footer,
-  // cssTips is large; exclude unless explicitly asked
   cssTips: portfolio.cssTips,
   faqs: portfolio.faqs,
 } as const;
 
-function buildContextForMessage(message: string) {
-  const m = message.toLowerCase();
+type ChatTurn = { role: 'user' | 'assistant'; content: string };
+
+function buildContextForMessage(message: string, history: ChatTurn[] = []) {
+  const historyText = history.map(h => h.content).join(' \n ');
+  const combined = `${historyText} \n ${message}`.toLowerCase();
   const include: Record<string, unknown> = {};
 
   // Always include general identity, contact basics, and skills (frequent queries)
@@ -36,33 +38,34 @@ function buildContextForMessage(message: string) {
   include.footer = fullData.footer;
   include.skills = fullData.skills;
 
-  if (/(project|portfolio|work\s*sample|case\s*study)/i.test(m)) include.projects = fullData.projects;
-  if (/(experience|job|role|company|work\s*history)/i.test(m)) include.experiences = fullData.experiences;
-  if (/(education|degree|university|school|college)/i.test(m)) include.education = fullData.education;
-  if (/(service|offer|offering|hire)/i.test(m)) include.services = fullData.services;
-  if (/(testimonial|review|client\s*say)/i.test(m)) include.testimonials = fullData.testimonials;
-  if (/(hobby|interest|fun)/i.test(m)) {
+  if (/(project|portfolio|work\s*sample|case\s*study)/i.test(combined)) include.projects = fullData.projects;
+  if (/(experience|job|role|company|work\s*history)/i.test(combined)) include.experiences = fullData.experiences;
+  if (/(education|degree|university|school|college)/i.test(combined)) include.education = fullData.education;
+  if (/(service|offer|offering|hire)/i.test(combined)) include.services = fullData.services;
+  if (/(testimonial|review|client\s*say)/i.test(combined)) include.testimonials = fullData.testimonials;
+  if (/(hobby|interest|fun)/i.test(combined)) {
     include.hobbies = fullData.hobbies;
     include.funFacts = fullData.funFacts;
   }
-  if (/(faq|question)/i.test(m)) include.faqs = fullData.faqs;
-  if (/(css\s*tips?|css3)/i.test(m)) include.cssTips = fullData.cssTips; // opt-in heavy section
+  if (/(faq|question)/i.test(combined)) include.faqs = fullData.faqs;
+  // Include CSS tips if explicitly mentioned OR if recent history referenced tips and user is asking follow-ups like "share one" or "give me one"
+  if (/(css\s*tips?|css3|share\s+one|give\s+one|another\s+one|example)/i.test(combined)) include.cssTips = fullData.cssTips;
 
   return JSON.stringify(include);
 }
 
-// Create OpenAI client (reads from env). Key should be stored in .env.local as OPENAI_API_KEY
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Create Google Gemini client. Key should be stored in .env.local as GOOGLE_API_KEY
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
 
 // Config via env
-const MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
-const TEMPERATURE = Number(process.env.OPENAI_TEMPERATURE ?? '0.1');
+const MODEL = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+const TEMPERATURE = Number(process.env.GEMINI_TEMPERATURE ?? '0.1');
 
-const SYSTEM_PROMPT = `You are Portfolio AI Chat for MD Hasan Patwary's personal website.
+const SYSTEM_PROMPT = `You are MD Hasan Patwary (the site owner) speaking in first person.
+Style: concise, friendly, and professional. Use "I", "me", and "my" as appropriate.
 You must answer ONLY using the information found in the provided portfolio JSON context.
-If the answer cannot be found strictly in that context, reply exactly:
-"Sorry, I don’t have that information in my portfolio."
-Be concise and helpful.`;
+If the answer cannot be found strictly in that context, respond gently in first person, e.g.:
+"Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."`;
 
 // Very simple in-memory rate limiter per client. Suitable for a single server instance.
 // For production, replace with a durable store (Upstash Redis, Vercel KV, etc.).
@@ -98,7 +101,7 @@ function checkRateLimit(key: string) {
 
 export async function POST(req: NextRequest) {
   try {
-    const { message } = await req.json();
+    const { message, history = [] } = await req.json();
 
     if (!message || typeof message !== 'string') {
       return NextResponse.json({ error: 'Invalid message' }, { status: 400 });
@@ -121,72 +124,82 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Short-circuit: very basic guard to reduce hallucinations.
-    // We still rely on system prompt to be strict.
-    const selectedContext = buildContextForMessage(message);
-    const userPrompt = `User question: ${message}\n\nPortfolio JSON Context (stringified):\n${selectedContext}`;
+    const safeHistory: ChatTurn[] = Array.isArray(history)
+      ? history.filter((h) => h && (h.role === 'user' || h.role === 'assistant') && typeof h.content === 'string').slice(-10)
+      : [];
+
+    const selectedContext = buildContextForMessage(message, safeHistory);
+
+    const historyTranscript = safeHistory
+      .map((t) => `${t.role === 'user' ? 'User' : 'Assistant'}: ${t.content}`)
+      .join('\n');
+
+    const userPrompt = `${historyTranscript ? `Recent conversation (most recent last):\n${historyTranscript}\n\n` : ''}User question: ${message}\n\nPortfolio JSON Context (stringified):\n${selectedContext}`;
 
     // Ensure API key exists
-    if (!process.env.OPENAI_API_KEY) {
+    if (!process.env.GOOGLE_API_KEY) {
       // Do not expose server details
       return NextResponse.json({
-        error: 'Server is not configured with an OpenAI API key.',
+        error: 'Server is not configured with a Google Gemini API key.',
       }, { status: 500 });
     }
 
-    // Streaming response to client
     const encoder = new TextEncoder();
     const stream = new ReadableStream<Uint8Array>({
       async start(controller) {
         try {
-          if (!process.env.OPENAI_API_KEY) {
-            console.error('[Portfolio AI] Missing OPENAI_API_KEY. Set it in .env.local and restart the dev server.');
-            controller.enqueue(encoder.encode('Sorry, I don’t have that information in my portfolio.'));
-            controller.close();
-            return;
-          }
-
-          // Debug: log model/config and context keys
-          try {
-            const contextKeys = Object.keys(JSON.parse(selectedContext || '{}'));
+          // Dev-only debug logging
+          if (process.env.NODE_ENV !== 'production') {
+            const contextKeys = (() => {
+              try { return Object.keys(JSON.parse(selectedContext || '{}')); } catch { return []; }
+            })();
             console.log('[Portfolio AI] Request', {
               model: MODEL,
               temperature: isFinite(TEMPERATURE) ? TEMPERATURE : 0.1,
               messagePreview: (typeof message === 'string' ? message : '').slice(0, 120),
               contextKeys,
             });
-          } catch {
-            console.warn('[Portfolio AI] Failed to parse selectedContext for logging');
           }
 
-          const completion = await openai.chat.completions.create({
+          // Initialize model with system instruction
+          const model = genAI.getGenerativeModel({
             model: MODEL,
-            temperature: isFinite(TEMPERATURE) ? TEMPERATURE : 0.1,
-            stream: true,
-            messages: [
-              { role: 'system', content: SYSTEM_PROMPT },
-              { role: 'user', content: userPrompt },
+            systemInstruction: SYSTEM_PROMPT,
+            generationConfig: {
+              temperature: isFinite(TEMPERATURE) ? TEMPERATURE : 0.1,
+            },
+          });
+
+          // Stream generation
+          const result = await model.generateContentStream({
+            contents: [
+              {
+                role: 'user',
+                parts: [{ text: userPrompt }],
+              },
             ],
           });
 
           let wroteAny = false;
-          for await (const chunk of completion) {
-            const delta = chunk.choices?.[0]?.delta?.content || '';
-            if (delta) {
+          for await (const chunk of result.stream) {
+            const deltaText = chunk.text();
+            if (deltaText) {
               wroteAny = true;
-              controller.enqueue(encoder.encode(delta));
+              controller.enqueue(encoder.encode(deltaText));
             }
           }
 
           if (!wroteAny) {
-            console.warn('[Portfolio AI] OpenAI returned no content tokens (empty stream)');
-            controller.enqueue(encoder.encode('Sorry, I don’t have that information in my portfolio.'));
+            if (process.env.NODE_ENV !== 'production') {
+              console.warn('[Portfolio AI] Gemini returned no content tokens (empty stream)');
+            }
+            controller.enqueue(encoder.encode("I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help."));
           }
           controller.close();
         } catch (e) {
           // On error, return fallback
           console.error('[Portfolio AI] Streaming error', e);
-          controller.enqueue(encoder.encode('Sorry, I don’t have that information in my portfolio.'));
+          controller.enqueue(encoder.encode("I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help."));
           controller.close();
         }
       },

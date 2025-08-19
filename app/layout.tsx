@@ -16,9 +16,6 @@ import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {
@@ -99,8 +96,7 @@ export default function RootLayout({
               ],
               jobTitle: "Front-End Developer",
               image: "/profile.webp",
-              description:
-                "MD Hasan Patwary - Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Open to Remote/Relocation",
+              description: "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
               knowsAbout: [
                 "React.js",
                 "Next.js",
@@ -134,7 +130,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://patwary.vercel.app" />
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary RSS" href="/rss.xml" />
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary Projects RSS" href="/projects.xml" />
-        <link rel="preconnect" href="https://dev.to" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://dev.to" crossOrigin="" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -189,7 +185,7 @@ export default function RootLayout({
             <PortfolioChatWidget />
           </ErrorBoundary>
         </ThemeProvider>
-        <Analytics />
+        <Analytics/>
         <SpeedInsights />
       </body>
     </html>

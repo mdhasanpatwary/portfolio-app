@@ -113,6 +113,11 @@
     "@eslint/core" "^0.14.0"
     levn "^0.4.1"
 
+"@google/generative-ai@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/@google/generative-ai/-/generative-ai-0.19.0.tgz#02cb718e596d390e5356dfb71ab8316acca72a41"
+  integrity sha512-iGf/62v3sTwtEJGJY6S5m7PfkglU8hi1URaxqIjiRg1OItV27xyc4aVeR0og8cDkZFkUlGZKv+23bJtT1QWFzQ==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.npmjs.org/@humanfs/core/-/core-0.19.1.tgz"
@@ -2795,11 +2800,6 @@ object.values@^1.1.6, object.values@^1.2.0, object.values@^1.2.1:
     call-bound "^1.0.3"
     define-properties "^1.2.1"
     es-object-atoms "^1.0.0"
-
-openai@^5.12.2:
-  version "5.12.2"
-  resolved "https://registry.yarnpkg.com/openai/-/openai-5.12.2.tgz#512ab6b80eb8414837436e208f1b951442b97761"
-  integrity sha512-xqzHHQch5Tws5PcKR2xsZGX9xtch+JQFz5zb14dGqlshmmDAFBFEWmeIpf7wVqWV+w7Emj7jRgkNJakyKE0tYQ==
 
 optionator@^0.9.3:
   version "0.9.4"
