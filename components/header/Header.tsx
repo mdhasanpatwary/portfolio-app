@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/global/ThemeToggle";
-import { Transition } from "@headlessui/react";
-import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { FaBars, FaTimes, FaSearch, FaEnvelope } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import SearchOverlay from "@/components/global/SearchOverlay";
 
@@ -59,7 +58,7 @@ const Header = ({ navItems }: HeaderProps) => {
   };
 
   return (
-    <header className="bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow sticky top-0 z-50">
+    <header className="bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link
           href="/"
@@ -113,11 +112,12 @@ const Header = ({ navItems }: HeaderProps) => {
         {/* Mobile */}
         {isMobile && (
           <div className="flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition border border-primary-500 rounded px-3 py-1 text-sm font-medium"
-            >
-              Hire Me!
+            <Link href="/contact" aria-label="Contact">
+              <button
+                className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
+              >
+                <FaEnvelope className="text-base" />
+              </button>
             </Link>
             {/* Search button styled like ThemeToggle and placed left of it */}
             <button
@@ -130,7 +130,7 @@ const Header = ({ navItems }: HeaderProps) => {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 cursor-pointer"
+              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
               aria-label="Toggle menu">
               {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
             </button>
@@ -138,42 +138,42 @@ const Header = ({ navItems }: HeaderProps) => {
         )}
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      <Transition
-        show={isMobile && isOpen}
-        enter="transition duration-200 ease-out"
-        enterFrom="transform -translate-y-4 opacity-0"
-        enterTo="transform translate-y-0 opacity-100"
-        leave="transition duration-150 ease-in"
-        leaveFrom="transform translate-y-0 opacity-100"
-        leaveTo="transform -translate-y-4 opacity-0">
-        <nav className="xl:hidden bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 pb-4">
-          <ul className="flex flex-col space-y-3">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                {item.href.startsWith("/") ? (
-                  <Link
-                    href={item.href}
-                    className={`block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition cursor-pointer ${
-                      pathname === item.href ? "text-primary-600 dark:text-primary-400 font-semibold underline" : ""
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition cursor-pointer"
-                  >
-                    {item.label}
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </Transition>
+      {/* Mobile Menu Dropdown (CSS-only transitions) */}
+      {isMobile && (
+        <div
+          className={`xl:hidden absolute left-0 right-0 top-full w-full transform transition-[opacity,transform] duration-200 ease-out ${
+            isOpen ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-2 opacity-0 pointer-events-none"
+          }`}
+          aria-hidden={!isOpen}
+        >
+          <nav className="bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 pb-4">
+            <ul className="flex flex-col space-y-3">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  {item.href.startsWith("/") ? (
+                    <Link
+                      href={item.href}
+                      className={`block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition cursor-pointer ${
+                        pathname === item.href ? "text-primary-600 dark:text-primary-400 font-semibold underline" : ""
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(item.href)}
+                      className="block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition cursor-pointer"
+                    >
+                      {item.label}
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
       {isSearchOpen && <SearchOverlay onClose={() => setIsSearchOpen(false)} />}
     </header>
   );
