@@ -133,10 +133,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://patwary.vercel.app" />
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary RSS" href="/rss.xml" />
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary Projects RSS" href="/projects.xml" />
-        <link rel="preconnect" href="https://dev.to" crossOrigin="" />
-        {/* CSS preload optimization */}
-        <link rel="preload" href="/globals.css" as="style" />
-        <noscript><link rel="stylesheet" href="/globals.css" /></noscript>
+        <link rel="preconnect" href="https://dev.to" crossOrigin="anonymous" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -189,7 +186,7 @@ export default function RootLayout({
             <ServiceWorkerRegistration />
           </ErrorBoundary>
         </ThemeProvider>
-        <Analytics/>
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
