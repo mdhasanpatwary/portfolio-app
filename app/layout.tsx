@@ -11,6 +11,7 @@ import InstallPrompt from "@/components/global/InstallPrompt";
 import ServiceWorkerRegistration from "@/components/global/ServiceWorkerRegistration";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -184,6 +185,8 @@ export default function RootLayout({
             <Footer name={footer.name} description={footer.description} />
             <InstallPrompt />
             <ServiceWorkerRegistration />
+            {/* Floating AI Chat Widget */}
+            <PortfolioChatWidget />
           </ErrorBoundary>
         </ThemeProvider>
         <Analytics />
