@@ -193,13 +193,13 @@ export async function POST(req: NextRequest) {
             if (process.env.NODE_ENV !== 'production') {
               console.warn('[Portfolio AI] Gemini returned no content tokens (empty stream)');
             }
-            controller.enqueue(encoder.encode("I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help."));
+            controller.enqueue(encoder.encode("Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."));
           }
           controller.close();
         } catch (e) {
           // On error, return fallback
           console.error('[Portfolio AI] Streaming error', e);
-          controller.enqueue(encoder.encode("I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help."));
+          controller.enqueue(encoder.encode("Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."));
           controller.close();
         }
       },

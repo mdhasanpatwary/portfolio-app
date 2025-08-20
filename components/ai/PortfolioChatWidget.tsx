@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
+import { FiMessageSquare, FiX } from 'react-icons/fi'
+import { RiArrowLeftUpLine } from 'react-icons/ri'
 
 interface Message {
   id: string
@@ -14,6 +16,13 @@ export default function PortfolioChatWidget() {
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+  // Resizable container state
+  const [size, setSize] = useState({ width: 320, height: 480 })
+  const resizingRef = useRef<{ startX: number; startY: number; startW: number; startH: number } | null>(null)
+  const MIN_W = 280
+  const MIN_H = 320
+  const MAX_W = 640
+  const MAX_H = 720
 
   useEffect(() => {
     if (open) {
@@ -34,6 +43,39 @@ export default function PortfolioChatWidget() {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages, open])
+
+  // Resize handlers (top-left handle)
+  function onResizeStart(e: React.MouseEvent) {
+    e.preventDefault()
+    e.stopPropagation()
+    resizingRef.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      startW: size.width,
+      startH: size.height,
+    }
+    window.addEventListener('mousemove', onResizing)
+    window.addEventListener('mouseup', onResizeEnd)
+  }
+
+  function onResizing(e: MouseEvent) {
+    const ctx = resizingRef.current
+    if (!ctx) return
+    const dx = e.clientX - ctx.startX
+    const dy = e.clientY - ctx.startY
+    // Top-left handle: moving mouse right/down decreases the shrink amount
+    const viewportMaxW = Math.min(MAX_W, Math.floor(window.innerWidth * 0.95))
+    const viewportMaxH = Math.min(MAX_H, Math.floor(window.innerHeight * 0.8))
+    const newW = Math.min(viewportMaxW, Math.max(MIN_W, ctx.startW - dx))
+    const newH = Math.min(viewportMaxH, Math.max(MIN_H, ctx.startH - dy))
+    setSize({ width: newW, height: newH })
+  }
+
+  function onResizeEnd() {
+    window.removeEventListener('mousemove', onResizing)
+    window.removeEventListener('mouseup', onResizeEnd)
+    resizingRef.current = null
+  }
 
   async function sendMessage() {
     const question = input.trim()
@@ -56,11 +98,11 @@ export default function PortfolioChatWidget() {
       })
       if (!res.ok || !res.body) {
         // Attempt to parse an error message
-        let fallback = "I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help."
+        let fallback = "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."
         try {
           const data = await res.json()
           if (data?.error) fallback = String(data.error)
-        } catch {}
+        } catch { }
         const botMsg: Message = { id: crypto.randomUUID(), role: 'assistant', content: fallback }
         setMessages((prev) => [...prev, botMsg])
         return
@@ -88,7 +130,7 @@ export default function PortfolioChatWidget() {
       const botMsg: Message = {
         id: crypto.randomUUID(),
         role: 'assistant',
-        content: "I couldn’t find that in my portfolio data. If you can share more specifics or ask about my skills, projects, experience, education, services, or contact details, I’ll do my best to help.",
+        content: "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share.",
       }
       setMessages((prev) => [...prev, botMsg])
     } finally {
@@ -109,40 +151,48 @@ export default function PortfolioChatWidget() {
       <button
         aria-label="Open Portfolio AI Chat"
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-5 right-5 z-40 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 h-14 w-14 flex items-center justify-center"
+        className="fixed bottom-5 right-5 z-40 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 h-14 w-14 flex items-center justify-center cursor-pointer"
       >
         {open ? (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-            <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
-          </svg>
+          <FiX className="h-6 w-6" />
         ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-            <path d="M8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9ZM9 11.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5H9Z" />
-            <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm9.75-8.25a8.25 8.25 0 1 0 6.61 13.298c.368-.45.64-1.026.64-1.673 0-.77-.36-1.402-.827-1.869C16.77 12.705 15.17 12 12 12c-3.665 0-5.25 2.04-5.25 3.375 0 .647.272 1.223.64 1.673A8.25 8.25 0 0 0 12 3.75Z" clipRule="evenodd" />
-          </svg>
+          <FiMessageSquare className="h-6 w-6" />
         )}
       </button>
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-20 right-5 z-40 w-80 sm:w-96 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-xl">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700 rounded-t-xl bg-gray-50 dark:bg-gray-900">
-            <h3 className="text-sm font-semibold">Portfolio AI Chat</h3>
+        <div
+          className="fixed bottom-20 right-5 z-50 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-xl overflow-hidden flex flex-col text-xs"
+          style={{ width: size.width, height: size.height, maxHeight: '80vh', maxWidth: '95vw' }}
+        >
+          {/* Top-left resize handle */}
+          <div
+            onMouseDown={onResizeStart}
+            className="absolute top-[1px] left-[1px] h-5 w-5 cursor-nwse-resize text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100"
+            title="Resize"
+          >
+            <RiArrowLeftUpLine className="h-3 w-3" />
+          </div>
+
+          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <h3 className="text-base font-semibold">Hasan&apos;s Assistant</h3>
             <button
               aria-label="Close chat"
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1"
               onClick={() => setOpen(false)}
+              title="Close"
             >
-              ✕
+              <FiX className="h-5 w-5" />
             </button>
           </div>
 
-          <div ref={scrollRef} className="max-h-96 overflow-y-auto px-4 py-3 space-y-3">
+          <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
             {messages.map((m) => (
               <div key={m.id} className={m.role === 'user' ? 'text-right' : 'text-left'}>
                 <div
                   className={
-                    'inline-block rounded-2xl px-3 py-2 text-sm ' +
+                    'inline-block rounded-2xl px-3 py-2 text-xs ' +
                     (m.role === 'user'
                       ? 'bg-blue-600 text-white'
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-gray-100')
@@ -154,7 +204,7 @@ export default function PortfolioChatWidget() {
             ))}
             {loading && (
               <div className="text-left">
-                <div className="inline-block rounded-2xl px-3 py-2 text-sm bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-gray-100">
+                <div className="inline-block rounded-2xl px-3 py-2 text-xs bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-gray-100">
                   Thinking...
                 </div>
               </div>
@@ -168,12 +218,12 @@ export default function PortfolioChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask about skills, projects, experience..."
-              className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-xs placeholder:text-xs focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <button
               onClick={sendMessage}
               disabled={loading}
-              className="rounded-lg bg-blue-600 text-white px-3 py-2 text-sm disabled:opacity-50 hover:bg-blue-700"
+              className="rounded-lg bg-blue-600 text-white px-3 py-2 text-xs disabled:opacity-50 hover:bg-blue-700 cursor-pointer"
             >
               Send
             </button>
@@ -183,3 +233,4 @@ export default function PortfolioChatWidget() {
     </>
   )
 }
+
