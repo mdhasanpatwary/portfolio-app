@@ -23,6 +23,8 @@ export default function PortfolioChatWidget() {
   const MIN_H = 320
   const MAX_W = 640
   const MAX_H = 720
+  // Track visual viewport height to handle mobile keyboards
+  const [vvh, setVvh] = useState<number>(typeof window !== 'undefined' ? (window.visualViewport?.height ?? window.innerHeight) : 800)
 
   useEffect(() => {
     if (open) {
@@ -40,12 +42,27 @@ export default function PortfolioChatWidget() {
     }
   }, [open, messages.length])
 
+  // Listen to visual viewport changes (keyboard open/close) to keep widget in view
+  useEffect(() => {
+    function handleResize() {
+      const next = window.visualViewport?.height ?? window.innerHeight
+      setVvh(next)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    window.visualViewport?.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.visualViewport?.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages, open])
 
-  // Resize handlers (top-left handle)
-  function onResizeStart(e: React.MouseEvent) {
+  // Resize handlers (top-left handle) using Pointer Events (mouse, touch, pen)
+  function onResizeStart(e: React.PointerEvent) {
     e.preventDefault()
     e.stopPropagation()
     resizingRef.current = {
@@ -54,11 +71,11 @@ export default function PortfolioChatWidget() {
       startW: size.width,
       startH: size.height,
     }
-    window.addEventListener('mousemove', onResizing)
-    window.addEventListener('mouseup', onResizeEnd)
+    window.addEventListener('pointermove', onResizing)
+    window.addEventListener('pointerup', onResizeEnd)
   }
 
-  function onResizing(e: MouseEvent) {
+  function onResizing(e: PointerEvent) {
     const ctx = resizingRef.current
     if (!ctx) return
     const dx = e.clientX - ctx.startX
@@ -72,8 +89,8 @@ export default function PortfolioChatWidget() {
   }
 
   function onResizeEnd() {
-    window.removeEventListener('mousemove', onResizing)
-    window.removeEventListener('mouseup', onResizeEnd)
+    window.removeEventListener('pointermove', onResizing)
+    window.removeEventListener('pointerup', onResizeEnd)
     resizingRef.current = null
   }
 
@@ -151,7 +168,7 @@ export default function PortfolioChatWidget() {
       <button
         aria-label="Open Portfolio AI Chat"
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-5 right-5 z-40 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 h-14 w-14 flex items-center justify-center cursor-pointer"
+        className="fixed bottom-5 right-5 z-40 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 h-14 w-14 flex items-center justify-center cursor-pointer"
       >
         {open ? (
           <FiX className="h-6 w-6" />
@@ -163,13 +180,20 @@ export default function PortfolioChatWidget() {
       {/* Chat Window */}
       {open && (
         <div
-          className="fixed bottom-20 right-5 z-50 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-xl overflow-hidden flex flex-col text-xs"
-          style={{ width: size.width, height: size.height, maxHeight: '80vh', maxWidth: '95vw' }}
+          className="fixed right-5 z-50 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-xl overflow-hidden flex flex-col text-xs"
+          style={{
+            // Keep above safe areas and keyboard: inline style overrides any class bottom-*
+            bottom: 'calc(5rem + env(safe-area-inset-bottom))',
+            width: size.width,
+            // Cap height to 80% of the visual viewport (works with on-screen keyboards)
+            height: Math.min(size.height, Math.min(MAX_H, Math.floor(vvh * 0.8))),
+            maxWidth: '90vw',
+          }}
         >
           {/* Top-left resize handle */}
           <div
-            onMouseDown={onResizeStart}
-            className="absolute top-[1px] left-[1px] h-5 w-5 cursor-nwse-resize text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100"
+            onPointerDown={onResizeStart}
+            className="absolute top-[1px] left-[1px] h-5 w-5 cursor-nwse-resize text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100 touch-none select-none"
             title="Resize"
           >
             <RiArrowLeftUpLine className="h-3 w-3" />
@@ -179,7 +203,7 @@ export default function PortfolioChatWidget() {
             <h3 className="text-base font-semibold">Hasan&apos;s Assistant</h3>
             <button
               aria-label="Close chat"
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1"
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 cursor-pointer"
               onClick={() => setOpen(false)}
               title="Close"
             >
@@ -187,14 +211,18 @@ export default function PortfolioChatWidget() {
             </button>
           </div>
 
-          <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
+          <div
+            ref={scrollRef}
+            className="flex-1 overflow-y-auto px-4 py-3 space-y-3"
+            style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))' }}
+          >
             {messages.map((m) => (
               <div key={m.id} className={m.role === 'user' ? 'text-right' : 'text-left'}>
                 <div
                   className={
                     'inline-block rounded-2xl px-3 py-2 text-xs ' +
                     (m.role === 'user'
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-primary-600 text-white'
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-gray-100')
                   }
                 >
@@ -218,12 +246,18 @@ export default function PortfolioChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask about skills, projects, experience..."
-              className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-xs placeholder:text-xs focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-xs placeholder:text-xs focus:outline-none focus:ring-2 focus:ring-primary-400"
+              onFocus={() => {
+                // Ensure latest messages are visible when keyboard opens
+                setTimeout(() => {
+                  scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
+                }, 50)
+              }}
             />
             <button
               onClick={sendMessage}
               disabled={loading}
-              className="rounded-lg bg-blue-600 text-white px-3 py-2 text-xs disabled:opacity-50 hover:bg-blue-700 cursor-pointer"
+              className="rounded-lg bg-primary-600 text-white px-3 py-2 text-xs disabled:opacity-50 hover:bg-primary-700 cursor-pointer"
             >
               Send
             </button>
