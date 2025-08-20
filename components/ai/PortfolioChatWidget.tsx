@@ -25,6 +25,56 @@ export default function PortfolioChatWidget() {
   const MAX_H = 720
   // Track visual viewport height to handle mobile keyboards
   const [vvh, setVvh] = useState<number>(typeof window !== 'undefined' ? (window.visualViewport?.height ?? window.innerHeight) : 800)
+  // Language awareness
+  type Lang = 'bn' | 'en' | 'other'
+  const [userLang, setUserLang] = useState<Lang>('en')
+
+  function detectLang(text: string): Lang {
+    if (/[\u0980-\u09FF]/.test(text)) return 'bn'
+    if (/[A-Za-z]/.test(text)) return 'en'
+    return 'other'
+  }
+
+  function fallbackByLang(lang: Lang) {
+    switch (lang) {
+      case 'bn':
+        return 'দুঃখিত, এটি আমার বর্তমান কন্টেক্সটে নেই। আপনি চাইলে আমার দক্ষতা, প্রোজেক্ট, অভিজ্ঞতা, শিক্ষাগত যোগ্যতা, সার্ভিস বা যোগাযোগের তথ্য সম্পর্কে জানতে পারেন—আমি সাহায্য করতে আনন্দিত হবো।'
+      case 'en':
+        return "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."
+      default:
+        return "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."
+    }
+  }
+
+  function welcomeByLang(lang: Lang) {
+    switch (lang) {
+      case 'bn':
+        return 'হাই! আমি হাসান। আমার দক্ষতা, প্রোজেক্ট, অভিজ্ঞতা, শিক্ষা, সার্ভিস কিংবা যোগাযোগের তথ্য নিয়ে যেকোনো প্রশ্ন করুন।'
+      case 'en':
+        return "Hi! I’m Hasan. Ask me anything about my skills, projects, experience, education, services, or how to contact me."
+      default:
+        return "Hi! I’m Hasan. Ask me anything about my skills, projects, experience, education, services, or how to contact me."
+    }
+  }
+
+  function placeholderByLang(lang: Lang) {
+    switch (lang) {
+      case 'bn':
+        return 'দক্ষতা, প্রোজেক্ট, অভিজ্ঞতা সম্পর্কে জিজ্ঞেস করুন...'
+      case 'en':
+        return 'Ask about skills, projects, experience...'
+      default:
+        return 'Ask about skills, projects, experience...'
+    }
+  }
+
+  useEffect(() => {
+    // Detect browser language initially
+    if (typeof navigator !== 'undefined') {
+      const lang = navigator.language?.toLowerCase() || ''
+      setUserLang(lang.startsWith('bn') ? 'bn' : lang ? 'en' : 'en')
+    }
+  }, [])
 
   useEffect(() => {
     if (open) {
@@ -34,13 +84,12 @@ export default function PortfolioChatWidget() {
           {
             id: crypto.randomUUID(),
             role: 'assistant',
-            content:
-              "Hi! I’m Hasan. Ask me anything about my skills, projects, experience, education, services, or how to contact me.",
+            content: welcomeByLang(userLang),
           },
         ])
       }
     }
-  }, [open, messages.length])
+  }, [open, messages.length, userLang])
 
   // Listen to visual viewport changes (keyboard open/close) to keep widget in view
   useEffect(() => {
@@ -115,7 +164,7 @@ export default function PortfolioChatWidget() {
       })
       if (!res.ok || !res.body) {
         // Attempt to parse an error message
-        let fallback = "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."
+        let fallback = fallbackByLang(detectLang(question) || userLang)
         try {
           const data = await res.json()
           if (data?.error) fallback = String(data.error)
@@ -147,7 +196,7 @@ export default function PortfolioChatWidget() {
       const botMsg: Message = {
         id: crypto.randomUUID(),
         role: 'assistant',
-        content: "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share.",
+        content: fallbackByLang(detectLang(question) || userLang),
       }
       setMessages((prev) => [...prev, botMsg])
     } finally {
@@ -245,7 +294,7 @@ export default function PortfolioChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about skills, projects, experience..."
+              placeholder={placeholderByLang(userLang)}
               className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-xs placeholder:text-xs focus:outline-none focus:ring-2 focus:ring-primary-400"
               onFocus={() => {
                 // Ensure latest messages are visible when keyboard opens

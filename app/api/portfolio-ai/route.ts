@@ -61,11 +61,49 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
 const MODEL = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 const TEMPERATURE = Number(process.env.GEMINI_TEMPERATURE ?? '0.1');
 
-const SYSTEM_PROMPT = `You are MD Hasan Patwary (the site owner) speaking in first person.
-Style: concise, friendly, and professional. Use "I", "me", and "my" as appropriate.
-You must answer ONLY using the information found in the provided portfolio JSON context.
-If the answer cannot be found strictly in that context, respond gently in first person, e.g.:
-"Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."`;
+const SYSTEM_PROMPT = `
+You are MD Hasan Patwary (the site owner) speaking in the first person.  
+Style: concise, friendly, and professional. Use "I", "me", and "my" naturally.  
+
+Language Policy:  
+- Always respond in the same language as the user's last message.  
+- If the user mixes languages or explicitly requests it, mirror their style.  
+- Never switch languages unless the user does first.  
+
+Content Policy:  
+- You must answer ONLY using the information available in the provided portfolio JSON context.  
+- Do not invent or assume details outside that context.  
+
+Fallback Policy:  
+- If the requested information is not in the context, reply gently in the user's language.  
+- Example:  
+  "I don’t have an answer for that, but I’d be happy to share details about my skills, projects, experience, or services."  
+
+Tone:  
+- Keep replies short, approachable, and professional.  
+- Avoid over-explaining unless the user asks for more detail.  
+`;
+
+
+function detectLang(text: string): 'bn' | 'en' | 'other' {
+  // Simple detection: Bengali block
+  if (/[\u0980-\u09FF]/.test(text)) return 'bn';
+  // Basic heuristic: default to 'en' if ASCII letters are present
+  if (/[A-Za-z]/.test(text)) return 'en';
+  return 'other';
+}
+
+function fallbackByLang(lang: 'bn' | 'en' | 'other') {
+  switch (lang) {
+    case 'bn':
+      return 'দুঃখিত, এটি আমার বর্তমান কন্টেক্সটে নেই। আপনি চাইলে আমার দক্ষতা, প্রোজেক্ট, অভিজ্ঞতা, শিক্ষাগত যোগ্যতা, সার্ভিস বা যোগাযোগের তথ্য সম্পর্কে জানতে পারেন—আমি সাহায্য করতে আনন্দিত হবো।';
+    case 'en':
+      return "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share.";
+    default:
+      // Default to English if unknown
+      return "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share.";
+  }
+}
 
 // Very simple in-memory rate limiter per client. Suitable for a single server instance.
 // For production, replace with a durable store (Upstash Redis, Vercel KV, etc.).
@@ -129,12 +167,13 @@ export async function POST(req: NextRequest) {
       : [];
 
     const selectedContext = buildContextForMessage(message, safeHistory);
+    const userLang = detectLang(message);
 
     const historyTranscript = safeHistory
       .map((t) => `${t.role === 'user' ? 'User' : 'Assistant'}: ${t.content}`)
       .join('\n');
 
-    const userPrompt = `${historyTranscript ? `Recent conversation (most recent last):\n${historyTranscript}\n\n` : ''}User question: ${message}\n\nPortfolio JSON Context (stringified):\n${selectedContext}`;
+    const userPrompt = `${historyTranscript ? `Recent conversation (most recent last):\n${historyTranscript}\n\n` : ''}User question: ${message}\n\nPortfolio JSON Context (stringified):\n${selectedContext}\n\nInstruction: Reply in the same language as the user's question (detected: ${userLang}).`;
 
     // Ensure API key exists
     if (!process.env.GOOGLE_API_KEY) {
@@ -193,13 +232,13 @@ export async function POST(req: NextRequest) {
             if (process.env.NODE_ENV !== 'production') {
               console.warn('[Portfolio AI] Gemini returned no content tokens (empty stream)');
             }
-            controller.enqueue(encoder.encode("Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."));
+            controller.enqueue(encoder.encode(fallbackByLang(userLang)));
           }
           controller.close();
         } catch (e) {
           // On error, return fallback
           console.error('[Portfolio AI] Streaming error', e);
-          controller.enqueue(encoder.encode("Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share."));
+          controller.enqueue(encoder.encode(fallbackByLang(userLang)));
           controller.close();
         }
       },
