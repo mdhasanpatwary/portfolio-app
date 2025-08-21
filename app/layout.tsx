@@ -175,9 +175,16 @@ export default function RootLayout({
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
         <ThemeProvider>
           <ErrorBoundary>
+            {/* Skip to content link for keyboard users (inside a navigation landmark) */}
+            <nav aria-label="Skip links">
+              <a href="#main-content" className="skip-link">Skip to content</a>
+            </nav>
             <Toaster position="top-right" />
             <Header navItems={header.navItems} />
-            {children}
+            {/* Primary page content within a single main landmark */}
+            <main id="main-content" role="main">
+              {children}
+            </main>
             <Footer name={footer.name} description={footer.description} />
             <InstallPrompt />
             <ServiceWorkerRegistration />

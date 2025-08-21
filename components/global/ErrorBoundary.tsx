@@ -43,7 +43,7 @@ class ErrorBoundary extends Component<Props, State> {
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Something went wrong
               </h1>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 We encountered an unexpected error. Please try refreshing the page.
               </p>
             </div>

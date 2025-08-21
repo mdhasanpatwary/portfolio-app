@@ -225,11 +225,11 @@ export default async function BlogDetailPage({
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 font-medium hover:underline text-sm">
                   {post.user.name}{" "}
-                  <span className="text-xs text-gray-400">
+                  <span className="text-xs text-gray-600 dark:text-gray-300">
                     @{post.user.username}
                   </span>
                 </a>
-                <span className="text-gray-400 text-xs">
+                <span className="text-gray-600 dark:text-gray-300 text-xs">
                   {date}
                   {post.reading_time_minutes && (
                     <span> • {post.reading_time_minutes} min read</span>

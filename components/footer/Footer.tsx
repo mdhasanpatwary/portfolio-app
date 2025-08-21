@@ -19,7 +19,7 @@ const Footer: FC<FooterProps & { copyrightText?: string }> = ({
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
           {name}
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
+        <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto">
           {description}
         </p>
 
@@ -33,7 +33,7 @@ const Footer: FC<FooterProps & { copyrightText?: string }> = ({
         </div>
 
         {/* Copyright */}
-        <p className="text-xs text-gray-500 dark:text-gray-600">
+        <p className="text-xs text-gray-600 dark:text-gray-300">
           {copyrightText
             ? copyrightText
             : `© ${new Date().getFullYear()} ${name}. All rights reserved.`}

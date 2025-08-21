@@ -18,7 +18,7 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
         <SectionTitle
           title={testimonials.title}
           icon={
-            <FaQuoteLeft className="text-primary-600 dark:text-primary-400 text-3xl" />
+            <FaQuoteLeft className="text-primary-600 dark:text-primary-400 text-3xl" aria-hidden="true" focusable="false" />
           }>
           {testimonials.subtitle}
         </SectionTitle>

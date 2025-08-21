@@ -23,15 +23,15 @@ const CssTipCard: React.FC<CssTipCardProps> = ({ tip, onClick }) => (
     {/* Accent bar */}
     <span className="absolute top-0 left-0 h-1.5 w-12 bg-gradient-to-r from-primary-500 via-primary-400 to-primary-300 dark:from-primary-400 dark:via-primary-500 dark:to-primary-400 rounded-tr-xl" />
     {/* Subtle CSS icon */}
-    <FaCss3Alt className="absolute top-4 right-4 text-primary-400 dark:text-primary-300 text-2xl opacity-20 pointer-events-none" />
-    <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white tracking-tight leading-snug">
+    <FaCss3Alt className="absolute top-4 right-4 text-primary-400 dark:text-primary-300 text-2xl opacity-20 pointer-events-none" aria-hidden="true" focusable="false" />
+    <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white tracking-tight leading-snug">
       {tip.title}
-    </h3>
+    </h2>
     <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line flex-1 line-clamp-5 mb-6 text-base leading-relaxed">
       {tip.description}
     </p>
-    <div className="flex items-center gap-2 mt-auto text-primary-600 dark:text-primary-300 opacity-90 group-hover:opacity-100 transition-opacity text-base font-semibold select-none">
-      <FaArrowRight className="text-lg" />
+    <div className="flex items-center gap-2 mt-auto text-primary-700 dark:text-primary-300 group-hover:opacity-100 transition-opacity text-base font-semibold select-none">
+      <FaArrowRight className="text-lg" aria-hidden="true" focusable="false" />
       View Details
     </div>
   </Card>

@@ -1,6 +1,7 @@
 import About from "@/components/about/About";
+import Hobby from "@/components/hobby/Hobby";
 import Education from "@/components/education/Education";
-import { education, about } from "@/data";
+import { education, about, hobbies } from "@/data";
 import PageTitle from "@/components/global/PageTitle";
 import { FaUser } from "react-icons/fa";
 import type { Metadata } from "next";
@@ -56,6 +57,7 @@ export default function AboutPage() {
       />
       <About about={about} />
       <Education educationData={education} />
+      <Hobby hobbiesData={hobbies} />
       <FAQ faqData={aboutFaqs} />
       <script
         type="application/ld+json"

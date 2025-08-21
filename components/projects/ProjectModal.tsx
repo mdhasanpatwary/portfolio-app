@@ -25,8 +25,10 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
       {/* Floating Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 p-2.5 bg-white dark:bg-gray-900 text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 rounded-full shadow transition hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
-        <FaTimes size={18} />
+        className="absolute top-4 right-4 z-50 p-2.5 bg-white dark:bg-gray-900 text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 rounded-full shadow transition hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+        aria-label="Close"
+      >
+        <FaTimes size={18} aria-hidden="true" focusable="false" />
       </button>
 
       {/* Hero Image */}
@@ -41,7 +43,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
           className="w-full object-contain"
         />
         {/* Category badge matches card */}
-        <span className="absolute top-4 left-4 px-3 py-1.5 bg-primary-600 text-white text-xs font-semibold rounded-full shadow">
+        <span className="absolute top-4 left-4 px-3 py-1.5 bg-primary-700 text-white text-xs font-semibold rounded-full shadow">
           {project.category}
         </span>
       </div>
@@ -56,16 +58,16 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-primary-700 dark:hover:bg-primary-500 transition gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
+            className="inline-flex items-center px-6 py-2 bg-primary-700 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-primary-800 dark:hover:bg-primary-600 transition gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
             <span>View Project</span>
-            <FaExternalLinkAlt size={15} />
+            <FaExternalLinkAlt size={15} aria-hidden="true" focusable="false" />
           </a>
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2 border border-primary-600 text-primary-600 text-sm font-medium rounded-lg hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-800 transition gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
-            <FaPlay size={15} />
+            className="inline-flex items-center px-6 py-2 border border-primary-700 text-primary-700 text-sm font-medium rounded-lg hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-800 transition gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
+            <FaPlay size={15} aria-hidden="true" focusable="false" />
             <span>Live Demo</span>
           </a>
         </div>

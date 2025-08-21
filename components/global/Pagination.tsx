@@ -36,55 +36,56 @@ const Pagination: React.FC<PaginationProps> = ({
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex justify-center items-center gap-2 mt-10 select-none">
-      <button
-        className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
-          currentPage === 1 ? "cursor-default" : "cursor-pointer"
-        }`}
-        type="button"
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        aria-label="Previous page">
-        <FaChevronLeft />
-      </button>
-      {getPages().map((item, idx) =>
-        item === "ellipsis" ? (
-          <span
-            key={"ellipsis-" + idx}
-            className="px-2 text-gray-400 dark:text-gray-500">
-            ...
-          </span>
-        ) : (
-          <button
-            key={item}
-            className={`relative text-xs px-2 py-1 rounded-full transition font-semibold overflow-hidden ${
-              currentPage === item
-                ? "bg-primary-600 text-white shadow-lg cursor-default"
-                : "bg-primary-50 dark:bg-gray-800 text-primary-600 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-gray-700 cursor-pointer"
-            }`}
-            type="button"
-            style={{ minWidth: 24 }}
-            onClick={() => onPageChange(item as number)}
-            aria-current={currentPage === item ? "page" : undefined}
-            disabled={currentPage === item}>
-            <span className="relative z-10">{item}</span>
-            {currentPage === item && (
-              <span className="absolute left-1/2 -bottom-1 w-2/3 h-1 bg-white dark:bg-primary-400 rounded-full transform -translate-x-1/2 animate-pulse" />
-            )}
-          </button>
-        )
-      )}
-      <button
-        className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
-          currentPage === totalPages ? "cursor-default" : "cursor-pointer"
-        }`}
-        type="button"
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        aria-label="Next page">
-        <FaChevronRight />
-      </button>
-    </div>
+    <nav aria-label="Pagination" className="flex justify-center mt-10 select-none">
+      <ul className="flex items-center gap-2">
+        <button
+          className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
+            currentPage === 1 ? "cursor-default" : "cursor-pointer"
+          }`}
+          type="button"
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          aria-label="Previous page">
+          <FaChevronLeft aria-hidden="true" focusable="false" />
+        </button>
+        {getPages().map((item, idx) =>
+          item === "ellipsis" ? (
+            <li key={"ellipsis-" + idx}>
+              <span className="px-2 text-gray-600 dark:text-gray-300" aria-hidden="true" role="presentation">…</span>
+            </li>
+          ) : (
+            <li key={String(item)}>
+              <button
+                className={`relative text-xs px-2 py-1 rounded-full transition font-semibold overflow-hidden ${
+                  currentPage === item
+                    ? "bg-primary-600 text-white shadow-lg cursor-default"
+                    : "bg-primary-50 dark:bg-gray-800 text-primary-600 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-gray-700 cursor-pointer"
+                }`}
+                type="button"
+                style={{ minWidth: 24 }}
+                onClick={() => onPageChange(item as number)}
+                aria-current={currentPage === item ? "page" : undefined}
+                disabled={currentPage === item}>
+                <span className="relative z-10">{item}</span>
+                {currentPage === item && (
+                  <span className="absolute left-1/2 -bottom-1 w-2/3 h-1 bg-white dark:bg-primary-400 rounded-full transform -translate-x-1/2 animate-pulse" />
+                )}
+              </button>
+            </li>
+          )
+        )}
+        <button
+          className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
+            currentPage === totalPages ? "cursor-default" : "cursor-pointer"
+          }`}
+          type="button"
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          aria-label="Next page">
+          <FaChevronRight aria-hidden="true" focusable="false" />
+        </button>
+      </ul>
+    </nav>
   );
 };
 

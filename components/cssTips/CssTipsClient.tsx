@@ -72,8 +72,11 @@ export default function CssTipsClient({ tips, initialTipId, initialTipData }: Cs
   }, [initialTipId, initialTipData, tips]);
 
   const handleCardClick = (tip: CssTip) => {
+    // Set selected tip immediately
     setSelectedTip(tip);
-    setIsModalOpen(true);
+    // Defer opening to the next tick so the original click doesn't bubble to the overlay
+    // which would immediately trigger onClose on the newly mounted Modal.
+    setTimeout(() => setIsModalOpen(true), 0);
   };
 
   const handleCloseModal = () => {

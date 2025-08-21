@@ -4,13 +4,13 @@ import { FaCode, FaRocket, FaLightbulb } from "react-icons/fa";
 export const getStatusIcon = (status: string): React.ReactElement => {
   switch (status) {
     case "live":
-      return <FaRocket className="text-green-600 dark:text-green-400" />;
+      return <FaRocket className="text-green-600 dark:text-green-400" role="img" aria-label="Live" />;
     case "development":
-      return <FaCode className="text-primary-600 dark:text-primary-400" />;
+      return <FaCode className="text-primary-700 dark:text-primary-400" role="img" aria-label="In development" />;
     case "concept":
-      return <FaLightbulb className="text-yellow-600 dark:text-yellow-400" />;
+      return <FaLightbulb className="text-yellow-600 dark:text-yellow-400" role="img" aria-label="Concept" />;
     default:
-      return <FaCode className="text-gray-600 dark:text-gray-400" />;
+      return <FaCode className="text-gray-600 dark:text-gray-300" role="img" aria-label="Status" />;
   }
 };
 

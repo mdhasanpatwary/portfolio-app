@@ -28,7 +28,7 @@ export default function BlogList({ posts, page = 1 }: BlogListProps) {
             <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">
               No blog posts found.
             </p>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-300">
               Check back soon for new articles and insights!
             </p>
           </div>

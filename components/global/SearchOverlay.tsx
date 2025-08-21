@@ -23,6 +23,8 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lastActiveRef = useRef<Element | null>(null);
   const router = useRouter();
 
   const projects: Project[] = useMemo(
@@ -83,7 +85,12 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
     [tips, q]
   );
 
+  // Derive active option id for ARIA combobox after results are computed
+  const resultsCount = projectHits.length + tipHits.length;
+  const activeOptionId = resultsCount > 0 ? `search-opt-${activeIndex}` : undefined;
+
   useEffect(() => {
+    lastActiveRef.current = document.activeElement;
     inputRef.current?.focus();
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -121,10 +128,39 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       }
     };
     document.addEventListener("keydown", onKeyDown);
+    // Basic focus trap within the container
+    const trap = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const root = containerRef.current;
+      if (!root) return;
+      const focusables = root.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey) {
+        if (active === first || !root.contains(active)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (active === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    const rootNode = containerRef.current;
+    rootNode?.addEventListener("keydown", trap);
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKeyDown);
+      rootNode?.removeEventListener("keydown", trap);
       document.body.style.overflow = "unset";
+      const last = lastActiveRef.current as HTMLElement | null;
+      last?.focus?.();
     };
   }, [onClose, projectHits, tipHits, activeIndex, router, tips]);
 
@@ -135,27 +171,35 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
 
   return (
     <div
+      ref={containerRef}
       className="fixed inset-0 z-[100] bg-white/95 dark:bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-gray-900/80 animate-in fade-in duration-200"
       role="dialog"
       aria-modal="true"
+      aria-labelledby="search-title"
       onClick={onClose}
     >
       <div
         className="max-w-5xl mx-auto px-4 py-6 md:py-12 h-full flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
+        <h2 id="search-title" className="sr-only">Search</h2>
         <div className="flex items-center gap-3">
           <div className="flex-1 relative">
-            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 dark:text-gray-300" />
             <input
               ref={inputRef}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search projects and CSS tips... (Press Esc to close)"
-              className="w-full px-10 py-4 sm:py-5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full px-10 py-4 sm:py-5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               aria-label="Search"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={Boolean(query)}
+              aria-controls="search-results"
+              aria-activedescendant={activeOptionId}
             />
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:flex gap-1 text-xs text-gray-500">
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:flex gap-1 text-xs text-gray-600 dark:text-gray-300">
               <kbd className="px-2 py-0.5 rounded border">⌘</kbd>
               <kbd className="px-2 py-0.5 rounded border">K</kbd>
             </div>
@@ -163,14 +207,19 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
           <button
             onClick={onClose}
             aria-label="Close search"
-            className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
           >
             <FaTimes />
           </button>
         </div>
 
         {query ? (
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 overflow-auto">
+          <div
+            id="search-results"
+            role="listbox"
+            aria-label="Search results"
+            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 overflow-auto"
+          >
             <div>
               <h2 className="text-lg font-semibold mb-3">Projects</h2>
               {projectHits.length ? (
@@ -179,22 +228,23 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                     const globalIndex = idx; // projects first
                     const isActive = activeIndex === globalIndex;
                     return (
-                      <li key={p.id}>
+                      <li key={p.id} id={`search-opt-${globalIndex}`} role="option" aria-selected={isActive}>
                         <a
                           className={`block rounded px-2 py-2 transition ${isActive ? "bg-primary-50 dark:bg-primary-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800"}`}
                           href={p.link || p.demo}
                           target="_blank"
                           rel="noopener noreferrer"
+                          tabIndex={-1}
                         >
                           <div className="text-primary-600 dark:text-primary-400 font-medium">{highlightMatch(p.title)}</div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{p.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">{p.description}</p>
                         </a>
                       </li>
                     );
                   })}
                 </ul>
               ) : (
-                <p className="text-gray-500">No matching projects.</p>
+                <p className="text-gray-600 dark:text-gray-300">No matching projects.</p>
               )}
             </div>
             <div>
@@ -205,7 +255,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                     const globalIndex = projectHits.length + i;
                     const isActive = activeIndex === globalIndex;
                     return (
-                      <li key={i}>
+                      <li key={i} id={`search-opt-${globalIndex}`} role="option" aria-selected={isActive}>
                         <button
                           type="button"
                           onClick={() => {
@@ -217,21 +267,22 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                             router.push(`/css-tips?page=${page}${tipId ? `&tipId=${tipId}` : ""}`);
                           }}
                           className={`w-full text-left block rounded px-2 py-2 ${isActive ? "bg-primary-50 dark:bg-primary-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"}`}
+                          tabIndex={-1}
                         >
                           <div className="text-gray-800 dark:text-gray-200 font-medium">{highlightMatch(t.title || "")}</div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{highlightMatch(t.description || "")}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">{highlightMatch(t.description || "")}</p>
                         </button>
                       </li>
                     );
                   })}
                 </ul>
               ) : (
-                <p className="text-gray-500">No matching CSS tips.</p>
+                <p className="text-gray-600 dark:text-gray-300">No matching CSS tips.</p>
               )}
             </div>
           </div>
         ) : (
-          <div className="mt-10 text-gray-500">
+          <div className="mt-10 text-gray-600 dark:text-gray-300">
             Type to search projects and tips. Try shortcuts
             <span className="ml-2 hidden sm:inline-flex gap-1 align-middle text-xs">
               <kbd className="px-2 py-0.5 rounded border">⌘</kbd>

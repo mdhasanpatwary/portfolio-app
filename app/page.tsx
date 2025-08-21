@@ -3,7 +3,6 @@ import Skills from "@/components/skills/Skills";
 import ProfessionalExperience from "@/components/experience/Experience";
 import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
-import Hobby from "@/components/hobby/Hobby";
 import Blog from "@/components/blog/Blog";
 import type { DevToPost } from "@/components/blog/BlogCard";
 import FAQ from "@/components/faq/FAQ";
@@ -18,7 +17,6 @@ import {
   experiences,
   services,
   funFacts,
-  hobbies,
   testimonials,
 } from "@/data";
 import type { Metadata } from "next";
@@ -78,7 +76,7 @@ export default async function Home() {
   };
   const posts = await fetchDevToPosts();
   return (
-    <main className="flex flex-col row-start-2 items-center sm:items-start">
+    <div className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />
       <Skills skills={skills} />
       <ProfessionalExperience experiences={experiences} />
@@ -90,7 +88,6 @@ export default async function Home() {
       <Testimonials testimonials={testimonials} />
 
       <FunFact funFacts={funFacts} />
-      <Hobby hobbiesData={hobbies} />
       <Blog posts={posts} />
       <FAQ faqData={homeFaqs} />
       <script
@@ -128,6 +125,6 @@ export default async function Home() {
           }),
         }}
       />
-    </main>
+    </div>
   );
 }

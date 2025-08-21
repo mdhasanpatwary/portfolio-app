@@ -22,7 +22,7 @@ const Blog: FC<BlogProps> = ({ posts }) => {
         <SectionTitle
           title="Latest Blog Posts"
           icon={
-            <FaPenNib className="text-primary-600 dark:text-primary-400 text-3xl" />
+            <FaPenNib className="text-primary-600 dark:text-primary-400 text-3xl" aria-hidden="true" focusable="false" />
           }>
           Insights, tutorials, and tips from my frontend development journey.
         </SectionTitle>
@@ -45,9 +45,9 @@ const Blog: FC<BlogProps> = ({ posts }) => {
         <div className="text-center mt-6">
           <Link
             href="/blog"
-            className="inline-flex items-center px-6 py-2 bg-primary-600 text-white text-sm font-medium rounded hover:bg-primary-700 dark:hover:bg-primary-500 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
+            className="inline-flex items-center px-6 py-2 bg-primary-700 text-white text-sm font-medium rounded hover:bg-primary-800 dark:hover:bg-primary-600 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
             <span>View All Posts</span>
-            <FaExternalLinkAlt size={14} />
+            <FaExternalLinkAlt size={14} aria-hidden="true" focusable="false" />
           </Link>
         </div>
       </div>

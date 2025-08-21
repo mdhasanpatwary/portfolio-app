@@ -129,9 +129,9 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
       onReset={handleReset}
       className="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700"
       noValidate>
-      <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
         {contact.title}
-      </h3>
+      </h2>
 
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
@@ -256,7 +256,7 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
 
           <button
             type="submit"
-            className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+            className="px-6 py-3 bg-primary-700 hover:bg-primary-800 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:bg-primary-700 disabled:text-white disabled:cursor-not-allowed"
             disabled={loading}
             aria-busy={loading}>
             {loading ? (

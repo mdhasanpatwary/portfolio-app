@@ -106,10 +106,10 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-baseline gap-1.5">
-              <h3 className="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 truncate group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-400 truncate group-hover:text-primary-800 dark:group-hover:text-primary-300 transition-colors">
                 {experience.role}
               </h3>
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+              <span className="text-xs text-gray-600 dark:text-gray-300">
                 at
               </span>
               <p className="text-sm sm:text-base text-gray-800 dark:text-gray-100 font-medium truncate group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
@@ -118,11 +118,11 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
             </div>
             <div className="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="flex items-center gap-1">
-                <FaCalendarAlt className="text-primary-500 dark:text-primary-400 text-xs" />
+                <FaCalendarAlt className="text-primary-500 dark:text-primary-400 text-xs" aria-hidden="true" focusable="false" />
                 <span>{experience.duration}</span>
               </div>
               <div className="flex items-center gap-1">
-                <FaMapMarkerAlt className="text-primary-500 dark:text-primary-400 text-xs" />
+                <FaMapMarkerAlt className="text-primary-500 dark:text-primary-400 text-xs" aria-hidden="true" focusable="false" />
                 <span>{experience.location}</span>
               </div>
             </div>
@@ -131,9 +131,9 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
             href={experience.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+            className="flex items-center gap-1 text-xs text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 transition-colors">
             <span className="hidden sm:inline">Visit</span>
-            <FaExternalLinkAlt className="text-xs" />
+            <FaExternalLinkAlt className="text-xs" aria-hidden="true" focusable="false" />
           </a>
         </div>
       </div>
@@ -151,8 +151,10 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
                   color:
                     brandColors[tech.icon as keyof typeof brandColors] ||
                     "var(--color-primary-500)",
-                }}>
-                {Icon && <Icon />}
+                }}
+                role="img"
+                aria-label={tech.name}>
+                {Icon && <Icon aria-hidden="true" focusable="false" />}
                 <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white dark:text-gray-100 text-xs rounded-md opacity-0 group-hover/tech:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none shadow-lg">
                   {tech.name}
                 </span>

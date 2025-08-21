@@ -18,7 +18,7 @@ const SkillCard = ({
     style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
     {/* Title as full-width table header */}
     <div className="w-full px-8 py-4 border-b border-gray-200 dark:border-gray-700 rounded-t-lg">
-      <h3 className="text-xl font-semibold text-primary-600 dark:text-primary-400 text-left">
+      <h3 className="text-xl font-semibold text-primary-700 dark:text-primary-400 text-left">
         {group.title}
       </h3>
     </div>
@@ -34,11 +34,11 @@ const SkillCard = ({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Open ${tech.name} documentation in a new tab`}
-            className="flex flex-col items-center justify-center gap-1 px-4 py-6 bg-white dark:bg-gray-800 transition-colors duration-200 cursor-pointer focus:outline-none hover:bg-primary-50 dark:hover:bg-primary-900/40 focus:bg-primary-50 dark:focus:bg-primary-900/40 rounded-none hover:text-primary-500 dark:hover:text-primary-400">
+            className="flex flex-col items-center justify-center gap-1 px-4 py-6 bg-white dark:bg-gray-800 transition-colors duration-200 cursor-pointer focus:outline-none hover:bg-primary-50 dark:hover:bg-primary-900/40 focus:bg-primary-50 dark:focus:bg-primary-900/40 rounded-none hover:text-primary-600 dark:hover:text-primary-400">
             <div
               className="text-3xl mb-1 drop-shadow-md"
               style={{ color: brandColor }}>
-              {Icon ? <Icon /> : null}
+              {Icon ? <Icon aria-hidden="true" focusable="false" /> : null}
             </div>
             <span className="text-sm font-medium text-gray-800 dark:text-gray-100 text-center flex items-center gap-1">
               {tech.name}

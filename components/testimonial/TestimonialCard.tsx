@@ -18,7 +18,7 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
       }}
     />
     <div className="absolute top-8 left-8 text-primary-500 text-4xl opacity-30 pointer-events-none select-none drop-shadow-lg">
-      <FaQuoteLeft />
+      <FaQuoteLeft aria-hidden="true" focusable="false" />
     </div>
     <p className="text-gray-800 dark:text-gray-200 mb-4 italic text-xl font-serif font-medium leading-relaxed z-10">
       “{testimonial.message}”
@@ -37,9 +37,9 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
         />
       </div>
       <div>
-        <h4 className="text-lg font-bold text-gray-900 dark:text-white tracking-wide">
+        <p className="text-lg font-bold text-gray-900 dark:text-white tracking-wide">
           {testimonial.name}
-        </h4>
+        </p>
         <p className="text-xs text-primary-600 dark:text-primary-400 font-semibold tracking-wide">
           {testimonial.title}
         </p>

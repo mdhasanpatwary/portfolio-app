@@ -61,7 +61,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
           {about.description.map((desc, idx) => (
             <p
               key={idx}
-              className={`text-base md:text-lg ${idx === 0 ? 'text-gray-700 dark:text-gray-300 mb-4' : 'text-gray-600 dark:text-gray-400 mb-6'}`}
+              className={`text-base md:text-lg ${idx === 0 ? 'text-gray-700 dark:text-gray-300 mb-4' : 'text-gray-600 dark:text-gray-300 mb-6'}`}
             >
               {desc}
             </p>

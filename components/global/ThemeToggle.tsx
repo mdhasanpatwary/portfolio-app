@@ -13,7 +13,11 @@ const ThemeToggle = () => {
             className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700"
             aria-label="Toggle Theme"
         >
-            {isDark ? <FiSun className="text-xl" /> : <FiMoon className="text-xl" />}
+            {isDark ? (
+                <FiSun className="text-xl" aria-hidden="true" focusable="false" />
+            ) : (
+                <FiMoon className="text-xl" aria-hidden="true" focusable="false" />
+            )}
         </button>
     );
 };

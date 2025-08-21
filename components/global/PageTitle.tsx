@@ -28,13 +28,13 @@ const PageTitle: React.FC<PageTitleProps> = ({
       className={`max-w-7xl mx-auto py-8 md:py-12 px-4 text-center ${className}`}>
       {/* Centered Breadcrumb */}
       <nav className="mb-2 flex justify-center" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1 text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+        <ol className="flex flex-wrap items-center gap-1 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
           {breadcrumb.map((item, idx) => (
             <li key={idx} className="flex items-center">
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="hover:underline text-gray-500 dark:text-gray-400">
+                  className="hover:underline text-gray-700 dark:text-gray-300">
                   {item.label}
                 </Link>
               ) : (
@@ -57,7 +57,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
         {title}
       </h1>
       {subtitle && (
-        <div className="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mt-0 mx-auto">
+        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mt-0 mx-auto">
           {subtitle}
         </div>
       )}

@@ -61,7 +61,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
           {/* Title */}
           <Skeleton className="w-3/4 mb-2" height="h-7" />
           {/* Meta info */}
-          <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
+          <div className="text-xs text-gray-600 dark:text-gray-300 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
             <Skeleton className="w-24" height="h-4" />
           </div>
           {/* Excerpt with fade-out */}
@@ -78,7 +78,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
       <Link
         href={post ? `/blog/${post.id}` : "#"}
         className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
-        tabIndex={0}
       >
         {/* Image at top with overlay */}
         <div className="relative w-full aspect-[5/2.3] overflow-hidden">
@@ -113,16 +112,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
             ))}
           </div>
           {/* Title */}
-          <h3
+          <h2
             className="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-2 transition-all line-clamp-2"
             title={post?.title}
-            role="heading"
-            aria-level={3}
           >
             {post?.title}
-          </h3>
+          </h2>
           {/* Meta info */}
-          <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
+          <div className="text-xs text-gray-600 dark:text-gray-300 mb-3 flex flex-wrap items-center gap-2 min-h-[20px]">
             <span>by {post?.user?.name || post?.user?.username}</span>
             <span>• {date}</span>
             {readingTime && <span>{readingTime}</span>}
@@ -137,7 +134,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
           {/* Read more link */}
           <div>
             <span
-              className="text-primary-600 dark:text-primary-400 text-sm font-semibold hover:underline underline-offset-4 cursor-pointer"
+              className="text-primary-700 dark:text-primary-400 text-sm font-semibold hover:underline underline-offset-4 cursor-pointer"
             >
               Read more →
             </span>

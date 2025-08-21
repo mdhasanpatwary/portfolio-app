@@ -21,7 +21,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
           <SectionTitle
             title={projectsData.title}
             icon={
-              <FaFolderOpen className="text-primary-600 dark:text-primary-400 text-3xl" />
+              <FaFolderOpen className="text-primary-600 dark:text-primary-400 text-3xl" aria-hidden="true" focusable="false" />
             }>
             {projectsData.subtitle}
           </SectionTitle>
@@ -33,9 +33,9 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
           <div className="text-center mt-12">
             <Link
               href="/projects"
-              className="inline-flex items-center px-6 py-2 bg-primary-600 text-white text-sm font-medium rounded hover:bg-primary-700 dark:hover:bg-primary-500 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
+              className="inline-flex items-center px-6 py-2 bg-primary-700 text-white text-sm font-medium rounded hover:bg-primary-800 dark:hover:bg-primary-600 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
               <span>View All Projects</span>
-              <FaExternalLinkAlt size={14} />
+              <FaExternalLinkAlt size={14} aria-hidden="true" focusable="false" />
             </Link>
           </div>
         </div>
