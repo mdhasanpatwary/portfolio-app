@@ -41,6 +41,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             fill
             priority={true}
+            fetchPriority="high"
             blurType="profile"
             style={{ objectFit: "cover", objectPosition: "top" }}
           />

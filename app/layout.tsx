@@ -131,6 +131,9 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary RSS" href="/rss.xml" />
         <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary Projects RSS" href="/projects.xml" />
         <link rel="preconnect" href="https://dev.to" crossOrigin="" />
+        {/* Preconnect to analytics/vitals domains to speed up first requests */}
+        <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="" />
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
