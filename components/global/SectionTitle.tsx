@@ -21,7 +21,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       </h2>
     </div>
     {children && (
-      <div className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center">
+      <div className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-center">
         {children}
       </div>
     )}

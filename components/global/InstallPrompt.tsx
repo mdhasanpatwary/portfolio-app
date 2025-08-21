@@ -61,10 +61,10 @@ export default function InstallPrompt() {
     <div className="fixed bottom-4 left-4 z-50">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 border border-gray-200 dark:border-gray-700 max-w-[96%] sm:max-w-sm">
         <h3 className="text-sm font-semibold mb-2">Install Portfolio App</h3>
-        <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+        <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
           MD Hasan Patwary
         </p>
-        <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+        <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
           Install this portfolio app for quick access to my projects, skills,
           and contact information.
         </p>

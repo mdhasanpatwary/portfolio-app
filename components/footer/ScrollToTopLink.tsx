@@ -15,7 +15,7 @@ export default function ScrollToTopLink() {
       aria-label="Scroll back to top"
       className="inline-flex items-center gap-1 text-sm text-primary-600 hover:underline"
     >
-      <FaChevronUp className="animate-bounce" /> Back to top
+      <FaChevronUp className="animate-bounce" aria-hidden="true" focusable="false" /> Back to top
     </a>
   );
 }

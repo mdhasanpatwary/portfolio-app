@@ -25,7 +25,7 @@ const HobbyCard: FC<HobbyCardProps> = ({ hobby, iconMap }) => {
         <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-primary-500 transition-colors">
           {hobby.title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 text-sm">
+        <p className="text-gray-600 dark:text-gray-300 text-sm">
           {hobby.description}
         </p>
       </div>

@@ -27,7 +27,7 @@ export default function PaginationLinks({ currentPage, totalPages, makeHref }: P
           (currentPage <= 3 && p <= 4) ||
           (currentPage >= totalPages - 2 && p >= totalPages - 3) ||
           Math.abs(p - currentPage) <= 1;
-        if (!shouldShow) return idx > 0 && arr[idx - 1] !== -1 ? <span key={`e${idx}`} className="px-2 text-gray-400 dark:text-gray-500">...</span> : null;
+        if (!shouldShow) return idx > 0 && arr[idx - 1] !== -1 ? <span key={`e${idx}`} className="px-2 text-gray-600 dark:text-gray-300">...</span> : null;
         return (
           <Link
             key={p}

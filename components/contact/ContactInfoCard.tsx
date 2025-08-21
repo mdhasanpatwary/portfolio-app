@@ -23,9 +23,9 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
     <div className="flex-1">
       {/* Introduction */}
       <div className="mb-8">
-        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
+        <h2 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
           Let&apos;s Connect
-        </h4>
+        </h2>
         <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
           {contact.summary}
         </p>
@@ -33,9 +33,9 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
 
       {/* Contact Info */}
       <div className="space-y-6 mb-10">
-        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4 uppercase tracking-wide">
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4 uppercase tracking-wide">
           Contact Info
-        </h5>
+        </h3>
 
         <div className="space-y-4">
           <div className="flex items-center gap-3">
@@ -67,7 +67,7 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
           </div>
 
           <div className="flex items-center gap-3">
-            <FaMapMarkerAlt className="text-gray-600 dark:text-gray-400 text-lg" />
+            <FaMapMarkerAlt className="text-gray-600 dark:text-gray-300 text-lg" />
             <span className="text-gray-800 dark:text-gray-200">
               {contact.location}
             </span>
@@ -77,9 +77,9 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
 
       {/* Availability */}
       <div className="mb-8">
-        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">
           Availability
-        </h5>
+        </h3>
         <p className="text-gray-800 dark:text-gray-200 text-sm">
           {contact.availability}
         </p>
@@ -88,9 +88,9 @@ const ContactInfoCard = ({ contact }: ContactInfoCardProps) => (
 
     {/* Social Links - Fixed at bottom */}
     <div className="mt-auto pt-6">
-      <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
+      <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
         Connect
-      </h5>
+      </h3>
       <SocialLinks />
     </div>
   </div>

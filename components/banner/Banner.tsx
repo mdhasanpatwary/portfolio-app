@@ -13,7 +13,6 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
   return (
     <section
       id="banner"
-      role="banner"
       className="relative w-full bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 md:py-40 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Text Content */}
@@ -25,7 +24,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
           <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300 mb-4">
             {title}
           </h2>
-          <p className="text-md md:text-lg text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-md md:text-lg text-gray-600 dark:text-gray-300 mb-6">
             {summary}
           </p>
           {/* Buttons */}
@@ -35,14 +34,14 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
         </div>
         {/* Profile Image */}
         <div
-          className="relative w-80 h-80 md:w-[30rem] md:h-[30rem] rounded-full overflow-hidden border-4 border-primary-100 dark:border-gray-700 shadow-lg"
-          aria-label={`Profile image of ${name}`}>
+          className="relative w-80 h-80 md:w-[30rem] md:h-[30rem] rounded-full overflow-hidden border-4 border-primary-100 dark:border-gray-700 shadow-lg">
           <CustomImage
             src={image}
             alt={`Profile picture of ${name}`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             fill
             priority={true}
+            fetchPriority="high"
             blurType="profile"
             style={{ objectFit: "cover", objectPosition: "top" }}
           />

@@ -30,6 +30,25 @@ body {
   font-family: var(--font-geist-mono);
 }
 
+/* Skip link: visible when focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -60px;
+  background: white;
+  color: #111827;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--color-primary-500);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
 .prose :is(h2, h3, h4, h5, h6) {
   font-weight: bold;
 }
@@ -55,6 +74,12 @@ body {
 }
 
 .prose :is(a:focus-visible) {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Baseline focus-visible for interactive elements */
+:is(button, [role="button"], a, input, select, textarea):focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
 }

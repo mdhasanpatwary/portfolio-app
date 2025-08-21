@@ -24,11 +24,11 @@ const iconMap = {
 // Brand colors for each social platform
 const brandColors = {
   FaGithub: "hover:text-gray-900 dark:hover:text-gray-100",
-  FaLinkedin: "hover:text-primary-600 dark:hover:text-primary-400",
+  FaLinkedin: "hover:text-primary-700 dark:hover:text-primary-400",
   FaStackOverflow: "hover:text-orange-600 dark:hover:text-orange-400",
-  FaFacebook: "hover:text-primary-600 dark:hover:text-primary-400",
+  FaFacebook: "hover:text-primary-700 dark:hover:text-primary-400",
   SiDevdotto: "hover:text-black dark:hover:text-white",
-  SiDailydotdev: "hover:text-primary-600 dark:hover:text-primary-400",
+  SiDailydotdev: "hover:text-primary-700 dark:hover:text-primary-400",
   SiCodepen: "hover:text-black dark:hover:text-white",
   SiUpwork: "hover:text-green-600 dark:hover:text-green-400",
 };
@@ -50,7 +50,7 @@ const SocialLinks: React.FC = () => (
           className={`transition-transform transform hover:scale-110 focus-visible:ring-2 focus-visible:ring-primary-500 ${brandColor}`}
           title={link.name}
           aria-label={link.name}>
-          {Icon ? <Icon /> : <span>{link.name[0]}</span>}
+          {Icon ? <Icon aria-hidden="true" focusable="false" /> : <span>{link.name[0]}</span>}
         </a>
       );
     })}
