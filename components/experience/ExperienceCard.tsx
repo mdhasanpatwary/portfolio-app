@@ -131,7 +131,8 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
             href={experience.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 transition-colors">
+            className="flex items-center gap-1 text-xs text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 transition-colors"
+            aria-label={`Visit ${experience.company} website`}>
             <span className="hidden sm:inline">Visit</span>
             <FaExternalLinkAlt className="text-xs" aria-hidden="true" focusable="false" />
           </a>
