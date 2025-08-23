@@ -37,16 +37,18 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <nav aria-label="Pagination" className="flex justify-center mt-10 select-none">
-      <ul className="flex items-center gap-2">
+      <ul className="flex items-center gap-3">
         <button
-          className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
+          className={`flex items-center justify-center rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
             currentPage === 1 ? "cursor-default" : "cursor-pointer"
           }`}
           type="button"
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
           aria-label="Previous page">
-          <FaChevronLeft aria-hidden="true" focusable="false" />
+          <span className="w-11 h-11 flex items-center justify-center">
+            <FaChevronLeft aria-hidden="true" focusable="false" />
+          </span>
         </button>
         {getPages().map((item, idx) =>
           item === "ellipsis" ? (
@@ -56,13 +58,13 @@ const Pagination: React.FC<PaginationProps> = ({
           ) : (
             <li key={String(item)}>
               <button
-                className={`relative text-xs px-2 py-1 rounded-full transition font-semibold overflow-hidden ${
+                className={`relative text-xs rounded-full transition font-semibold overflow-hidden ${
                   currentPage === item
                     ? "bg-primary-600 text-white shadow-lg cursor-default"
                     : "bg-primary-50 dark:bg-gray-800 text-primary-600 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-gray-700 cursor-pointer"
                 }`}
                 type="button"
-                style={{ minWidth: 24 }}
+                style={{ minWidth: 44, minHeight: 44, paddingInline: 12 }}
                 onClick={() => onPageChange(item as number)}
                 aria-current={currentPage === item ? "page" : undefined}
                 disabled={currentPage === item}>
@@ -75,14 +77,16 @@ const Pagination: React.FC<PaginationProps> = ({
           )
         )}
         <button
-          className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
+          className={`flex items-center justify-center rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:opacity-50 ${
             currentPage === totalPages ? "cursor-default" : "cursor-pointer"
           }`}
           type="button"
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           aria-label="Next page">
-          <FaChevronRight aria-hidden="true" focusable="false" />
+          <span className="w-11 h-11 flex items-center justify-center">
+            <FaChevronRight aria-hidden="true" focusable="false" />
+          </span>
         </button>
       </ul>
     </nav>

@@ -100,7 +100,7 @@ const Header = ({ navItems }: HeaderProps) => {
             {/* Search button styled like ThemeToggle and placed left of it */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+              className="w-11 h-11 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               aria-label="Open search"
             >
               <FaSearch className="text-base" />
@@ -115,14 +115,14 @@ const Header = ({ navItems }: HeaderProps) => {
             <Link
               href="/contact"
               aria-label="Contact"
-              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+              className="w-11 h-11 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
             >
               <FaEnvelope className="text-base" />
             </Link>
             {/* Search button styled like ThemeToggle and placed left of it */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+              className="w-11 h-11 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               aria-label="Open search"
             >
               <FaSearch className="text-base" />
@@ -130,7 +130,7 @@ const Header = ({ navItems }: HeaderProps) => {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-10 h-10 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+              className="w-11 h-11 cursor-pointer flex items-center justify-center rounded-full bg-gray-200 dark:bg-primary-900 text-black dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
               aria-controls="primary-mobile-menu">
@@ -147,6 +147,7 @@ const Header = ({ navItems }: HeaderProps) => {
             isOpen ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-2 opacity-0 pointer-events-none"
           }`}
           aria-hidden={!isOpen}
+          hidden={!isOpen}
           id="primary-mobile-menu"
         >
           <nav className="bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 pb-4" aria-label="Primary">
