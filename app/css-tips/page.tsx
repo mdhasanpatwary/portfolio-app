@@ -3,7 +3,7 @@ import CssTipsClient from "@/components/cssTips/CssTipsClient";
 import PageTitle from "@/components/global/PageTitle";
 import { FaCode } from "react-icons/fa";
 import type { Metadata } from "next";
-import PaginationLinks from "@/components/global/PaginationLinks";
+import Pagination from "@/components/global/Pagination";
 
 export const metadata: Metadata = {
   title: "CSS Tips & Tricks | MD Hasan Patwary - Front-End Developer",
@@ -76,7 +76,7 @@ export default async function CssTipsPage({ searchParams }: { searchParams: Prom
       <CssTipsClient tips={pageTips} initialTipId={initialTipId} initialTipData={initialTipData} />
       {/* Wrapper adds consistent bottom spacing from footer */}
       <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24">
-        <PaginationLinks
+        <Pagination
           currentPage={page}
           totalPages={totalPages}
           makeHref={(p) => `/css-tips?page=${p}`}

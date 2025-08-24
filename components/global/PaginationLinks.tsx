@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-interface PaginationLinksProps {
+interface PaginationProps {
   currentPage: number;
   totalPages: number;
   makeHref: (page: number) => string;
 }
 
-export default function PaginationLinks({ currentPage, totalPages, makeHref }: PaginationLinksProps) {
+export default function Pagination({ currentPage, totalPages, makeHref }: PaginationProps) {
   if (totalPages <= 1) return null;
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   return (

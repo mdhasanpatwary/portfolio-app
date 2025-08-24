@@ -57,13 +57,14 @@ const TIPS_PER_PAGE = 6;
 const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
   const [selectedTip, setSelectedTip] = useState<CssTip | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+
   const searchParams = useSearchParams();
 
   // Keep a stable full list reference
   const allTips = useMemo(() => tips, [tips]);
 
   const totalPages = Math.ceil(tips.length / TIPS_PER_PAGE);
+  const currentPage = parseInt(searchParams?.get("page") || "1", 10) || 1;
   const paginatedTips = tips.slice((currentPage - 1) * TIPS_PER_PAGE, currentPage * TIPS_PER_PAGE);
 
   const handleCardClick = (tip: CssTip) => {
@@ -76,18 +77,11 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
     setSelectedTip(null);
   };
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
-  // Initialize from URL params: page and tipId
+
+  // Initialize from URL params: tipId
   useEffect(() => {
     if (!searchParams) return;
-    const pageParam = parseInt(searchParams.get("page") || "", 10);
-    if (!Number.isNaN(pageParam) && pageParam >= 1 && pageParam <= totalPages) {
-      setCurrentPage(pageParam);
-    }
     const tipIdParam = parseInt(searchParams.get("tipId") || "", 10);
     if (!Number.isNaN(tipIdParam)) {
       const found = allTips.find((t) => t.id === tipIdParam);
@@ -96,7 +90,7 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
         setIsModalOpen(true);
       }
     }
-  }, [searchParams, totalPages, allTips]);
+  }, [searchParams, allTips]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
@@ -108,7 +102,7 @@ const CssTips: React.FC<CssTipsProps> = ({ tips }) => {
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        onPageChange={handlePageChange}
+        makeHref={(page) => `/css-tips?page=${page}`}
       />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedTip?.title}>
         {selectedTip && (
