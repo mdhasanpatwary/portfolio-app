@@ -14,7 +14,7 @@ export default function Pagination({ currentPage, totalPages, makeHref }: Pagina
       <Link
         aria-label="Previous page"
         href={makeHref(Math.max(1, currentPage - 1))}
-        className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${currentPage === 1 ? "pointer-events-none opacity-50" : ""}`}
+        className={`flex items-center justify-center text-2xl w-11 h-11 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${currentPage === 1 ? "pointer-events-none opacity-50" : ""}`}
       >
         ‹
       </Link>
@@ -27,13 +27,13 @@ export default function Pagination({ currentPage, totalPages, makeHref }: Pagina
           (currentPage <= 3 && p <= 4) ||
           (currentPage >= totalPages - 2 && p >= totalPages - 3) ||
           Math.abs(p - currentPage) <= 1;
-        if (!shouldShow) return idx > 0 && arr[idx - 1] !== -1 ? <span key={`e${idx}`} className="px-2 text-gray-600 dark:text-gray-300">...</span> : null;
+        if (!shouldShow) return idx > 0 && arr[idx - 1] !== -1 ? <span key={`e${idx}`} className="text-gray-600 dark:text-gray-300">...</span> : null;
         return (
           <Link
             key={p}
             href={makeHref(p)}
             aria-current={currentPage === p ? "page" : undefined}
-            className={`relative text-xs px-2 py-1 rounded-full transition font-semibold overflow-hidden ${
+            className={`flex items-center justify-center relative text-sm w-11 h-11 rounded-full transition font-semibold overflow-hidden ${
               currentPage === p
                 ? "bg-primary-600 text-white shadow-lg"
                 : "bg-primary-50 dark:bg-gray-800 text-primary-600 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-gray-700"
@@ -46,7 +46,7 @@ export default function Pagination({ currentPage, totalPages, makeHref }: Pagina
       <Link
         aria-label="Next page"
         href={makeHref(Math.min(totalPages, currentPage + 1))}
-        className={`flex items-center px-2 py-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${currentPage === totalPages ? "pointer-events-none opacity-50" : ""}`}
+        className={`flex items-center justify-center text-2xl w-11 h-11 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${currentPage === totalPages ? "pointer-events-none opacity-50" : ""}`}
       >
         ›
       </Link>
