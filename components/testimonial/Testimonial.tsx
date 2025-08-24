@@ -13,13 +13,19 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
   return (
     <section
       id="testimonials"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+    >
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={testimonials.title}
           icon={
-            <FaQuoteLeft className="text-primary-600 dark:text-primary-400 text-3xl" aria-hidden="true" focusable="false" />
-          }>
+            <FaQuoteLeft
+              className="text-primary-600 dark:text-primary-400 text-3xl"
+              aria-hidden="true"
+              focusable="false"
+            />
+          }
+        >
           {testimonials.subtitle}
         </SectionTitle>
         {/* Aggregate review count without fabricating ratings */}
@@ -62,11 +68,14 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
           }}
         />
         <Carousel
-          breakpoints={{ 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1200: { slidesPerView: 3 } }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 },
+          }}
           spaceBetween={30}
-          className="pb-10 md:pb-12"
           navigation
-          pagination>
+        >
           {testimonials.items.map((testimonial: Testimonial, index: number) => (
             <div key={index}>
               <TestimonialCard testimonial={testimonial} />

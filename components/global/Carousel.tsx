@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type Breakpoints = Record<number, { slidesPerView: number }>;
@@ -46,7 +52,7 @@ const Carousel: React.FC<CarouselProps> = ({
   spaceBetween = 30,
   className = "",
   navigation = true,
-  pagination = true,
+  pagination = false,
 }) => {
   const items = useMemo(() => React.Children.toArray(children), [children]);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -84,18 +90,27 @@ const Carousel: React.FC<CarouselProps> = ({
       const i = Math.max(0, Math.min(maxIndex, next));
       setIndex(i);
     },
-    [maxIndex]
+    [maxIndex],
   );
 
-  const prev = useCallback(() => slideToIndex(index - 1), [index, slideToIndex]);
-  const next = useCallback(() => slideToIndex(index + 1), [index, slideToIndex]);
+  const prev = useCallback(
+    () => slideToIndex(index - 1),
+    [index, slideToIndex],
+  );
+  const next = useCallback(
+    () => slideToIndex(index + 1),
+    [index, slideToIndex],
+  );
 
   // Apply translate based on index (1 slide per step) and include gap in pixels
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
     // Slide width must subtract the gaps that exist within the viewport
-    const slideWidthPx = containerWidth > 0 ? (containerWidth - spaceBetween * (spv - 1)) / spv : 0;
+    const slideWidthPx =
+      containerWidth > 0
+        ? (containerWidth - spaceBetween * (spv - 1)) / spv
+        : 0;
     const delta = slideWidthPx + spaceBetween; // step by one slide + one gap
     const translate = -(index * delta);
     track.style.transform = `translateX(${translate}px)`;
