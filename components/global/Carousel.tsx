@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type Breakpoints = Record<number, { slidesPerView: number }>;
@@ -11,7 +17,6 @@ type CarouselProps = {
   spaceBetween?: number; // px gap between slides
   className?: string;
   navigation?: boolean;
-  pagination?: boolean; // dots
 };
 
 function useSlidesPerView(breakpoints?: Breakpoints, defaultSpv = 1) {
@@ -46,7 +51,6 @@ const Carousel: React.FC<CarouselProps> = ({
   spaceBetween = 30,
   className = "",
   navigation = true,
-  pagination = true,
 }) => {
   const items = useMemo(() => React.Children.toArray(children), [children]);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -84,18 +88,27 @@ const Carousel: React.FC<CarouselProps> = ({
       const i = Math.max(0, Math.min(maxIndex, next));
       setIndex(i);
     },
-    [maxIndex]
+    [maxIndex],
   );
 
-  const prev = useCallback(() => slideToIndex(index - 1), [index, slideToIndex]);
-  const next = useCallback(() => slideToIndex(index + 1), [index, slideToIndex]);
+  const prev = useCallback(
+    () => slideToIndex(index - 1),
+    [index, slideToIndex],
+  );
+  const next = useCallback(
+    () => slideToIndex(index + 1),
+    [index, slideToIndex],
+  );
 
   // Apply translate based on index (1 slide per step) and include gap in pixels
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
     // Slide width must subtract the gaps that exist within the viewport
-    const slideWidthPx = containerWidth > 0 ? (containerWidth - spaceBetween * (spv - 1)) / spv : 0;
+    const slideWidthPx =
+      containerWidth > 0
+        ? (containerWidth - spaceBetween * (spv - 1)) / spv
+        : 0;
     const delta = slideWidthPx + spaceBetween; // step by one slide + one gap
     const translate = -(index * delta);
     track.style.transform = `translateX(${translate}px)`;
@@ -111,8 +124,7 @@ const Carousel: React.FC<CarouselProps> = ({
     } as React.CSSProperties;
   }, [spv, spaceBetween]);
 
-  // Total positions (for dots) equals maxIndex + 1
-  const positions = maxIndex + 1;
+
 
   return (
     <div className={`relative group ${className}`} ref={containerRef}>
@@ -130,7 +142,7 @@ const Carousel: React.FC<CarouselProps> = ({
         </div>
       </div>
 
-      {navigation && positions > 1 && (
+      {navigation && maxIndex > 0 && (
         <>
           <button
             aria-label="Previous"
@@ -151,23 +163,7 @@ const Carousel: React.FC<CarouselProps> = ({
         </>
       )}
 
-      {pagination && positions > 1 && (
-        <div className="absolute left-0 right-0 bottom-0 flex items-center justify-center gap-2 pb-2 md:pb-3">
-          {Array.from({ length: positions }).map((_, i) => (
-            <button
-              key={i}
-              aria-label={`Go to slide ${i + 1}`}
-              onClick={() => slideToIndex(i)}
-              className={
-                "h-2.5 w-2.5 rounded-full transition-colors " +
-                (i === index
-                  ? "bg-primary-600 dark:bg-primary-400"
-                  : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500")
-              }
-            />
-          ))}
-        </div>
-      )}
+
     </div>
   );
 };

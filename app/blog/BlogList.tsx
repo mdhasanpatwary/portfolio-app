@@ -1,6 +1,6 @@
 import BlogCard, { DevToPost } from "@/components/blog/BlogCard";
 import { FaPenNib } from "react-icons/fa";
-import PaginationLinks from "@/components/global/PaginationLinks";
+import Pagination from "@/components/global/Pagination";
 
 interface BlogListProps {
   posts: DevToPost[];
@@ -41,7 +41,7 @@ export default function BlogList({ posts, page = 1 }: BlogListProps) {
             ))}
           </div>
           {/* Pagination with links */}
-          <PaginationLinks
+          <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             makeHref={(p) => `/blog?page=${p}`}

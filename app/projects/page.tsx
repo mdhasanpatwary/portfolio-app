@@ -3,7 +3,7 @@ import { FaFolderOpen } from "react-icons/fa";
 import { projects } from "@/data";
 import type { Metadata } from "next";
 import ProjectsGrid from "./ProjectsGrid";
-import PaginationLinks from "@/components/global/PaginationLinks";
+import Pagination from "@/components/global/Pagination";
 
 export const metadata: Metadata = {
   title: "Projects | MD Hasan Patwary - Front-End Developer Portfolio",
@@ -48,7 +48,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
       />
       <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
         <ProjectsGrid items={pageItems} />
-        <PaginationLinks
+        <Pagination
           currentPage={page}
           totalPages={totalPages}
           makeHref={(p) => `/projects?page=${p}`}
