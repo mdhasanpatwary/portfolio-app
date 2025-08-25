@@ -73,13 +73,6 @@ const Carousel: React.FC<CarouselProps> = ({
     
     ro.observe(el);
     
-    // Initial measurement using requestAnimationFrame to batch DOM reads
-    requestAnimationFrame(() => {
-      if (el.isConnected) {
-        setContainerWidth(el.clientWidth);
-      }
-    });
-    
     return () => {
       ro.disconnect();
     };
