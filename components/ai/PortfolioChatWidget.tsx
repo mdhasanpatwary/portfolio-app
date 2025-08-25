@@ -159,7 +159,15 @@ export default function PortfolioChatWidget() {
   }, [])
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
+    // Batch scroll operations to avoid forced reflow
+    if (scrollRef.current) {
+      requestAnimationFrame(() => {
+        const element = scrollRef.current
+        if (element) {
+          element.scrollTo({ top: element.scrollHeight, behavior: 'smooth' })
+        }
+      })
+    }
   }, [messages, open])
 
   // Resize handlers (top-left handle) using Pointer Events (mouse, touch, pen)
@@ -360,9 +368,13 @@ export default function PortfolioChatWidget() {
               className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-xs placeholder:text-xs focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               onFocus={() => {
                 // Ensure latest messages are visible when keyboard opens
-                setTimeout(() => {
-                  scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
-                }, 50)
+                // Use requestAnimationFrame to batch DOM operations
+                requestAnimationFrame(() => {
+                  const element = scrollRef.current
+                  if (element) {
+                    element.scrollTo({ top: element.scrollHeight, behavior: 'smooth' })
+                  }
+                })
               }}
               ref={inputRef}
             />
