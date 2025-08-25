@@ -62,14 +62,26 @@ const Carousel: React.FC<CarouselProps> = ({
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    const update = () => setContainerWidth(el.clientWidth);
-    update();
-    const ro = new ResizeObserver(update);
+    
+    // Use ResizeObserver entries to avoid forced reflow
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        // Use contentRect.width instead of clientWidth to avoid forced reflow
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    
     ro.observe(el);
-    window.addEventListener("resize", update);
+    
+    // Initial measurement using requestAnimationFrame to batch DOM reads
+    requestAnimationFrame(() => {
+      if (el.isConnected) {
+        setContainerWidth(el.clientWidth);
+      }
+    });
+    
     return () => {
       ro.disconnect();
-      window.removeEventListener("resize", update);
     };
   }, []);
 
