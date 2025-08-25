@@ -38,7 +38,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
           <CustomImage
             src={image}
             alt={`Profile picture of ${name}`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            sizes="(max-width: 768px) 320px, (max-width: 1200px) 400px, 480px"
             fill
             priority={true}
             fetchPriority="high"
