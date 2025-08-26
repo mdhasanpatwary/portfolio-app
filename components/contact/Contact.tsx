@@ -1,6 +1,8 @@
 import React from "react";
 import ContactInfoCard from "./ContactInfoCard";
-import ContactForm from "./ContactForm";
+import dynamic from "next/dynamic";
+
+const ContactForm = dynamic(() => import("./ContactForm"));
 
 interface ContactProps {
   contact: {
