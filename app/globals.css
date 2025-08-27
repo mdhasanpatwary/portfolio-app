@@ -3,7 +3,7 @@
 
 @theme {
   /* Primary color scale (Sky) */
-  --color-primary-50:  #f0f9ff;
+  --color-primary-50: #f0f9ff;
   --color-primary-100: #e0f2fe;
   --color-primary-200: #bae6fd;
   --color-primary-300: #7dd3fc;
@@ -40,9 +40,10 @@ body {
   padding: 0.5rem 0.75rem;
   border: 2px solid var(--color-primary-500);
   border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
+
 .skip-link:focus-visible {
   top: 1rem;
   outline: 2px solid var(--color-primary-500);
@@ -122,4 +123,9 @@ code {
 .dark .prose code:not(pre code) {
   background-color: #374151;
   color: #f9fafb;
+}
+
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0px 500px;
 }

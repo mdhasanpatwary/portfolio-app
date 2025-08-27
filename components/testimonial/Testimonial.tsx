@@ -13,7 +13,7 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
   return (
     <section
       id="testimonials"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 content-visibility-auto"
     >
       <div className="max-w-7xl mx-auto">
         <SectionTitle

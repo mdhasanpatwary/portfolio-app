@@ -16,7 +16,7 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
     <>
       <section
         id="projects"
-        className="w-full py-16 md:py-24 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6">
+        className="w-full py-16 md:py-24 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6 content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             title={projectsData.title}
