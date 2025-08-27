@@ -10,7 +10,7 @@ interface CssTip {
 
 interface CssTipCardProps {
   tip: CssTip;
-  onClick?: () => void;
+  onClick?: (() => void) | undefined;
 }
 
 const CssTipCard: React.FC<CssTipCardProps> = ({ tip, onClick }) => (

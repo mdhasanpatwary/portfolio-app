@@ -14,9 +14,9 @@ type Project = {
 };
 
 type Tip = {
-  id?: number;
-  title?: string;
-  description?: string;
+  id?: number | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
 };
 
 export default function SearchOverlay({ onClose }: { onClose: () => void }) {
@@ -105,7 +105,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       }
       if (e.key === "Enter") {
         const items: Array<
-          | { type: "project"; href?: string; title: string }
+          | { type: "project"; href?: string | undefined; title: string }
           | { type: "tip"; tip: Tip }
         > = [
           ...projectHits.map((p) => ({ type: "project" as const, href: p.link || p.demo, title: p.title })),
@@ -143,12 +143,12 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       if (e.shiftKey) {
         if (active === first || !root.contains(active)) {
           e.preventDefault();
-          last.focus();
+          last?.focus();
         }
       } else {
         if (active === last) {
           e.preventDefault();
-          first.focus();
+          first?.focus();
         }
       }
     };

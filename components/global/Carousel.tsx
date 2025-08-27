@@ -28,7 +28,7 @@ function useSlidesPerView(breakpoints?: Breakpoints, defaultSpv = 1) {
     let spv = defaultSpv;
     const w = window.innerWidth;
     for (const bp of widths) {
-      if (w >= bp) spv = breakpoints[bp].slidesPerView;
+      if (w >= bp) spv = breakpoints[bp]?.slidesPerView ?? defaultSpv;
     }
     return Math.max(1, spv || defaultSpv);
   }, [breakpoints, defaultSpv]);

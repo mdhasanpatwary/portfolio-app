@@ -1,17 +1,19 @@
 import React from "react";
+import { IconType } from "react-icons";
 import { SkillGroup } from "../../types/data";
 
-const SkillCard = ({
+interface SkillCardProps {
+  group: SkillGroup;
+  iconMap: Record<string, IconType>;
+  brandColors: Record<string, string>;
+  index: number;
+}
+
+const SkillCard: React.FC<SkillCardProps> = ({
   group,
   iconMap,
   brandColors,
   index,
-}: {
-  group: SkillGroup;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  iconMap: Record<string, React.ComponentType<any>>;
-  brandColors: Record<string, string>;
-  index: number;
 }) => (
   <div
     className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 p-0 flex flex-col items-stretch rounded-lg overflow-hidden"

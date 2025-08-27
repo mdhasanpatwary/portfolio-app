@@ -28,9 +28,11 @@ import {
   SiAdobexd,
   SiAdobephotoshop,
 } from "react-icons/si";
+import { IconType } from "react-icons";
 import ExperienceAchievements from "./ExperienceAchievements";
+import { ExperienceItem } from "@/types/data";
 
-const iconMap = {
+const iconMap: Record<string, IconType> = {
   FaHtml5,
   FaCss3Alt,
   FaDocker,
@@ -55,7 +57,7 @@ const iconMap = {
   SiAdobephotoshop,
 };
 
-const brandColors = {
+const brandColors: Record<string, string> = {
   FaHtml5: "#E44D26",
   FaCss3Alt: "#1572B6",
   FaDocker: "#2496ED",
@@ -80,17 +82,11 @@ const brandColors = {
   SiAdobephotoshop: "#31A8FF",
 };
 
-type ExperienceItem = {
-  company: string;
-  role: string;
-  duration: string;
-  location: string;
-  website: string;
-  highlights: string[];
-  techStack: { icon: string; name: string }[];
-};
+interface ExperienceCardProps {
+  experience: ExperienceItem;
+}
 
-const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
+const ExperienceCard: React.FC<ExperienceCardProps> = ({
   experience,
 }) => {
   const AchievementItem = ({ point }: { point: string }) => (

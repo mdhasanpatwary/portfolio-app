@@ -13,7 +13,7 @@ interface CssTip {
 
 interface CssTipsClientProps {
   tips: CssTip[];
-  initialTipId?: number;
+  initialTipId?: number | undefined;
   initialTipData?: CssTip | null;
 }
 
@@ -32,7 +32,7 @@ function parseDescription(description: string) {
     if (match.index > lastIndex) {
       parts.push({ type: "text", content: description.slice(lastIndex, match.index) });
     }
-    parts.push({ type: "code", content: match[2], language: match[1] || "css" });
+    parts.push({ type: "code", content: match[2] || "", language: match[1] || "css" });
     lastIndex = regex.lastIndex;
   }
   if (lastIndex < description.length) {

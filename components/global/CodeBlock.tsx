@@ -4,7 +4,7 @@ import { FaRegCopy, FaCheck } from "react-icons/fa";
 
 interface CodeBlockProps {
   code: string;
-  language?: string;
+  language?: string | undefined;
   className?: string;
 }
 

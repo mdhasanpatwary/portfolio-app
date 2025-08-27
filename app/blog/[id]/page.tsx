@@ -5,6 +5,7 @@ import PageTitle from "@/components/global/PageTitle";
 import SectionTitle from "@/components/global/SectionTitle";
 import { FaPenNib } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
+import type { Components } from "react-markdown";
 import { CustomImage } from "@/components/global";
 import type { Metadata } from "next";
 
@@ -73,25 +74,19 @@ export async function generateMetadata({
 
 // MarkdownRenderer component for proper headings and code highlighting
 function MarkdownRenderer({ content }: { content: string }) {
+  const components: Components = {
+    code: ({ className, children, ...props }) => {
+      return (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      );
+    },
+  };
+
   return (
     <div className="prose dark:prose-invert max-w-none text-lg leading-relaxed">
-      <ReactMarkdown
-        components={{
-          code({
-            className,
-            children,
-            ...props
-          }: {
-            className?: string;
-            children?: React.ReactNode;
-          }) {
-            return (
-              <code className={className} {...props}>
-                {children}
-              </code>
-            );
-          },
-        }}>
+      <ReactMarkdown components={components}>
         {content}
       </ReactMarkdown>
     </div>

@@ -7,7 +7,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
-  title?: string;
+  title?: string | undefined;
   size?: "sm" | "md" | "lg" | "xl" | "full";
   showCloseButton?: boolean;
   className?: string;
@@ -90,6 +90,7 @@ const Modal: React.FC<ModalProps> = ({
       dialog.addEventListener("keydown", onKeyDown);
       return () => dialog.removeEventListener("keydown", onKeyDown);
     }
+    return undefined;
   }, [isOpen]);
 
   useEffect(() => {

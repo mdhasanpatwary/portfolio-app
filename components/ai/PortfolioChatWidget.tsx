@@ -120,12 +120,12 @@ export default function PortfolioChatWidget() {
         if (e.shiftKey) {
           if (active === first || !root.contains(active)) {
             e.preventDefault()
-            last.focus()
+            last?.focus()
           }
         } else {
           if (active === last) {
             e.preventDefault()
-            first.focus()
+            first?.focus()
           }
         }
       }
@@ -141,6 +141,7 @@ export default function PortfolioChatWidget() {
       const last = toggleBtnRef.current ?? (lastActiveRef.current as HTMLElement | null)
       last?.focus?.()
     }
+    return undefined
   }, [open, messages.length, userLang])
 
   // Listen to visual viewport changes (keyboard open/close) to keep widget in view
