@@ -171,7 +171,7 @@ async function handleBlogApiRequest(request) {
     }
 
     throw new Error('Network failed and no cache available');
-  } catch (error) {
+  } catch {
     // Network failed, try to serve from cache
     if (cachedResponse) {
       return cachedResponse;
