@@ -96,21 +96,12 @@ export default async function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: homeFaqs.items.map((i) => ({
-              "@type": "Question",
-              name: i.question,
-              acceptedAnswer: { "@type": "Answer", text: i.answer },
-            })),
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
             mainEntity: [
+              ...homeFaqs.items.map((i) => ({
+                "@type": "Question",
+                name: i.question,
+                acceptedAnswer: { "@type": "Answer", text: i.answer },
+              })),
               {
                 "@type": "Question",
                 name: "What services do you offer?",

@@ -158,17 +158,13 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
               __html: `
                 // Gentle cache clearing in development - only clear service worker
-                console.log('Development mode detected - clearing service workers');
                 if ('serviceWorker' in navigator) {
                   navigator.serviceWorker.getRegistrations().then(registrations => {
-                    console.log('Found service workers:', registrations.length);
                     registrations.forEach(registration => {
                       registration.unregister();
-                      console.log('Unregistered service worker');
                     });
                   });
                 }
-                console.log('Development setup complete');
               `,
             }}
           />
