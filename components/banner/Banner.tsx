@@ -40,7 +40,7 @@ const Banner: React.FC<BannerProps> = ({ banner }) => {
             alt={`Profile picture of ${name}`}
             sizes="(max-width: 768px) 320px, (max-width: 1200px) 400px, 480px"
             fill
-            priority={true}
+            priority
             fetchPriority="high"
             blurType="profile"
             style={{ objectFit: "cover", objectPosition: "top" }}

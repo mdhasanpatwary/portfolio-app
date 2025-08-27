@@ -91,7 +91,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
                 className="w-full h-full object-cover rounded-t-xl transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 blurType="default"
-                priority
               />
               {/* Soft overlay for contrast */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
