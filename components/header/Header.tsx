@@ -130,7 +130,6 @@ const Header = ({ navItems }: HeaderProps) => {
         className={`lg:hidden absolute left-0 right-0 top-full w-full transform transition-[opacity,transform] duration-200 ease-out ${
           isOpen ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-2 opacity-0 pointer-events-none"
         }`}
-        aria-hidden={!isOpen}
         hidden={!isOpen}
         id="primary-mobile-menu"
       >
