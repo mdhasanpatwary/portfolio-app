@@ -37,9 +37,17 @@ function useSlidesPerView(breakpoints?: Breakpoints, defaultSpv = 1) {
 
   useEffect(() => {
     setSpv(getSpv());
-    const onResize = () => setSpv(getSpv());
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    // Throttle resize events for better mobile performance
+    let timeoutId: NodeJS.Timeout;
+    const onResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => setSpv(getSpv()), 100);
+    };
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", onResize);
+    };
   }, [getSpv]);
 
   return spv;
