@@ -9,8 +9,8 @@ import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
 import InstallPrompt from "@/components/global/InstallPrompt";
 import ServiceWorkerRegistration from "@/components/global/ServiceWorkerRegistration";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
 
 const geistMono = Geist_Mono({
