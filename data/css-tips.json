@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "contain: layout paint;",
-    "description": "CSS এ একটা ছোট্ট কিন্তু powerful জিনিস আছে — contain: layout paint;। এটা ব্রাউজারকে basically বলে, এই এলিমেন্টটা আলাদা করে ধরো, বাইরের কোনো layout বা paint change এর সাথে এর কোন সম্পর্ক নাই।\nএইটার মজা হচ্ছে, যেকোনো component যেটা বারবার update হয় — যেমন modal, scrollable list, অথবা dashboard এর widget — সেগুলা isolate করে ফেলা যায়। এতে পুরো পেজ রি-রেন্ডার হয় না, শুধুমাত্র ওই এলিমেন্টটাই কাজ করে। রেজাল্ট? ফাস্টার UI, কম layout thrash, smooth performance।\nতবে খেয়াল রাখতে হবে, proper width/height না থাকলে কাজ নাও করতে পারে। আবার margin বা overflow issue হতে পারে, তাই blindly use করাও ঠিক না। আর কেউ চাইলে will-change এর সাথে combo করেও ইউজ করতে পারে, just খেয়াল রাখবেন memory leak যেন না হয়।\nএইরকম ছোট্ট একটা CSS টুইকে পারফরম্যান্সে অনেক পার্থক্য আসে। আপনি কি কখনো contain ইউজ করেছেন? করলে কেমন result পেয়েছেন?",
+    "description": "CSS এ একটা ছোট্ট কিন্তু powerful জিনিস আছে — contain: layout paint;। এটা ব্রাউজারকে basically বলে, এই এলিমেন্টটা আলাদা করে ধরো, বাইরের কোনো layout বা paint change এর সাথে এর কোন সম্পর্ক নাই।\nএইটার মজা হচ্ছে, যেকোনো component যেটা বারবার update হয় — যেমন modal, scrollable list, অথবা dashboard এর widget — সেগুলা isolate করে ফেলা যায়। এতে পুরো পেজ রি-রেন্ডার হয় না, শুধুমাত্র ওই এলিমেন্টটাই কাজ করে। রেজাল্ট? ফাস্টার UI, কম layout thrash, smooth performance।\nতবে খেয়াল রাখতে হবে, proper width/height না থাকলে কাজ নাও করতে পারে। আবার margin বা overflow issue হতে পারে, তাই blindly use করাও ঠিক না। আর কেউ চাইলে will-change এর সাথে combo করেও ইউজ করতে পারে, just খেয়াল রাখবেন memory leak যেন না হয়।\nএইরকম ছোট্ট একটা CSS টুইকে পারফরম্যান্সে অনেক পার্থক্য আসে।",
     "category": "Performance"
   },
   {
@@ -209,4 +209,89 @@
     "description": "appearance হচ্ছে CSS-এর এমন একটা প্রপার্টি, যেটা দিয়ে আপনি ব্রাউজার-কন্ট্রোল্ড ডিফল্ট স্টাইলিং বন্ধ করে দিতে পারেন। ধরুন একটা <input type=\"range\">, ব্রাউজার এটাকে নিজে নিজে একটা স্লাইডার বানিয়ে দেয় — কিন্তু আপনি যদি চান সেটা নিজের মতো করে ডিজাইন করবেন, তাহলে প্রথমেই appearance: none; লিখতে হবে। তখন ব্রাউজার আর তার নিজস্ব ডিজাইন প্রয়োগ করবে না — আপনি পুরোটা কাস্টম করে ফেলতে পারবেন।\nএটা শুধু রেঞ্জ ইনপুটে না — বাটন, চেকবক্স, রেডিও, এমনকি ফর্ম এলিমেন্টেও প্রযোজ্য। মানে, যখন আপনি চাচ্ছেন ব্রাউজারের পুরনো বা বিরক্তিকর ডিফল্ট লুক বাদ দিয়ে নিজের হাতে সব তৈরি করবেন — তখন appearance দিয়েই শুরু করতে হবে।\nআর হ্যাঁ, আলাদা আলাদা ব্রাউজারে ভালো কাস্টম ডিজাইন আনতে -webkit-appearance বা -moz-appearance ও কখনও কখনও দরকার হয়।",
     "category": "Utility & Shorthand"
   }
-]
+ ,
+   {
+     "id": 36,
+     "title": "isolation",
+     "description": "isolation হলো এমন একটা CSS প্রপার্টি যেটা দিয়ে আপনি একটা element তার parent এর সাথে blend হবে কিনা সেটা কন্ট্রোল করতে পারেন। সাধারনত যখন mix-blend-mode ব্যবহার করেন তখন child element parent এর background এর সাথে blend হয়ে যায়। কিন্তু isolation: isolate; দিলে ওই element একটা আলাদা stacking context তৈরি করবে, ফলে তার blend effect শুধু নিজের ভেতরে সীমাবদ্ধ থাকবে, parent এর সাথে মিশে যাবে না।\nডিফল্ট ভ্যালু হলো auto, মানে browser ঠিক করবে blend হবে কিনা। আর isolate মানে স্পষ্টভাবে isolate করে দেওয়া।\nউদাহরণ:\n.container {\n  background: yellow;\n}\n.box {\n  background: blue;\n  mix-blend-mode: multiply;\n  isolation: isolate;\n}\nএখানে .box element তার parent background এর সাথে multiply blend করবে না, বরং isolate হয়ে আলাদা ভাবে effect দেখাবে। Complex UI তে বা multiple overlapping elements এ visual control রাখার জন্য এটা খুব দরকারী।",
+     "category": "Layout & Positioning"
+   },
+   {
+     "id": 37,
+     "title": "pointer-events",
+     "description": "pointer-events হচ্ছে CSS-এর একটা শক্তিশালী প্রপার্টি, যেটা দিয়ে আপনি কন্ট্রোল করতে পারেন কোনো element এ click, hover বা অন্য যেকোনো interaction হবে কি না। ধরুন, আপনার একটা button আছে যেটাকে আপনি temporarily disable করতে চান। তখন লিখবেন:\nbutton {\n  pointer-events: none;\n}\nএতে button-টা আর কোনো click বা hover রেসপন্স করবে না। মানে visually button থাকবে, কিন্তু একে একদম \"Untouchable\" করে দেওয়া হলো। আবার যদি পরে এটাকে স্বাভাবিকভাবে কাজ করাতে চান, তখন pointer-events: auto; লিখলেই interaction ফিরে আসবে। অনেক সময় transparent overlay বা modal design করতে গিয়ে নিচের element এ click কাজ করাতে হয়। সেক্ষেত্রে উপরের layer এ pointer-events: none; দিলে সহজেই নিচের element এ interaction পৌঁছে যাবে। এই প্রপার্টি modern UI design এ খুব দরকারি।",
+     "category": "Utility & Shorthand"
+   },
+   {
+     "id": 38,
+     "title": "resize",
+     "description": "resize হচ্ছে CSS-এর একটি সুবিধাজনক প্রপার্টি, যেটা দিয়ে নির্ধারণ করা যায় কোনো element ইউজার নিজের হাতে resize করতে পারবে কি না এবং কোন দিকে পারবে। সাধারণত এটা textarea-তে দেখা যায়, তবে যেকোনো block element-এ ব্যবহার করা যায় যদি overflow সঠিকভাবে সেট করা থাকে।\nধরুন, আপনি চান textarea একদম resize না হয়। তখন লিখবেন:\ntextarea {\n  resize: none;\n}\nএবার textarea-টা fixed থাকবে, ইউজার সেটাকে টেনে বড় বা ছোট করতে পারবে না। আবার যদি কোনো div কে কেবল ডান-বাম দিকে resize করার সুযোগ দিতে চান, তখন লিখবেন:\n.box {\n  resize: horizontal;\n  overflow: auto;\n}\nএতে box শুধু horizontally resize করা যাবে। একইভাবে resize: vertical; দিলে কেবল উপরে-নিচে সাইজ পরিবর্তন করা যাবে, আর resize: both; দিলে দুই দিকেই resize করা যাবে। তবে মনে রাখবেন, এটা কাজ করতে চাইলে overflow hidden না হয়ে auto বা scroll হতে হবে।\nএটা UI কন্ট্রোলের ক্ষেত্রে খুবই দরকারি—যেমন, যেখানে design একদম fixed রাখতে হবে সেখানে resize বন্ধ রাখা যায়, আর যেখানে ইউজারকে flexibility দিতে হবে সেখানে চালু রাখা যায়।",
+     "category": "Utility & Shorthand"
+   },
+   {
+     "id": 39,
+     "title": "table-layout",
+     "description": "table-layout হলো CSS-এর একটি property যেটা দিয়ে নিয়ন্ত্রণ করা যায় HTML table-এর column-এর Width কিভাবে calculate হবে। এর দুটি value বেশি ব্যবহৃত হয় — auto (Default) এবং fixed।\nauto ব্যবহার করলে browser table-এর content দেখে column-এর Width নির্ধারণ করে। তাই কোনো cell-এ বড় text থাকলে column-এর Width-ও বড় হয়ে যাবে। অপরদিকে fixed ব্যবহার করলে column-এর Width নির্ধারণ হয় header বা প্রথম row-এর উপর ভিত্তি করে। ফলে content যত বড়ই হোক না কেন, column সেই Width-এই থাকবে, আর text হয় Wrap হবে না হলে কেটে যাবে।\nউদাহরণ:\ntable {\n  table-layout: fixed;\n  width: 100%;\n}\nএভাবে ব্যবহার করলে browser table অনেক দ্রুত Render করতে পারে, কারণ তাকে পুরো content লোড হওয়ার জন্য অপেক্ষা করতে হয় না। তবে fixed layout-এ content overflow হওয়ার সম্ভাবনা থাকে, তাই সেক্ষেত্রে text-overflow, word-wrap বা ellipsis ব্যবহার করে handle করা ভালো।",
+     "category": "Layout & Positioning"
+   },
+   {
+     "id": 40,
+     "title": "transition-timing-function",
+     "description": "transition-timing-function হলো CSS-এর এমন একটি property যেটা দিয়ে নিয়ন্ত্রণ করা যায় Transition-এর Speed সময়ের সাথে কিভাবে পরিবর্তিত হবে। এটাকে মূলত একটা Speed Curve হিসেবে ভাবা যায়।\nDefault value হলো ease — এখানে Transition শুরুতে ধীরে হয়, মাঝে দ্রুত হয়, আবার শেষে ধীরে হয়। যদি পুরো সময় এক constant Speed চান তাহলে linear ব্যবহার করতে পারেন। ease-in দিলে Transition শুরুতে ধীরে হবে পরে দ্রুত হবে, ease-out দিলে শুরুতে দ্রুত হবে শেষে ধীরে হবে, আর ease-in-out দিলে শুরু ও শেষে ধীরে কিন্তু মাঝখানে দ্রুত হবে।\nআরও advanced control চাইলে cubic-bezier() ফাংশন ব্যবহার করে নিজের মতো করে Custom Curve বানানো যায়।\nউদাহরণ:\nbutton {\n  transition: all 0.3s ease-in-out;\n}\nএতে কোনো Button-এ hover করলে একটা Smooth ও Natural Feel আসবে।",
+     "category": "Animation & Effects"
+   },
+   {
+     "id": 41,
+     "title": "cubic-bezier()",
+     "description": "cubic-bezier() হলো CSS-এর এমন একটি function যেটা দিয়ে Transition বা Animation-এর Speed Curve একদম নিজের মতো করে design করা যায়। সাধারণ ease বা linear এর মতো preset value ছাড়াও আপনি চারটি Control Point দিয়ে Custom Curve বানাতে পারবেন।\nএর format হলো—\ncubic-bezier(x1, y1, x2, y2)\nএখানে x value সবসময় 0 থেকে 1 এর মধ্যে থাকতে হবে (Timeline বোঝাতে), আর y value যেকোনো হতে পারে (Speed/Position বোঝাতে)।\nউদাহরণ:\n.box {\n  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);\n}\nএতে Transition-এর শুরুতে হালকা একটা Spring-এর মতো Bounce Effect তৈরি হবে।\nএইভাবে আপনি চাইলে নিজের মতো করে Animation-এর feel সেট করতে পারবেন — যেমন ধীরে শুরু, হঠাৎ দ্রুত, আবার শেষে ধীরে, কিংবা একদম অপ্রত্যাশিত Speed Pattern।",
+     "category": "Animation & Effects"
+   },
+   {
+     "id": 42,
+     "title": "white-space",
+     "description": "white-space হলো CSS-এর একটি property যেটা দিয়ে নিয়ন্ত্রণ করা যায় কোনো content-এর মধ্যে থাকা Space, Tab আর Line Break কীভাবে handle হবে। Default হিসেবে Browser একাধিক Space-কে একটি Space-এ নামিয়ে আনে এবং Text-কে Wrap করে দেয়। কিন্তু white-space ব্যবহার করে এই behavior পরিবর্তন করা যায়।\nউদাহরণ—\n.normal {\n  white-space: normal;   /* Default – Space compress হয়, Text Wrap হয় */\n}\n.nowrap {\n  white-space: nowrap;   /* Space compress হয়, কিন্তু Line Break হবে না */\n}\n.pre {\n  white-space: pre;      /* Space, Tab, Line Break সব 그대로 রাখা হবে */\n}\n.pre-wrap {\n  white-space: pre-wrap; /* Space ও Tab রাখা হবে, Text Wrap-ও হবে */\n}\n.pre-line {\n  white-space: pre-line; /* Space compress হবে, কিন্তু Line Break রাখা হবে */\n}\nএটা বিশেষভাবে দরকারি যখন Code Block দেখাতে হয়, লম্বা Text manage করতে হয়, বা Table-এর cell-এর ভেতরে Content formatting control করতে হয়।",
+     "category": "Utility & Shorthand"
+   },
+   {
+     "id": 43,
+     "title": "writing-mode",
+     "description": "writing-mode হলো CSS-এর একটি property যেটা দিয়ে Text-এর Writing Direction এবং Flow কন্ট্রোল করা যায়। Default হিসেবে ইংরেজি বা বাংলা Text Horizontal ভাবে বাম থেকে ডানে চলে, কিন্তু writing-mode ব্যবহার করে আপনি Text-কে উল্লম্ব বা ডান থেকে বামে করতে পারেন।\nউদাহরণ—\n.horizontal {\n  writing-mode: horizontal-tb;   /* Default – Left to Right, Top to Bottom */\n}\n.vertical {\n  writing-mode: vertical-rl;     /* Top to Bottom, Right to Left */\n}\n.vertical-ltr {\n  writing-mode: vertical-lr;     /* Top to Bottom, Left to Right */\n}\nএটা বিশেষভাবে দরকারি যখন Japanese, Chinese, Korean বা Design-specific Layout-এ Content Direction পরিবর্তন করতে হয়। পোস্টার, ব্যানার বা Sideway Navigation-এ এটি খুবই Useful।",
+     "category": "Layout & Positioning"
+   },
+   {
+     "id": 44,
+     "title": ":-webkit-autofill",
+     "description": ":-webkit-autofill হলো CSS-এর একটি special pseudo-class যা ব্রাউজারকে allow করে কোনো input field-কে target করতে যখন সে Automatically Data fill করে (যেমন saved Username বা Password)। এটি মূলত Chrome, Safari এবং অন্যান্য WebKit-based browser-এ কাজ করে।\nউদাহরণ—\ninput:-webkit-autofill {\n  background-color: #e0ffe0; /* Background Change */\n  color: #333;                /* Text Color Change */\n  border: 1px solid #4caf50;\n}\nঅনেক সময় browser ডিফল্ট style হিসেবে box-shadow ব্যবহার করে background দেখায়। সেটি override করতে হলে লিখতে পারেন—\ninput:-webkit-autofill {\n  box-shadow: 0 0 0px 1000px white inset;\n}\nসব browser-এ support দিতে চাইলে শুধুমাত্র :-webkit-autofill এর উপর নির্ভর না করে multi-vendor selector ব্যবহার করা ভালো—\ninput:-webkit-autofill,\ninput:-moz-autofill,\ninput:autofill {\n  background-color: #e0ffe0;\n}\nএভাবে Chrome, Safari এবং Firefox-এ Autofill style control করা যায় (যদিও Firefox-এ support কিছুটা limited)। এই pseudo-class দিয়ে form input-এর auto-filled state কাস্টমাইজ করা যায়, তবে Accessibility এবং User Experience মাথায় রেখে ডিজাইন করা গুরুত্বপূর্ণ, যেন browser-এর default hint হারিয়ে না যায়।",
+     "category": "Selectors & Specificity"
+   },
+   {
+     "id": 45,
+     "title": "::-webkit-scrollbar",
+     "description": "::-webkit-scrollbar হলো CSS-এর একটি pseudo-element যা দিয়ে WebKit-based browser (Chrome, Safari, Edge)-এর Scrollbar কাস্টমাইজ করা যায়। ডিফল্ট scrollbar অনেক সময় design-এর সাথে মেলায় না, তাই এটি ব্যবহার করে আপনি color, size, thumb style ইত্যাদি পরিবর্তন করতে পারেন।\nউদাহরণ—\n/* পুরো Scrollbar */\n::-webkit-scrollbar {\n  width: 12px;\n  height: 12px;\n}\n/* Scrollbar Thumb */\n::-webkit-scrollbar-thumb {\n  background-color: #888;\n  border-radius: 6px;\n}\n/* Scrollbar Track */\n::-webkit-scrollbar-track {\n  background-color: #f0f0f0;\n  border-radius: 6px;\n}\nএভাবে scrollbar-এর Thumb এবং Track উভয়ই কাস্টমাইজ করা যায়। মনে রাখবেন, এটি শুধুমাত্র WebKit browser-এ কাজ করে। Firefox বা অন্য non-WebKit browser-এ কাজ করাতে চাইলে scrollbar-width বা scrollbar-color ব্যবহার করতে হবে।",
+     "category": "Selectors & Specificity"
+   },
+   {
+     "id": 46,
+     "title": "scrollbar-width",
+     "description": "scrollbar-width হলো CSS-এর একটি property যা মূলত Firefox browser-এ Scrollbar-এর Width কন্ট্রোল করতে দেয়। WebKit-based pseudo-element (::-webkit-scrollbar) এর মতো, এটি Firefox-এ Scrollbar কাস্টমাইজেশনের জন্য ব্যবহার করা হয়।\nউদাহরণ—\n/* Firefox-এ পাতলা Scrollbar */\n.scrollable {\n  scrollbar-width: thin;\n}\n/* Firefox-এ Scrollbar লুকানো */\n.no-scrollbar {\n  scrollbar-width: none;\n}\nমনে রাখবেন, এটি শুধু Width কন্ট্রোল করে; color বা Thumb style পরিবর্তন করতে পারবে না। Color পরিবর্তনের জন্য scrollbar-color ব্যবহার করা যেতে পারে। WebKit browser-এ এটি কাজ করবে না, সেক্ষেত্রে ::-webkit-scrollbar ব্যবহার করতে হবে।",
+     "category": "Utility & Shorthand"
+   },
+   {
+     "id": 47,
+     "title": "scrollbar-color",
+     "description": "scrollbar-color হলো CSS-এর একটি property যা দিয়ে Firefox এবং অন্যান্য non-WebKit browser-এ Scrollbar-এর Thumb এবং Track-এর color কাস্টমাইজ করা যায়। এটি WebKit scrollbar-এর মতো পুরো control দেয় না, কিন্তু color নিয়ন্ত্রণের জন্য সহজ উপায়।\nউদাহরণ—\n/* Thumb এবং Track-এর color সেট করা */\n.container {\n  scrollbar-color: #888 #f0f0f0; /* thumb color, track color */\n  scrollbar-width: thin;         /* Scrollbar-এর width control */\n}\nএতে .container-এর Scrollbar-এ Thumb-এর color হবে #888 এবং Track-এর color হবে #f0f0f0। scrollbar-width দিয়ে Scrollbar-এর Width control করা যায় — যেমন auto, thin বা none।\nWebKit browser-এর জন্য ::-webkit-scrollbar pseudo-element ব্যবহার করতে হয়, আর Firefox-এর জন্য scrollbar-color এবং scrollbar-width ব্যবহার করা ভালো practice।",
+     "category": "Utility & Shorthand"
+   },
+   {
+     "id": 48,
+     "title": "background-clip",
+     "description": "background-clip হলো CSS-এর একটি property যা দিয়ে আপনি নিয়ন্ত্রণ করতে পারেন background কোন অংশ পর্যন্ত “clip” বা প্রদর্শিত হবে। সাধারণত তিনটি main value ব্যবহার হয় — border-box, padding-box, এবং content-box।\nborder-box দিলে background border পর্যন্ত দেখা যাবে। padding-box দিলে background শুধু padding area পর্যন্ত দেখা যাবে। আর content-box দিলে background শুধুমাত্র content area-এ দেখাবে।\nউদাহরণ—\n.box {\n  background: linear-gradient(to right, #ff7e5f, #feb47b);\n  border: 5px solid #333;\n  padding: 20px;\n  background-clip: padding-box; /* Background শুধু padding পর্যন্ত দেখাবে */\n}\nএকটি বিশেষ use case হলো Text-এর জন্য। background-clip: text; ব্যবহার করে আপনি Text-কে Gradient বা Image দিয়ে fill করতে পারেন—\nh1 {\n  background: linear-gradient(90deg, #ff7e5f, #feb47b);\n  -webkit-background-clip: text;\n  color: transparent;\n}\nএভাবে Text বা Element-এর background কে Artisticভাবে control করা যায়।",
+     "category": "Utility & Shorthand"
+   },
+   {
+     "id": 49,
+     "title": "column-count",
+     "description": "column-count হলো CSS-এর একটি property যা দিয়ে আপনি কোনো block element কে একাধিক column-এ ভাগ করতে পারেন। এটি মূলত newspaper বা magazine style Layout তৈরি করার জন্য কাজে লাগে।\nউদাহরণ—\n.article {\n  column-count: 3;   /* 3টি column তৈরি হবে */\n  column-gap: 20px;  /* Column-এর মধ্যে gap */\n}\nএতে .article element-এর content স্বয়ংক্রিয়ভাবে ৩টি column-এ ভাগ হয়ে যাবে। column-gap দিয়ে column-এর মধ্যে space ঠিক করা যায়।\nআরেকটি useful property হলো column-rule, যা দিয়ে column-এর মাঝে divider line দেওয়া যায়—\n.article {\n  column-count: 3;\n  column-gap: 20px;\n  column-rule: 1px solid #ccc;\n}\nএভাবে আপনি text-heavy Layout কে সুন্দরভাবে multi-column করে readable করতে পারেন।",
+     "category": "Layout & Positioning"
+   }
+ ]
