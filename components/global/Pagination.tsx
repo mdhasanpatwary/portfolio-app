@@ -8,45 +8,86 @@ interface PaginationProps {
 
 export default function Pagination({ currentPage, totalPages, makeHref }: PaginationProps) {
   if (totalPages <= 1) return null;
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  const generatePageNumbers = (): (number | "ellipsis")[] => {
+    const pages: (number | "ellipsis")[] = [];
+
+    // Always include first page
+    pages.push(1);
+
+    if (totalPages <= 6) {
+      // Show all pages if totalPages <= 6
+      for (let i = 2; i <= totalPages; i++) pages.push(i);
+      return pages;
+    }
+
+    // Determine when to show ellipses
+    const left = Math.max(2, currentPage - 1);
+    const right = Math.min(totalPages - 1, currentPage + 1);
+
+    // Add left ellipsis if needed
+    if (left > 2) pages.push("ellipsis");
+
+    // Add middle pages
+    for (let i = left; i <= right; i++) pages.push(i);
+
+    // Add right ellipsis if needed
+    if (right < totalPages - 1) pages.push("ellipsis");
+
+    // Always include last page
+    pages.push(totalPages);
+
+    return pages;
+  };
+
+  const pageItems = generatePageNumbers();
+
   return (
     <div className="flex justify-center items-center gap-2 mt-10 select-none">
+      {/* Previous Button */}
       <Link
         aria-label="Previous page"
         href={makeHref(Math.max(1, currentPage - 1))}
-        className={`flex items-center justify-center text-2xl w-11 h-11 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${currentPage === 1 ? "pointer-events-none opacity-50" : ""}`}
+        className={`flex items-center justify-center text-2xl w-11 h-11 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+          currentPage === 1 ? "pointer-events-none opacity-50" : ""
+        }`}
       >
         ‹
       </Link>
-      {pages.map((p, idx, arr) => {
-        // compact with ellipsis like existing Pagination
-        const shouldShow =
-          totalPages <= 5 ||
-          p === 1 ||
-          p === totalPages ||
-          (currentPage <= 3 && p <= 4) ||
-          (currentPage >= totalPages - 2 && p >= totalPages - 3) ||
-          Math.abs(p - currentPage) <= 1;
-        if (!shouldShow) return idx > 0 && arr[idx - 1] !== -1 ? <span key={`e${idx}`} className="text-gray-600 dark:text-gray-300">...</span> : null;
-        return (
+
+      {/* Page Numbers */}
+      {pageItems.map((item, index) =>
+        item === "ellipsis" ? (
+          <span
+            key={`ellipsis-${index}`}
+            className="flex items-center justify-center w-5 sm:w-7 h-11 text-gray-600 dark:text-gray-300"
+            aria-hidden="true"
+          >
+            …
+          </span>
+        ) : (
           <Link
-            key={p}
-            href={makeHref(p)}
-            aria-current={currentPage === p ? "page" : undefined}
-            className={`flex items-center justify-center relative text-sm w-11 h-11 rounded-full transition font-semibold overflow-hidden ${
-              currentPage === p
+            key={item}
+            href={makeHref(item)}
+            aria-current={currentPage === item ? "page" : undefined}
+            className={`flex items-center justify-center text-sm w-11 h-11 rounded-full transition font-semibold focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+              currentPage === item
                 ? "bg-primary-600 text-white shadow-lg"
                 : "bg-primary-50 dark:bg-gray-800 text-primary-600 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-gray-700"
             }`}
           >
-            <span className="relative z-10">{p}</span>
+            {item}
           </Link>
-        );
-      })}
+        )
+      )}
+
+      {/* Next Button */}
       <Link
         aria-label="Next page"
         href={makeHref(Math.min(totalPages, currentPage + 1))}
-        className={`flex items-center justify-center text-2xl w-11 h-11 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${currentPage === totalPages ? "pointer-events-none opacity-50" : ""}`}
+        className={`flex items-center justify-center text-2xl w-11 h-11 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-600 dark:text-primary-300 transition hover:bg-primary-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+          currentPage === totalPages ? "pointer-events-none opacity-50" : ""
+        }`}
       >
         ›
       </Link>
