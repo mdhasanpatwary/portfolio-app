@@ -42,7 +42,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, idx }) => {
       key={idx}
       className="p-5 sm:p-8 flex flex-col items-stretch overflow-hidden transition-colors duration-200 hover:bg-primary-50 dark:hover:bg-primary-900/40">
       {/* Row 1: Icon and Title */}
-      <div className="flex items-center gap-4 w-full mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+      <div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
         <div className="flex items-center justify-center w-14 h-14 bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_4px_rgba(var(--color-primary-500-rgb),0.18)]">
           {Icon ? <Icon /> : null}
         </div>
@@ -51,13 +51,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, idx }) => {
         </h3>
       </div>
       {/* Row 2: Description */}
-      <div className="w-full mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
-        <p className="text-gray-700 dark:text-gray-300 text-sm">
-          {service.description}
-        </p>
-      </div>
+      <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+        {service.description}
+      </p>
       {/* Row 3: Tags */}
-      <div className="flex flex-wrap gap-2 w-full">
+      <div className="flex flex-wrap gap-2">
         {service.tools.map((tool, i) => (
           <span
             key={i}

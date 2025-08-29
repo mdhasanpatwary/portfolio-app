@@ -20,11 +20,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
       {/* Project Image */}
       <div className="relative w-full aspect-[59/30] overflow-hidden">
         {/* Category Badge Only */}
-        <div className="absolute top-3 left-3 flex gap-2 z-20">
-          <span className="px-2.5 py-1 bg-primary-700 text-white text-xs font-semibold rounded-full shadow">
-            {project.category}
-          </span>
-        </div>
+        <span className="absolute top-3 left-3 px-2.5 py-1 bg-primary-700 text-white text-xs font-semibold rounded-full shadow z-20">
+          {project.category}
+        </span>
         <CustomImage
           src={project.image || "/profile.png"}
           alt={project.title}
@@ -37,17 +35,15 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
       </div>
       {/* Card Content */}
       <div className="flex-1 flex flex-col justify-between p-4">
-        <div>
-          <h2
-            className="text-base font-semibold text-gray-900 dark:text-white mb-1 truncate"
-            title={project.title}>
-            {project.title}
-          </h2>
-          {/* Tech stack removed for cleaner card */}
-          <p className="text-xs text-gray-600 dark:text-gray-300 line-clamp-2 mb-2">
-            {project.description}
-          </p>
-        </div>
+        <h2
+          className="text-base font-semibold text-gray-900 dark:text-white mb-1 truncate"
+          title={project.title}>
+          {project.title}
+        </h2>
+        {/* Tech stack removed for cleaner card */}
+        <p className="text-xs text-gray-600 dark:text-gray-300 line-clamp-2 mb-2">
+          {project.description}
+        </p>
         <div className="flex items-center justify-between mt-2">
           <span className="text-xs text-gray-600 dark:text-gray-300">{project.marketplace}</span>
           <span className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-400 text-xs font-medium group-hover:underline">

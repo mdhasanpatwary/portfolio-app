@@ -15,17 +15,15 @@ const EducationCard: FC<EducationCardProps> = ({ item }) => {
       {/* Timeline dot - hidden on mobile */}
       <div className="hidden md:block absolute left-4 top-6 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
       <Card className="md:ml-12" variant="default" padding="md">
-        <div>
-          <h3 className="text-lg font-semibold text-primary-700 dark:text-primary-400 mb-1">
-            {item.degree}
-          </h3>
-          <p className="text-sm text-gray-800 dark:text-gray-100 font-medium mb-2">
-            {item.institution}
-          </p>
-          <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 rounded-md px-3 py-1.5 w-fit">
-            <FaCalendarAlt className="text-primary-500" aria-hidden="true" focusable="false" />
-            <span className="font-medium">{item.period}</span>
-          </div>
+        <h3 className="text-lg font-semibold text-primary-700 dark:text-primary-400 mb-1">
+          {item.degree}
+        </h3>
+        <p className="text-sm text-gray-800 dark:text-gray-100 font-medium mb-2">
+          {item.institution}
+        </p>
+        <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 rounded-md px-3 py-1.5 w-fit">
+          <FaCalendarAlt className="text-primary-500" aria-hidden="true" focusable="false" />
+          <span className="font-medium">{item.period}</span>
         </div>
       </Card>
     </div>

@@ -98,7 +98,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => (
   <section
     id="skills"
     className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-    <div className="relative max-w-7xl mx-auto text-center z-10">
+    <div className="max-w-7xl mx-auto text-center">
       <SectionTitle
         title={skills.title}
         icon={

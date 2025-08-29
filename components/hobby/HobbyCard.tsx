@@ -9,26 +9,16 @@ interface HobbyCardProps {
 const HobbyCard: FC<HobbyCardProps> = ({ hobby, iconMap }) => {
   const Icon = iconMap[hobby.icon as keyof typeof iconMap];
   return (
-    <div className="relative group flex flex-col justify-between h-full bg-white/80 dark:bg-gray-800/90 backdrop-blur-xl border border-gray-300 dark:border-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 text-left hover:border-primary-500 dark:hover:border-primary-400 overflow-hidden min-h-[220px]">
-      {/* Subtle gradient overlay for premium feel */}
-      <div
-        className="absolute inset-0 pointer-events-none select-none rounded-xl"
-        style={{
-          background:
-            "linear-gradient(135deg,rgba(var(--color-primary-500-rgb),0.07) 0%,rgba(255,255,255,0.03) 100%)",
-        }}
-      />
-      <div className="relative z-10">
-        <div className="text-3xl text-primary-600 dark:text-primary-400 mb-4">
-          {Icon ? <Icon /> : null}
-        </div>
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-primary-500 transition-colors">
-          {hobby.title}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm">
-          {hobby.description}
-        </p>
+    <div className="relative group flex flex-col justify-between h-full bg-white/80 dark:bg-gray-800/90 backdrop-blur-xl border border-gray-300 dark:border-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 text-left hover:border-primary-500 dark:hover:border-primary-400 overflow-hidden min-h-[180px] before:absolute before:inset-0 before:pointer-events-none before:select-none before:rounded-xl before:bg-gradient-to-br before:from-primary-500/7 before:to-white/3">
+      <div className="text-3xl text-primary-600 dark:text-primary-400 mb-4 relative z-10">
+        {Icon ? <Icon /> : null}
       </div>
+      <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-primary-500 transition-colors relative z-10">
+        {hobby.title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-300 text-sm relative z-10">
+        {hobby.description}
+      </p>
     </div>
   );
 };

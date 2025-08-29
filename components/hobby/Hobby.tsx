@@ -31,11 +31,7 @@ const Hobby: FC<HobbyProps> = ({ hobbiesData }) => {
       <div className="max-w-7xl mx-auto text-center">
         <SectionTitle
           title={title}
-          icon={
-            <span className="text-3xl text-primary-600 dark:text-primary-400">
-              <FaLightbulb />
-            </span>
-          }>
+          icon={<FaLightbulb className="text-3xl text-primary-600 dark:text-primary-400" />}>
           {subtitle}
         </SectionTitle>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
