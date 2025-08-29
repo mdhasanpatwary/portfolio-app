@@ -16,7 +16,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
   index,
 }) => (
   <div
-    className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 p-0 flex flex-col items-stretch rounded-lg overflow-hidden"
+    className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-colors duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 p-0 flex flex-col items-stretch rounded-lg overflow-hidden"
     style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
     {/* Title as full-width table header */}
     <div className="w-full px-8 py-4 border-b border-gray-200 dark:border-gray-700 rounded-t-lg">

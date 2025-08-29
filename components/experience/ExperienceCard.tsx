@@ -96,7 +96,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   );
 
   return (
-    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 overflow-hidden">
+    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-colors duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 overflow-hidden">
       {/* Header */}
       <div className="p-3 sm:p-4 border-b border-gray-100 dark:border-gray-700 flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
@@ -140,7 +140,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           return (
             <span
               key={idx}
-              className="group/tech relative text-lg sm:text-xl hover:scale-110 transform transition-all duration-200"
+              className="group/tech relative text-lg sm:text-xl hover:scale-110 transform transition-transform duration-200"
               style={{
                 color:
                   brandColors[tech.icon as keyof typeof brandColors] ||
@@ -149,7 +149,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               role="img"
               aria-label={tech.name}>
               {Icon && <Icon aria-hidden="true" focusable="false" />}
-              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white dark:text-gray-100 text-xs rounded-md opacity-0 group-hover/tech:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none shadow-lg">
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white dark:text-gray-100 text-xs rounded-md opacity-0 group-hover/tech:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg">
                 {tech.name}
               </span>
             </span>

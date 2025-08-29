@@ -62,7 +62,7 @@ const Header = ({ navItems }: HeaderProps) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition cursor-pointer ${
+                className={`text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer ${
                   pathname === item.href ? "text-primary-600 dark:text-primary-400 font-semibold underline" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -73,7 +73,7 @@ const Header = ({ navItems }: HeaderProps) => {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               >
                 {item.label}
               </button>
@@ -81,7 +81,7 @@ const Header = ({ navItems }: HeaderProps) => {
           ))}
           <Link
             href="/contact"
-            className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition border border-primary-500 rounded px-3 py-1 ml-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+            className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors border border-primary-500 rounded px-3 py-1 ml-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
           >
             Hire Me!
           </Link>
@@ -140,7 +140,7 @@ const Header = ({ navItems }: HeaderProps) => {
                 {item.href.startsWith("/") ? (
                   <Link
                     href={item.href}
-                    className={`block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition cursor-pointer ${
+                    className={`block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition-colors cursor-pointer ${
                       pathname === item.href ? "text-primary-600 dark:text-primary-400 font-semibold underline" : ""
                     }`}
                     onClick={() => setIsOpen(false)}
@@ -150,7 +150,7 @@ const Header = ({ navItems }: HeaderProps) => {
                 ) : (
                   <button
                     onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition cursor-pointer"
+                    className="block w-full text-left py-2 px-3 rounded text-gray-800 dark:text-gray-200 hover:bg-primary-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                   >
                     {item.label}
                   </button>
