@@ -4,8 +4,11 @@ import {
   FaLinkedin,
   FaStackOverflow,
   FaFacebook,
+  FaYoutube,
+  FaTwitter as FaXTwitter,
+  FaInstagram,
 } from "react-icons/fa";
-import { SiDevdotto, SiDailydotdev, SiCodepen, SiUpwork } from "react-icons/si";
+import { SiDevdotto, SiDailydotdev, SiCodepen, SiUpwork, SiThreads } from "react-icons/si";
 import { contact } from "@/data";
 
 export type SocialLink = { name: string; url: string; icon: string };
@@ -15,10 +18,14 @@ const iconMap = {
   FaLinkedin,
   FaStackOverflow,
   FaFacebook,
+  FaYoutube,
+  FaXTwitter,
+  FaInstagram,
   SiDevdotto,
   SiDailydotdev,
   SiCodepen,
   SiUpwork,
+  SiThreads,
 };
 
 // Brand colors for each social platform
@@ -27,17 +34,21 @@ const brandColors = {
   FaLinkedin: "hover:text-primary-700 dark:hover:text-primary-400",
   FaStackOverflow: "hover:text-orange-600 dark:hover:text-orange-400",
   FaFacebook: "hover:text-primary-700 dark:hover:text-primary-400",
+  FaYoutube: "hover:text-red-600 dark:hover:text-red-500",
+  FaXTwitter: "hover:text-blue-500 dark:hover:text-blue-400",
+  FaInstagram: "hover:text-pink-600 dark:hover:text-pink-500",
   SiDevdotto: "hover:text-black dark:hover:text-white",
   SiDailydotdev: "hover:text-primary-700 dark:hover:text-primary-400",
   SiCodepen: "hover:text-black dark:hover:text-white",
   SiUpwork: "hover:text-green-600 dark:hover:text-green-400",
+  SiThreads: "hover:text-black dark:hover:text-white",
 };
 
 const links = contact?.socialLinks || [];
 
 const SocialLinks: React.FC = () => (
   <div className="flex space-x-5 text-gray-600 dark:text-gray-300 text-xl">
-    {links.map((link) => {
+    {links.slice(0, 8).map((link) => {
       const Icon = iconMap[link.icon as keyof typeof iconMap];
       const brandColor = brandColors[link.icon as keyof typeof brandColors] || "hover:text-primary-600 dark:hover:text-primary-400";
 
