@@ -8,7 +8,6 @@ export { default as ErrorBoundary } from "./ErrorBoundary";
 export { default as LoadingSpinner } from "./LoadingSpinner";
 export { default as Skeleton } from "./Skeleton";
 export { default as CodeBlock } from "./CodeBlock";
-export { default as InstallPrompt } from "./InstallPrompt";
-export { default as ServiceWorkerRegistration } from "./ServiceWorkerRegistration";
+
 export { default as CustomImage } from "./CustomImage";
 export { default as FAQ } from "../faq/FAQ";

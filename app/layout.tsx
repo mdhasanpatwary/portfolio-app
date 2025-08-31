@@ -7,8 +7,7 @@ import { header, footer } from "@/data";
 import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
-import InstallPrompt from "@/components/global/InstallPrompt";
-import ServiceWorkerRegistration from "@/components/global/ServiceWorkerRegistration";
+
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
@@ -100,7 +99,8 @@ export default function RootLayout({
               ],
               jobTitle: "Front-End Developer",
               image: "/profile.webp",
-              description: "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
+              description:
+                "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
               knowsAbout: [
                 "React.js",
                 "Next.js",
@@ -132,12 +132,30 @@ export default function RootLayout({
           content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4"
         />
         <link rel="canonical" href="https://patwary.vercel.app" />
-        <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary RSS" href="/rss.xml" />
-        <link rel="alternate" type="application/rss+xml" title="MD Hasan Patwary Projects RSS" href="/projects.xml" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="MD Hasan Patwary RSS"
+          href="/rss.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="MD Hasan Patwary Projects RSS"
+          href="/projects.xml"
+        />
         <link rel="preconnect" href="https://dev.to" crossOrigin="" />
         {/* Preconnect to analytics/vitals domains to speed up first requests */}
-        <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="" />
-        <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://va.vercel-scripts.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://vitals.vercel-insights.com"
+          crossOrigin=""
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -155,24 +173,6 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
         />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        {/* Development-only cache clearing script */}
-        {process.env.NODE_ENV === 'development' && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                // Gentle cache clearing in development - only clear service worker
-                if ('serviceWorker' in navigator) {
-                  navigator.serviceWorker.getRegistrations().then(registrations => {
-                    registrations.forEach(registration => {
-                      registration.unregister();
-                    });
-                  });
-                }
-              `,
-            }}
-          />
-        )}
       </head>
       <body
         className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
@@ -180,7 +180,9 @@ export default function RootLayout({
           <ErrorBoundary>
             {/* Skip to content link for keyboard users (inside a navigation landmark) */}
             <nav aria-label="Skip links">
-              <a href="#main-content" className="skip-link">Skip to content</a>
+              <a href="#main-content" className="skip-link">
+                Skip to content
+              </a>
             </nav>
             <Toaster position="top-right" />
             <Header navItems={header.navItems} />
@@ -189,13 +191,12 @@ export default function RootLayout({
               {children}
             </main>
             <Footer name={footer.name} description={footer.description} />
-            <InstallPrompt />
-            <ServiceWorkerRegistration />
+
             {/* Floating AI Chat Widget */}
             <PortfolioChatWidget />
           </ErrorBoundary>
         </ThemeProvider>
-        <Analytics/>
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
