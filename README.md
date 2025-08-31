@@ -1,6 +1,6 @@
 # 🧑‍💻 MD Hasan Patwary — Personal Portfolio
 
-A modern, responsive, and feature-rich personal portfolio website built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. Features include PWA capabilities, offline caching, dark/light mode, and a comprehensive showcase of professional experience, skills, and projects.
+A modern, responsive, and feature-rich personal portfolio website built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. Features include dark/light mode, and a comprehensive showcase of professional experience, skills, and projects.
 
 🔗 **Live Website**: [https://patwary.vercel.app](https://patwary.vercel.app)  
 📁 **GitHub Repo**: [github.com/mdhasanpatwary/portfolio-app](https://github.com/mdhasanpatwary/portfolio-app)
@@ -17,14 +17,6 @@ A modern, responsive, and feature-rich personal portfolio website built with **N
 - 🌗 **Dark/Light Mode** with smooth transitions
 - 📱 **Fully Responsive** design for all devices
 - ⚡ **Optimized Performance** with Next.js optimizations
-
-### 📱 **PWA (Progressive Web App) Features**
-
-- 🏠 **Install to Home Screen** - Users can install as a native app
-- 🔄 **Offline Caching** - Works completely offline after first visit
-- 🎨 **App-like Experience** - Standalone display mode
-- 🖼️ **Custom Icons** - Professional app icons for all platforms
-- 📋 **Complete Web Manifest** - Full PWA configuration
 
 ### 🧩 **Portfolio Sections**
 
@@ -53,18 +45,17 @@ A modern, responsive, and feature-rich personal portfolio website built with **N
 
 ## 🛠️ Tech Stack
 
-| Category             | Technology                    | Version  |
-| -------------------- | ----------------------------- | -------- |
-| **Framework**        | Next.js                       | 15.3.2   |
-| **Language**         | TypeScript                    | 5.x      |
-| **Styling**          | Tailwind CSS                  | 4.x      |
-| **UI Components**    | React Icons, Headless UI      | Latest   |
-| **Animations**       | Swiper.js                     | 11.2.8   |
-| **Content**          | React Markdown, Marked        | Latest   |
-| **Forms**            | EmailJS                       | 4.4.1    |
-| **State Management** | React Context API             | Built-in |
-| **Deployment**       | Vercel                        | Platform |
-| **PWA**              | Service Workers, Web Manifest | Native   |
+| Category             | Technology               | Version  |
+| -------------------- | ------------------------ | -------- |
+| **Framework**        | Next.js                  | 15.3.2   |
+| **Language**         | TypeScript               | 5.x      |
+| **Styling**          | Tailwind CSS             | 4.x      |
+| **UI Components**    | React Icons, Headless UI | Latest   |
+| **Animations**       | Swiper.js                | 11.2.8   |
+| **Content**          | React Markdown, Marked   | Latest   |
+| **Forms**            | EmailJS                  | 4.4.1    |
+| **State Management** | React Context API        | Built-in |
+| **Deployment**       | Vercel                   | Platform |
 
 ---
 
@@ -120,11 +111,10 @@ portfolio-app/
 ├── hooks/                        # Custom React hooks
 │   └── useProjectModal.tsx       # Project modal hook
 ├── public/                       # Static assets
-│   ├── favicon/                  # PWA icons and manifest
+│   ├── favicon/                  # Favicon icons
 │   ├── testimonials/             # Testimonial images
 │   ├── profile.webp              # Profile images
-│   ├── resume.pdf                # Downloadable resume
-│   └── sw.js                     # Service worker for PWA
+│   └── resume.pdf                # Downloadable resume
 ├── types/                        # TypeScript type definitions
 │   └── data.ts                   # Data type interfaces
 ├── utils/                        # Utility functions
@@ -178,28 +168,6 @@ npm start
 
 ---
 
-## 📱 PWA Features
-
-### **Offline Functionality**
-
-- ✅ **Complete offline browsing** after first visit
-- ✅ **Cached pages**: Home, About, Projects, Blog, Contact, CSS Tips
-- ✅ **Cached assets**: Images, icons, PDFs, SVGs
-- ✅ **Dynamic content caching**: Blog posts and API responses
-
-### **Installation**
-
-- ✅ **Install to home screen** on mobile devices
-- ✅ **Desktop app installation** on supported browsers
-- ✅ **Custom install prompt** with user-friendly UI
-
-### **App-like Experience**
-
-- ✅ **Standalone display mode** - No browser UI
-- ✅ **Custom app icons** for all platforms
-- ✅ **Splash screen** and loading states
-- ✅ **Native app behavior** with proper navigation
-
 ---
 
 ## 🎨 Customization
@@ -220,13 +188,6 @@ All content is stored in JSON files in the `data/` directory. Update these files
 - Custom CSS in `app/globals.css`
 - Theme colors defined in Tailwind config
 - Responsive design with mobile-first approach
-
-### **PWA Configuration**
-
-- Web manifest: `public/favicon/site.webmanifest`
-- Service worker: `public/sw.js`
-- Icons: `public/favicon/` directory
-- Caching strategy: Cache-first with network fallback
 
 ---
 
@@ -260,7 +221,7 @@ The project is optimized for **Vercel** deployment:
 - ✅ **Next.js 15** with Turbopack for faster builds
 - ✅ **Image optimization** with Next.js Image component
 - ✅ **Code splitting** and lazy loading
-- ✅ **PWA caching** for offline performance
+
 - ✅ **SEO optimization** with meta tags and structured data
 
 ### **Lighthouse Scores**
@@ -314,7 +275,7 @@ Frontend Developer | HTML, CSS, JavaScript, jQuery, React, Vue, Next.js, Docker,
 ## 🎯 Project Status
 
 - ✅ **Core Features** - Complete
-- ✅ **PWA Implementation** - Complete
+
 - ✅ **Responsive Design** - Complete
 - ✅ **Performance Optimization** - Complete
 - ✅ **SEO Optimization** - Complete
