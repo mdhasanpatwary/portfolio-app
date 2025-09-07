@@ -1,12 +1,12 @@
 {
-  "name": "MD Hasan Patwary",
+  "name": "John Doe",
   "title": "About Me",
-  "subtitle": "Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer",
+  "subtitle": "Full-Stack Developer (React, Next.js, TypeScript) | UI/UX Engineer",
   "highlights": [
     "Leader in Scalable Web Apps",
     "Docker & AWS",
-    "6+ Years Exp.",
-    "Delivered for 30K+ Global Clients",
+    "5+ Years Exp.",
+    "Delivered for 20K+ Global Clients",
     "Open to Remote/Relocation"
   ],
   "description": [
@@ -20,7 +20,7 @@
     "🌍 Global Impact"
   ],
   "image": {
-    "src": "/profile2.webp",
-    "alt": "MD Hasan Patwary"
+    "src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop&crop=face",
+    "alt": "John Doe"
   }
 }

@@ -1,1257 +1,334 @@
 {
-  "title": "Projects",
-  "subtitle": "Projects I contributed to as a Front End Developer at ThemeLooks and 6amTech, published on Themeforest or Codecanyon.",
+  "title": "Featured Projects",
+  "subtitle": "A showcase of recent work demonstrating expertise in modern web technologies and innovative solutions.",
   "items": [
     {
       "id": "1",
-      "title": "6valley",
-      "description": "Multi-Vendor eCommerce CMS with advanced marketplace functionality.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635457347/6valley%20Cover%206amTech.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=9ab205c47b54412a9013717f033536fa23ab7fd433b01ccb718b5415e35c3b37",
-      "link": "https://codecanyon.net/item/6valley-multivendor-ecommerce-complete-ecommerce-mobile-app-web-and-admin-panel/31448597?s_rank=1",
-      "category": "Laravel CMS",
+      "title": "E-Commerce Platform",
+      "description": "Modern e-commerce platform with advanced features, responsive design, and seamless user experience.",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/ecommerce",
+      "category": "Web Application",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB"
       ],
       "status": "live",
-      "longDescription": "6valley is a modern and flexible multi-vendor e-commerce system where you can organize multiple shops and stores (digital, fashion, sports, home & living, health & beauty, and more) in one platform. It's ideal for eCommerce, electronics, online delivery, and multi/single-vendor businesses. The system is mobile-optimized, clean, and trendy, with a focus on conversion and user experience.",
+      "longDescription": "A comprehensive e-commerce solution built with modern technologies. Features include product catalog, shopping cart, payment processing, order management, and admin dashboard. The platform is optimized for performance and mobile responsiveness.",
       "features": [
-        "Complete multi-vendor eCommerce system",
-        "Organize shops and stores under one system",
-        "Admin & Seller web panels (Laravel)",
-        "3 mobile apps: User, Seller, Deliveryman (Flutter)",
-        "Multiple themes",
-        "All apps available on PlayStore & AppStore",
-        "Responsive design",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment gateway integration",
+        "Order tracking and management",
         "Admin dashboard",
-        "Customer management",
-        "Regular updates",
-        "Clean, maintainable code",
-        "Active customer support",
-        "Flexible pricing"
+        "Mobile-responsive design",
+        "SEO optimization",
+        "Performance optimization"
       ],
       "challenges": [
-        "Complex multi-vendor architecture",
-        "Real-time inventory synchronization",
-        "Payment gateway integration"
+        "Complex state management",
+        "Payment security implementation",
+        "Performance optimization for large catalogs"
       ],
       "solutions": [
-        "Implemented microservices architecture",
-        "Used WebSocket for real-time updates",
-        "Integrated multiple payment gateways"
+        "Implemented Redux for state management",
+        "Used Stripe for secure payments",
+        "Applied lazy loading and caching strategies"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6valley.app/"
+      "github": "https://github.com/example/ecommerce",
+      "marketplace": "",
+      "demo": "https://demo.example.com/ecommerce"
     },
     {
       "id": "2",
-      "title": "6amMart",
-      "description": "Multi-vendor food, grocery, eCommerce, parcel, pharmacy delivery app with admin & website.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633494062/6amMart%20Main%20System.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=88eed080b711127646ca5752742cd98d27083fcbdf5618bf6cb0b227b5d4c9ed",
-      "link": "https://codecanyon.net/item/6ammart-multivendor-food-grocery-ecommerce-parcel-pharmacy-delivery-app-with-admin-website/36772112?s_rank=2",
-      "category": "Laravel CMS",
+      "title": "Task Management App",
+      "description": "Collaborative task management application with real-time updates and team collaboration features.",
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/taskmanager",
+      "category": "Productivity App",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
+        "Vue.js",
+        "Express.js",
+        "Socket.io",
+        "PostgreSQL",
+        "CSS3",
+        "JWT"
       ],
       "status": "live",
-      "longDescription": "6amMart is a complete multi-vendor delivery solution for food, grocery, eCommerce, parcel, and pharmacy businesses. It includes customer, store, deliveryman, and admin panels, as well as mobile apps for all roles. The system is scalable, modern, and optimized for performance and user experience.",
+      "longDescription": "A feature-rich task management application that helps teams collaborate effectively. Includes project organization, task assignment, progress tracking, and real-time notifications.",
       "features": [
-        "Multi-vendor delivery system",
-        "Customer, store, deliveryman, and admin panels",
-        "Mobile apps for all roles (Flutter)",
-        "Order tracking and real-time notifications",
-        "Multiple payment gateways",
-        "Responsive and modern UI",
-        "Comprehensive admin dashboard",
-        "Regular updates and support"
+        "Project and task organization",
+        "Team collaboration tools",
+        "Real-time notifications",
+        "Progress tracking",
+        "Time tracking",
+        "File attachments",
+        "Comment system",
+        "Dashboard analytics"
       ],
       "challenges": [
-        "Real-time order and delivery tracking",
-        "Multi-vendor management",
-        "Payment gateway integration"
+        "Real-time synchronization",
+        "User permission management",
+        "Scalable architecture design"
       ],
       "solutions": [
-        "WebSocket for real-time updates",
-        "Modular architecture for scalability",
-        "Integrated multiple payment gateways"
+        "Implemented WebSocket connections",
+        "Role-based access control",
+        "Microservices architecture"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6ammart.app/"
+      "github": "https://github.com/example/taskmanager",
+      "marketplace": "",
+      "demo": "https://demo.example.com/taskmanager"
     },
     {
       "id": "3",
-      "title": "StackFood",
-      "description": "Multi-restaurant food delivery app with Laravel admin and restaurant panel.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635429701/Stackfood%20Main%20System.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=587c5296b74863677306ac30e452fa206b2ca0f86b4243dfdcabaccb20d03b24",
-      "link": "https://codecanyon.net/item/stackfood-multi-restaurant-food-delivery-app-with-laravel-admin-and-restaurant-panel-v10/33571750?s_rank=3",
-      "category": "Laravel CMS",
+      "title": "Restaurant Website",
+      "description": "Elegant restaurant website with online ordering, reservation system, and menu management.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/restaurant",
+      "category": "Business Website",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
+        "HTML5",
+        "CSS3",
         "JavaScript",
-        "HTML",
-        "CSS"
+        "PHP",
+        "MySQL",
+        "Bootstrap"
       ],
       "status": "live",
-      "longDescription": "StackFood is a complete multi-restaurant food delivery solution with customer, restaurant, deliveryman, and admin panels, plus mobile apps for all roles. It is scalable, modern, and optimized for performance and user experience.",
+      "longDescription": "A beautiful restaurant website featuring online menu browsing, table reservations, and order management. Designed with a focus on visual appeal and user experience.",
       "features": [
-        "Multi-restaurant food delivery system",
-        "Customer, restaurant, deliveryman, and admin panels",
-        "Mobile apps for all roles (Flutter)",
-        "Order tracking and real-time notifications",
-        "Multiple payment gateways",
-        "Responsive and modern UI",
-        "Comprehensive admin dashboard",
-        "Regular updates and support"
+        "Interactive menu display",
+        "Online reservation system",
+        "Order management",
+        "Photo gallery",
+        "Contact forms",
+        "Location map",
+        "Mobile optimization",
+        "Social media integration"
       ],
       "challenges": [
-        "Real-time order and delivery tracking",
-        "Multi-restaurant management",
-        "Payment gateway integration"
+        "Visual design requirements",
+        "Reservation system complexity",
+        "Mobile responsiveness"
       ],
       "solutions": [
-        "WebSocket for real-time updates",
-        "Modular architecture for scalability",
-        "Integrated multiple payment gateways"
+        "Custom CSS animations",
+        "Calendar-based booking system",
+        "Mobile-first design approach"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://stackfood.app/"
+      "github": "https://github.com/example/restaurant",
+      "marketplace": "",
+      "demo": "https://demo.example.com/restaurant"
     },
     {
       "id": "4",
-      "title": "eFood",
-      "description": "Food delivery system with Laravel admin panel and delivery man app.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/639642686/eFood%20Main.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=623381501dcfe2a343ac5cf8aea5d970d7c7afa7361932cda7ae0cd7b5b0d0c7",
-      "link": "https://codecanyon.net/item/efood-food-delivery-system-with-laravel-admin-panel-delivery-man-app-v10/30320338?s_rank=8",
-      "category": "Laravel CMS",
+      "title": "Portfolio Website",
+      "description": "Professional portfolio website showcasing creative work with interactive galleries and animations.",
+      "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/portfolio",
+      "category": "Portfolio Site",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
+        "React",
+        "Three.js",
+        "GSAP",
+        "Sass",
+        "Webpack",
+        "Git"
       ],
       "status": "live",
-      "longDescription": "eFood is a complete food delivery system with customer, restaurant, deliveryman, and admin panels, plus mobile apps for all roles. It is scalable, modern, and optimized for performance and user experience.",
+      "longDescription": "An interactive portfolio website featuring 3D elements, smooth animations, and responsive design. Optimized for showcasing creative work and professional achievements.",
       "features": [
-        "Multi-restaurant food delivery system",
-        "Customer, restaurant, deliveryman, and admin panels",
-        "Mobile apps for all roles (Flutter)",
-        "Order tracking and real-time notifications",
-        "Multiple payment gateways",
-        "Responsive and modern UI",
-        "Comprehensive admin dashboard",
-        "Regular updates and support"
+        "3D interactive elements",
+        "Smooth scroll animations",
+        "Project galleries",
+        "Contact forms",
+        "Blog integration",
+        "SEO optimization",
+        "Performance optimization",
+        "Dark/light theme toggle"
       ],
       "challenges": [
-        "Real-time order and delivery tracking",
-        "Multi-restaurant management",
-        "Payment gateway integration"
+        "3D performance optimization",
+        "Cross-browser compatibility",
+        "Animation performance"
       ],
       "solutions": [
-        "WebSocket for real-time updates",
-        "Modular architecture for scalability",
-        "Integrated multiple payment gateways"
+        "WebGL optimization techniques",
+        "Progressive enhancement",
+        "Hardware acceleration"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://efood.pro/"
+      "github": "https://github.com/example/portfolio",
+      "marketplace": "",
+      "demo": "https://demo.example.com/portfolio"
     },
     {
       "id": "5",
-      "title": "GroFresh",
-      "description": "Grocery, pharmacy, eCommerce store app and web with Laravel admin panel and delivery app.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/637026487/GroFresh-cover.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=7d0c113a4012731ead45a14e8299ecccfec0bb4f2321965585fa7665c292af59",
-      "link": "https://codecanyon.net/item/grofresh-grocery-pharmacy-ecommerce-store-app-and-web-with-laravel-admin-panel-delivery-app/32791631?s_rank=9",
-      "category": "Laravel CMS",
+      "title": "Blog Platform",
+      "description": "Content management system with rich text editor, user authentication, and responsive design.",
+      "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/blog",
+      "category": "CMS Platform",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
+        "Django",
+        "Python",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "AWS"
       ],
       "status": "live",
-      "longDescription": "GroFresh is a complete solution for grocery, pharmacy, and eCommerce stores, featuring customer, store, deliveryman, and admin panels, plus mobile apps for all roles. It is scalable, modern, and optimized for performance and user experience.",
+      "longDescription": "A robust blogging platform with advanced content management features. Includes user authentication, rich text editing, comment system, and social sharing.",
       "features": [
-        "Multi-store eCommerce system",
-        "Customer, store, deliveryman, and admin panels",
-        "Mobile apps for all roles (Flutter)",
-        "Order tracking and real-time notifications",
-        "Multiple payment gateways",
-        "Responsive and modern UI",
-        "Comprehensive admin dashboard",
-        "Regular updates and support"
+        "Rich text editor",
+        "User authentication system",
+        "Comment and reply system",
+        "Social media sharing",
+        "SEO optimization",
+        "Content scheduling",
+        "Analytics dashboard",
+        "Email notifications"
       ],
       "challenges": [
-        "Real-time order and delivery tracking",
-        "Multi-store management",
-        "Payment gateway integration"
+        "Content editor complexity",
+        "User management system",
+        "Performance with large content"
       ],
       "solutions": [
-        "WebSocket for real-time updates",
-        "Modular architecture for scalability",
-        "Integrated multiple payment gateways"
+        "WYSIWYG editor integration",
+        "Role-based permissions",
+        "Database optimization and caching"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6amtech.com/grofresh/"
+      "github": "https://github.com/example/blog",
+      "marketplace": "",
+      "demo": "https://demo.example.com/blog"
     },
     {
       "id": "6",
-      "title": "Demandium",
-      "description": "Multi-provider on-demand handyman & home service app with admin panel.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/634596445/Demandium%20Main.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=d83b7dd3329cfe2dc8a3705110b3384237e651814a81c24af60e6a555af3d254",
-      "link": "https://codecanyon.net/item/demandium-multi-provider-on-demand-handyman-home-service-app-with-admin-panel/40224772?s_rank=10",
-      "category": "Laravel CMS",
+      "title": "Weather Dashboard",
+      "description": "Interactive weather dashboard with location-based forecasts and data visualizations.",
+      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/weather",
+      "category": "Data Visualization",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
+        "Angular",
+        "D3.js",
+        "TypeScript",
+        "Chart.js",
+        "RxJS",
+        "Material UI"
       ],
       "status": "live",
-      "longDescription": "Demandium is a complete multi-provider on-demand handyman and home service solution, featuring customer, provider, deliveryman, and admin panels, plus mobile apps for all roles. It is scalable, modern, and optimized for performance and user experience.",
+      "longDescription": "A comprehensive weather dashboard that provides detailed forecasts, historical data, and interactive charts. Features location-based services and real-time weather updates.",
       "features": [
-        "Multi-provider on-demand service system",
-        "Customer, provider, deliveryman, and admin panels",
-        "Mobile apps for all roles (Flutter)",
-        "Order tracking and real-time notifications",
-        "Multiple payment gateways",
-        "Responsive and modern UI",
-        "Comprehensive admin dashboard",
-        "Regular updates and support"
+        "Real-time weather data",
+        "Interactive charts and graphs",
+        "Location-based forecasts",
+        "Historical weather data",
+        "Weather alerts",
+        "Map integration",
+        "Mobile responsiveness",
+        "Offline functionality"
       ],
       "challenges": [
-        "Real-time order and service tracking",
-        "Multi-provider management",
-        "Payment gateway integration"
+        "API data management",
+        "Chart performance optimization",
+        "Geolocation accuracy"
       ],
       "solutions": [
-        "WebSocket for real-time updates",
-        "Modular architecture for scalability",
-        "Integrated multiple payment gateways"
+        "Data caching and state management",
+        "Virtual scrolling for charts",
+        "GPS and IP-based location services"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://demandium.app/"
+      "github": "https://github.com/example/weather",
+      "marketplace": "",
+      "demo": "https://demo.example.com/weather"
     },
     {
       "id": "7",
-      "title": "6amMart React User Website",
-      "description": "React-based user website for 6amMart multi-vendor delivery system.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633493754/6amMart%20react.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=29ec78c512ce995b970be4dd4b17fef3907a127690dd6bea7cee5664580fb15f",
-      "link": "https://codecanyon.net/item/6ammart-react-user-website/45370351?s_rank=12",
-      "category": "React Website",
-      "technologies": ["React", "JavaScript", "HTML", "CSS", "REST API"],
+      "title": "Fitness Tracking App",
+      "description": "Mobile-first fitness application with workout planning, progress tracking, and social features.",
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/fitness",
+      "category": "Mobile App",
+      "technologies": [
+        "React Native",
+        "Firebase",
+        "Redux",
+        "Expo",
+        "Node.js",
+        "GraphQL"
+      ],
       "status": "live",
-      "longDescription": "6amMart React User Website is a modern, responsive, and feature-rich user-facing web application for the 6amMart multi-vendor delivery system. It provides seamless ordering, real-time tracking, and a smooth user experience.",
+      "longDescription": "A comprehensive fitness tracking application that helps users plan workouts, track progress, and connect with fitness communities. Features offline capability and cross-platform compatibility.",
       "features": [
-        "Modern React-based user website",
-        "Seamless ordering and checkout",
-        "Real-time order tracking",
-        "Responsive and mobile-friendly design",
-        "Integration with 6amMart backend",
-        "Multiple payment gateways",
-        "User account management",
-        "Regular updates and support"
+        "Workout planning and tracking",
+        "Progress analytics",
+        "Social community features",
+        "Nutrition logging",
+        "Goal setting and achievements",
+        "Offline functionality",
+        "Wearable device integration",
+        "Personal trainer matching"
       ],
       "challenges": [
-        "Real-time order tracking integration",
-        "Responsive UI across devices",
-        "Payment gateway integration"
+        "Cross-platform compatibility",
+        "Offline data synchronization",
+        "Performance optimization"
       ],
       "solutions": [
-        "WebSocket for real-time updates",
-        "Responsive design with modern CSS",
-        "Integrated multiple payment gateways"
+        "React Native for unified codebase",
+        "Local storage with sync capabilities",
+        "Optimized rendering and lazy loading"
       ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6ammart-react.6amtech.com/"
+      "github": "https://github.com/example/fitness",
+      "marketplace": "",
+      "demo": "https://demo.example.com/fitness"
     },
     {
       "id": "8",
-      "title": "eMarket",
-      "description": "eCommerce app with Laravel admin panel and delivery man app.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635428827/Hexacom%20CC%20Cover.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=0f62db6f3a05243f460d23b6c0b74ae76408b80596694206c90c60d554973af4",
-      "link": "https://codecanyon.net/item/emarket-ecommerce-app-with-laravel-admin-panel-delivery-man-app/31157454?s_rank=15",
-      "category": "Laravel CMS",
+      "title": "Real Estate Platform",
+      "description": "Property listing platform with advanced search, virtual tours, and agent management system.",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center",
+      "link": "https://example.com/realestate",
+      "category": "Marketplace",
       "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
-      ],
-      "status": "live",
-      "longDescription": "eMarket is a comprehensive eCommerce solution featuring a Laravel-based admin panel, customer and deliveryman mobile apps, and a robust backend. Designed for scalability and performance, it supports a wide range of eCommerce business models and offers a seamless user experience across platforms.",
-      "features": [
-        "Complete eCommerce system with admin panel",
-        "Customer and deliveryman mobile apps (Flutter)",
-        "Order management and real-time notifications",
-        "Multiple payment gateways",
-        "Responsive and modern UI",
-        "Comprehensive admin dashboard",
-        "Product, category, and inventory management",
-        "Discounts, coupons, and promotions",
-        "Multi-language and multi-currency support",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Real-time order and delivery tracking",
-        "Scalable product and inventory management",
-        "Payment gateway integration"
-      ],
-      "solutions": [
-        "WebSocket for real-time updates",
-        "Modular architecture for scalability",
-        "Integrated multiple payment gateways"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6amtech.com/hexacom/"
-    },
-    {
-      "id": "9",
-      "title": "6Cash",
-      "description": "Digital wallet mobile app with Laravel admin panel.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633493909/6cash-cover.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=217cce48c900ad19e4963f38df2a0584231bccb1055643a2b0982942b1076278",
-      "link": "https://codecanyon.net/item/6cash-digital-wallet-mobile-app-with-laravel-admin-panel/37354147?s_rank=16",
-      "category": "Laravel CMS",
-      "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
-      ],
-      "status": "live",
-      "longDescription": "6Cash is a secure and feature-rich digital wallet solution with a Laravel-based admin panel and mobile apps for users and agents. It enables seamless money transfers, bill payments, and wallet management, supporting a wide range of financial services for both individuals and businesses.",
-      "features": [
-        "Digital wallet system with admin panel",
-        "User and agent mobile apps (Flutter)",
-        "Money transfer, add money, and cash-out",
-        "Bill payments and mobile recharge",
-        "Transaction history and notifications",
-        "Multiple payment gateways",
-        "KYC and user verification",
-        "Comprehensive admin dashboard",
-        "Multi-language and multi-currency support",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Secure financial transactions",
-        "Real-time balance and transaction updates",
-        "Payment gateway and KYC integration"
-      ],
-      "solutions": [
-        "End-to-end encryption and secure APIs",
-        "WebSocket for real-time updates",
-        "Integrated multiple payment gateways and KYC modules"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6amtech.com/6cash/"
-    },
-    {
-      "id": "10",
-      "title": "StackFood React User Website",
-      "description": "React-based user website for StackFood multi-restaurant delivery system.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635428650/stackfood%20react.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=76dc687b233f000c77f2a603ea1d04a94aa32ce19c6c519a7316d0162c3d2195",
-      "link": "https://codecanyon.net/item/stackfood-react-user-website/43218516?s_rank=18",
-      "category": "React Website",
-      "technologies": ["React", "JavaScript", "HTML", "CSS", "REST API"],
-      "status": "live",
-      "longDescription": "StackFood React User Website is a modern, responsive, and feature-rich user-facing web application for the StackFood multi-restaurant delivery system. It provides seamless ordering, real-time tracking, and a smooth user experience integrated with the StackFood backend.",
-      "features": [
-        "Modern React-based user website",
-        "Seamless ordering and checkout",
-        "Real-time order tracking",
-        "Responsive and mobile-friendly design",
-        "Integration with StackFood backend",
-        "Multiple payment gateways",
-        "User account management",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Real-time order tracking integration",
-        "Responsive UI across devices",
-        "Payment gateway integration"
-      ],
-      "solutions": [
-        "WebSocket for real-time updates",
-        "Responsive design with modern CSS",
-        "Integrated multiple payment gateways"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://stackfood-react.6amtech.com/"
-    },
-    {
-      "id": "11",
-      "title": "6valley Aster",
-      "description": "Modern multi-vendor eCommerce demo showcasing 6valley platform capabilities.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635457347/6valley%20Cover%206amTech.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=9ab205c47b54412a9013717f033536fa23ab7fd433b01ccb718b5415e35c3b37",
-      "link": "https://codecanyon.net/item/6valley-multivendor-ecommerce-complete-ecommerce-mobile-app-web-and-admin-panel/31448597?s_rank=1",
-      "category": "Laravel CMS",
-      "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
-      ],
-      "status": "live",
-      "longDescription": "6valley Aster is a comprehensive demo showcasing the full capabilities of the 6valley multi-vendor eCommerce platform. It demonstrates advanced marketplace functionality, product management, vendor features, and modern eCommerce solutions for various business types including electronics, fashion, home & living, and more.",
-      "features": [
-        "Complete multi-vendor eCommerce demo",
-        "Advanced product catalog and search",
-        "Vendor management and storefronts",
-        "Real-time inventory and pricing",
-        "Multiple payment gateways",
-        "Responsive and modern UI design",
-        "Comprehensive admin dashboard",
-        "Mobile-optimized experience",
-        "Multi-language and currency support",
-        "Regular updates and maintenance"
-      ],
-      "challenges": [
-        "Complex multi-vendor architecture demonstration",
-        "Real-time inventory and pricing synchronization",
-        "Scalable product catalog management"
-      ],
-      "solutions": [
-        "Implemented robust multi-vendor system",
-        "Used WebSocket for real-time updates",
-        "Optimized database for large product catalogs"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6valley-aster.6amtech.com/"
-    },
-    {
-      "id": "13",
-      "title": "6valley LifeStyle Theme Addon",
-      "description": "Modern lifestyle theme addon for 6valley multi-vendor eCommerce system.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635456978/6valley%20LifeStyle%20Theme.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=8a379d5fb3dffe574fa9809619ca86e48899dcbbd4f28ece95eaf2725c000653",
-      "link": "https://codecanyon.net/item/6valley-lifestyle-theme-addon/48999882?s_rank=23",
-      "category": "Theme Addon",
-      "technologies": [
-        "Laravel (PHP)",
-        "Flutter (Dart)",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
-      ],
-      "status": "live",
-      "longDescription": "The 6valley LifeStyle Theme Addon is a premium theme for the 6valley multi-vendor eCommerce system, offering a modern, elegant, and highly customizable design. It enhances the user experience with new layouts, color schemes, and UI components, making online stores more visually appealing and user-friendly.",
-      "features": [
-        "Modern and elegant lifestyle theme",
-        "Customizable layouts and color schemes",
-        "Enhanced UI components and animations",
-        "Optimized for performance and responsiveness",
-        "Seamless integration with 6valley system",
-        "Mobile-friendly design",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Ensuring compatibility with core 6valley updates",
-        "Maintaining performance with advanced UI features",
-        "Responsive design across devices"
-      ],
-      "solutions": [
-        "Modular theme architecture for easy updates",
-        "Performance optimization techniques",
-        "Thorough testing on multiple devices"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6valley-lifestyle.6amtech.com/"
-    },
-    {
-      "id": "14",
-      "title": "6POS - The Ultimate POS Solution",
-      "description": "Comprehensive POS solution with Laravel admin panel and modern features.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633493880/6POS.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=a5f8c1edd0092ad3af0946bbab16d9861b89bcd6c24b952c9b5d3f5b5e73c2c0",
-      "link": "https://codecanyon.net/item/6pos-the-ultimate-pos-solution/39827011?s_rank=20",
-      "category": "Laravel CMS",
-      "technologies": ["Laravel (PHP)", "JavaScript", "MySQL", "HTML", "CSS"],
-      "status": "live",
-      "longDescription": "6POS is a robust and feature-rich point of sale (POS) solution designed for businesses of all sizes. It offers a Laravel-based admin panel, real-time inventory management, sales tracking, and seamless integration with hardware devices, providing a complete solution for retail and restaurant operations.",
-      "features": [
-        "Comprehensive POS system with admin panel",
-        "Real-time inventory and sales management",
-        "Barcode scanning and receipt printing",
-        "Multi-store and multi-user support",
-        "Sales analytics and reporting",
-        "Customer and supplier management",
-        "Discounts, taxes, and promotions",
-        "Responsive and modern UI",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Real-time inventory synchronization",
-        "Hardware integration (barcode, printer)",
-        "Scalable multi-store management"
-      ],
-      "solutions": [
-        "WebSocket for real-time updates",
-        "Modular hardware integration",
-        "Optimized database and architecture for scalability"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://6amtech.com/6pos/"
-    },
-    {
-      "id": "15",
-      "title": "TLCOMMERCE SaaS",
-      "description": "Laravel & Vue.js powered multivendor eCommerce SaaS CMS.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/637589930/inline-preview-image.jpg?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1c1175b48869e64d077727fc5a1685b5e57e87a008271adb259c89d8b939d21c",
-      "link": "https://codecanyon.net/item/tlcommerce-saas-laravel-vuejs-powered-multivendor-ecommerce-saas-cms/49513303?s_rank=5",
-      "category": "SaaS CMS",
-      "technologies": [
-        "Laravel (PHP)",
+        "Laravel",
         "Vue.js",
         "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS"
+        "Elasticsearch",
+        "AWS S3",
+        "Google Maps API"
       ],
       "status": "live",
-      "longDescription": "TLCOMMERCE SaaS is a powerful multivendor eCommerce SaaS CMS built with Laravel and Vue.js. It enables users to launch their own eCommerce platforms as a service, supporting multiple vendors, subscription management, and advanced customization. The platform is scalable, secure, and optimized for high performance.",
+      "longDescription": "A full-featured real estate platform connecting buyers, sellers, and agents. Includes property listings, advanced search capabilities, virtual tours, and integrated communication tools.",
       "features": [
-        "Multivendor eCommerce SaaS platform",
-        "Built with Laravel and Vue.js",
-        "Subscription and tenant management",
-        "Advanced product, order, and vendor management",
-        "Customizable themes and layouts",
-        "Payment gateway integration",
-        "Analytics and reporting dashboard",
-        "Multi-language and multi-currency support",
-        "Responsive and mobile-friendly design",
-        "Regular updates and support"
+        "Property listing management",
+        "Advanced search and filtering",
+        "Virtual tour integration",
+        "Agent profiles and ratings",
+        "Mortgage calculator",
+        "Neighborhood information",
+        "Saved searches and alerts",
+        "Mobile app integration"
       ],
       "challenges": [
-        "Multi-tenant architecture and data isolation",
-        "Scalable subscription and billing management",
-        "Real-time updates and notifications"
+        "Complex search functionality",
+        "Large image and video handling",
+        "Map integration performance"
       ],
       "solutions": [
-        "Implemented robust multi-tenant architecture",
-        "Integrated subscription billing modules",
-        "WebSocket and event-driven updates"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://themelooks.com/tlcommerce-saas/"
-    },
-    {
-      "id": "16",
-      "title": "FoodBook - Online Food Ordering System for WordPress",
-      "description": "Online food ordering and delivery system plugin for WordPress.",
-      "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/637590525/inline-preview-image.jpg?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=7e7ae683ebe100940f1c46077516a8f4b7eecd0296fc72adbdd8a344fc67370b",
-      "link": "https://codecanyon.net/item/foodbook-online-food-ordering-system-for-wordpress/27669182?s_rank=23",
-      "category": "WordPress Plugin",
-      "technologies": [
-        "WordPress",
-        "PHP",
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "MySQL"
-      ],
-      "status": "live",
-      "longDescription": "FoodBook is a complete online food ordering and delivery system plugin for WordPress. It enables restaurants to accept orders directly on their website, manage menus, track orders, and provide a seamless customer experience. The plugin is easy to install, highly customizable, and integrates with popular payment gateways.",
-      "features": [
-        "Online food ordering and delivery system for WordPress",
-        "Easy menu and order management",
-        "Real-time order tracking",
-        "Customizable design and layout",
-        "Integration with popular payment gateways",
-        "Responsive and mobile-friendly UI",
-        "Order notifications and reporting",
-        "Multi-language support",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Seamless integration with WordPress themes",
-        "Real-time order management",
-        "Payment gateway compatibility"
-      ],
-      "solutions": [
-        "Shortcode and widget-based integration",
-        "AJAX and WebSocket for real-time updates",
-        "Support for multiple payment gateways"
-      ],
-      "github": "",
-      "marketplace": "Codecanyon",
-      "demo": "https://foodbook.info/"
-    },
-    {
-      "id": "17",
-      "title": "Anefty - NFT Marketplace HTML5 Template",
-      "description": "Modern HTML5 template for NFT marketplace websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481329998/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=dbb3ba1c92af3c73aab65bc9972b7a7d30584046e49202f2634de7d6e095cc3c",
-      "link": "https://themeforest.net/item/anefty-nft-marketplace-html5-template/36419773?s_rank=1",
-      "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "status": "live",
-      "longDescription": "Anefty is a modern and feature-rich HTML5 template designed for NFT marketplace websites. It offers a wide range of pre-built pages, components, and UI elements tailored for digital asset trading, auctions, and user profiles. The template is fully responsive, customizable, and optimized for performance.",
-      "features": [
-        "Modern NFT marketplace design",
-        "Multiple homepage and inner page layouts",
-        "Auction, bidding, and wallet integration UI",
-        "User profile and dashboard pages",
-        "Responsive and mobile-friendly design",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for the NFT and crypto audience",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "User research and modern UI/UX best practices",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.biz/demo/anefty/html/"
-    },
-    {
-      "id": "18",
-      "title": "Repserv - Multipurpose Servicing and Repairing HTML5 Template",
-      "description": "Modern HTML5 template for servicing and repair business websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481329462/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=e40e8ed7cdda3721a2ad21292b826227ce10447b24c2fd8f75c2b32da36e4ac6",
-      "link": "https://themeforest.net/item/repserv-multipurpose-servicing-and-repairing-html5-template/35612604?s_rank=2",
-      "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "status": "live",
-      "longDescription": "Repserv is a modern and versatile HTML5 template designed for servicing, repairing, and maintenance business websites. It features a wide range of pre-built pages, service layouts, and UI components, making it easy to create a professional online presence for any repair or service company. The template is fully responsive, customizable, and optimized for performance.",
-      "features": [
-        "Multipurpose servicing and repair business template",
-        "Multiple homepage and service page layouts",
-        "Booking, contact, and quote request forms",
-        "Service detail and team member pages",
-        "Responsive and mobile-friendly design",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for a wide range of service businesses",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Flexible and modular page layouts",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://www.themelooks.biz/demo/repserv/html/"
-    },
-    {
-      "id": "19",
-      "title": "dVPN - Multipurpose VPN React JS Template",
-      "description": "Modern React JS template for VPN and proxy service websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479718432/01_dvpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=358b4f165b4211601595e219c33860a6e4a98c3de705991dc81e142c4f101c39",
-      "link": "https://themeforest.net/item/dvpn-multipurpose-vpn-react-js-template/35412628?s_rank=3",
-      "category": "React Template",
-      "technologies": ["React", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
-      "status": "live",
-      "longDescription": "dVPN is a modern and versatile React JS template designed for VPN, proxy, and cybersecurity service websites. It features a wide range of pre-built pages, pricing tables, and UI components, making it easy to launch a professional online presence for VPN providers. The template is fully responsive, customizable, and optimized for performance.",
-      "features": [
-        "Multipurpose VPN and proxy service template",
-        "Multiple homepage and pricing page layouts",
-        "Feature, FAQ, and testimonial sections",
-        "Responsive and mobile-friendly design",
-        "Built with React and Bootstrap",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for the VPN and cybersecurity audience",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Modern UI/UX best practices",
-        "Responsive design and thorough testing",
-        "Clean, semantic React and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://react-dvpn.netlify.app/"
-    },
-    {
-      "id": "20",
-      "title": "Hostpack - Responsive Hosting HTML Template",
-      "description": "Modern HTML template for web hosting and domain service websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479718868/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b7b3f81b32c07a41d83b3ec17473d8dc46be91e578b2a9621eb8b04c14ebf10",
-      "link": "https://themeforest.net/item/hostpack-responsive-hosting-html-template/31910801?s_rank=4",
-      "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "status": "live",
-      "longDescription": "Hostpack is a modern and fully responsive HTML template designed for web hosting, domain registration, and server provider websites. It features a wide range of pre-built pages, pricing tables, and UI components, making it easy to create a professional online presence for hosting businesses. The template is customizable, SEO optimized, and built for performance.",
-      "features": [
-        "Responsive hosting and domain service template",
-        "Multiple homepage and pricing page layouts",
-        "Domain search and registration UI",
-        "Feature, FAQ, and testimonial sections",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for the hosting and tech audience",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Modern UI/UX best practices",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://www.themelooks.biz/demo/hostpack/html/"
-    },
-    {
-      "id": "21",
-      "title": "Beautain - Multipurpose Beauty Salon and Spa HTML5 Template",
-      "description": "Modern HTML5 template for beauty salon, spa, and wellness business websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481330818/01_beautain.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=2fb1c56e9bfa9e34ac42e4e726f3065cecda586c07d19a025a46634079ab71f5",
-      "link": "https://themeforest.net/item/beautain-multipurpose-beauty-salon-and-spa-html5-template/31210311?s_rank=5",
-      "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "status": "live",
-      "longDescription": "Beautain is a modern and versatile HTML5 template designed for beauty salons, spas, wellness centers, and related businesses. It features a wide range of pre-built pages, service layouts, and UI components, making it easy to create a professional and inviting online presence. The template is fully responsive, customizable, and optimized for performance.",
-      "features": [
-        "Multipurpose beauty salon and spa template",
-        "Multiple homepage and service page layouts",
-        "Booking, contact, and appointment forms",
-        "Service detail and team member pages",
-        "Responsive and mobile-friendly design",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for the beauty and wellness industry",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Flexible and modular page layouts",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://www.themelooks.biz/demo/beautain/html/"
-    },
-    {
-      "id": "22",
-      "title": "Unihost - Multipurpose Hosting WordPress Theme",
-      "description": "Modern WordPress theme for web hosting, domain, and SaaS business websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/637989114/theme-preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=af8de6dbe28bda8b8a757390947ad1ccf8779b5095fde655a2f8ed6b437a175d",
-      "link": "https://themeforest.net/item/unihost-multipurpose-hosting-wordpress-theme/30249102?s_rank=6",
-      "category": "WordPress Theme",
-      "technologies": ["WordPress", "PHP", "JavaScript", "HTML5", "CSS3"],
-      "status": "live",
-      "longDescription": "Unihost is a modern and versatile WordPress theme designed for web hosting, domain registration, SaaS, and technology business websites. It features a wide range of pre-built demos, pricing tables, and UI components, making it easy to create a professional online presence. The theme is fully responsive, customizable, and optimized for performance and SEO.",
-      "features": [
-        "Multipurpose hosting and SaaS WordPress theme",
-        "Multiple homepage and pricing page layouts",
-        "Domain search and registration integration",
-        "Feature, FAQ, and testimonial sections",
-        "Drag-and-drop page builder support",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for the hosting and SaaS audience",
-        "Ensuring plugin compatibility and flexibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Modern UI/UX best practices",
-        "Responsive design and thorough testing",
-        "Clean, semantic WordPress and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/unihost/wordpress/"
-    },
-    {
-      "id": "23",
-      "title": "Socibook - Multipurpose Social Network HTML5 Template",
-      "description": "Modern HTML5 template for social network and community websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481333936/theme-preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=0d70ac6bccaf90e019968e2faca095e2af64fdd9b030f96f2ffe004e9cb4c9e5",
-      "link": "https://themeforest.net/item/socibook-multipurpose-social-network-html5-template/30545120?s_rank=7",
-      "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "status": "live",
-      "longDescription": "Socibook is a modern and versatile HTML5 template designed for social network, community, and forum websites. It features a wide range of pre-built pages, user profile layouts, and interactive UI components, making it easy to create a professional and engaging online community. The template is fully responsive, customizable, and optimized for performance.",
-      "features": [
-        "Multipurpose social network and community template",
-        "Multiple homepage and user profile layouts",
-        "News feed, groups, and messaging UI",
-        "Responsive and mobile-friendly design",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for interactive social experiences",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Modern UI/UX best practices",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.biz/demo/socibook/html/"
-    },
-    {
-      "id": "24",
-      "title": "ProVPN - Multipurpose VPN HTML Template with WHMCS",
-      "description": "Modern HTML template for VPN, proxy, and hosting service websites with WHMCS integration.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479747370/theme_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=0d78dea64b62850ba4265d33421a5416a12259576e0550a29b2cf75464e9fd72",
-      "link": "https://themeforest.net/item/provpn-multipurpose-vpn-html-template-with-whmcs/29814759?s_rank=8",
-      "category": "HTML5 Template",
-      "technologies": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap",
-        "jQuery",
-        "WHMCS"
-      ],
-      "status": "live",
-      "longDescription": "ProVPN is a modern and versatile HTML template designed for VPN, proxy, and hosting service websites. It features WHMCS integration, a wide range of pre-built pages, pricing tables, and UI components, making it easy to launch a professional online presence for VPN providers. The template is fully responsive, customizable, and optimized for performance.",
-      "features": [
-        "Multipurpose VPN, proxy, and hosting template",
-        "WHMCS integration for billing and support",
-        "Multiple homepage and pricing page layouts",
-        "Feature, FAQ, and testimonial sections",
-        "Responsive and mobile-friendly design",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Integrating WHMCS for seamless billing and support",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "WHMCS template integration and testing",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/provpn/html/"
-    },
-    {
-      "id": "25",
-      "title": "GoVPN - Responsive VPN Website Template",
-      "description": "Modern HTML template for VPN, proxy, and cybersecurity service websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479751936/01_govpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=4d93b963f25dc6c345934a0a483e571ad6344d3cc9cc797562008b8421c0c3b0",
-      "link": "https://themeforest.net/item/govpn-responsive-vpn-website-template/29623034?s_rank=10",
-      "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "status": "live",
-      "longDescription": "GoVPN is a modern and fully responsive HTML template designed for VPN, proxy, and cybersecurity service websites. It features a wide range of pre-built pages, pricing tables, and UI components, making it easy to launch a professional online presence for VPN providers. The template is customizable, SEO optimized, and built for performance.",
-      "features": [
-        "Responsive VPN and proxy service template",
-        "Multiple homepage and pricing page layouts",
-        "Feature, FAQ, and testimonial sections",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Designing for the VPN and cybersecurity audience",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "Modern UI/UX best practices",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/govpn/html/"
-    },
-    {
-      "id": "26",
-      "title": "Unihost - Responsive Web Hosting and WHMCS Template",
-      "description": "Modern HTML template for web hosting, domain, and SaaS business websites with WHMCS integration.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479752343/01_unihost.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=ce23f04c1a290434a3321d82e811f0411fa063146b59dfe6047102cc7bdec3f9",
-      "link": "https://themeforest.net/item/unihost-responsive-web-hosting-and-whmcs-template/29415986?s_rank=11",
-      "category": "HTML5 Template",
-      "technologies": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap",
-        "jQuery",
-        "WHMCS"
-      ],
-      "status": "live",
-      "longDescription": "Unihost is a modern and fully responsive HTML template designed for web hosting, domain registration, SaaS, and technology business websites. It features WHMCS integration, a wide range of pre-built demos, pricing tables, and UI components, making it easy to create a professional online presence. The template is customizable, SEO optimized, and built for performance.",
-      "features": [
-        "Responsive hosting and SaaS template with WHMCS integration",
-        "Multiple homepage and pricing page layouts",
-        "Domain search and registration UI",
-        "Feature, FAQ, and testimonial sections",
-        "Built with Bootstrap and jQuery",
-        "Easy customization and well-documented code",
-        "SEO optimized and fast loading",
-        "Regular updates and support"
-      ],
-      "challenges": [
-        "Integrating WHMCS for seamless billing and support",
-        "Ensuring cross-browser and device compatibility",
-        "Optimizing for performance and SEO"
-      ],
-      "solutions": [
-        "WHMCS template integration and testing",
-        "Responsive design and thorough testing",
-        "Clean, semantic HTML5 and CSS3 code"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/unihost/html/"
-    },
-    {
-      "id": "27",
-      "title": "dVPN - Multipurpose VPN and Cloud Service HTML Template",
-      "description": "Modern HTML template for VPN, cloud, and proxy service websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479753022/01_dvpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=a85416a6789a750ff33c1bbb0512e65ae3c0254e34ac3f3e0fdba826546b95cd",
-      "link": "https://themeforest.net/item/dvpn-multipurpose-vpn-and-cloud-service-html-template/29282089?s_rank=12",
-      "category": "HTML Template",
-      "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "features": [
-        "Multipurpose design for VPN, cloud, and proxy services",
-        "Fully responsive and retina ready",
-        "Multiple homepage and inner page layouts",
-        "Modern UI/UX with clean code",
-        "Easy customization and well-documented",
-        "Cross-browser compatibility",
-        "Integrated pricing tables and service sections"
-      ],
-      "challenges": [
-        "Ensuring compatibility across a wide range of browsers and devices",
-        "Providing a flexible template for various VPN and cloud service use cases",
-        "Maintaining performance with rich UI elements"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Designed modular components for easy customization",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/dvpn/html/"
-    },
-    {
-      "id": "28",
-      "title": "Hosttop - Responsive Hosting with WHMCS Template",
-      "description": "Modern HTML template for web hosting, domain, and WHMCS service websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479753379/01_hosttop.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=8f5f329e46ed8750370534475af0743faf7a9c614b1e49fdfafd17004434a9ef",
-      "link": "https://themeforest.net/item/hosttop-responsive-hosting-with-whmcs-template/29182605?s_rank=13",
-      "category": "HTML Template",
-      "status": "live",
-      "technologies": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap",
-        "WHMCS",
-        "jQuery"
-      ],
-      "features": [
-        "Responsive design for hosting and domain services",
-        "WHMCS integration for client management and billing",
-        "Multiple homepage and inner page layouts",
-        "Modern UI/UX with clean code",
-        "Easy customization and well-documented",
-        "Cross-browser compatibility",
-        "Integrated pricing tables and service sections"
-      ],
-      "challenges": [
-        "Ensuring seamless WHMCS integration with the template",
-        "Maintaining responsive layouts across devices",
-        "Providing a flexible template for various hosting business needs"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Developed WHMCS-compatible pages and styles",
-        "Designed modular components for easy customization"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/hosttop/html/"
-    },
-    {
-      "id": "30",
-      "title": "Karton - Multipurpose WooCommerce Theme",
-      "description": "Modern WooCommerce theme for multipurpose eCommerce websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/503605226/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=ce38a2b2d01e347744c7036088cfbb86837d781d892d8568023c92093538c615",
-      "link": "https://themeforest.net/item/karton-multipurpose-woocommerce-theme/25295639?s_rank=21",
-      "category": "WordPress Theme",
-      "status": "live",
-      "technologies": [
-        "WordPress",
-        "WooCommerce",
-        "PHP",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap"
-      ],
-      "features": [
-        "Multipurpose design for various eCommerce niches",
-        "Full WooCommerce integration",
-        "Multiple homepage and shop layouts",
-        "Modern UI/UX with clean code",
-        "Easy customization and well-documented",
-        "Responsive and retina ready",
-        "Cross-browser compatibility"
-      ],
-      "challenges": [
-        "Ensuring compatibility with WooCommerce and WordPress updates",
-        "Providing flexible layouts for different eCommerce needs",
-        "Maintaining performance with rich UI elements"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Developed custom widgets and shortcodes for flexibility",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://www.themelooks.com/demo/karton/"
-    },
-    {
-      "id": "31",
-      "title": "Woolea - Minimal WooCommerce Theme",
-      "description": "Minimal WooCommerce theme for modern eCommerce websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/506347394/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=ad383c18ff73ad0b31d151b5c07b689f0e51113473e346357adf5210fc292f1f",
-      "link": "https://themeforest.net/item/woolea-minimal-woocommerce-theme/25743000?s_rank=18",
-      "category": "WordPress Theme",
-      "status": "live",
-      "technologies": [
-        "WordPress",
-        "WooCommerce",
-        "PHP",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap"
-      ],
-      "features": [
-        "Minimal and modern design for eCommerce",
-        "Full WooCommerce integration",
-        "Multiple homepage and shop layouts",
-        "Easy customization and well-documented",
-        "Responsive and retina ready",
-        "Modern UI/UX with clean code",
-        "Cross-browser compatibility"
-      ],
-      "challenges": [
-        "Ensuring compatibility with WooCommerce and WordPress updates",
-        "Maintaining a minimal yet feature-rich UI",
-        "Optimizing for fast loading and performance"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Developed custom widgets and shortcodes for flexibility",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://www.themelooks.org/demo/woolea/"
-    },
-    {
-      "id": "32",
-      "title": "Dashmin - Responsive Admin Dashboard Template",
-      "description": "Modern HTML template for admin dashboards and web applications.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481328291/Theme-Preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=2883a22af651d0de8658a770a915b05655bdb2db926f6dc28c7fe00eaf14c00f",
-      "link": "https://themeforest.net/item/dashmin-responsive-admin-dashboard-template/29071668?s_rank=14",
-      "category": "HTML Template",
-      "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "features": [
-        "Responsive design for admin dashboards",
-        "Multiple dashboard and UI component layouts",
-        "Modern UI/UX with clean code",
-        "Easy customization and well-documented",
-        "Cross-browser compatibility",
-        "Integrated charts, tables, and widgets",
-        "Dark and light mode support"
-      ],
-      "challenges": [
-        "Ensuring compatibility across a wide range of browsers and devices",
-        "Providing flexible layouts for different dashboard needs",
-        "Maintaining performance with rich UI elements"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Designed modular components for easy customization",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/dashmin/"
-    },
-    {
-      "id": "33",
-      "title": "Docland - Multipurpose SaaS & Tech Startup Landing Page Templates",
-      "description": "Modern HTML templates for SaaS, tech startups, and landing pages.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/480480973/01_docland.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=8aaa3cbef404c604bd633cc06929f938b2a446fb0e8a87a1e219416fad0a6f91",
-      "link": "https://themeforest.net/item/docland-multipurpose-saas-tech-startup-landing-page-templates/25638536?s_rank=19",
-      "category": "HTML Template",
-      "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "features": [
-        "Multipurpose design for SaaS, tech, and startup landing pages",
-        "Fully responsive and retina ready",
-        "Multiple homepage and landing page layouts",
-        "Modern UI/UX with clean code",
-        "Easy customization and well-documented",
-        "Cross-browser compatibility",
-        "Integrated pricing, features, and contact sections"
-      ],
-      "challenges": [
-        "Ensuring compatibility across a wide range of browsers and devices",
-        "Providing flexible layouts for different SaaS and tech startup needs",
-        "Maintaining performance with rich UI elements"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Designed modular components for easy customization",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.com/demo/docland/html/"
-    },
-    {
-      "id": "34",
-      "title": "dVPN - Multipurpose VPN WordPress Theme",
-      "description": "Modern WordPress theme for VPN, proxy, and cybersecurity service websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/504748322/theme_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=46504e298b2cef91bc77a4aa3b2f245e5a60433b6100fa32bde9dd4c8b8181c8",
-      "link": "https://themeforest.net/item/dvpn-multipurpose-vpn-wordpress-theme/27545810?s_rank=15",
-      "category": "WordPress Theme",
-      "status": "live",
-      "technologies": [
-        "WordPress",
-        "PHP",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap"
-      ],
-      "features": [
-        "Multipurpose design for VPN, proxy, and cybersecurity services",
-        "Full WordPress theme with easy customization",
-        "Multiple homepage and inner page layouts",
-        "Modern UI/UX with clean code",
-        "Responsive and retina ready",
-        "Cross-browser compatibility",
-        "Integrated pricing tables and service sections"
-      ],
-      "challenges": [
-        "Ensuring compatibility with WordPress updates and plugins",
-        "Providing flexible layouts for different VPN and cybersecurity needs",
-        "Maintaining performance with rich UI elements"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Developed custom widgets and shortcodes for flexibility",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "https://themelooks.net/demo/dvpn/"
-    },
-    {
-      "id": "35",
-      "title": "Dentzone - Dentist Medical HTML5 Template",
-      "description": "Modern HTML5 template for dental clinics, medical, and healthcare websites.",
-      "image": "https://market-resized.envatousercontent.com/themeforest.net/files/271172301/01_dentzone.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=18dc7d2348580659c378872d2ad4a7d327eb02b708999b7d1bbda8e02afe3fd5",
-      "link": "https://themeforest.net/item/dentzone-dentist-medical-html5-template/24565457?s_rank=22",
-      "category": "HTML Template",
-      "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-      "features": [
-        "Modern design for dental, medical, and healthcare websites",
-        "Fully responsive and retina ready",
-        "Multiple homepage and inner page layouts",
-        "Modern UI/UX with clean code",
-        "Easy customization and well-documented",
-        "Cross-browser compatibility",
-        "Integrated appointment, services, and contact sections"
-      ],
-      "challenges": [
-        "Ensuring compatibility across a wide range of browsers and devices",
-        "Providing flexible layouts for different medical and healthcare needs",
-        "Maintaining performance with rich UI elements"
-      ],
-      "solutions": [
-        "Used Bootstrap and modern CSS for responsive, cross-browser layouts",
-        "Designed modular components for easy customization",
-        "Optimized images and assets for fast loading times"
-      ],
-      "github": "",
-      "marketplace": "Themeforest",
-      "demo": "http://themelooks.org/demo/dentzone/html/"
+        "Elasticsearch for advanced search",
+        "CDN for media optimization",
+        "Lazy loading for map markers"
+      ],
+      "github": "https://github.com/example/realestate",
+      "marketplace": "",
+      "demo": "https://demo.example.com/realestate"
     }
   ]
 }

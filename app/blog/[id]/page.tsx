@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import { CustomImage } from "@/components/global";
 import type { Metadata } from "next";
+import blogData from "@/data/blog.json";
 
 interface DevToPost {
   id: number;
@@ -19,7 +20,7 @@ interface DevToPost {
   slug: string;
   tag_list?: string[] | string;
   reading_time_minutes?: number;
-  body_markdown?: string;
+  content?: string;
   edited_at?: string;
   user: {
     name: string;
@@ -29,10 +30,13 @@ interface DevToPost {
 }
 
 async function getPostById(id: string): Promise<DevToPost | null> {
-  // Fetch full post details by ID (includes body_markdown)
-  const res = await fetch(`https://dev.to/api/articles/${id}`);
-  if (!res.ok) return null;
-  return await res.json();
+  try {
+    // Use local blog data instead of external API
+    const post = blogData.posts.find(p => p.id.toString() === id);
+    return post || null;
+  } catch {
+    return null;
+  }
 }
 
 export async function generateMetadata({
@@ -42,21 +46,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const { id } = await params;
-    const res = await fetch(`https://dev.to/api/articles/${id}`, {
-      next: { revalidate: 86400 },
-    });
-    if (!res.ok) return {};
-    const post: DevToPost = await res.json();
+    const post = blogData.posts.find(p => p.id.toString() === id);
+    if (!post) return {};
     return {
       title: post.title,
       description: post.description,
       alternates: {
-        canonical: `https://patwary.vercel.app/blog/${id}`,
+        canonical: `https://yourdomain.com/blog/${id}`,
       },
       openGraph: {
         title: post.title,
         description: post.description,
-        url: `https://patwary.vercel.app/blog/${id}`,
+        url: `https://yourdomain.com/blog/${id}`,
         images: post.cover_image ? [{ url: post.cover_image }] : undefined,
         type: "article",
       },
@@ -99,18 +100,11 @@ export const revalidate = 86400; // 24 hours in seconds
 // Pre-generate some popular blog posts at build time
 export async function generateStaticParams() {
   try {
-    // Fetch recent articles to pre-generate
-    const res = await fetch(
-      "https://dev.to/api/articles?username=mdhassanpatwary&per_page=10"
-    );
-    if (!res.ok) return [];
-
-    const articles = await res.json();
-    return articles.map((article: DevToPost) => ({
+    // Use local blog data to pre-generate static pages
+    return blogData.posts.slice(0, 10).map((article) => ({
       id: article.id.toString(),
     }));
   } catch {
-
     return [];
   }
 }
@@ -169,11 +163,11 @@ export default async function BlogDetailPage({
                 dateModified: post.edited_at || post.published_at,
                 author: {
                   "@type": "Person",
-                  name: post.user?.name || "MD Hasan Patwary",
-                  url: "https://patwary.vercel.app",
+                  name: post.user?.name || "John Doe",
+                  url: "https://yourdomain.com",
                 },
-                publisher: { "@type": "Person", name: "MD Hasan Patwary" },
-                mainEntityOfPage: `https://patwary.vercel.app/blog/${post.id}`,
+                publisher: { "@type": "Person", name: "John Doe" },
+                mainEntityOfPage: `https://yourdomain.com/blog/${post.id}`,
                 speakable: {
                   "@type": "SpeakableSpecification",
                   cssSelector: ["h1", "p"],
@@ -196,34 +190,10 @@ export default async function BlogDetailPage({
           )}
           <div className="sm:px-6 md:px-8 pb-8">
             <div className="flex items-center gap-4 mb-6 mt-2">
-              {post.user.profile_image && (
-                <a
-                  href={`https://dev.to/${post.user.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="focus:outline-none focus:ring-2 focus:ring-primary-400 rounded-full"
-                  aria-label={`View ${post.user.name}'s profile on Dev.to`}>
-                  <CustomImage
-                    src={post.user.profile_image}
-                    alt={post.user.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full border-2 border-primary-200 dark:border-primary-700 shadow-sm"
-                    blurType="avatar"
-                  />
-                </a>
-              )}
               <div className="flex flex-col">
-                <a
-                  href={`https://dev.to/${post.user.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 font-medium hover:underline text-sm">
-                  {post.user.name}{" "}
-                  <span className="text-xs text-gray-600 dark:text-gray-300">
-                    @{post.user.username}
-                  </span>
-                </a>
+                <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">
+                  {post.user.name}
+                </span>
                 <span className="text-gray-600 dark:text-gray-300 text-xs">
                   {date}
                   {post.reading_time_minutes && (
@@ -234,15 +204,12 @@ export default async function BlogDetailPage({
             </div>
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag, i) => (
-                <a
+                <span
                   key={i}
-                  href={`https://dev.to/t/${encodeURIComponent(tag)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition focus:outline-none focus:ring-2 focus:ring-primary-400"
-                  aria-label={`View tag ${tag} on Dev.to`}>
+                  className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full"
+                  aria-label={`Tag: ${tag}`}>
                   #{tag}
-                </a>
+                </span>
               ))}
             </div>
             <hr className="my-6 border-primary-100 dark:border-primary-800" />
@@ -254,23 +221,15 @@ export default async function BlogDetailPage({
               className="mb-4 text-left text-2xl md:text-3xl">
               <span className="sr-only">Article content</span>
             </SectionTitle>
-            <MarkdownRenderer content={post.body_markdown || ""} />
+            <MarkdownRenderer content={post.content || post.description} />
             <hr className="my-8 border-primary-100 dark:border-primary-800" />
-            <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="mt-8 flex justify-center">
               <Link
                 href="/blog"
-                className="text-primary-600 dark:text-primary-400 hover:underline font-semibold text-sm flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary-400 rounded px-2 py-1 bg-primary-50 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-gray-700 transition"
+                className="text-primary-600 dark:text-primary-400 hover:underline font-semibold text-sm flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary-400 rounded px-4 py-2 bg-primary-50 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-gray-700 transition"
                 aria-label="Back to Blog">
                 ← Back to Blog
               </Link>
-              <a
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-600 dark:text-primary-400 hover:underline font-semibold text-base focus:outline-none focus:ring-2 focus:ring-primary-400 rounded px-2 py-1 bg-primary-50 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-gray-700 transition"
-                aria-label="View this post on Dev.to">
-                View on Dev.to →
-              </a>
             </div>
           </div>
         </div>

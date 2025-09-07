@@ -1,9 +1,9 @@
-# 🧑‍💻 MD Hasan Patwary — Personal Portfolio
+# 🚀 Modern Portfolio Template
 
-A modern, responsive, and feature-rich personal portfolio website built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. Features include dark/light mode, and a comprehensive showcase of professional experience, skills, and projects.
+A professional, responsive, and feature-rich portfolio template built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. Perfect for developers, designers, freelancers, and agencies to showcase their work and skills.
 
-🔗 **Live Website**: [https://patwary.vercel.app](https://patwary.vercel.app)  
-📁 **GitHub Repo**: [github.com/mdhasanpatwary/portfolio-app](https://github.com/mdhasanpatwary/portfolio-app)
+🔗 **Live Demo**: [https://portfolio-template-demo.vercel.app](https://portfolio-template-demo.vercel.app)  
+📁 **CodeCanyon**: [Purchase Template](https://codecanyon.net/)
 
 ---
 
@@ -135,19 +135,24 @@ portfolio-app/
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/mdhasanpatwary/portfolio-app.git
-cd portfolio-app
+# Clone or extract the template
+cd modern-portfolio-template
 
 # Install dependencies
-yarn install
-# or
 npm install
+# or
+yarn install
+
+# Copy environment variables template
+cp .env.example .env.local
+
+# Edit .env.local with your actual values
+# (Optional: Only needed for contact form and AI features)
 
 # Start development server
-yarn dev
-# or
 npm run dev
+# or
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -172,6 +177,26 @@ npm start
 
 ## 🎨 Customization
 
+### **Quick Setup**
+
+1. **Site Configuration**: Edit `config/site.config.ts` for basic settings:
+   - Personal information (name, email, social links)
+   - Feature toggles (AI, blog, contact form)
+   - SEO settings
+   - Theme preferences
+
+2. **Content Management**: Update JSON files in the `data/` directory:
+   - `data/about.json` - Personal information and skills
+   - `data/projects.json` - Portfolio projects
+   - `data/experiences.json` - Work experience
+   - `data/skills.json` - Technical skills
+   - `data/testimonials.json` - Client feedback
+
+3. **Environment Variables**: Copy `.env.example` to `.env.local` and configure:
+   - EmailJS for contact form
+   - Google AI for chat widget
+   - Analytics tracking IDs
+
 ### **Content Management**
 
 All content is stored in JSON files in the `data/` directory. Update these files to customize:
@@ -195,13 +220,19 @@ All content is stored in JSON files in the `data/` directory. Update these files
 
 ### **Environment Variables**
 
-Create a `.env.local` file for local development:
+Copy `.env.example` to `.env.local` and configure:
 
 ```env
-# Optional: EmailJS configuration for contact form
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+# EmailJS Configuration (Optional)
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_emailjs_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+
+# Google AI Configuration (Optional)
+NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key
+
+# Analytics (Optional)
+NEXT_PUBLIC_GA_TRACKING_ID=your_google_analytics_id
 ```
 
 ### **Deployment**
@@ -258,28 +289,29 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under a Commercial License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙋‍♂️ Author
+## 🚀 Template Features
 
-**MD Hasan Patwary**  
-Frontend Developer | HTML, CSS, JavaScript, jQuery, React, Vue, Next.js, Docker, AWS
+**Modern Portfolio Template**  
+Built with Next.js 15, TypeScript, and Tailwind CSS
 
-📧 [patwary.dev@gmail.com](mailto:patwary.dev@gmail.com)  
-🌐 [Portfolio](https://patwary.vercel.app) • [LinkedIn](https://linkedin.com/in/mdhasanpatwary) • [GitHub](https://github.com/mdhasanpatwary)
+📧 **Support**: Available through CodeCanyon comments  
+🌐 **Demo**: [Portfolio Template Demo](https://portfolio-template-demo.vercel.app) • [CodeCanyon Page](https://codecanyon.net/)
 
 ---
 
-## 🎯 Project Status
+## 🎯 Template Status
 
-- ✅ **Core Features** - Complete
-
+- ✅ **Template Features** - Complete
+- ✅ **Documentation** - Complete
 - ✅ **Responsive Design** - Complete
 - ✅ **Performance Optimization** - Complete
 - ✅ **SEO Optimization** - Complete
-- ✅ **Deployment** - Live on Vercel
+- ✅ **CodeCanyon Ready** - Complete
 
-**Last Updated**: August 2025  
-**Version**: 1.0.0
+**Last Updated**: January 2025  
+**Version**: 1.0.0  
+**Compatibility**: Next.js 15+, Node.js 18+

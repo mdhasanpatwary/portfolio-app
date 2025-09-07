@@ -1,7 +1,11 @@
 {
-  "name": "mdhasanpatwary-portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "name": "modern-portfolio-template",
+  "version": "1.0.0",
+  "description": "Modern Portfolio Template built with Next.js 15, TypeScript, and Tailwind CSS. Perfect for developers, designers, and freelancers.",
+  "keywords": ["portfolio", "nextjs", "typescript", "tailwindcss", "template", "responsive", "dark-mode", "pwa"],
+  "author": "CodeCanyon Template",
+  "license": "Commercial",
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide - Modern Portfolio Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        
+        .nav-back {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-back a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content h2 {
+            color: #2d3748;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .content h3 {
+            color: #4a5568;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .content p {
+            margin: 1rem 0;
+            color: #718096;
+        }
+        
+        .content ul, .content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content li {
+            margin: 0.5rem 0;
+            color: #718096;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: #fef5e7;
+            border: 1px solid #f6e05e;
+            border-left: 4px solid #ed8936;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .info {
+            background: #ebf8ff;
+            border: 1px solid #90cdf4;
+            border-left: 4px solid #4299e1;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-left: 4px solid #48bb78;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .step {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step h4 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="index.html">← Back to Documentation</a>
+        </div>
+        
+        <div class="header">
+            <h1>🔧 Installation Guide</h1>
+            <p>Complete setup instructions for Modern Portfolio Template</p>
+        </div>
+
+        <div class="content">
+            <h2>System Requirements</h2>
+            
+            <p>Before installing the template, ensure your system meets these requirements:</p>
+            
+            <ul>
+                <li><strong>Node.js 18+</strong> - Required for Next.js 15</li>
+                <li><strong>npm 9+</strong> or <strong>yarn 1.22+</strong> - Package manager</li>
+                <li><strong>Git</strong> - For version control (optional)</li>
+                <li><strong>Code Editor</strong> - VS Code recommended</li>
+            </ul>
+
+            <div class="info">
+                <strong>💡 Tip:</strong> You can check your Node.js version by running <code>node --version</code> in your terminal.
+            </div>
+
+            <h2>Installation Steps</h2>
+
+            <div class="step">
+                <h4>Step 1: Extract Template Files</h4>
+                <p>Extract the downloaded template files to your desired location:</p>
+                <div class="code">cd your-projects-folder
+unzip modern-portfolio-template.zip
+cd modern-portfolio-template</div>
+            </div>
+
+            <div class="step">
+                <h4>Step 2: Install Dependencies</h4>
+                <p>Install all required dependencies using npm or yarn:</p>
+                <div class="code"># Using npm
+npm install
+
+# Or using yarn
+yarn install</div>
+                <p>This may take a few minutes depending on your internet connection.</p>
+            </div>
+
+            <div class="step">
+                <h4>Step 3: Environment Configuration</h4>
+                <p>Copy the environment template and configure your settings:</p>
+                <div class="code"># Copy environment template
+cp .env.example .env.local
+
+# Edit the file with your settings
+nano .env.local  # or use your preferred editor</div>
+                
+                <div class="warning">
+                    <strong>⚠️ Important:</strong> The .env.local file contains sensitive information. Never commit it to version control.
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Step 4: Start Development Server</h4>
+                <p>Start the development server to see your portfolio:</p>
+                <div class="code"># Using npm
+npm run dev
+
+# Or using yarn
+yarn dev</div>
+                <p>Open <strong>http://localhost:3000</strong> in your browser to view the template.</p>
+            </div>
+
+            <div class="success">
+                <strong>✅ Success!</strong> Your portfolio template is now running locally. You can start customizing it to match your needs.
+            </div>
+
+            <h2>Environment Variables</h2>
+            
+            <p>The template uses environment variables for optional features. Here's what each variable does:</p>
+
+            <h3>EmailJS (Contact Form)</h3>
+            <div class="code">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
+            <p>Required only if you want to use the contact form. Get these keys from <a href="https://emailjs.com" target="_blank">EmailJS</a>.</p>
+
+            <h3>Google AI (Chat Widget)</h3>
+            <div class="code">NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key</div>
+            <p>Required only for the AI chat widget. Get your API key from the <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a>.</p>
+
+            <h3>Analytics (Optional)</h3>
+            <div class="code">NEXT_PUBLIC_GA_TRACKING_ID=your_google_analytics_id</div>
+            <p>For Google Analytics tracking. Vercel Analytics is automatically configured when deployed to Vercel.</p>
+
+            <h2>Project Structure</h2>
+            
+            <p>Understanding the project structure will help you customize the template effectively:</p>
+            
+            <div class="code">modern-portfolio-template/
+├── app/                    # Next.js App Router pages
+├── components/             # React components
+├── config/                 # Site configuration
+├── context/                # React Context providers
+├── data/                   # JSON content files
+├── documentation/          # This documentation
+├── hooks/                  # Custom React hooks
+├── public/                 # Static assets
+├── types/                  # TypeScript type definitions
+├── utils/                  # Utility functions
+├── .env.example           # Environment template
+├── next.config.ts         # Next.js configuration
+├── package.json           # Dependencies
+└── tailwind.config.js     # Tailwind CSS config</div>
+
+            <h2>Common Installation Issues</h2>
+
+            <h3>Node.js Version Error</h3>
+            <p>If you get an error about Node.js version:</p>
+            <div class="code"># Check your version
+node --version
+
+# Install Node.js 18+ from https://nodejs.org</div>
+
+            <h3>Permission Errors (macOS/Linux)</h3>
+            <p>If you encounter permission errors during installation:</p>
+            <div class="code"># Fix npm permissions
+sudo chown -R $(whoami) ~/.npm</div>
+
+            <h3>Port Already in Use</h3>
+            <p>If port 3000 is already in use:</p>
+            <div class="code"># Use a different port
+npm run dev -- -p 3001</div>
+
+            <h2>Next Steps</h2>
+            
+            <p>Once installation is complete, you can:</p>
+            <ol>
+                <li>Read the <a href="customization.html">Customization Guide</a> to personalize your portfolio</li>
+                <li>Check the <a href="features.html">Features Overview</a> to understand all available features</li>
+                <li>Review the <a href="deployment.html">Deployment Guide</a> when ready to go live</li>
+            </ol>
+
+            <div class="info">
+                <strong>💡 Need Help?</strong> If you encounter any issues during installation, check the <a href="troubleshooting.html">Troubleshooting Guide</a> or contact support through CodeCanyon.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

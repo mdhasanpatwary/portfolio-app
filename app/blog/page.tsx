@@ -3,36 +3,33 @@ import { FaPenNib } from "react-icons/fa";
 import BlogList from "./BlogList";
 import type { Metadata } from "next";
 import type { DevToPost } from "@/components/blog/BlogCard";
+import blogData from "@/data/blog.json";
 
 export const metadata: Metadata = {
-  title: "Blog | MD Hasan Patwary - Web Development Articles",
+  title: "Blog | Modern Portfolio Template - Web Development Articles",
   description:
-    "Read MD Hasan Patwary's web development blog featuring articles on React, Next.js, TypeScript, CSS tips, and modern web development best practices.",
+    "Read our web development blog featuring articles on React, Next.js, TypeScript, and modern web development best practices.",
   keywords: [
     "Web Development Blog",
     "React Blog",
     "Next.js Blog",
     "TypeScript Blog",
-    "CSS Tips",
     "Front-End Development",
-    "MD Hasan Patwary Blog",
+    "Programming Blog",
   ],
   openGraph: {
-    title: "Blog | MD Hasan Patwary - Web Development Articles",
+    title: "Blog | Modern Portfolio Template - Web Development Articles",
     description:
-      "Read MD Hasan Patwary's web development blog featuring articles on React, Next.js, TypeScript, CSS tips, and modern web development best practices.",
-    url: "https://patwary.vercel.app/blog",
+      "Read our web development blog featuring articles on React, Next.js, TypeScript, and modern web development best practices.",
+    url: "https://yourdomain.com/blog",
   },
-  alternates: { canonical: "https://patwary.vercel.app/blog" },
+  alternates: { canonical: "https://yourdomain.com/blog" },
 };
 
-async function fetchDevToPosts(): Promise<DevToPost[]> {
+async function getBlogPosts(): Promise<DevToPost[]> {
   try {
-    const res = await fetch("https://dev.to/api/articles?username=mdhassanpatwary", {
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return [];
-    return await res.json();
+    // Use local blog data instead of external API
+    return blogData.posts;
   } catch {
     return [];
   }
@@ -43,14 +40,14 @@ export default async function BlogPage({
 }: {
   searchParams: Promise<{ page?: string }>;
 }) {
-  const posts = await fetchDevToPosts();
+  const posts = await getBlogPosts();
   const sp = await searchParams;
   const page = Number(sp?.page || 1) || 1;
   return (
     <>
       <PageTitle
         title="Latest Blog Posts"
-        subtitle="Explore all my articles, tutorials, and insights."
+        subtitle="Explore all our articles, tutorials, and insights."
         icon={
           <FaPenNib className="text-primary-600 dark:text-primary-400 text-3xl" />
         }

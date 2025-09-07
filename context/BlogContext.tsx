@@ -1,6 +1,7 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { DevToPost } from "@/components/blog/BlogCard";
+import blogData from "@/data/blog.json";
 
 interface AppContextType {
   posts: DevToPost[];
@@ -16,29 +17,21 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const loadPosts = async () => {
       try {
-
-        const response = await fetch("https://dev.to/api/articles?username=mdhassanpatwary");
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
+        // Use local blog data instead of external API
+        const data = blogData.posts;
         setPosts(data);
         setError(null);
       } catch (err) {
-
-        setError(err instanceof Error ? err.message : 'Failed to fetch articles');
+        setError(err instanceof Error ? err.message : 'Failed to load blog articles');
         setPosts([]);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPosts();
+    loadPosts();
   }, []);
 
   return (

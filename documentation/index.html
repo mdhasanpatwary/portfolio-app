@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Template - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .nav h2 {
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .nav-item {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-item h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-item p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .nav-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .nav-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .quick-start {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .quick-start h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+        }
+        
+        .steps {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-content p {
+            color: #718096;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #667eea;
+        }
+        
+        .feature h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .support {
+            background: #e6fffa;
+            border: 2px solid #4fd1c7;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .support h2 {
+            color: #234e52;
+            margin-bottom: 1rem;
+        }
+        
+        .support p {
+            color: #285e61;
+            margin-bottom: 1rem;
+        }
+        
+        .support-button {
+            background: #4fd1c7;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+        
+        .support-button:hover {
+            background: #38b2ac;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Modern Portfolio Template</h1>
+            <p>Complete documentation for your Next.js 15 portfolio template</p>
+        </div>
+
+        <div class="quick-start">
+            <h2>⚡ Quick Start</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Extract & Install</h3>
+                        <p>Extract the template files and run npm install to install dependencies</p>
+                        <div class="code">npm install</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Configure Environment</h3>
+                        <p>Copy .env.example to .env.local and configure your settings</p>
+                        <div class="code">cp .env.example .env.local</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Customize Content</h3>
+                        <p>Edit config/site.config.ts and data/*.json files with your information</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Start Development</h3>
+                        <p>Run the development server and start customizing</p>
+                        <div class="code">npm run dev</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <h2>📚 Documentation Sections</h2>
+            <div class="nav-grid">
+                <div class="nav-item">
+                    <h3><a href="installation.html">🔧 Installation Guide</a></h3>
+                    <p>Step-by-step setup instructions, requirements, and initial configuration</p>
+                </div>
+                <div class="nav-item">
+                    <h3><a href="customization.html">🎨 Customization Guide</a></h3>
+                    <p>How to customize content, styling, and features to match your brand</p>
+                </div>
+                <div class="nav-item">
+                    <h3><a href="features.html">✨ Features Overview</a></h3>
+                    <p>Complete list of all features and how to use them effectively</p>
+                </div>
+                <div class="nav-item">
+                    <h3><a href="troubleshooting.html">🔍 Troubleshooting</a></h3>
+                    <p>Common issues and solutions to help you resolve problems quickly</p>
+                </div>
+                <div class="nav-item">
+                    <h3><a href="deployment.html">🌐 Deployment Guide</a></h3>
+                    <p>How to deploy your portfolio to Vercel, Netlify, and other platforms</p>
+                </div>
+                <div class="nav-item">
+                    <h3><a href="changelog.html">📝 Changelog</a></h3>
+                    <p>Version history and updates to keep track of improvements</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-start">
+            <h2>🌟 Template Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h4>⚡ Next.js 15</h4>
+                    <p>Latest Next.js with App Router and Turbopack for blazing fast development</p>
+                </div>
+                <div class="feature">
+                    <h4>🎯 TypeScript</h4>
+                    <p>Full TypeScript support with strict typing for better development experience</p>
+                </div>
+                <div class="feature">
+                    <h4>🎨 Tailwind CSS</h4>
+                    <p>Modern utility-first CSS framework for rapid UI development</p>
+                </div>
+                <div class="feature">
+                    <h4>🌗 Dark/Light Mode</h4>
+                    <p>Beautiful theme switching with smooth transitions and user preference persistence</p>
+                </div>
+                <div class="feature">
+                    <h4>📱 Fully Responsive</h4>
+                    <p>Mobile-first design that looks perfect on all devices and screen sizes</p>
+                </div>
+                <div class="feature">
+                    <h4>🚀 PWA Ready</h4>
+                    <p>Progressive Web App features for offline support and native app experience</p>
+                </div>
+                <div class="feature">
+                    <h4>📊 SEO Optimized</h4>
+                    <p>Built-in SEO best practices with meta tags, structured data, and sitemaps</p>
+                </div>
+                <div class="feature">
+                    <h4>🤖 AI Integration</h4>
+                    <p>Google Generative AI chat widget for interactive user engagement</p>
+                </div>
+                <div class="feature">
+                    <h4>📝 Blog System</h4>
+                    <p>Built-in blog with markdown support and Dev.to integration</p>
+                </div>
+                <div class="feature">
+                    <h4>📧 Contact Form</h4>
+                    <p>Working contact form with EmailJS integration and validation</p>
+                </div>
+                <div class="feature">
+                    <h4>📈 Analytics</h4>
+                    <p>Vercel Analytics and Google Analytics support for tracking</p>
+                </div>
+                <div class="feature">
+                    <h4>⚙️ Easy Configuration</h4>
+                    <p>Centralized configuration system for quick customization</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="support">
+            <h2>💬 Need Help?</h2>
+            <p>Get support through CodeCanyon comments or contact us directly for assistance with your portfolio template.</p>
+            <a href="https://codecanyon.net/" class="support-button">Get Support</a>
+        </div>
+    </div>
+</body>
+</html>

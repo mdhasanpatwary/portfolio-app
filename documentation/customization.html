@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customization Guide - Modern Portfolio Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        
+        .nav-back {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-back a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content h2 {
+            color: #2d3748;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .content h3 {
+            color: #4a5568;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .content p {
+            margin: 1rem 0;
+            color: #718096;
+        }
+        
+        .content ul, .content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content li {
+            margin: 0.5rem 0;
+            color: #718096;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: #fef5e7;
+            border: 1px solid #f6e05e;
+            border-left: 4px solid #ed8936;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .info {
+            background: #ebf8ff;
+            border: 1px solid #90cdf4;
+            border-left: 4px solid #4299e1;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-left: 4px solid #48bb78;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .file-tree {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="index.html">← Back to Documentation</a>
+        </div>
+        
+        <div class="header">
+            <h1>🎨 Customization Guide</h1>
+            <p>Make the template your own with easy customization</p>
+        </div>
+
+        <div class="content">
+            <h2>Quick Configuration</h2>
+            
+            <p>The fastest way to customize your portfolio is through the site configuration file:</p>
+
+            <h3>1. Site Configuration (config/site.config.ts)</h3>
+            <p>This is your main customization hub. Update the following sections:</p>
+
+            <div class="code">export const siteConfig = {
+  // Your basic information
+  siteName: "Your Portfolio",
+  author: {
+    name: "Your Name",
+    title: "Your Professional Title",
+    email: "your@email.com",
+    phone: "+1 (555) 123-4567",
+    location: "Your City, Country",
+  },
+  
+  // Your social media links
+  social: {
+    github: "https://github.com/yourusername",
+    linkedin: "https://linkedin.com/in/yourusername",
+    twitter: "https://x.com/yourusername",
+    // ... other social links
+  },
+  
+  // Toggle features on/off
+  features: {
+    enableAI: true,
+    enableBlog: true,
+    enableContact: true,
+    // ... other feature toggles
+  }
+};</div>
+
+            <div class="info">
+                <strong>💡 Pro Tip:</strong> You can disable any section you don't need by setting the corresponding feature flag to <code>false</code>.
+            </div>
+
+            <h2>Content Customization</h2>
+
+            <p>All content is stored in JSON files in the <code>data/</code> directory. Here's what each file contains:</p>
+
+            <div class="file-tree">data/
+├── about.json          # Personal information and bio
+├── banner.json         # Hero section content
+├── contact.json        # Contact information and form
+├── education.json      # Education history
+├── experiences.json    # Work experience
+├── footer.json         # Footer content
+├── header.json         # Navigation menu
+├── hobbies.json       # Personal interests
+├── projects.json      # Portfolio projects
+├── services.json      # Services offered
+├── skills.json        # Technical skills
+└── testimonials.json  # Client testimonials</div>
+
+            <h3>Personal Information (data/about.json)</h3>
+            <div class="code">{
+  "name": "Your Name",
+  "title": "About Me",
+  "subtitle": "Your Professional Title",
+  "highlights": [
+    "Your Key Achievement 1",
+    "Your Key Achievement 2",
+    "Your Experience Level",
+    "Your Unique Value Proposition"
+  ],
+  "description": [
+    "Your professional bio paragraph 1...",
+    "Your professional bio paragraph 2..."
+  ],
+  "traits": [
+    "🎯 Your Trait 1",
+    "💡 Your Trait 2",
+    "🧩 Your Trait 3"
+  ],
+  "image": {
+    "src": "/your-profile-image.jpg",
+    "alt": "Your Name"
+  }
+}</div>
+
+            <h3>Projects (data/projects.json)</h3>
+            <p>Add your portfolio projects here:</p>
+            <div class="code">{
+  "title": "My Projects",
+  "subtitle": "Showcase of my recent work",
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project Name",
+      "description": "Brief project description",
+      "longDescription": "Detailed project description",
+      "image": "/project-image.jpg",
+      "technologies": ["React", "Next.js", "TypeScript"],
+      "link": "https://project-url.com",
+      "github": "https://github.com/user/repo",
+      "category": "Web Development",
+      "status": "live",
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3"
+      ]
+    }
+  ]
+}</div>
+
+            <h3>Skills (data/skills.json)</h3>
+            <p>Organize your skills by categories:</p>
+            <div class="code">{
+  "title": "Skills",
+  "subtitle": "Technologies I use",
+  "groups": [
+    {
+      "title": "Frontend",
+      "skills": [
+        {
+          "name": "React",
+          "level": 90,
+          "icon": "SiReact"
+        },
+        {
+          "name": "TypeScript",
+          "level": 85,
+          "icon": "SiTypescript"
+        }
+      ]
+    }
+  ]
+}</div>
+
+            <h2>Visual Customization</h2>
+
+            <h3>Colors and Styling</h3>
+            <p>The template uses Tailwind CSS for styling. You can customize colors in several ways:</p>
+
+            <div class="code">// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          500: '#3b82f6',
+          900: '#1e3a8a',
+        },
+        secondary: {
+          50: '#f8fafc',
+          500: '#64748b',
+          900: '#0f172a',
+        }
+      }
+    }
+  }
+}</div>
+
+            <h3>Fonts</h3>
+            <p>Change fonts by updating the font imports in <code>app/layout.tsx</code>:</p>
+
+            <div class="code">import { Inter, Roboto } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({ 
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'] 
+})</div>
+
+            <h3>Images</h3>
+            <p>Replace placeholder images in the <code>public/</code> directory:</p>
+
+            <ul>
+                <li><code>/profile.webp</code> - Main profile image</li>
+                <li><code>/profile2.webp</code> - Secondary profile image</li>
+                <li><code>/resume.pdf</code> - Your resume file</li>
+                <li><code>/og-image.jpg</code> - Social media preview image</li>
+            </ul>
+
+            <div class="warning">
+                <strong>⚠️ Image Requirements:</strong>
+                <ul>
+                    <li>Profile images: 400x400px minimum, square aspect ratio</li>
+                    <li>Project images: 600x400px minimum, 3:2 aspect ratio</li>
+                    <li>OG image: 1200x630px for social media previews</li>
+                </ul>
+            </div>
+
+            <h2>Feature Configuration</h2>
+
+            <h3>Contact Form Setup</h3>
+            <p>To enable the contact form, you need to configure EmailJS:</p>
+
+            <ol>
+                <li>Create an account at <a href="https://emailjs.com" target="_blank">EmailJS</a></li>
+                <li>Create a service and template</li>
+                <li>Add your credentials to <code>.env.local</code>:</li>
+            </ol>
+
+            <div class="code">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
+
+            <h3>AI Chat Widget Setup</h3>
+            <p>To enable the AI chat widget:</p>
+
+            <ol>
+                <li>Get a Google Generative AI API key from <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+                <li>Add it to your <code>.env.local</code> file:</li>
+            </ol>
+
+            <div class="code">NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key</div>
+
+            <h3>Blog Integration</h3>
+            <p>The template supports Dev.to blog integration. To customize:</p>
+
+            <ol>
+                <li>Update your Dev.to username in the blog context</li>
+                <li>Or disable the blog by setting <code>enableBlog: false</code> in site config</li>
+            </ol>
+
+            <h2>SEO Customization</h2>
+
+            <h3>Meta Tags</h3>
+            <p>Update SEO settings in <code>config/site.config.ts</code>:</p>
+
+            <div class="code">seo: {
+  keywords: [
+    "your keyword 1",
+    "your keyword 2",
+    "your profession",
+    "your location"
+  ],
+  ogImage: "/your-og-image.jpg",
+  twitterCard: "summary_large_image",
+}</div>
+
+            <h3>Sitemap</h3>
+            <p>The sitemap is automatically generated. Update the configuration in <code>next-sitemap.config.js</code>:</p>
+
+            <div class="code">module.exports = {
+  siteUrl: 'https://yourdomain.com',
+  generateRobotsTxt: true,
+  changefreq: 'daily',
+  priority: 0.7,
+}</div>
+
+            <h2>Advanced Customization</h2>
+
+            <h3>Adding New Sections</h3>
+            <p>To add a new section to your portfolio:</p>
+
+            <ol>
+                <li>Create a new component in <code>components/your-section/</code></li>
+                <li>Create corresponding data file in <code>data/your-section.json</code></li>
+                <li>Import and add to your page layout</li>
+                <li>Update the navigation if needed</li>
+            </ol>
+
+            <h3>Custom Animations</h3>
+            <p>The template uses CSS transitions and transforms. You can add custom animations:</p>
+
+            <div class="code">// Example custom animation
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}</div>
+
+            <h2>Testing Your Changes</h2>
+
+            <p>After making changes, always test your portfolio:</p>
+
+            <ol>
+                <li>Run <code>npm run dev</code> to check in development</li>
+                <li>Test responsive design on different screen sizes</li>
+                <li>Check dark/light mode switching</li>
+                <li>Verify all links and forms work correctly</li>
+                <li>Run <code>npm run build</code> to check for build errors</li>
+            </ol>
+
+            <div class="success">
+                <strong>✅ Tip:</strong> Use browser developer tools to test responsiveness and performance. The template is optimized for 95+ Lighthouse scores.
+            </div>
+
+            <h2>Need More Help?</h2>
+
+            <p>If you need assistance with customization:</p>
+
+            <ul>
+                <li>Check the <a href="troubleshooting.html">Troubleshooting Guide</a> for common issues</li>
+                <li>Review the <a href="features.html">Features Overview</a> for detailed feature explanations</li>
+                <li>Contact support through CodeCanyon comments</li>
+            </ul>
+
+            <div class="info">
+                <strong>💡 Remember:</strong> Always backup your customizations before making major changes. Consider using Git for version control.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

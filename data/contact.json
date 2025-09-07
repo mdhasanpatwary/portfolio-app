@@ -1,10 +1,10 @@
 {
-  "name": "MD Hasan Patwary",
+  "name": "John Doe",
   "title": "Get In Touch",
   "subtitle": "Drop a message and I'll get back to you via email.",
   "email": "patwary.dev@gmail.com",
-  "phone": "+8801783721411",
-  "location": "Dhaka, Bangladesh",
+  "phone": "+1 (555) 123-4567",
+  "location": "New York, USA",
   "summary": "I'm always open to meaningful conversations—whether you're looking to collaborate, have a project in mind, or just want to connect. Feel free to reach out anytime.",
   "availability": "Available for freelance & collaboration",
   "formLabels": {
@@ -19,7 +19,7 @@
   },
   "placeholders": {
     "name": "Your name",
-    "email": "patwary.dev@gmail.com",
+    "email": "john@example.com",
     "subject": "What's this about?",
     "message": "Tell me about your project or idea..."
   },
@@ -36,62 +36,62 @@
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/mdhasanpatwary/",
+      "url": "https://www.linkedin.com/in/johndoe/",
       "icon": "FaLinkedin"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/mdhasanpatwary",
+      "url": "https://github.com/johndoe",
       "icon": "FaGithub"
     },
     {
       "name": "StackOverflow",
-      "url": "https://stackoverflow.com/users/11076109/patwary",
+      "url": "https://stackoverflow.com/users/johndoe",
       "icon": "FaStackOverflow"
     },
     {
       "name": "Facebook",
-      "url": "https://www.facebook.com/mdhasanpatwaryweb",
+      "url": "https://www.facebook.com/johndoe",
       "icon": "FaFacebook"
     },
     {
       "name": "Dev.to",
-      "url": "https://dev.to/mdhassanpatwary",
+      "url": "https://dev.to/johndoe",
       "icon": "SiDevdotto"
     },
     {
       "name": "daily.dev",
-      "url": "https://app.daily.dev/mdhassanpatwary",
+      "url": "https://app.daily.dev/johndoe",
       "icon": "SiDailydotdev"
     },
     {
       "name": "CodePen",
-      "url": "https://codepen.io/MD-Hasan-Patwary",
+      "url": "https://codepen.io/johndoe",
       "icon": "SiCodepen"
     },
     {
       "name": "Upwork",
-      "url": "https://www.upwork.com/freelancers/~01edc329725caf7992",
+      "url": "https://www.upwork.com/freelancers/johndoe",
       "icon": "SiUpwork"
     },
     {
       "name": "YouTube",
-      "url": "https://www.youtube.com/@mdhasanpatwary7711",
+      "url": "https://www.youtube.com/@johndoe",
       "icon": "FaYoutube"
     },
     {
       "name": "X",
-      "url": "https://x.com/md_hasanpatwary",
+      "url": "https://x.com/johndoe",
       "icon": "FaXTwitter"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/mdhasanpatwaryweb/",
+      "url": "https://www.instagram.com/johndoe/",
       "icon": "FaInstagram"
     },
     {
       "name": "Threads",
-      "url": "https://www.threads.com/@mdhasanpatwaryweb",
+      "url": "https://www.threads.com/@johndoe",
       "icon": "SiThreads"
     }
   ]

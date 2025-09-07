@@ -20,7 +20,6 @@ const fullData = {
   contact: portfolio.contact,
   header: portfolio.header,
   footer: portfolio.footer,
-  cssTips: portfolio.cssTips,
   faqs: portfolio.faqs,
 } as const;
 
@@ -48,8 +47,6 @@ function buildContextForMessage(message: string, history: ChatTurn[] = []) {
     include.funFacts = fullData.funFacts;
   }
   if (/(faq|question)/i.test(combined)) include.faqs = fullData.faqs;
-  // Include CSS tips if explicitly mentioned OR if recent history referenced tips and user is asking follow-ups like "share one" or "give me one"
-  if (/(css\s*tips?|css3|share\s+one|give\s+one|another\s+one|example)/i.test(combined)) include.cssTips = fullData.cssTips;
 
   return JSON.stringify(include);
 }
@@ -237,7 +234,10 @@ export async function POST(req: NextRequest) {
           controller.close();
         } catch (e) {
           // On error, return fallback
-          console.error('[Portfolio AI] Streaming error', e);
+          if (process.env.NODE_ENV === 'development') {
+            console.error('[Portfolio AI] Streaming error', e);
+          }
+          // TODO: Add error reporting service integration
           controller.enqueue(encoder.encode(fallbackByLang(userLang)));
           controller.close();
         }
@@ -253,7 +253,10 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (err) {
-    console.error('Portfolio AI error:', err);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Portfolio AI error:', err);
+    }
+    // TODO: Add error reporting service integration
     return NextResponse.json({
       error: 'Something went wrong while getting the answer.',
     }, { status: 500 });

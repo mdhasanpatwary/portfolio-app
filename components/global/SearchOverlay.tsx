@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FaSearch, FaTimes } from "react-icons/fa";
-import { projects as projectsData, cssTips as cssTipsData } from "@/data";
+import { projects as projectsData } from "@/data";
 import { useRouter } from "next/navigation";
 
 type Project = {
@@ -11,12 +11,6 @@ type Project = {
   description: string;
   link?: string;
   demo?: string;
-};
-
-type Tip = {
-  id?: number | undefined;
-  title?: string | undefined;
-  description?: string | undefined;
 };
 
 export default function SearchOverlay({ onClose }: { onClose: () => void }) {
@@ -31,16 +25,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
     () => (projectsData.items as unknown as Project[]) || [],
     []
   );
-  // cssTipsData is an array in data/css-tips.json, not an object with items
 
-  const tips: Tip[] = useMemo(() => {
-    if (!Array.isArray(cssTipsData)) return [];
-    return (cssTipsData as Array<{ id?: number; title?: string; description?: string }>).map((t) => ({
-      id: t.id,
-      title: t.title,
-      description: t.description,
-    }));
-  }, []);
 
   const q = query.toLowerCase();
 
@@ -73,20 +58,9 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
     [projects, q]
   );
 
-  const tipHits = useMemo(
-    () =>
-      q
-        ? tips.filter(
-            (t) =>
-              (t.title || "").toLowerCase().includes(q) ||
-              (t.description || "").toLowerCase().includes(q)
-          )
-        : [],
-    [tips, q]
-  );
 
   // Derive active option id for ARIA combobox after results are computed
-  const resultsCount = projectHits.length + tipHits.length;
+  const resultsCount = projectHits.length;
   const activeOptionId = resultsCount > 0 ? `search-opt-${activeIndex}` : undefined;
 
   useEffect(() => {
@@ -97,33 +71,21 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        setActiveIndex((i) => Math.min(i + 1, projectHits.length + tipHits.length - 1));
+        setActiveIndex((i) => Math.min(i + 1, projectHits.length - 1));
       }
       if (e.key === "ArrowUp") {
         e.preventDefault();
         setActiveIndex((i) => Math.max(i - 1, 0));
       }
       if (e.key === "Enter") {
-        const items: Array<
-          | { type: "project"; href?: string | undefined; title: string }
-          | { type: "tip"; tip: Tip }
-        > = [
+        const items: Array<{ type: "project"; href?: string | undefined; title: string }> = [
           ...projectHits.map((p) => ({ type: "project" as const, href: p.link || p.demo, title: p.title })),
-          ...tipHits.map((t) => ({ type: "tip" as const, tip: t })),
         ];
         const item = items[activeIndex];
         if (!item) return;
         if (item.type === "project" && item.href) {
           window.open(item.href, "_blank", "noopener,noreferrer");
           return;
-        }
-        if (item.type === "tip" && item.tip) {
-          const all = tips;
-          const idx = all.findIndex((x) => x.title === item.tip.title);
-          const page = idx >= 0 ? Math.floor(idx / 6) + 1 : 1; // 6 per page
-          const tipId = item.tip.id ?? undefined;
-          onClose();
-          router.push(`/css-tips?page=${page}${tipId ? `&tipId=${tipId}` : ""}`);
         }
       }
     };
@@ -162,12 +124,12 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       const last = lastActiveRef.current as HTMLElement | null;
       last?.focus?.();
     };
-  }, [onClose, projectHits, tipHits, activeIndex, router, tips]);
+  }, [onClose, projectHits, activeIndex, router]);
 
   // Reset selection when query or results change
   useEffect(() => {
     setActiveIndex(0);
-  }, [q, projectHits.length, tipHits.length]);
+  }, [q, projectHits.length]);
 
   return (
     <div
@@ -190,7 +152,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
               ref={inputRef}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search projects and CSS tips... (Press Esc to close)"
+              placeholder="Search projects... (Press Esc to close)"
               className="w-full px-10 py-4 sm:py-5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
               aria-label="Search"
               role="combobox"
@@ -218,7 +180,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
             id="search-results"
             role="listbox"
             aria-label="Search results"
-            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 overflow-auto"
+            className="mt-8 overflow-auto"
           >
             <div>
               <h2 className="text-lg font-semibold mb-3">Projects</h2>
@@ -247,43 +209,10 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                 <p className="text-gray-600 dark:text-gray-300">No matching projects.</p>
               )}
             </div>
-            <div>
-              <h2 className="text-lg font-semibold mb-3">CSS Tips</h2>
-              {tipHits.length ? (
-                <ul className="space-y-1">
-                  {tipHits.map((t, i) => {
-                    const globalIndex = projectHits.length + i;
-                    const isActive = activeIndex === globalIndex;
-                    return (
-                      <li key={i} id={`search-opt-${globalIndex}`} role="option" aria-selected={isActive}>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            const all = tips;
-                            const idx = all.findIndex((x) => x.title === t.title);
-                            const page = idx >= 0 ? Math.floor(idx / 6) + 1 : 1; // 6 per page
-                            const tipId = t.id ?? undefined;
-                            onClose();
-                            router.push(`/css-tips?page=${page}${tipId ? `&tipId=${tipId}` : ""}`);
-                          }}
-                          className={`w-full text-left block rounded px-2 py-2 ${isActive ? "bg-primary-50 dark:bg-primary-900/40" : "hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"}`}
-                          tabIndex={-1}
-                        >
-                          <div className="text-gray-800 dark:text-gray-200 font-medium">{highlightMatch(t.title || "")}</div>
-                          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">{highlightMatch(t.description || "")}</p>
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <p className="text-gray-600 dark:text-gray-300">No matching CSS tips.</p>
-              )}
-            </div>
           </div>
         ) : (
           <div className="mt-10 text-gray-600 dark:text-gray-300">
-            Type to search projects and tips. Try shortcuts
+            Type to search projects. Try shortcuts
             <span className="ml-2 hidden sm:inline-flex gap-1 align-middle text-xs">
               <kbd className="px-2 py-0.5 rounded border">⌘</kbd>
               <kbd className="px-2 py-0.5 rounded border">K</kbd>

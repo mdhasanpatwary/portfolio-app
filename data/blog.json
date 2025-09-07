@@ -1,0 +1,166 @@
+{
+  "title": "Latest Blog Posts",
+  "subtitle": "Explore articles, tutorials, and insights on web development, programming, and technology.",
+  "posts": [
+    {
+      "id": 1,
+      "title": "Building Modern Web Applications with Next.js 15",
+      "description": "Explore the latest features in Next.js 15 including App Router, Server Components, and performance improvements. Learn how to build scalable applications with the newest framework updates.",
+      "published_at": "2025-01-15T10:00:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/1",
+      "slug": "building-modern-web-applications-nextjs-15",
+      "tag_list": ["nextjs", "react", "javascript", "webdev"],
+      "reading_time_minutes": 8,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Next.js 15 introduces revolutionary changes that make building modern web applications more efficient than ever before..."
+    },
+    {
+      "id": 2,
+      "title": "TypeScript Best Practices for Large-Scale Applications",
+      "description": "Discover essential TypeScript patterns and practices that help maintain clean, scalable code in enterprise applications. From advanced types to project organization strategies.",
+      "published_at": "2025-01-12T14:30:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/2",
+      "slug": "typescript-best-practices-large-scale-applications",
+      "tag_list": ["typescript", "javascript", "programming", "bestpractices"],
+      "reading_time_minutes": 12,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "As applications grow in complexity, TypeScript becomes an invaluable tool for maintaining code quality..."
+    },
+    {
+      "id": 3,
+      "title": "Responsive Design Patterns with Tailwind CSS",
+      "description": "Master responsive design with Tailwind CSS utility-first approach. Learn how to create beautiful, adaptive layouts that work seamlessly across all devices and screen sizes.",
+      "published_at": "2025-01-10T09:15:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/3",
+      "slug": "responsive-design-patterns-tailwind-css",
+      "tag_list": ["tailwindcss", "css", "responsive", "design"],
+      "reading_time_minutes": 6,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Responsive design is no longer optional in today's multi-device world. Tailwind CSS makes it easier than ever..."
+    },
+    {
+      "id": 4,
+      "title": "API Design Principles for Modern Applications",
+      "description": "Learn the fundamental principles of designing robust, scalable APIs. From RESTful conventions to GraphQL considerations, discover best practices for API architecture.",
+      "published_at": "2025-01-08T16:45:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/4",
+      "slug": "api-design-principles-modern-applications",
+      "tag_list": ["api", "backend", "design", "architecture"],
+      "reading_time_minutes": 10,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Well-designed APIs are the backbone of modern applications. They enable seamless communication between different systems..."
+    },
+    {
+      "id": 5,
+      "title": "Performance Optimization Techniques for React Applications",
+      "description": "Boost your React app's performance with proven optimization techniques. From code splitting to memoization, learn how to create lightning-fast user experiences.",
+      "published_at": "2025-01-05T11:20:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/5",
+      "slug": "performance-optimization-techniques-react-applications",
+      "tag_list": ["react", "performance", "optimization", "javascript"],
+      "reading_time_minutes": 15,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Performance is crucial for user experience. React provides several tools and patterns to optimize your applications..."
+    },
+    {
+      "id": 6,
+      "title": "Database Design Patterns for Modern Web Apps",
+      "description": "Explore database design patterns that scale with your application. From normalization to NoSQL considerations, learn how to structure data for optimal performance.",
+      "published_at": "2025-01-03T13:10:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/6",
+      "slug": "database-design-patterns-modern-web-apps",
+      "tag_list": ["database", "sql", "nosql", "architecture"],
+      "reading_time_minutes": 11,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "The foundation of any great application is a well-designed database. Proper data modeling can make or break your project..."
+    },
+    {
+      "id": 7,
+      "title": "Security Best Practices for Web Development",
+      "description": "Protect your applications with essential security practices. From authentication strategies to data protection, learn how to build secure, trustworthy web applications.",
+      "published_at": "2025-01-01T08:30:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/7",
+      "slug": "security-best-practices-web-development",
+      "tag_list": ["security", "webdev", "authentication", "encryption"],
+      "reading_time_minutes": 13,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Security should be built into every aspect of web development from the ground up. Here are the essential practices..."
+    },
+    {
+      "id": 8,
+      "title": "Progressive Web Apps: The Future of Mobile Development",
+      "description": "Discover how Progressive Web Apps bridge the gap between web and native applications. Learn PWA implementation strategies and best practices for modern mobile experiences.",
+      "published_at": "2024-12-28T15:45:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/8",
+      "slug": "progressive-web-apps-future-mobile-development",
+      "tag_list": ["pwa", "mobile", "javascript", "webdev"],
+      "reading_time_minutes": 9,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Progressive Web Apps represent the evolution of web applications, offering native-like experiences through web technologies..."
+    },
+    {
+      "id": 9,
+      "title": "Microservices Architecture: When and How to Implement",
+      "description": "Understand when microservices make sense for your project and how to implement them effectively. Explore the benefits, challenges, and best practices of distributed systems.",
+      "published_at": "2024-12-25T12:00:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/9",
+      "slug": "microservices-architecture-when-how-implement",
+      "tag_list": ["microservices", "architecture", "backend", "scaling"],
+      "reading_time_minutes": 14,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "Microservices architecture has gained popularity, but it's not always the right choice. Here's when and how to implement it..."
+    },
+    {
+      "id": 10,
+      "title": "CSS Grid vs Flexbox: Choosing the Right Layout System",
+      "description": "Master modern CSS layout with a comprehensive comparison of Grid and Flexbox. Learn when to use each system and how to combine them for powerful, flexible layouts.",
+      "published_at": "2024-12-22T10:30:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+      "url": "/blog/10",
+      "slug": "css-grid-vs-flexbox-choosing-right-layout-system",
+      "tag_list": ["css", "grid", "flexbox", "layout"],
+      "reading_time_minutes": 7,
+      "user": {
+        "name": "John Doe",
+        "username": "johndoe"
+      },
+      "content": "CSS Grid and Flexbox are powerful layout systems that solve different problems. Understanding when to use each is crucial..."
+    }
+  ]
+}

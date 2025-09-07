@@ -10,6 +10,7 @@ import { faqs } from "@/data";
 import type { FAQsData } from "@/types/data";
 import FunFact from "@/components/funfact/Funfact";
 import Services from "@/components/services/Services";
+import blogData from "@/data/blog.json";
 import {
   projects,
   banner,
@@ -23,12 +24,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "MD Hasan Patwary | Front-End Developer Portfolio - React, Next.js, TypeScript",
+    "John Doe | Full-Stack Developer Portfolio - React, Next.js, TypeScript",
   description:
-    "MD Hasan Patwary - Experienced Front-End Developer with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies. View projects, skills, and professional experience.",
+    "John Doe - Experienced Full-Stack Developer with 5+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies. View projects, skills, and professional experience.",
   keywords: [
-    "MD Hasan Patwary",
-    "Front-End Developer",
+    "John Doe",
+    "Full-Stack Developer",
     "React Developer",
     "Next.js Developer",
     "TypeScript",
@@ -37,21 +38,18 @@ export const metadata: Metadata = {
     "UI/UX Engineer",
   ],
   openGraph: {
-    title: "MD Hasan Patwary | Front-End Developer Portfolio",
+    title: "John Doe | Full-Stack Developer Portfolio",
     description:
-      "Experienced Front-End Developer with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies.",
-    url: "https://patwary.vercel.app",
+      "Experienced Full-Stack Developer with 5+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies.",
+    url: "https://yourdomain.com",
   },
-  alternates: { canonical: "https://patwary.vercel.app" },
+  alternates: { canonical: "https://yourdomain.com" },
 };
 
-async function fetchDevToPosts(): Promise<DevToPost[]> {
+async function getBlogPosts(): Promise<DevToPost[]> {
   try {
-    const res = await fetch("https://dev.to/api/articles?username=mdhassanpatwary", {
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return [];
-    return await res.json();
+    // Use local blog data instead of external API
+    return blogData.posts;
   } catch {
     return [];
   }
@@ -74,7 +72,7 @@ export default async function Home() {
       ].some((k) => (i.question + i.answer).toLowerCase().includes(k))
     ),
   };
-  const posts = await fetchDevToPosts();
+  const posts = await getBlogPosts();
   return (
     <div className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />

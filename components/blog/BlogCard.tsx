@@ -13,6 +13,7 @@ export interface DevToPost {
   slug: string; // Added slug to the interface
   tag_list?: string[] | string;
   reading_time_minutes?: number;
+  content?: string; // Changed from body_markdown to content
   user: {
     name: string;
     username: string;

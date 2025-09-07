@@ -2,6 +2,7 @@
 
 import React, { Component, ReactNode } from 'react';
 import { FaExclamationTriangle, FaRedo } from 'react-icons/fa';
+import { handleErrorBoundary } from '@/utils/errorLogger';
 
 interface Props {
   children: ReactNode;
@@ -24,7 +25,8 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
-    console.error('Error caught by boundary:', error, errorInfo);
+    // Use centralized error logging
+    handleErrorBoundary(error, errorInfo, 'ErrorBoundary');
   }
 
   handleRetry = () => {
