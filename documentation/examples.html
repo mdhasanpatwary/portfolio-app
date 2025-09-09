@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples - Modern Portfolio Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: #f7fafc;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h3 {
+            color: #4a5568;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .example {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .example-header {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+        }
+        
+        .example-content {
+            padding: 1.5rem;
+        }
+        
+        .step {
+            background: #e6fffa;
+            border-left: 4px solid #4fd1c7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .step h4 {
+            color: #234e52;
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning {
+            background: #fef5e7;
+            border: 1px solid #f6ad55;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .warning strong {
+            color: #c05621;
+        }
+        
+        .success {
+            background: #c6f6d5;
+            border: 1px solid #48bb78;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .success strong {
+            color: #22543d;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 1rem;
+        }
+        
+        .tab {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-bottom: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-radius: 6px 6px 0 0;
+            margin-right: 0.25rem;
+        }
+        
+        .tab.active {
+            background: white;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💡 Examples & Tutorials</h1>
+            <p>Step-by-step guides for customizing your Modern Portfolio Template</p>
+        </div>
+
+        <div class="nav">
+            <a href="index.html">← Back to Documentation</a>
+            <a href="installation.html">Installation</a>
+            <a href="customization.html">Customization</a>
+            <a href="file-structure.html">File Structure</a>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Quick Start Examples</h2>
+            <p>These examples will get you up and running quickly with common customizations.</p>
+        </div>
+
+        <div class="example">
+            <div class="example-header">
+                Example 1: Personalizing Your Portfolio
+            </div>
+            <div class="example-content">
+                <p>Learn how to replace the demo content with your own information in under 10 minutes.</p>
+                
+                <div class="step">
+                    <h4>Step 1: Update Basic Information</h4>
+                    <p>Edit your name, title, and contact information:</p>
+                    <div class="code">// data/banner.json
+{
+  "name": "Your Name",
+  "title": "Your Professional Title | Technologies | Experience",
+  "summary": "Your professional summary...",
+  "image": "/your-profile-image.jpg"
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 2: Update About Section</h4>
+                    <p>Personalize your about information:</p>
+                    <div class="code">// data/about.json
+{
+  "name": "Your Name",
+  "title": "About Me",
+  "subtitle": "Your Role | Key Technologies",
+  "highlights": [
+    "Your Key Achievement 1",
+    "Your Key Achievement 2",
+    "Years of Experience",
+    "Notable Accomplishment"
+  ],
+  "description": [
+    "Your first paragraph about your background...",
+    "Your second paragraph about your goals..."
+  ]
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 3: Update Contact Information</h4>
+                    <p>Add your real contact details:</p>
+                    <div class="code">// data/contact.json
+{
+  "email": "your.email@domain.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "Your City, Country",
+  "socialLinks": [
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/yourprofile",
+      "icon": "FaLinkedin"
+    }
+    // ... other social links
+  ]
+}</div>
+                </div>
+
+                <div class="success">
+                    <strong>✅ Result:</strong> Your portfolio now shows your personal information instead of demo content!
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-header">
+                Example 2: Adding Your Projects
+            </div>
+            <div class="example-content">
+                <p>Replace the demo projects with your own portfolio pieces.</p>
+                
+                <div class="step">
+                    <h4>Step 1: Prepare Project Information</h4>
+                    <p>Gather the following for each project:</p>
+                    <ul>
+                        <li>Project title and description</li>
+                        <li>Technologies used</li>
+                        <li>Project images (recommended: 800x600px)</li>
+                        <li>Live demo and/or GitHub links</li>
+                        <li>Key features and challenges</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Step 2: Add Project to JSON</h4>
+                    <div class="code">// data/projects.json - Add to items array
+{
+  "id": "unique-project-id",
+  "title": "Your Project Name",
+  "description": "Brief project description for the grid view.",
+  "image": "/images/projects/your-project.jpg",
+  "link": "https://your-project-demo.com",
+  "category": "Web Application", // or "Mobile App", "API", etc.
+  "technologies": [
+    "React",
+    "Node.js",
+    "MongoDB"
+  ],
+  "status": "live", // or "development", "completed"
+  "longDescription": "Detailed description for the modal view...",
+  "features": [
+    "Feature 1",
+    "Feature 2",
+    "Feature 3"
+  ],
+  "challenges": [
+    "Challenge you faced",
+    "Another challenge"
+  ],
+  "solutions": [
+    "How you solved it",
+    "Another solution"
+  ],
+  "github": "https://github.com/yourusername/project",
+  "demo": "https://your-demo-url.com"
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 3: Optimize Project Images</h4>
+                    <p>For best performance, use optimized images:</p>
+                    <div class="code"># Recommended image specifications:
+- Format: WebP or JPEG
+- Dimensions: 800x600px (4:3 aspect ratio)
+- File size: Under 200KB
+- Store in public/images/ directory for local hosting</div>
+                </div>
+
+                <div class="warning">
+                    <strong>💡 Tip:</strong> Use consistent image dimensions and aspect ratios for a professional look.
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-header">
+                Example 3: Customizing the Color Scheme
+            </div>
+            <div class="example-content">
+                <p>Change the template colors to match your personal brand.</p>
+                
+                <div class="tabs">
+                    <div class="tab active" onclick="showTab('css-vars')">CSS Variables</div>
+                    <div class="tab" onclick="showTab('tailwind-config')">Tailwind Config</div>
+                    <div class="tab" onclick="showTab('component-styles')">Component Styles</div>
+                </div>
+
+                <div id="css-vars" class="tab-content active">
+                    <div class="step">
+                        <h4>Method 1: CSS Custom Properties</h4>
+                        <p>Edit the CSS variables in app/globals.css:</p>
+                        <div class="code">/* app/globals.css */
+:root {
+  /* Light theme colors */
+  --primary: #your-primary-color;
+  --secondary: #your-secondary-color;
+  --accent: #your-accent-color;
+  --background: #your-background-color;
+  --text: #your-text-color;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --primary: #your-dark-primary;
+  --secondary: #your-dark-secondary;
+  --accent: #your-dark-accent;
+  --background: #your-dark-background;
+  --text: #your-dark-text;
+}</div>
+                    </div>
+                </div>
+
+                <div id="tailwind-config" class="tab-content">
+                    <div class="step">
+                        <h4>Method 2: Tailwind Configuration</h4>
+                        <p>Extend Tailwind's color palette:</p>
+                        <div class="code">// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#your-color-50',
+          100: '#your-color-100',
+          500: '#your-color-500',
+          900: '#your-color-900',
+        },
+        brand: {
+          primary: '#your-brand-primary',
+          secondary: '#your-brand-secondary',
+        }
+      }
+    }
+  }
+}</div>
+                    </div>
+                </div>
+
+                <div id="component-styles" class="tab-content">
+                    <div class="step">
+                        <h4>Method 3: Component-Level Styling</h4>
+                        <p>Apply custom styles to specific components:</p>
+                        <div class="code">// Example: Customizing the header
+// components/header/Header.tsx
+const Header = () => {
+  return (
+    &lt;header className="bg-gradient-to-r from-purple-600 to-blue-600"&gt;
+      {/* Your custom header styles */}
+    &lt;/header&gt;
+  )
+}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-header">
+                Example 4: Setting Up Contact Form
+            </div>
+            <div class="example-content">
+                <p>Configure EmailJS to receive messages from your contact form.</p>
+                
+                <div class="step">
+                    <h4>Step 1: Create EmailJS Account</h4>
+                    <ol>
+                        <li>Go to <a href="https://emailjs.com" target="_blank">EmailJS.com</a></li>
+                        <li>Create a free account</li>
+                        <li>Add an email service (Gmail, Outlook, etc.)</li>
+                        <li>Create an email template</li>
+                    </ol>
+                </div>
+
+                <div class="step">
+                    <h4>Step 2: Configure Environment Variables</h4>
+                    <div class="code"># .env.local
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxxxxxx
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxx</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 3: Test the Contact Form</h4>
+                    <ol>
+                        <li>Start your development server: <code>npm run dev</code></li>
+                        <li>Navigate to the contact page</li>
+                        <li>Fill out and submit the form</li>
+                        <li>Check your email for the test message</li>
+                    </ol>
+                </div>
+
+                <div class="success">
+                    <strong>✅ Success:</strong> Your contact form is now fully functional!
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-header">
+                Example 5: Adding AI Chat Widget
+            </div>
+            <div class="example-content">
+                <p>Enable the AI chat widget to interact with visitors about your portfolio.</p>
+                
+                <div class="step">
+                    <h4>Step 1: Get Google AI API Key</h4>
+                    <ol>
+                        <li>Go to <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></li>
+                        <li>Create a new API key</li>
+                        <li>Copy the API key</li>
+                    </ol>
+                </div>
+
+                <div class="step">
+                    <h4>Step 2: Configure Environment Variable</h4>
+                    <div class="code"># .env.local
+NEXT_PUBLIC_GOOGLE_API_KEY=your_google_ai_api_key_here</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 3: Enable in Site Config</h4>
+                    <div class="code">// config/site.config.ts
+export const siteConfig = {
+  features: {
+    enableAI: true, // Set to true
+    // ... other features
+  },
+  ai: {
+    enableAI: true,
+    googleApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+  },
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 4: Test AI Chat</h4>
+                    <p>The AI chat widget will appear in the bottom-right corner. Test it by asking questions about your portfolio content.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-header">
+                Example 6: Creating Custom Sections
+            </div>
+            <div class="example-content">
+                <p>Add a new section to your portfolio (e.g., Certifications, Awards, etc.).</p>
+                
+                <div class="step">
+                    <h4>Step 1: Create Data File</h4>
+                    <div class="code">// data/certifications.json
+{
+  "title": "Certifications",
+  "subtitle": "Professional certifications and achievements",
+  "items": [
+    {
+      "id": "1",
+      "name": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "image": "/certifications/aws.png",
+      "credentialUrl": "https://credential-url.com"
+    }
+  ]
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 2: Create Component</h4>
+                    <div class="code">// components/certifications/Certifications.tsx
+import { certifications } from '@/data'
+
+export default function Certifications() {
+  return (
+    &lt;section className="py-16"&gt;
+      &lt;h2 className="text-3xl font-bold mb-8"&gt;{certifications.title}&lt;/h2&gt;
+      &lt;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+        {certifications.items.map((cert) =&gt; (
+          &lt;div key={cert.id} className="bg-white p-6 rounded-lg shadow"&gt;
+            &lt;h3 className="font-semibold"&gt;{cert.name}&lt;/h3&gt;
+            &lt;p className="text-gray-600"&gt;{cert.issuer}&lt;/p&gt;
+            &lt;p className="text-sm"&gt;{cert.date}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/section&gt;
+  )
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 3: Add Types</h4>
+                    <div class="code">// types/data.ts
+export interface Certification {
+  id: string
+  name: string
+  issuer: string
+  date: string
+  image?: string
+  credentialUrl?: string
+}
+
+export interface CertificationsData {
+  title: string
+  subtitle: string
+  items: Certification[]
+}</div>
+                </div>
+
+                <div class="step">
+                    <h4>Step 4: Import in Page</h4>
+                    <div class="code">// app/page.tsx or dedicated page
+import Certifications from '@/components/certifications/Certifications'
+
+export default function HomePage() {
+  return (
+    &lt;main&gt;
+      {/* Other sections */}
+      &lt;Certifications /&gt;
+    &lt;/main&gt;
+  )
+}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Design Customization Examples</h2>
+            
+            <div class="example">
+                <div class="example-header">
+                    Typography Customization
+                </div>
+                <div class="example-content">
+                    <div class="code">/* app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.heading-font {
+  font-family: 'Playfair Display', serif;
+}</div>
+                </div>
+            </div>
+
+            <div class="example">
+                <div class="example-header">
+                    Animation Customization
+                </div>
+                <div class="example-content">
+                    <div class="code">/* Custom animations in globals.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚡ Performance Optimization Examples</h2>
+            
+            <div class="warning">
+                <strong>Image Optimization:</strong> Always use next/image component for better performance
+            </div>
+
+            <div class="code">// Good: Using Next.js Image component
+import Image from 'next/image'
+
+&lt;Image
+  src="/profile.webp"
+  alt="Profile"
+  width={400}
+  height={400}
+  priority // For above-the-fold images
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,..."
+/&gt;
+
+// Avoid: Regular img tag
+&lt;img src="/profile.webp" alt="Profile" /&gt;</div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Deployment Examples</h2>
+            
+            <div class="example">
+                <div class="example-header">
+                    Vercel Deployment
+                </div>
+                <div class="example-content">
+                    <div class="step">
+                        <h4>One-Click Deployment</h4>
+                        <ol>
+                            <li>Push your code to GitHub</li>
+                            <li>Go to <a href="https://vercel.com" target="_blank">vercel.com</a></li>
+                            <li>Import your repository</li>
+                            <li>Add environment variables</li>
+                            <li>Deploy!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <div class="example-header">
+                    Static Export for Any Host
+                </div>
+                <div class="example-content">
+                    <div class="code"># Add to package.json scripts
+"export": "next build && next export"
+
+# Run static export
+npm run export
+
+# Upload the 'out' folder to any static hosting</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

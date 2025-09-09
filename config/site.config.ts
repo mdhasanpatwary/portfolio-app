@@ -43,7 +43,6 @@ export const siteConfig = {
     enableHobbies: true,
     enableFunFacts: true,
     enableDarkMode: true,
-    enablePWA: true,
   },
   
   // SEO Configuration
@@ -66,8 +65,8 @@ export const siteConfig = {
   // Analytics
   analytics: {
     googleAnalyticsId: process.env.NEXT_PUBLIC_GA_TRACKING_ID,
-    enableVercelAnalytics: true,
-    enableSpeedInsights: true,
+    enableVercelAnalytics: false,
+    enableSpeedInsights: false,
   },
   
   // Contact Form

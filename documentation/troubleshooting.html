@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Guide - Modern Portfolio Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: #f7fafc;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h3 {
+            color: #4a5568;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .issue {
+            background: #fed7d7;
+            border-left: 4px solid #f56565;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .solution {
+            background: #c6f6d5;
+            border-left: 4px solid #48bb78;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fef5e7;
+            border: 1px solid #f6ad55;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .warning strong {
+            color: #c05621;
+        }
+        
+        .info {
+            background: #bee3f8;
+            border-left: 4px solid #4299e1;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .toc {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .toc h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Troubleshooting Guide</h1>
+            <p>Solutions to common issues and problems you might encounter</p>
+        </div>
+
+        <div class="nav">
+            <a href="index.html">← Back to Documentation</a>
+            <a href="installation.html">Installation</a>
+            <a href="customization.html">Customization</a>
+            <a href="browser-support.html">Browser Support</a>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Quick Navigation</h3>
+            <ul>
+                <li><a href="#installation-issues">Installation Issues</a></li>
+                <li><a href="#build-errors">Build & Development Errors</a></li>
+                <li><a href="#deployment-problems">Deployment Problems</a></li>
+                <li><a href="#performance-issues">Performance Issues</a></li>
+                <li><a href="#contact-form">Contact Form Issues</a></li>
+                <li><a href="#ai-chat">AI Chat Problems</a></li>
+                <li><a href="#styling-issues">Styling & Theme Issues</a></li>
+                <li><a href="#mobile-issues">Mobile & Responsive Issues</a></li>
+            </ul>
+        </div>
+
+        <div class="section" id="installation-issues">
+            <h2>🚨 Installation Issues</h2>
+            
+            <h3>Node.js Version Compatibility</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Getting errors during npm install or when running development server
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Ensure you're using Node.js 18+ and npm 8+
+                <div class="code">node --version  # Should be 18.0.0 or higher
+npm --version   # Should be 8.0.0 or higher</div>
+                <p>Update Node.js if needed: <a href="https://nodejs.org/" target="_blank">https://nodejs.org/</a></p>
+            </div>
+
+            <h3>Package Installation Failures</h3>
+            <div class="issue">
+                <strong>Problem:</strong> npm install fails with dependency conflicts or network errors
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Clear cache and try alternative installation methods
+                <div class="code"># Clear npm cache
+npm cache clean --force
+
+# Delete node_modules and package-lock.json
+rm -rf node_modules package-lock.json
+
+# Try installing with legacy peer deps
+npm install --legacy-peer-deps
+
+# Alternative: Use yarn
+npm install -g yarn
+yarn install</div>
+            </div>
+
+            <h3>Permission Errors</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Permission denied errors during installation
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Fix npm permissions or use a Node version manager
+                <div class="code"># Option 1: Use npx to avoid global installs
+npx create-next-app@latest
+
+# Option 2: Use Node Version Manager (nvm)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install 18
+nvm use 18</div>
+            </div>
+        </div>
+
+        <div class="section" id="build-errors">
+            <h2>⚙️ Build & Development Errors</h2>
+            
+            <h3>TypeScript Compilation Errors</h3>
+            <div class="issue">
+                <strong>Problem:</strong> TypeScript errors preventing build or development server start
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check and fix TypeScript configuration
+                <div class="code"># Check TypeScript version
+npx tsc --version
+
+# Run type checking
+npx tsc --noEmit
+
+# Fix common type issues
+npm run lint</div>
+                <p>Common fixes:</p>
+                <ul>
+                    <li>Add missing type definitions: <code>npm install @types/node @types/react @types/react-dom</code></li>
+                    <li>Check that all imports have proper file extensions in imports</li>
+                    <li>Verify environment variable types match your .env file</li>
+                </ul>
+            </div>
+
+            <h3>Development Server Won't Start</h3>
+            <div class="issue">
+                <strong>Problem:</strong> <code>npm run dev</code> fails or server doesn't start
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check port availability and configuration
+                <div class="code"># Check if port 3000 is in use
+lsof -ti:3000
+
+# Kill process using port 3000
+kill -9 $(lsof -ti:3000)
+
+# Start with different port
+npm run dev -- -p 3001
+
+# Check for syntax errors
+npm run lint</div>
+            </div>
+
+            <h3>Build Process Fails</h3>
+            <div class="issue">
+                <strong>Problem:</strong> <code>npm run build</code> fails with various errors
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Common build issue fixes
+                <div class="code"># Clear Next.js cache
+rm -rf .next
+
+# Check for unused imports
+npm run lint
+
+# Build with verbose output
+npm run build -- --debug
+
+# Check for missing environment variables
+cp .env.example .env.local</div>
+            </div>
+        </div>
+
+        <div class="section" id="deployment-problems">
+            <h2>🌐 Deployment Problems</h2>
+            
+            <h3>Vercel Deployment Issues</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Deployment fails on Vercel with build or runtime errors
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Configure Vercel settings and environment variables
+                <div class="code"># Check vercel.json configuration
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install"
+}</div>
+                <p>Common issues:</p>
+                <ul>
+                    <li>Add all environment variables in Vercel dashboard</li>
+                    <li>Check that build output size is under Vercel limits</li>
+                    <li>Ensure all dependencies are in package.json</li>
+                </ul>
+            </div>
+
+            <h3>Static Export Issues</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Static export fails or pages don't work correctly
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Configure Next.js for static export
+                <div class="code">// next.config.ts
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+}
+
+export default nextConfig</div>
+            </div>
+
+            <h3>Environment Variables Not Working</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Environment variables are undefined in production
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Properly configure environment variables
+                <div class="info">
+                    <strong>Remember:</strong> Only variables prefixed with <code>NEXT_PUBLIC_</code> are available in the browser.
+                </div>
+                <div class="code"># .env.local (for development)
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+
+# Add the same variables in your hosting platform's dashboard</div>
+            </div>
+        </div>
+
+        <div class="section" id="performance-issues">
+            <h2>⚡ Performance Issues</h2>
+            
+            <h3>Slow Page Load Times</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Pages load slowly or Lighthouse scores are low
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Optimize images and bundles
+                <div class="code"># Analyze bundle size
+npm install -g @next/bundle-analyzer
+ANALYZE=true npm run build
+
+# Optimize images
+# Use next/image component for all images
+# Compress images before adding to public folder</div>
+                <p>Performance tips:</p>
+                <ul>
+                    <li>Use WebP format for images</li>
+                    <li>Enable static optimization in next.config.ts</li>
+                    <li>Implement lazy loading for heavy components</li>
+                    <li>Remove unused dependencies</li>
+                </ul>
+            </div>
+
+            <h3>Large Bundle Size</h3>
+            <div class="issue">
+                <strong>Problem:</strong> JavaScript bundle is too large
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Implement code splitting and tree shaking
+                <div class="code">// Use dynamic imports for heavy components
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <LoadingSpinner />
+})
+
+// Check what's in your bundle
+npm run build
+npx @next/bundle-analyzer</div>
+            </div>
+        </div>
+
+        <div class="section" id="contact-form">
+            <h2>📧 Contact Form Issues</h2>
+            
+            <h3>EmailJS Not Working</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Contact form submissions fail or don't send emails
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Verify EmailJS configuration
+                <div class="code"># Check environment variables
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key</div>
+                <p>Troubleshooting steps:</p>
+                <ol>
+                    <li>Verify EmailJS account is active</li>
+                    <li>Check service ID matches your EmailJS service</li>
+                    <li>Ensure template ID exists and is published</li>
+                    <li>Test with EmailJS dashboard first</li>
+                    <li>Check browser console for errors</li>
+                </ol>
+            </div>
+
+            <h3>Form Validation Issues</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Form validation not working correctly
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check validation rules and error handling
+                <div class="code">// Check validation patterns in contact.json
+{
+  "validation": {
+    "nameRequired": "Name is required.",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Invalid email format.",
+    "messageRequired": "Message must be at least 10 characters."
+  }
+}</div>
+            </div>
+        </div>
+
+        <div class="section" id="ai-chat">
+            <h2>🤖 AI Chat Problems</h2>
+            
+            <h3>AI Chat Not Responding</h3>
+            <div class="issue">
+                <strong>Problem:</strong> AI chat widget doesn't respond or shows errors
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Verify Google AI configuration
+                <div class="code"># Check Google AI API key
+NEXT_PUBLIC_GOOGLE_API_KEY=your_google_ai_api_key
+
+# Test API key validity
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://generativelanguage.googleapis.com/v1/models</div>
+                <p>Common issues:</p>
+                <ul>
+                    <li>API key not set or incorrect</li>
+                    <li>API quotas exceeded</li>
+                    <li>API key doesn't have proper permissions</li>
+                    <li>Network connectivity issues</li>
+                </ul>
+            </div>
+
+            <h3>Rate Limiting Issues</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Getting rate limit errors from AI chat
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Adjust rate limiting configuration
+                <div class="code">// In app/api/portfolio-ai/route.ts
+const RATE_LIMIT_MAX = 10; // Requests per minute
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute</div>
+            </div>
+        </div>
+
+        <div class="section" id="styling-issues">
+            <h2>🎨 Styling & Theme Issues</h2>
+            
+            <h3>Dark Mode Not Working</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Dark mode toggle doesn't work or styles are incorrect
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check theme context and CSS variables
+                <div class="code">// Verify ThemeContext is properly wrapped
+// Check if localStorage is available
+// Ensure CSS variables are defined for both themes</div>
+                <p>Check these files:</p>
+                <ul>
+                    <li><code>context/ThemeContext.tsx</code> - Theme state management</li>
+                    <li><code>app/globals.css</code> - CSS variables for themes</li>
+                    <li><code>components/global/ThemeToggle.tsx</code> - Toggle component</li>
+                </ul>
+            </div>
+
+            <h3>Tailwind CSS Not Working</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Tailwind CSS classes not applying or not working
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check Tailwind configuration and build process
+                <div class="code"># Verify Tailwind config
+// tailwind.config.js
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  // ... rest of config
+}</div>
+            </div>
+
+            <h3>Custom CSS Not Loading</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Custom CSS styles not applying
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check CSS import order and specificity
+                <div class="code">// In app/layout.tsx, ensure correct import order
+import './globals.css'  // Should be imported in layout</div>
+            </div>
+        </div>
+
+        <div class="section" id="mobile-issues">
+            <h2>📱 Mobile & Responsive Issues</h2>
+            
+            <h3>Mobile Layout Problems</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Layout breaks on mobile devices or specific screen sizes
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Check responsive design implementation
+                <div class="code">// Use Chrome DevTools to test different screen sizes
+// Check for:
+// - Overflow issues (overflow-x: hidden)
+// - Fixed widths that don't scale
+// - Text that's too small on mobile
+// - Touch targets that are too small (min 44px)</div>
+            </div>
+
+            <h3>Touch/Click Issues</h3>
+            <div class="issue">
+                <strong>Problem:</strong> Buttons or links not working properly on touch devices
+            </div>
+            <div class="solution">
+                <strong>Solution:</strong> Ensure proper touch target sizing and event handling
+                <div class="code">// Ensure minimum touch target size
+.button, .link {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🆘 Getting Additional Help</h2>
+            <p>If you're still experiencing issues after trying these solutions:</p>
+            
+            <div class="info">
+                <h3>Before asking for help, please provide:</h3>
+                <ul>
+                    <li>Your operating system and version</li>
+                    <li>Node.js and npm versions</li>
+                    <li>Exact error messages and stack traces</li>
+                    <li>Steps to reproduce the issue</li>
+                    <li>Any modifications you've made to the template</li>
+                </ul>
+            </div>
+
+            <h3>Support Channels</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin: 0.5rem 0;">💬 CodeCanyon Comments - For template-specific issues</li>
+                <li style="margin: 0.5rem 0;">📧 Direct Support - For urgent or complex problems</li>
+                <li style="margin: 0.5rem 0;">📚 Documentation - Check all documentation pages first</li>
+                <li style="margin: 0.5rem 0;">🔍 Search Issues - Look for similar problems online</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Note:</strong> Support response time is typically 24-48 hours. Please be patient and provide as much detail as possible when reporting issues.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

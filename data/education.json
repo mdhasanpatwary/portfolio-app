@@ -1,30 +1,42 @@
 {
   "title": "Education",
-  "subtitle": "My academic journey and qualifications that have shaped my professional path.",
+  "subtitle": "Academic foundation and continuous learning that shapes my technical expertise.",
   "items": [
     {
       "id": "1",
-      "period": "2018",
-      "degree": "Web Design (SEIP)",
-      "institution": "Feni Computer Institute, Bangladesh"
+      "period": "2018 – 2022",
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University of Technology"
     },
     {
-      "id": "0",
-      "period": "2013–2017",
-      "degree": "BBA (Honours) in Accounting",
-      "institution": "Alhaj Abdul Hoque Chowdhury Degree College"
+      "id": "2",
+      "period": "2020",
+      "degree": "Full-Stack Web Development Bootcamp",
+      "institution": "TechAcademy Professional Institute"
     },
     {
       "id": "3",
-      "period": "2011 – 2013",
-      "degree": "Higher Secondary Certificate (HSC)",
-      "institution": "Alhaj Abdul Hoque Chowdury Degree College, Bangladesh"
+      "period": "2019",
+      "degree": "AWS Certified Developer Associate",
+      "institution": "Amazon Web Services"
     },
     {
       "id": "4",
-      "period": "2006 – 2011",
-      "degree": "Secondary School Certificate (SSC)",
-      "institution": "Dharmapur Educational Estate, Bangladesh"
+      "period": "2021",
+      "degree": "React Developer Certification",
+      "institution": "Meta (Facebook) Professional Certificate"
+    },
+    {
+      "id": "5",
+      "period": "2016 – 2018",
+      "degree": "Associate Degree in Information Technology",
+      "institution": "Community College of Technology"
+    },
+    {
+      "id": "6",
+      "period": "2022",
+      "degree": "Advanced JavaScript & Node.js Course",
+      "institution": "Online Tech University"
     }
   ]
 }

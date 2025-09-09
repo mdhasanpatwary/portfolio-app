@@ -6,7 +6,7 @@
       "id": "1",
       "title": "E-Commerce Platform",
       "description": "Modern e-commerce platform with advanced features, responsive design, and seamless user experience.",
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-1.jpg",
       "link": "https://example.com/ecommerce",
       "category": "Web Application",
       "technologies": [
@@ -47,7 +47,7 @@
       "id": "2",
       "title": "Task Management App",
       "description": "Collaborative task management application with real-time updates and team collaboration features.",
-      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-2.jpg",
       "link": "https://example.com/taskmanager",
       "category": "Productivity App",
       "technologies": [
@@ -88,7 +88,7 @@
       "id": "3",
       "title": "Restaurant Website",
       "description": "Elegant restaurant website with online ordering, reservation system, and menu management.",
-      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-3.jpg",
       "link": "https://example.com/restaurant",
       "category": "Business Website",
       "technologies": [
@@ -129,7 +129,7 @@
       "id": "4",
       "title": "Portfolio Website",
       "description": "Professional portfolio website showcasing creative work with interactive galleries and animations.",
-      "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-4.jpg",
       "link": "https://example.com/portfolio",
       "category": "Portfolio Site",
       "technologies": [
@@ -170,7 +170,7 @@
       "id": "5",
       "title": "Blog Platform",
       "description": "Content management system with rich text editor, user authentication, and responsive design.",
-      "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-5.jpg",
       "link": "https://example.com/blog",
       "category": "CMS Platform",
       "technologies": [
@@ -211,7 +211,7 @@
       "id": "6",
       "title": "Weather Dashboard",
       "description": "Interactive weather dashboard with location-based forecasts and data visualizations.",
-      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-6.jpg",
       "link": "https://example.com/weather",
       "category": "Data Visualization",
       "technologies": [
@@ -252,7 +252,7 @@
       "id": "7",
       "title": "Fitness Tracking App",
       "description": "Mobile-first fitness application with workout planning, progress tracking, and social features.",
-      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-7.jpg",
       "link": "https://example.com/fitness",
       "category": "Mobile App",
       "technologies": [
@@ -293,7 +293,7 @@
       "id": "8",
       "title": "Real Estate Platform",
       "description": "Property listing platform with advanced search, virtual tours, and agent management system.",
-      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center",
+      "image": "/images/projects/project-8.jpg",
       "link": "https://example.com/realestate",
       "category": "Marketplace",
       "technologies": [

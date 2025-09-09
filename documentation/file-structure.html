@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Structure - Modern Portfolio Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: #f7fafc;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h3 {
+            color: #4a5568;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .file-tree {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 2rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .file-tree .folder {
+            color: #81c995;
+            font-weight: bold;
+        }
+        
+        .file-tree .file {
+            color: #e2e8f0;
+        }
+        
+        .file-tree .comment {
+            color: #718096;
+            font-style: italic;
+        }
+        
+        .directory-info {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .file-info {
+            background: #e6fffa;
+            border-left: 4px solid #4fd1c7;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .important {
+            background: #fef5e7;
+            border: 1px solid #f6ad55;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .important strong {
+            color: #c05621;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .table th,
+        .table td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        .table th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        
+        .table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📁 File Structure Guide</h1>
+            <p>Complete breakdown of the Modern Portfolio Template file organization</p>
+        </div>
+
+        <div class="nav">
+            <a href="index.html">← Back to Documentation</a>
+            <a href="installation.html">Installation</a>
+            <a href="customization.html">Customization</a>
+            <a href="api-reference.html">API Reference</a>
+        </div>
+
+        <div class="section">
+            <h2>📋 Overview</h2>
+            <p>The Modern Portfolio Template follows Next.js 15 App Router conventions with a well-organized structure for scalability and maintainability. This guide explains each directory and file's purpose.</p>
+            
+            <div class="important">
+                <strong>Next.js 15 App Router:</strong> This template uses the new App Router (app/ directory) instead of the legacy Pages Router. Make sure you're familiar with App Router conventions.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🗂️ Complete File Structure</h2>
+            
+            <div class="file-tree">hz-portfolio/
+├── <span class="folder">app/</span>                      <span class="comment"># Next.js App Router pages</span>
+│   ├── <span class="folder">about/</span>
+│   │   └── <span class="file">page.tsx</span>           <span class="comment"># About page component</span>
+│   ├── <span class="folder">api/</span>                 <span class="comment"># API routes</span>
+│   │   └── <span class="folder">portfolio-ai/</span>
+│   │       └── <span class="file">route.ts</span>       <span class="comment"># AI chat API endpoint</span>
+│   ├── <span class="folder">blog/</span>
+│   │   ├── <span class="folder">[id]/</span>
+│   │   │   └── <span class="file">page.tsx</span>       <span class="comment"># Dynamic blog post page</span>
+│   │   ├── <span class="file">BlogList.tsx</span>       <span class="comment"># Blog list component</span>
+│   │   └── <span class="file">page.tsx</span>           <span class="comment"># Blog index page</span>
+│   ├── <span class="folder">contact/</span>
+│   │   └── <span class="file">page.tsx</span>           <span class="comment"># Contact page</span>
+│   ├── <span class="folder">projects/</span>
+│   │   ├── <span class="file">ProjectsGrid.tsx</span>   <span class="comment"># Projects grid component</span>
+│   │   └── <span class="file">page.tsx</span>           <span class="comment"># Projects page</span>
+│   ├── <span class="folder">projects.xml/</span>
+│   │   └── <span class="file">route.ts</span>           <span class="comment"># Projects XML feed</span>
+│   ├── <span class="folder">rss.xml/</span>
+│   │   └── <span class="file">route.ts</span>           <span class="comment"># RSS feed</span>
+│   ├── <span class="file">globals.css</span>            <span class="comment"># Global styles</span>
+│   ├── <span class="file">layout.tsx</span>             <span class="comment"># Root layout component</span>
+│   └── <span class="file">page.tsx</span>               <span class="comment"># Home page</span>
+├── <span class="folder">components/</span>               <span class="comment"># Reusable UI components</span>
+│   ├── <span class="folder">about/</span>
+│   ├── <span class="folder">ai/</span>
+│   ├── <span class="folder">banner/</span>
+│   ├── <span class="folder">blog/</span>
+│   ├── <span class="folder">contact/</span>
+│   ├── <span class="folder">education/</span>
+│   ├── <span class="folder">experience/</span>
+│   ├── <span class="folder">faq/</span>
+│   ├── <span class="folder">footer/</span>
+│   ├── <span class="folder">funfact/</span>
+│   ├── <span class="folder">global/</span>
+│   ├── <span class="folder">header/</span>
+│   ├── <span class="folder">hobby/</span>
+│   ├── <span class="folder">projects/</span>
+│   ├── <span class="folder">services/</span>
+│   ├── <span class="folder">skills/</span>
+│   ├── <span class="folder">testimonial/</span>
+│   └── <span class="file">index.ts</span>               <span class="comment"># Component exports</span>
+├── <span class="folder">config/</span>                  <span class="comment"># Configuration files</span>
+│   ├── <span class="file">index.ts</span>               <span class="comment"># Configuration exports</span>
+│   └── <span class="file">site.config.ts</span>        <span class="comment"># Main site configuration</span>
+├── <span class="folder">context/</span>                 <span class="comment"># React Context providers</span>
+│   ├── <span class="file">BlogContext.tsx</span>        <span class="comment"># Blog state management</span>
+│   └── <span class="file">ThemeContext.tsx</span>       <span class="comment"># Theme state management</span>
+├── <span class="folder">data/</span>                    <span class="comment"># JSON data files</span>
+│   ├── <span class="file">about.json</span>
+│   ├── <span class="file">banner.json</span>
+│   ├── <span class="file">blog.json</span>
+│   ├── <span class="file">contact.json</span>
+│   ├── <span class="file">css-tips.json</span>
+│   ├── <span class="file">education.json</span>
+│   ├── <span class="file">experiences.json</span>
+│   ├── <span class="file">faqs.json</span>
+│   ├── <span class="file">footer.json</span>
+│   ├── <span class="file">funFacts.json</span>
+│   ├── <span class="file">header.json</span>
+│   ├── <span class="file">hobbies.json</span>
+│   ├── <span class="file">index.ts</span>
+│   ├── <span class="file">projects.json</span>
+│   ├── <span class="file">services.json</span>
+│   ├── <span class="file">skills.json</span>
+│   └── <span class="file">testimonials.json</span>
+├── <span class="folder">documentation/</span>            <span class="comment"># Template documentation</span>
+│   ├── <span class="file">api-reference.html</span>
+│   ├── <span class="file">browser-support.html</span>
+│   ├── <span class="file">changelog.html</span>
+│   ├── <span class="file">customization.html</span>
+│   ├── <span class="file">file-structure.html</span>
+│   ├── <span class="file">index.html</span>
+│   ├── <span class="file">installation.html</span>
+│   └── <span class="file">troubleshooting.html</span>
+├── <span class="folder">hooks/</span>                   <span class="comment"># Custom React hooks</span>
+│   └── <span class="file">useProjectModal.tsx</span>
+├── <span class="folder">public/</span>                  <span class="comment"># Static assets</span>
+│   ├── <span class="folder">favicon/</span>
+│   ├── <span class="folder">testimonials/</span>
+│   ├── <span class="file">profile.webp</span>
+│   ├── <span class="file">profile2.webp</span>
+│   ├── <span class="file">resume.pdf</span>
+│   ├── <span class="file">robots.txt</span>
+│   ├── <span class="file">sitemap-0.xml</span>
+│   └── <span class="file">sitemap.xml</span>
+├── <span class="folder">types/</span>                   <span class="comment"># TypeScript type definitions</span>
+│   └── <span class="file">data.ts</span>
+├── <span class="folder">utils/</span>                   <span class="comment"># Utility functions</span>
+│   ├── <span class="file">errorLogger.ts</span>
+│   ├── <span class="file">imageBlur.ts</span>
+│   ├── <span class="file">index.ts</span>
+│   └── <span class="file">status.tsx</span>
+├── <span class="file">.env.example</span>               <span class="comment"># Environment variables template</span>
+├── <span class="file">.gitignore</span>                 <span class="comment"># Git ignore rules</span>
+├── <span class="file">eslint.config.mjs</span>          <span class="comment"># ESLint configuration</span>
+├── <span class="file">next-sitemap.config.js</span>     <span class="comment"># Sitemap generation config</span>
+├── <span class="file">next.config.ts</span>             <span class="comment"># Next.js configuration</span>
+├── <span class="file">package.json</span>               <span class="comment"># Dependencies and scripts</span>
+├── <span class="file">postcss.config.mjs</span>         <span class="comment"># PostCSS configuration</span>
+├── <span class="file">README.md</span>                  <span class="comment"># Project documentation</span>
+└── <span class="file">tsconfig.json</span>              <span class="comment"># TypeScript configuration</span></div>
+        </div>
+
+        <div class="section">
+            <h2>📂 Directory Breakdown</h2>
+            
+            <h3>app/ - Next.js App Router</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> Contains all pages, layouts, and API routes using Next.js 15 App Router conventions.
+                <br><strong>Key Features:</strong> File-based routing, nested layouts, server components, API routes
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>File/Directory</th>
+                        <th>Purpose</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>layout.tsx</td>
+                        <td>Root layout component wrapping all pages</td>
+                        <td>Layout</td>
+                    </tr>
+                    <tr>
+                        <td>page.tsx</td>
+                        <td>Homepage component</td>
+                        <td>Page</td>
+                    </tr>
+                    <tr>
+                        <td>globals.css</td>
+                        <td>Global CSS styles and Tailwind imports</td>
+                        <td>Styles</td>
+                    </tr>
+                    <tr>
+                        <td>api/</td>
+                        <td>API routes for backend functionality</td>
+                        <td>API</td>
+                    </tr>
+                    <tr>
+                        <td>[page]/page.tsx</td>
+                        <td>Individual page components</td>
+                        <td>Pages</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>components/ - UI Components</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> Reusable React components organized by feature/section.
+                <br><strong>Pattern:</strong> Each directory contains related components for a specific section.
+            </div>
+
+            <div class="file-info">
+                <strong>global/</strong> - Shared components used across multiple sections (modals, buttons, etc.)
+            </div>
+            <div class="file-info">
+                <strong>Feature directories</strong> - Components specific to each portfolio section (about/, projects/, etc.)
+            </div>
+
+            <h3>data/ - Content Management</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> JSON files containing all website content for easy customization.
+                <br><strong>Benefit:</strong> Modify content without touching code - perfect for non-developers.
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Content</th>
+                        <th>Used In</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>banner.json</td>
+                        <td>Hero section content and CTA</td>
+                        <td>Home page banner</td>
+                    </tr>
+                    <tr>
+                        <td>about.json</td>
+                        <td>Personal information and bio</td>
+                        <td>About section</td>
+                    </tr>
+                    <tr>
+                        <td>projects.json</td>
+                        <td>Portfolio projects and details</td>
+                        <td>Projects section</td>
+                    </tr>
+                    <tr>
+                        <td>experiences.json</td>
+                        <td>Work experience and achievements</td>
+                        <td>Experience section</td>
+                    </tr>
+                    <tr>
+                        <td>skills.json</td>
+                        <td>Technical skills and proficiency</td>
+                        <td>Skills section</td>
+                    </tr>
+                    <tr>
+                        <td>blog.json</td>
+                        <td>Blog posts and articles</td>
+                        <td>Blog section</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>config/ - Configuration</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> Centralized configuration for site settings, features, and integrations.
+                <br><strong>Main File:</strong> site.config.ts - Primary configuration hub
+            </div>
+
+            <h3>context/ - State Management</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> React Context providers for global state management.
+                <br><strong>Files:</strong> ThemeContext (dark/light mode), BlogContext (blog state)
+            </div>
+
+            <h3>hooks/ - Custom Hooks</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> Reusable React hooks for component logic.
+                <br><strong>Example:</strong> useProjectModal for project modal state management
+            </div>
+
+            <h3>types/ - TypeScript Definitions</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> TypeScript interfaces and type definitions for data structures.
+                <br><strong>Main File:</strong> data.ts - Types for all JSON data structures
+            </div>
+
+            <h3>utils/ - Utility Functions</h3>
+            <div class="directory-info">
+                <strong>Purpose:</strong> Helper functions and utilities used across the application.
+                <br><strong>Examples:</strong> Error logging, image processing, status components
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Configuration Files</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Purpose</th>
+                        <th>Modify</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>next.config.ts</td>
+                        <td>Next.js framework configuration</td>
+                        <td>Rarely</td>
+                    </tr>
+                    <tr>
+                        <td>tsconfig.json</td>
+                        <td>TypeScript compiler settings</td>
+                        <td>Rarely</td>
+                    </tr>
+                    <tr>
+                        <td>eslint.config.mjs</td>
+                        <td>Code linting rules</td>
+                        <td>As needed</td>
+                    </tr>
+                    <tr>
+                        <td>postcss.config.mjs</td>
+                        <td>CSS processing configuration</td>
+                        <td>Rarely</td>
+                    </tr>
+                    <tr>
+                        <td>next-sitemap.config.js</td>
+                        <td>Sitemap generation settings</td>
+                        <td>Once</td>
+                    </tr>
+                    <tr>
+                        <td>.env.example</td>
+                        <td>Environment variables template</td>
+                        <td>Copy to .env.local</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📝 Content Modification Guide</h2>
+            
+            <h3>Quick Content Updates</h3>
+            <div class="important">
+                <strong>For most content changes, you only need to edit JSON files in the data/ directory!</strong>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>What to Change</th>
+                        <th>File to Edit</th>
+                        <th>Restart Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name, title, bio</td>
+                        <td>data/about.json, data/banner.json</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Contact information</td>
+                        <td>data/contact.json</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Projects portfolio</td>
+                        <td>data/projects.json</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Work experience</td>
+                        <td>data/experiences.json</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Skills and technologies</td>
+                        <td>data/skills.json</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Site configuration</td>
+                        <td>config/site.config.ts</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Environment variables</td>
+                        <td>.env.local</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Advanced Customization</h3>
+            <div class="file-info">
+                <strong>Components:</strong> Modify React components in components/ for layout or functionality changes
+            </div>
+            <div class="file-info">
+                <strong>Styles:</strong> Edit app/globals.css for global styling or component-specific CSS modules
+            </div>
+            <div class="file-info">
+                <strong>Pages:</strong> Add new pages by creating new directories in app/ with page.tsx files
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Development Workflow</h2>
+            
+            <h3>File Watch & Hot Reload</h3>
+            <p>The development server automatically watches these files for changes:</p>
+            <ul>
+                <li>✅ All .tsx/.ts files (instant reload)</li>
+                <li>✅ JSON files in data/ directory (instant reload)</li>
+                <li>✅ CSS files (instant reload)</li>
+                <li>⚠️ Configuration files (.env, next.config.ts) require restart</li>
+            </ul>
+
+            <h3>Adding New Sections</h3>
+            <ol>
+                <li>Create JSON data file in data/</li>
+                <li>Create component in components/[section-name]/</li>
+                <li>Add TypeScript types in types/data.ts</li>
+                <li>Import and use in appropriate page</li>
+                <li>Update navigation if needed</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>📦 Build Output Structure</h2>
+            
+            <div class="file-tree">/.next/                      <span class="comment"># Next.js build output (auto-generated)</span>
+├── <span class="folder">static/</span>                  <span class="comment"># Static assets with hashed filenames</span>
+├── <span class="folder">server/</span>                  <span class="comment"># Server-side rendering files</span>
+└── <span class="folder">cache/</span>                   <span class="comment"># Build cache for faster rebuilds</span>
+
+/out/                       <span class="comment"># Static export output (if using static export)</span>
+├── <span class="file">index.html</span>
+├── <span class="file">about.html</span>
+└── <span class="folder">_next/</span>                   <span class="comment"># Optimized assets</span></div>
+
+            <div class="important">
+                <strong>Note:</strong> Never modify files in .next/ directory - they are auto-generated during build process.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

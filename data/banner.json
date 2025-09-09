@@ -2,5 +2,5 @@
   "name": "John Doe",
   "title": "Full-Stack Web Developer | 5+ Years Exp. | HTML, CSS, JavaScript, React, Next.js, Docker, AWS",
   "summary": "Passionate about crafting intuitive user interfaces using HTML, CSS, JavaScript, React, and Next.js. Experienced in Docker, AWS, and performance optimization. Let's build something amazing.",
-  "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+  "image": "/images/banner/hero.jpg"
 }

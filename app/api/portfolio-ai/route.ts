@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as portfolio from '@/data';
+import { errorLogger } from '@/utils/errorLogger';
 
 // Ensure this route runs in the Node.js runtime (Gemini server SDK uses Node runtime here)
 export const runtime = 'nodejs';
@@ -59,7 +60,7 @@ const MODEL = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 const TEMPERATURE = Number(process.env.GEMINI_TEMPERATURE ?? '0.1');
 
 const SYSTEM_PROMPT = `
-You are MD Hasan Patwary (the site owner) speaking in the first person.  
+You are the portfolio owner speaking in the first person.  
 Style: concise, friendly, and professional. Use "I", "me", and "my" naturally.  
 
 Language Policy:  
@@ -186,15 +187,13 @@ export async function POST(req: NextRequest) {
         try {
           // Dev-only debug logging
           if (process.env.NODE_ENV !== 'production') {
-            const contextKeys = (() => {
-              try { return Object.keys(JSON.parse(selectedContext || '{}')); } catch { return []; }
-            })();
-            console.log('[Portfolio AI] Request', {
-              model: MODEL,
-              temperature: isFinite(TEMPERATURE) ? TEMPERATURE : 0.1,
-              messagePreview: (typeof message === 'string' ? message : '').slice(0, 120),
-              contextKeys,
-            });
+            // Context available for debugging
+            try { 
+              Object.keys(JSON.parse(selectedContext || '{}'));
+              // Debugging context in development only
+            } catch { 
+              // Silent catch for invalid JSON
+            }
           }
 
           // Initialize model with system instruction
@@ -226,18 +225,12 @@ export async function POST(req: NextRequest) {
           }
 
           if (!wroteAny) {
-            if (process.env.NODE_ENV !== 'production') {
-              console.warn('[Portfolio AI] Gemini returned no content tokens (empty stream)');
-            }
             controller.enqueue(encoder.encode(fallbackByLang(userLang)));
           }
           controller.close();
         } catch (e) {
           // On error, return fallback
-          if (process.env.NODE_ENV === 'development') {
-            console.error('[Portfolio AI] Streaming error', e);
-          }
-          // TODO: Add error reporting service integration
+          errorLogger.logApiError(e instanceof Error ? e : new Error(String(e)), '/api/portfolio-ai', 'POST');
           controller.enqueue(encoder.encode(fallbackByLang(userLang)));
           controller.close();
         }
@@ -253,10 +246,7 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (err) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error('Portfolio AI error:', err);
-    }
-    // TODO: Add error reporting service integration
+    errorLogger.logApiError(err instanceof Error ? err : new Error(String(err)), '/api/portfolio-ai', 'POST');
     return NextResponse.json({
       error: 'Something went wrong while getting the answer.',
     }, { status: 500 });

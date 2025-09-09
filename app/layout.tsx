@@ -8,8 +8,7 @@ import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
 
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
 
 const geistMono = Geist_Mono({
@@ -18,14 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://patwary.vercel.app"),
-  title: "MD Hasan Patwary | Front-End Developer Portfolio",
+  metadataBase: new URL("https://yourdomain.com"),
+  title: "John Doe | Full-Stack Developer Portfolio",
   description:
-    "MD Hasan Patwary - Front-End Web Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS. Leader in Scalable Web Apps. Delivered for 30K+ Global Clients. Available for freelance & collaboration.",
+    "John Doe - Full-Stack Developer | Modern Web Solutions | React, Next.js, TypeScript, Node.js. Professional portfolio showcasing skills and projects. Available for freelance & collaboration.",
   keywords: [
-    "MD Hasan Patwary",
+    "John Doe",
     "Portfolio",
-    "Front-End Developer",
+    "Full-Stack Developer",
     "Web Developer",
     "React",
     "Next.js",
@@ -33,25 +32,23 @@ export const metadata: Metadata = {
     "JavaScript",
     "HTML",
     "CSS",
-    "Docker",
-    "AWS",
-    "UI/UX Engineer",
+    "Node.js",
+    "Frontend",
+    "Backend",
     "Freelance Developer",
-    "Dhaka",
-    "Bangladesh",
   ],
   openGraph: {
-    title: "MD Hasan Patwary | Front-End Developer Portfolio",
+    title: "John Doe | Full-Stack Developer Portfolio",
     description:
-      "Front-End Web Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Available for freelance & collaboration",
-    url: "https://patwary.vercel.app",
-    siteName: "MD Hasan Patwary Portfolio",
+      "Full-Stack Developer (React, Next.js, TypeScript) | Modern Web Solutions | Professional Portfolio | Available for freelance & collaboration",
+    url: "https://yourdomain.com",
+    siteName: "John Doe Portfolio",
     images: [
       {
         url: "/profile.webp",
         width: 800,
         height: 600,
-        alt: "MD Hasan Patwary - Front-End Developer",
+        alt: "John Doe - Full-Stack Developer",
       },
     ],
     locale: "en_US",
@@ -59,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MD Hasan Patwary | Front-End Developer Portfolio",
+    title: "John Doe | Full-Stack Developer Portfolio",
     description:
-      "Front-End Web Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Available for freelance & collaboration",
+      "Full-Stack Developer (React, Next.js, TypeScript) | Modern Web Solutions | Professional Portfolio | Available for freelance & collaboration",
     images: ["/profile.webp"],
   },
 };
@@ -80,27 +77,19 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://patwary.vercel.app/#person",
-              name: "MD Hasan Patwary",
-              url: "https://patwary.vercel.app",
+              "@id": "https://yourdomain.com/#person",
+              name: "John Doe",
+              url: "https://yourdomain.com",
               sameAs: [
-                "https://github.com/mdhasanpatwary",
-                "https://www.linkedin.com/in/mdhasanpatwary/",
-                "https://stackoverflow.com/users/11076109/patwary",
-                "https://www.facebook.com/mdhasanpatwaryweb",
-                "https://dev.to/mdhassanpatwary",
-                "https://app.daily.dev/mdhassanpatwary",
-                "https://codepen.io/MD-Hasan-Patwary",
-                "https://www.upwork.com/freelancers/~01edc329725caf7992",
-                "https://www.youtube.com/@mdhasanpatwary7711",
-                "https://x.com/md_hasanpatwary",
-                "https://www.instagram.com/mdhasanpatwaryweb/",
-                "https://www.threads.com/@mdhasanpatwaryweb",
+                "https://github.com/johndoe",
+                "https://linkedin.com/in/johndoe",
+                "https://twitter.com/johndoe",
+                "https://instagram.com/johndoe",
               ],
-              jobTitle: "Front-End Developer",
+              jobTitle: "Full-Stack Developer",
               image: "/profile.webp",
               description:
-                "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
+                "John Doe – Full-Stack Developer (React, Next.js, TypeScript) with expertise in modern web technologies. Professional portfolio showcasing skills and projects.",
               knowsAbout: [
                 "React.js",
                 "Next.js",
@@ -108,11 +97,10 @@ export default function RootLayout({
                 "JavaScript",
                 "HTML5",
                 "CSS3",
-                "Docker",
-                "AWS",
-                "UI/UX Design",
+                "Node.js",
                 "Web Development",
-                "Front-End Development",
+                "Frontend Development",
+                "Backend Development",
               ],
               worksFor: {
                 "@type": "Organization",
@@ -120,42 +108,28 @@ export default function RootLayout({
               },
               hasOccupation: {
                 "@type": "Occupation",
-                name: "Front-End Developer",
+                name: "Full-Stack Developer",
                 description:
                   "Specializing in React, Next.js, and modern web technologies",
               },
             }),
           }}
         />
-        <meta
-          name="google-site-verification"
-          content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4"
-        />
-        <link rel="canonical" href="https://patwary.vercel.app" />
+        <link rel="canonical" href="https://yourdomain.com" />
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="MD Hasan Patwary RSS"
+          title="Portfolio RSS"
           href="/rss.xml"
         />
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="MD Hasan Patwary Projects RSS"
+          title="Projects RSS"
           href="/projects.xml"
         />
-        <link rel="preconnect" href="https://dev.to" crossOrigin="" />
-        {/* Preconnect to analytics/vitals domains to speed up first requests */}
-        <link
-          rel="preconnect"
-          href="https://va.vercel-scripts.com"
-          crossOrigin=""
-        />
-        <link
-          rel="preconnect"
-          href="https://vitals.vercel-insights.com"
-          crossOrigin=""
-        />
+
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -196,8 +170,7 @@ export default function RootLayout({
             <PortfolioChatWidget />
           </ErrorBoundary>
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+
       </body>
     </html>
   );

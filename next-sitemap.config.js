@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://patwary.vercel.app',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com',
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,

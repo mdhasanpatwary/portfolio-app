@@ -3,11 +3,11 @@
   "subtitle": "A timeline of my professional growth and achievements in the tech industry.",
   "items": [
     {
-      "company": "6amtech",
-      "role": "Front-End Developer",
+      "company": "Google",
+      "role": "Senior Front-End Developer",
       "duration": "Jul 2022 – Present",
-      "location": "Dhaka, Bangladesh",
-      "website": "https://6amtech.com",
+      "location": "Mountain View, California",
+      "website": "https://google.com",
       "highlights": [
         "Developed scalable and performant frontend solutions for Demandium and Hexaride from scratch.",
         "Redesigned core UI/UX for flagship products like 6valley and 6amMart based on customer feedback and user testing.",
@@ -78,11 +78,11 @@
       ]
     },
     {
-      "company": "Themelooks",
+      "company": "Facebook",
       "role": "Front-End Developer",
       "duration": "Aug 2019 – Jul 2022",
-      "location": "Dhaka, Bangladesh",
-      "website": "https://themelooks.com",
+      "location": "Menlo Park, California",
+      "website": "https://facebook.com",
       "highlights": [
         "Developed over 10+ ThemeForest templates and Codecanyon web applications.",
         "Created responsive multipurpose admin dashboards such as Dashmin and commercial landing pages.",

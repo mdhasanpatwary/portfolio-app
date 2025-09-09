@@ -49,7 +49,7 @@ This portfolio project has been successfully converted from a personal portfolio
 - [x] Maintained all original functionality
 - [x] Kept performance optimizations (95+ Lighthouse scores)
 - [x] Preserved accessibility compliance (WCAG 2.1 AA)
-- [x] Maintained PWA features and dark/light mode
+- [x] Maintained dark/light mode and responsive design
 - [x] Kept AI integration and contact form features
 
 ## 📁 New Files Added
@@ -122,14 +122,13 @@ This portfolio project has been successfully converted from a personal portfolio
 - Full TypeScript support
 - Dark/Light mode with smooth transitions
 - AI-powered chat widget
-- PWA features and offline support
 - 95+ Lighthouse performance scores
 - WCAG 2.1 AA accessibility compliance
 - Easy customization system
 - Comprehensive documentation
 
 ### **Tags**
-portfolio, nextjs, typescript, react, responsive, dark-mode, pwa, ai-chat, developer, freelancer, template, modern, professional
+portfolio, nextjs, typescript, react, responsive, dark-mode, ai-chat, developer, freelancer, template, modern, professional
 
 ## 🚀 Ready for Submission
 
