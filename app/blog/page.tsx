@@ -4,44 +4,27 @@ import BlogList from "./BlogList";
 import type { Metadata } from "next";
 import type { DevToPost } from "@/components/blog/BlogCard";
 import blogData from "@/data/blog.json";
+import { generateMetadata as createMetadata, getPageMetadata } from "@/utils/metadata";
+import React from "react";
 
-export const metadata: Metadata = {
-  title: "Blog | Modern Portfolio Template - Web Development Articles",
-  description:
-    "Read our web development blog featuring articles on React, Next.js, TypeScript, and modern web development best practices.",
-  keywords: [
-    "Web Development Blog",
-    "React Blog",
-    "Next.js Blog",
-    "TypeScript Blog",
-    "Front-End Development",
-    "Programming Blog",
-  ],
-  openGraph: {
-    title: "Blog | Modern Portfolio Template - Web Development Articles",
-    description:
-      "Read our web development blog featuring articles on React, Next.js, TypeScript, and modern web development best practices.",
-    url: "https://yourdomain.com/blog",
-  },
-  alternates: { canonical: "https://yourdomain.com/blog" },
-};
+export const metadata: Metadata = createMetadata(getPageMetadata("blog"));
 
-async function getBlogPosts(): Promise<DevToPost[]> {
+function getBlogPosts(): DevToPost[] {
   try {
-    // Use local blog data instead of external API
+    // Use local blog data directly without Promise wrapper
     return blogData.posts;
   } catch {
     return [];
   }
 }
 
-export default async function BlogPage({
+export default function BlogPage({
   searchParams,
 }: {
   searchParams: Promise<{ page?: string }>;
 }) {
-  const posts = await getBlogPosts();
-  const sp = await searchParams;
+  const posts = getBlogPosts();
+  const sp = React.use(searchParams);
   const page = Number(sp?.page || 1) || 1;
   return (
     <>

@@ -1,0 +1,424 @@
+{
+  "global": {
+    "siteName": "Adam Joseph Scott Portfolio",
+    "domain": "https://adamjosephscott.dev",
+    "author": "Adam Joseph Scott",
+    "language": "en",
+    "defaultImage": "/profile.webp"
+  },
+  "seo": {
+    "titleTemplate": "%s | Adam Joseph Scott",
+    "defaultTitle": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist",
+    "defaultDescription": "Adam Joseph Scott - CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer specializing in React, Next.js, TypeScript, and modern web technologies. Available globally for freelance & remote collaboration.",
+    "keywords": [
+      "Adam Joseph Scott",
+      "CSS Expert",
+      "Responsive CSS Specialist",
+      "Front-End Developer",
+      "Remote Developer",
+      "International Freelancer",
+      "React Developer",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Web Development",
+      "UI/UX",
+      "Global Remote Work",
+      "Timezone Flexible"
+    ]
+  },
+  "pages": {
+    "home": {
+      "title": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist - International Remote Front-End Developer",
+      "description": "Adam Joseph Scott - CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally. Specializing in React, Next.js, TypeScript, and modern responsive web technologies. Available for remote collaboration across all timezones.",
+      "keywords": [
+        "Adam Joseph Scott",
+        "CSS Expert",
+        "Responsive CSS Specialist", 
+        "International Remote Developer",
+        "Front-End Developer",
+        "React Developer",
+        "Next.js Developer",
+        "TypeScript",
+        "Global Freelancer",
+        "Remote Collaboration",
+        "Timezone Flexible",
+        "Web Development",
+        "Portfolio"
+      ],
+      "openGraph": {
+        "title": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist",
+        "description": "CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally for modern web solutions.",
+        "url": "https://adamjosephscott.dev",
+        "images": [
+          {
+            "url": "/profile.webp",
+            "width": 800,
+            "height": 600,
+            "alt": "Adam Joseph Scott - CSS Expert & Responsive CSS Specialist"
+          }
+        ]
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist",
+        "description": "CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally for modern web solutions.",
+        "images": ["/profile.webp"]
+      },
+      "canonical": "https://adamjosephscott.dev"
+    },
+    "about": {
+      "title": "About Adam Joseph Scott | CSS Expert & International Remote Front-End Developer",
+      "description": "Learn about Adam Joseph Scott, a CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer specializing in React, Next.js, TypeScript, and modern web technologies. Available globally for remote collaboration.",
+      "keywords": [
+        "Adam Joseph Scott",
+        "CSS Expert",
+        "Responsive CSS Specialist",
+        "International Remote Developer",
+        "Front-End Developer",
+        "React Developer",
+        "Next.js",
+        "TypeScript",
+        "Global Remote Work",
+        "About",
+        "Background",
+        "Portfolio"
+      ],
+      "openGraph": {
+        "title": "About Adam Joseph Scott | CSS Expert & Remote Front-End Developer",
+        "description": "Learn about Adam Joseph Scott, a CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally.",
+        "url": "https://adamjosephscott.dev/about",
+        "images": [
+          {
+            "url": "/profile.webp",
+            "width": 800,
+            "height": 600,
+            "alt": "Adam Joseph Scott - CSS Expert Profile"
+          }
+        ]
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "About Adam Joseph Scott | CSS Expert & Remote Developer",
+        "description": "Learn about Adam Joseph Scott, a CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally.",
+        "images": ["/profile.webp"]
+      },
+      "canonical": "https://adamjosephscott.dev/about"
+    },
+    "projects": {
+      "title": "Projects | Adam Joseph Scott - CSS Expert & Responsive Specialist Portfolio",
+      "description": "Explore Adam Joseph Scott's portfolio of responsive web projects. CSS Expert showcasing React, Next.js, TypeScript applications with modern responsive design and international client work. CodeCanyon and ThemeForest marketplace projects.",
+      "keywords": [
+        "Adam Joseph Scott Projects",
+        "CSS Expert Portfolio",
+        "Responsive CSS Projects",
+        "React Projects",
+        "Next.js Projects",
+        "TypeScript Applications",
+        "Web Development Portfolio",
+        "International Client Work",
+        "CodeCanyon",
+        "ThemeForest",
+        "Responsive Design"
+      ],
+      "openGraph": {
+        "title": "Projects | Adam Joseph Scott - CSS Expert Portfolio",
+        "description": "Explore Adam Joseph Scott's portfolio of responsive web projects. CSS Expert showcasing React, Next.js, TypeScript applications with modern responsive design.",
+        "url": "https://adamjosephscott.dev/projects",
+        "images": [
+          {
+            "url": "/profile.webp",
+            "width": 800,
+            "height": 600,
+            "alt": "Adam Joseph Scott Projects Portfolio"
+          }
+        ]
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Projects | Adam Joseph Scott - CSS Expert Portfolio",
+        "description": "Explore Adam Joseph Scott's portfolio of responsive web projects. CSS Expert showcasing React, Next.js, TypeScript applications with modern responsive design.",
+        "images": ["/profile.webp"]
+      },
+      "canonical": "https://adamjosephscott.dev/projects"
+    },
+    "blog": {
+      "title": "Blog | Adam Joseph Scott - CSS Expert Tips & Web Development Insights",
+      "description": "Read Adam Joseph Scott's blog featuring CSS expert tips, responsive design techniques, React tutorials, and modern web development insights. International remote developer sharing knowledge globally.",
+      "keywords": [
+        "Adam Joseph Scott Blog",
+        "CSS Expert Tips",
+        "Responsive CSS Tutorials",
+        "Web Development Blog",
+        "React Tutorials",
+        "Next.js Tips",
+        "TypeScript Guides",
+        "International Developer Blog",
+        "Remote Work Tips",
+        "Front-End Development"
+      ],
+      "openGraph": {
+        "title": "Blog | Adam Joseph Scott - CSS Expert Tips & Development Insights",
+        "description": "Read Adam Joseph Scott's blog featuring CSS expert tips, responsive design techniques, React tutorials, and modern web development insights.",
+        "url": "https://adamjosephscott.dev/blog",
+        "images": [
+          {
+            "url": "/profile.webp",
+            "width": 800,
+            "height": 600,
+            "alt": "Adam Joseph Scott Development Blog"
+          }
+        ]
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Blog | Adam Joseph Scott - CSS Expert Tips & Development Insights",
+        "description": "Read Adam Joseph Scott's blog featuring CSS expert tips, responsive design techniques, React tutorials, and modern web development insights.",
+        "images": ["/profile.webp"]
+      },
+      "canonical": "https://adamjosephscott.dev/blog"
+    },
+    "contact": {
+      "title": "Contact Adam Joseph Scott | CSS Expert Available for International Remote Work",
+      "description": "Contact Adam Joseph Scott, CSS Expert & Responsive CSS Specialist for international remote front-end development projects. Available globally across all timezones for React, Next.js, TypeScript, and modern web development collaboration.",
+      "keywords": [
+        "Contact Adam Joseph Scott",
+        "CSS Expert Contact",
+        "Responsive CSS Specialist",
+        "International Remote Developer",
+        "Global Freelancer",
+        "Remote Collaboration",
+        "Timezone Flexible",
+        "Front-End Developer Hire",
+        "React Developer Contact",
+        "Next.js Developer",
+        "TypeScript Developer"
+      ],
+      "openGraph": {
+        "title": "Contact Adam Joseph Scott | CSS Expert for International Remote Work",
+        "description": "Contact Adam Joseph Scott, CSS Expert & Responsive CSS Specialist for international remote front-end development projects. Available globally across all timezones.",
+        "url": "https://adamjosephscott.dev/contact",
+        "images": [
+          {
+            "url": "/profile.webp",
+            "width": 800,
+            "height": 600,
+            "alt": "Contact Adam Joseph Scott - CSS Expert"
+          }
+        ]
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Contact Adam Joseph Scott | CSS Expert for Remote Work",
+        "description": "Contact Adam Joseph Scott, CSS Expert & Responsive CSS Specialist for international remote front-end development projects. Available globally across all timezones.",
+        "images": ["/profile.webp"]
+      },
+      "canonical": "https://adamjosephscott.dev/contact"
+    },
+    "layout": {
+      "title": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist Portfolio",
+      "description": "Adam Joseph Scott - CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer specializing in React, Next.js, TypeScript, and modern web technologies. Available globally for freelance & collaboration.",
+      "keywords": [
+        "Adam Joseph Scott",
+        "CSS Expert",
+        "Responsive CSS Specialist",
+        "Front-End Developer",
+        "International Remote Developer",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Global Freelancer",
+        "Remote Collaboration"
+      ],
+      "openGraph": {
+        "title": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist Portfolio",
+        "description": "CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally for modern web solutions.",
+        "url": "https://adamjosephscott.dev",
+        "siteName": "Adam Joseph Scott Portfolio",
+        "images": [
+          {
+            "url": "/profile.webp",
+            "width": 800,
+            "height": 600,
+            "alt": "Adam Joseph Scott - CSS Expert & Responsive CSS Specialist"
+          }
+        ],
+        "locale": "en_US",
+        "type": "website"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Adam Joseph Scott | CSS Expert & Responsive CSS Specialist Portfolio",
+        "description": "CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer available globally for modern web solutions.",
+        "images": ["/profile.webp"]
+      }
+    }
+  },
+  "structured_data": {
+    "person": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://adamjosephscott.dev/#person",
+      "name": "Adam Joseph Scott",
+      "url": "https://adamjosephscott.dev",
+      "sameAs": [
+        "https://github.com/adamjosephscott",
+        "https://linkedin.com/in/adamjosephscott",
+        "https://twitter.com/adamjosephscott",
+        "https://instagram.com/adamjosephscott"
+      ],
+      "jobTitle": "CSS Expert & Responsive CSS Specialist",
+      "image": "/profile.webp",
+      "description": "Adam Joseph Scott – CSS Expert & Responsive CSS Specialist with 6+ years experience. International remote front-end developer specializing in React, Next.js, TypeScript, and modern responsive web technologies. Available globally for remote collaboration.",
+      "knowsAbout": [
+        "CSS",
+        "Responsive Design",
+        "CSS Grid",
+        "Flexbox",
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "SASS",
+        "Web Development",
+        "Frontend Development",
+        "UI/UX Development",
+        "Remote Collaboration"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "International Freelance/Remote"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "CSS Expert & Responsive CSS Specialist",
+        "description": "Specializing in CSS, responsive design, React, Next.js, and modern web technologies for international clients"
+      }
+    },
+    "website": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://adamjosephscott.dev/#website",
+      "url": "https://adamjosephscott.dev",
+      "name": "Adam Joseph Scott Portfolio",
+      "description": "CSS Expert & Responsive CSS Specialist portfolio showcasing international remote front-end development work",
+      "publisher": {
+        "@id": "https://adamjosephscott.dev/#person"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://adamjosephscott.dev/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://adamjosephscott.dev/#organization",
+      "name": "Adam Joseph Scott - CSS Expert Services",
+      "url": "https://adamjosephscott.dev",
+      "logo": "/profile.webp",
+      "description": "International remote CSS expert and responsive design specialist services",
+      "founder": {
+        "@id": "https://adamjosephscott.dev/#person"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": "International Remote Front-End Development"
+    },
+    "professional_service": {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://adamjosephscott.dev/#service",
+      "name": "CSS Expert & Responsive Design Services",
+      "description": "International remote CSS expert and responsive design specialist services. Providing modern front-end development with React, Next.js, TypeScript across all timezones.",
+      "provider": {
+        "@id": "https://adamjosephscott.dev/#person"
+      },
+      "areaServed": "Worldwide",
+      "availableLanguage": "English",
+      "serviceType": [
+        "CSS Development",
+        "Responsive Design",
+        "React Development", 
+        "Next.js Development",
+        "TypeScript Development",
+        "Front-End Development",
+        "International Remote Work"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Front-End Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CSS Expert Consultation",
+              "description": "Advanced CSS and responsive design solutions"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "React Application Development",
+              "description": "Modern React.js application development with TypeScript"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Next.js Website Development",
+              "description": "Full-stack Next.js website and application development"
+            }
+          }
+        ]
+      }
+    },
+    "faq": [
+      {
+        "@type": "Question",
+        "name": "What CSS expertise do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I specialize in advanced CSS techniques including CSS Grid, Flexbox, responsive design, CSS animations, SASS/SCSS, Tailwind CSS, and modern CSS methodologies. I'm a CSS Expert with 6+ years of experience creating responsive, cross-browser compatible designs."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Do you work with international remote clients?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, I work with international remote clients across all timezones. I'm experienced in remote collaboration using modern tools and communication platforms to deliver high-quality front-end development services globally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technologies do you specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I specialize in CSS, responsive design, React.js, Next.js, TypeScript, JavaScript, HTML5, Tailwind CSS, SASS, and modern front-end development technologies. I'm particularly expert in CSS and responsive design solutions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you available for freelance projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, I'm available for international freelance projects and remote collaboration. I work with clients globally and am flexible with different timezones to accommodate project requirements."
+        }
+      }
+    ]
+  }
+}

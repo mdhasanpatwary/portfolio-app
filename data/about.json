@@ -1,5 +1,5 @@
 {
-  "name": "John Doe",
+  "name": "Adam Joseph Scott",
   "title": "About Me",
   "subtitle": "Full-Stack Developer (React, Next.js, TypeScript) | UI/UX Engineer",
   "highlights": [
@@ -21,6 +21,6 @@
   ],
   "image": {
     "src": "/images/about/profile.jpg",
-    "alt": "John Doe"
+    "alt": "Adam Joseph Scott"
   }
 }

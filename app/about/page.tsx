@@ -8,29 +8,9 @@ import type { Metadata } from "next";
 import FAQ from "@/components/faq/FAQ";
 import { faqs } from "@/data";
 import type { FAQsData } from "@/types/data";
+import { generateMetadata as createMetadata, getPageMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "About MD Hasan Patwary | Front-End Developer Portfolio",
-  description:
-    "Learn about MD Hasan Patwary, a 6+ years experienced Front-End Developer specializing in React, Next.js, TypeScript, and modern web technologies. View education, skills, and professional background.",
-  keywords: [
-    "MD Hasan Patwary",
-    "Front-End Developer",
-    "React Developer",
-    "Next.js",
-    "TypeScript",
-    "Web Development",
-    "Portfolio",
-    "About",
-  ],
-  openGraph: {
-    title: "About MD Hasan Patwary | Front-End Developer",
-    description:
-      "Learn about MD Hasan Patwary, a 6+ years experienced Front-End Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
-    url: "https://patwary.vercel.app/about",
-  },
-  alternates: { canonical: "https://patwary.vercel.app/about" },
-};
+export const metadata: Metadata = createMetadata(getPageMetadata("about"));
 
 export default function AboutPage() {
   const aboutDescription = Array.isArray(about.description)
@@ -82,7 +62,7 @@ export default function AboutPage() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Who is MD Hasan Patwary?",
+                name: "Who is Adam Joseph Scott?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: aboutDescription,

@@ -4,27 +4,9 @@ import { projects } from "@/data";
 import type { Metadata } from "next";
 import ProjectsGrid from "./ProjectsGrid";
 import Pagination from "@/components/global/Pagination";
+import { generateMetadata as createMetadata, getPageMetadata, getGlobalMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Projects | MD Hasan Patwary - Front-End Developer Portfolio",
-  description:
-    "Explore MD Hasan Patwary's web development projects built with React, Next.js, TypeScript, and modern technologies. View live demos, source code, and technical implementations.",
-  keywords: [
-    "Web Development Projects",
-    "React Projects",
-    "Next.js Projects",
-    "Front-End Developer",
-    "Portfolio Projects",
-    "MD Hasan Patwary",
-  ],
-  openGraph: {
-    title: "Projects | MD Hasan Patwary - Front-End Developer",
-    description:
-      "Explore MD Hasan Patwary's web development projects built with React, Next.js, TypeScript, and modern technologies.",
-    url: "https://patwary.vercel.app/projects",
-  },
-  alternates: { canonical: "https://patwary.vercel.app/projects" },
-};
+export const metadata: Metadata = createMetadata(getPageMetadata("projects"));
 
 export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
   const sp = await searchParams;
@@ -35,6 +17,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
   const startIdx = (page - 1) * PAGE_SIZE;
   const endIdx = startIdx + PAGE_SIZE;
   const pageItems = projects.items.slice(startIdx, endIdx);
+  const globalConfig = getGlobalMetadata();
 
   return (
     <>
@@ -47,7 +30,23 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
         breadcrumb={[{ label: "Home", href: "/" }, { label: projects.title }]}
       />
       <div className="max-w-7xl mx-auto px-4 my-16 md:my-24">
-        <ProjectsGrid items={pageItems} />
+        <ProjectsGrid items={pageItems as Array<{
+          id: string;
+          title: string;
+          description: string;
+          image: string;
+          technologies: string[];
+          link: string;
+          github: string;
+          category: string;
+          status: string;
+          longDescription?: string;
+          features?: string[];
+          challenges?: string[];
+          solutions?: string[];
+          marketplace: "codecanyon" | "themeforest";
+          demo?: string;
+        }>} />
         <Pagination
           currentPage={page}
           totalPages={totalPages}
@@ -70,8 +69,8 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
               programmingLanguage: Array.isArray(p.technologies)
                 ? p.technologies.join(", ")
                 : undefined,
-              image: p.image ? `https://patwary.vercel.app${p.image}` : undefined,
-              author: { "@type": "Person", name: "MD Hasan Patwary" },
+              image: p.image ? `${globalConfig.domain}${p.image}` : undefined,
+              author: { "@type": "Person", name: globalConfig.author },
             })),
           }),
         }}

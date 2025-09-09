@@ -40,7 +40,7 @@
         "Applied lazy loading and caching strategies"
       ],
       "github": "https://github.com/example/ecommerce",
-      "marketplace": "",
+      "marketplace": "codecanyon",
       "demo": "https://demo.example.com/ecommerce"
     },
     {
@@ -81,7 +81,7 @@
         "Microservices architecture"
       ],
       "github": "https://github.com/example/taskmanager",
-      "marketplace": "",
+      "marketplace": "codecanyon",
       "demo": "https://demo.example.com/taskmanager"
     },
     {
@@ -122,7 +122,7 @@
         "Mobile-first design approach"
       ],
       "github": "https://github.com/example/restaurant",
-      "marketplace": "",
+      "marketplace": "themeforest",
       "demo": "https://demo.example.com/restaurant"
     },
     {
@@ -163,7 +163,7 @@
         "Hardware acceleration"
       ],
       "github": "https://github.com/example/portfolio",
-      "marketplace": "",
+      "marketplace": "themeforest",
       "demo": "https://demo.example.com/portfolio"
     },
     {
@@ -204,7 +204,7 @@
         "Database optimization and caching"
       ],
       "github": "https://github.com/example/blog",
-      "marketplace": "",
+      "marketplace": "codecanyon",
       "demo": "https://demo.example.com/blog"
     },
     {
@@ -245,7 +245,7 @@
         "GPS and IP-based location services"
       ],
       "github": "https://github.com/example/weather",
-      "marketplace": "",
+      "marketplace": "codecanyon",
       "demo": "https://demo.example.com/weather"
     },
     {
@@ -286,7 +286,7 @@
         "Optimized rendering and lazy loading"
       ],
       "github": "https://github.com/example/fitness",
-      "marketplace": "",
+      "marketplace": "codecanyon",
       "demo": "https://demo.example.com/fitness"
     },
     {
@@ -327,7 +327,7 @@
         "Lazy loading for map markers"
       ],
       "github": "https://github.com/example/realestate",
-      "marketplace": "",
+      "marketplace": "themeforest",
       "demo": "https://demo.example.com/realestate"
     }
   ]

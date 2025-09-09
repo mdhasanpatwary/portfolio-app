@@ -13,7 +13,7 @@
       "tag_list": ["nextjs", "react", "javascript", "webdev"],
       "reading_time_minutes": 8,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "Next.js 15 introduces revolutionary changes that make building modern web applications more efficient than ever before..."
@@ -29,7 +29,7 @@
       "tag_list": ["typescript", "javascript", "programming", "bestpractices"],
       "reading_time_minutes": 12,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "As applications grow in complexity, TypeScript becomes an invaluable tool for maintaining code quality..."
@@ -45,7 +45,7 @@
       "tag_list": ["tailwindcss", "css", "responsive", "design"],
       "reading_time_minutes": 6,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "Responsive design is no longer optional in today's multi-device world. Tailwind CSS makes it easier than ever..."
@@ -61,7 +61,7 @@
       "tag_list": ["api", "backend", "design", "architecture"],
       "reading_time_minutes": 10,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "Well-designed APIs are the backbone of modern applications. They enable seamless communication between different systems..."
@@ -77,7 +77,7 @@
       "tag_list": ["react", "performance", "optimization", "javascript"],
       "reading_time_minutes": 15,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "Performance is crucial for user experience. React provides several tools and patterns to optimize your applications..."
@@ -93,7 +93,7 @@
       "tag_list": ["database", "sql", "nosql", "architecture"],
       "reading_time_minutes": 11,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "The foundation of any great application is a well-designed database. Proper data modeling can make or break your project..."
@@ -109,7 +109,7 @@
       "tag_list": ["security", "webdev", "authentication", "encryption"],
       "reading_time_minutes": 13,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "Security should be built into every aspect of web development from the ground up. Here are the essential practices..."
@@ -125,7 +125,7 @@
       "tag_list": ["microservices", "architecture", "backend", "scaling"],
       "reading_time_minutes": 14,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "Microservices architecture has gained popularity, but it's not always the right choice. Here's when and how to implement it..."
@@ -141,7 +141,7 @@
       "tag_list": ["css", "grid", "flexbox", "layout"],
       "reading_time_minutes": 7,
       "user": {
-        "name": "John Doe",
+        "name": "Adam Joseph Scott",
         "username": "johndoe"
       },
       "content": "CSS Grid and Flexbox are powerful layout systems that solve different problems. Understanding when to use each is crucial..."

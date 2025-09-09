@@ -9,6 +9,7 @@ import type { Components } from "react-markdown";
 import { CustomImage } from "@/components/global";
 import type { Metadata } from "next";
 import blogData from "@/data/blog.json";
+import { getGlobalMetadata } from "@/utils/metadata";
 
 interface DevToPost {
   id: number;
@@ -29,9 +30,9 @@ interface DevToPost {
   };
 }
 
-async function getPostById(id: string): Promise<DevToPost | null> {
+function getPostById(id: string): DevToPost | null {
   try {
-    // Use local blog data instead of external API
+    // Use local blog data directly without Promise wrapper
     const post = blogData.posts.find(p => p.id.toString() === id);
     return post || null;
   } catch {
@@ -48,16 +49,18 @@ export async function generateMetadata({
     const { id } = await params;
     const post = blogData.posts.find(p => p.id.toString() === id);
     if (!post) return {};
+    const globalConfig = getGlobalMetadata();
+    
     return {
       title: post.title,
       description: post.description,
       alternates: {
-        canonical: `https://yourdomain.com/blog/${id}`,
+        canonical: `${globalConfig.domain}/blog/${id}`,
       },
       openGraph: {
         title: post.title,
         description: post.description,
-        url: `https://yourdomain.com/blog/${id}`,
+        url: `${globalConfig.domain}/blog/${id}`,
         images: post.cover_image ? [{ url: post.cover_image }] : undefined,
         type: "article",
       },
@@ -109,14 +112,15 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function BlogDetailPage({
+export default function BlogDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;
-  const post = await getPostById(id);
+  const { id } = React.use(params);
+  const post = getPostById(id);
   if (!post) return notFound();
+  const globalConfig = getGlobalMetadata();
 
   const date = new Date(post.published_at).toLocaleDateString(undefined, {
     year: "numeric",
@@ -163,11 +167,11 @@ export default async function BlogDetailPage({
                 dateModified: post.edited_at || post.published_at,
                 author: {
                   "@type": "Person",
-                  name: post.user?.name || "John Doe",
-                  url: "https://yourdomain.com",
+                  name: post.user?.name || globalConfig.author,
+                  url: globalConfig.domain,
                 },
-                publisher: { "@type": "Person", name: "John Doe" },
-                mainEntityOfPage: `https://yourdomain.com/blog/${post.id}`,
+                publisher: { "@type": "Person", name: globalConfig.author },
+                mainEntityOfPage: `${globalConfig.domain}/blog/${post.id}`,
                 speakable: {
                   "@type": "SpeakableSpecification",
                   cssSelector: ["h1", "p"],

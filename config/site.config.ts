@@ -13,7 +13,7 @@ export const siteConfig = {
   
   // Personal Information
   author: {
-    name: "John Doe",
+    name: "Adam Joseph Scott",
     title: "Full-Stack Developer",
     email: "john@example.com",
     phone: "+1 (555) 123-4567",

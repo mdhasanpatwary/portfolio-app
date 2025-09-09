@@ -94,6 +94,11 @@
           "name": "Animation",
           "icon": "FaPlay",
           "docUrl": "https://developer.mozilla.org/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+        },
+        {
+          "name": "CSS Grid",
+          "icon": "FaCss3Alt",
+          "docUrl": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout"
         }
       ]
     },

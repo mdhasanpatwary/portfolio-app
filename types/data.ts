@@ -5,6 +5,164 @@ export interface Hero {
   cta: string;
 }
 
+// Metadata Configuration Types
+export interface GlobalMetadata {
+  siteName: string;
+  domain: string;
+  author: string;
+  language: string;
+  defaultImage: string;
+}
+
+export interface SEOConfig {
+  titleTemplate: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  keywords: string[];
+}
+
+export interface OpenGraphData {
+  title: string;
+  description: string;
+  url: string;
+  siteName?: string;
+  images: Array<{
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+  }>;
+  locale?: string;
+  type?: string;
+}
+
+export interface TwitterCardData {
+  card: string;
+  title: string;
+  description: string;
+  images: string[];
+}
+
+export interface PageMetadata {
+  title: string;
+  description: string;
+  keywords: string[];
+  openGraph: OpenGraphData;
+  twitter: TwitterCardData;
+  canonical?: string;
+}
+
+export interface PersonSchema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  name: string;
+  url: string;
+  sameAs: string[];
+  jobTitle: string;
+  image: string;
+  description: string;
+  knowsAbout: string[];
+  worksFor: {
+    "@type": string;
+    name: string;
+  };
+  hasOccupation: {
+    "@type": string;
+    name: string;
+    description: string;
+  };
+}
+
+export interface WebsiteSchema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  url: string;
+  name: string;
+  description: string;
+  publisher: {
+    "@id": string;
+  };
+  potentialAction: {
+    "@type": string;
+    target: string;
+    "query-input": string;
+  };
+}
+
+export interface OrganizationSchema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  name: string;
+  url: string;
+  logo: string;
+  description: string;
+  founder: {
+    "@id": string;
+  };
+  areaServed: string;
+  serviceType: string;
+}
+
+export interface ProfessionalServiceSchema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  name: string;
+  description: string;
+  provider: {
+    "@id": string;
+  };
+  areaServed: string;
+  availableLanguage: string;
+  serviceType: string[];
+  hasOfferCatalog: {
+    "@type": string;
+    name: string;
+    itemListElement: Array<{
+      "@type": string;
+      itemOffered: {
+        "@type": string;
+        name: string;
+        description: string;
+      };
+    }>;
+  };
+}
+
+export interface FAQSchema {
+  "@type": string;
+  name: string;
+  acceptedAnswer: {
+    "@type": string;
+    text: string;
+  };
+}
+
+export interface StructuredDataConfig {
+  person: PersonSchema;
+  website: WebsiteSchema;
+  organization: OrganizationSchema;
+  professional_service: ProfessionalServiceSchema;
+  faq: FAQSchema[];
+}
+
+export interface MetadataConfig {
+  global: GlobalMetadata;
+  seo: SEOConfig;
+  pages: {
+    home: PageMetadata;
+    about: PageMetadata;
+    projects: PageMetadata;
+    blog: PageMetadata;
+    contact: PageMetadata;
+    layout: PageMetadata;
+  };
+  structured_data: StructuredDataConfig;
+}
+
 export interface About {
   title: string;
   subtitle: string;
@@ -118,7 +276,7 @@ export interface Projects {
     features?: string[];
     challenges?: string[];
     solutions?: string[];
-    marketplace: string;
+    marketplace: "codecanyon" | "themeforest";
     demo?: string;
   }>;
 }

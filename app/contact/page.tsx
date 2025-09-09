@@ -6,26 +6,9 @@ import type { Metadata } from "next";
 import FAQ from "@/components/faq/FAQ";
 import { faqs } from "@/data";
 import type { FAQsData } from "@/types/data";
+import { generateMetadata as createMetadata, getPageMetadata, getGlobalMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Contact MD Hasan Patwary | Front-End Developer",
-  description:
-    "Get in touch with MD Hasan Patwary for web development projects, collaboration opportunities, or professional inquiries. Available for remote work and relocation.",
-  keywords: [
-    "Contact MD Hasan Patwary",
-    "Front-End Developer Contact",
-    "Web Development Services",
-    "Hire Developer",
-    "Remote Work",
-  ],
-  openGraph: {
-    title: "Contact MD Hasan Patwary | Front-End Developer",
-    description:
-      "Get in touch with MD Hasan Patwary for web development projects, collaboration opportunities, or professional inquiries.",
-    url: "https://patwary.vercel.app/contact",
-  },
-  alternates: { canonical: "https://patwary.vercel.app/contact" },
-};
+export const metadata: Metadata = createMetadata(getPageMetadata("contact"));
 
 export default function ContactPage() {
   const contactFaqs: FAQsData = {
@@ -37,6 +20,8 @@ export default function ContactPage() {
       )
     ),
   };
+  const globalConfig = getGlobalMetadata();
+  
   return (
     <>
       <PageTitle
@@ -69,8 +54,8 @@ export default function ContactPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "@id": "https://patwary.vercel.app/#person",
-            name: "MD Hasan Patwary",
+            "@id": `${globalConfig.domain}/#person`,
+            name: globalConfig.author,
             contactPoint: [
               {
                 "@type": "ContactPoint",

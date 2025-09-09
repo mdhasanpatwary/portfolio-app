@@ -36,7 +36,7 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
               "@context": "https://schema.org",
               "@type": "Person",
               "@id": "https://patwary.vercel.app/#person",
-              name: "MD Hasan Patwary",
+              name: "Adam Joseph Scott",
               aggregateRating: {
                 "@type": "AggregateRating",
                 reviewCount: testimonials.items.length,
@@ -61,7 +61,7 @@ const Testimonials: FC<TestimonialProps> = ({ testimonials }) => {
                 itemReviewed: {
                   "@type": "Person",
                   "@id": "https://patwary.vercel.app/#person",
-                  name: "MD Hasan Patwary",
+                  name: "Adam Joseph Scott",
                 },
               })),
             }),

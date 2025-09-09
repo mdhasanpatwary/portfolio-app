@@ -21,41 +21,20 @@ import {
   testimonials,
 } from "@/data";
 import type { Metadata } from "next";
+import { generateMetadata as createMetadata, getPageMetadata, generateStructuredData } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title:
-    "John Doe | Full-Stack Developer Portfolio - React, Next.js, TypeScript",
-  description:
-    "John Doe - Experienced Full-Stack Developer with 5+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies. View projects, skills, and professional experience.",
-  keywords: [
-    "John Doe",
-    "Full-Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript",
-    "Web Development",
-    "Portfolio",
-    "UI/UX Engineer",
-  ],
-  openGraph: {
-    title: "John Doe | Full-Stack Developer Portfolio",
-    description:
-      "Experienced Full-Stack Developer with 5+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies.",
-    url: "https://yourdomain.com",
-  },
-  alternates: { canonical: "https://yourdomain.com" },
-};
+export const metadata: Metadata = createMetadata(getPageMetadata("home"));
 
-async function getBlogPosts(): Promise<DevToPost[]> {
+function getBlogPosts(): DevToPost[] {
   try {
-    // Use local blog data instead of external API
+    // Use local blog data directly without Promise wrapper
     return blogData.posts;
   } catch {
     return [];
   }
 }
 
-export default async function Home() {
+export default function Home() {
   const homeFaqs: FAQsData = {
     title: faqs.title,
     subtitle: faqs.subtitle,
@@ -72,7 +51,7 @@ export default async function Home() {
       ].some((k) => (i.question + i.answer).toLowerCase().includes(k))
     ),
   };
-  const posts = await getBlogPosts();
+  const posts = getBlogPosts();
   return (
     <div className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />
@@ -80,7 +59,23 @@ export default async function Home() {
       <ProfessionalExperience experiences={experiences} />
 
       <Projects
-        projectsData={{ ...projects, items: projects.items.slice(0, 8) }}
+        projectsData={{ ...projects, items: projects.items.slice(0, 8) as Array<{
+          id: string;
+          title: string;
+          description: string;
+          image: string;
+          technologies: string[];
+          link: string;
+          github: string;
+          category: string;
+          status: string;
+          longDescription?: string;
+          features?: string[];
+          challenges?: string[];
+          solutions?: string[];
+          marketplace: "codecanyon" | "themeforest";
+          demo?: string;
+        }> }}
       />
       <Services services={services} />
       <Testimonials testimonials={testimonials} />
@@ -91,7 +86,7 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: generateStructuredData("faq", {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: [
