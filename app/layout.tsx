@@ -7,6 +7,8 @@ import { header, footer } from "@/data";
 import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -17,53 +19,45 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const typedMetadata = metadataConfig as MetadataConfig;
+const layoutMetadata = typedMetadata.pages.layout;
+const siteConfig = typedMetadata.site;
+const defaultImage = typedMetadata.defaultImage;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://patwary.vercel.app"),
-  title: "MD Hasan Patwary | Front-End Developer Portfolio",
-  description:
-    "MD Hasan Patwary - Front-End Web Developer | 6+ Years Exp. | HTML, CSS, JavaScript, jQuery, React, Next.js, Docker, AWS. Leader in Scalable Web Apps. Delivered for 30K+ Global Clients. Available for freelance & collaboration.",
-  keywords: [
-    "MD Hasan Patwary",
-    "Portfolio",
-    "Front-End Developer",
-    "Web Developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Docker",
-    "AWS",
-    "UI/UX Engineer",
-    "Freelance Developer",
-    "Dhaka",
-    "Bangladesh",
-  ],
+  metadataBase: new URL(siteConfig.url),
+  title: layoutMetadata.title,
+  description: layoutMetadata.description,
+  keywords: layoutMetadata.keywords,
   openGraph: {
-    title: "MD Hasan Patwary | Front-End Developer Portfolio",
-    description:
-      "Front-End Web Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Available for freelance & collaboration",
-    url: "https://patwary.vercel.app",
-    siteName: "MD Hasan Patwary Portfolio",
+    title: layoutMetadata.openGraph.title,
+    description: layoutMetadata.openGraph.description,
+    url: siteConfig.url,
+    siteName: layoutMetadata.openGraph.siteName,
     images: [
       {
-        url: "/profile.webp",
-        width: 800,
-        height: 600,
-        alt: "MD Hasan Patwary - Front-End Developer",
+        url: defaultImage.url,
+        width: defaultImage.width,
+        height: defaultImage.height,
+        alt: defaultImage.alt,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: siteConfig.locale,
+    type: (layoutMetadata.openGraph.type as "website") || "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "MD Hasan Patwary | Front-End Developer Portfolio",
-    description:
-      "Front-End Web Developer (React, Next.js, TypeScript) | UI/UX Engineer | Leader in Scalable Web Apps | Docker & AWS | 6+ Years Exp. | Delivered for 30K+ Global Clients | Available for freelance & collaboration",
-    images: ["/profile.webp"],
-  },
+  twitter: layoutMetadata.twitter
+    ? {
+        card: layoutMetadata.twitter.card as "summary_large_image",
+        title: layoutMetadata.twitter.title,
+        description: layoutMetadata.twitter.description,
+        images: [defaultImage.url],
+      }
+    : {
+        card: "summary_large_image",
+        title: layoutMetadata.openGraph.title,
+        description: layoutMetadata.openGraph.description,
+        images: [defaultImage.url],
+      },
 };
 
 export default function RootLayout({
@@ -77,61 +71,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "@id": "https://patwary.vercel.app/#person",
-              name: "MD Hasan Patwary",
-              url: "https://patwary.vercel.app",
-              sameAs: [
-                "https://github.com/mdhasanpatwary",
-                "https://www.linkedin.com/in/mdhasanpatwary/",
-                "https://stackoverflow.com/users/11076109/patwary",
-                "https://www.facebook.com/mdhasanpatwaryweb",
-                "https://dev.to/mdhassanpatwary",
-                "https://app.daily.dev/mdhassanpatwary",
-                "https://codepen.io/MD-Hasan-Patwary",
-                "https://www.upwork.com/freelancers/~01edc329725caf7992",
-                "https://www.youtube.com/@mdhasanpatwary7711",
-                "https://x.com/md_hasanpatwary",
-                "https://www.instagram.com/mdhasanpatwaryweb/",
-                "https://www.threads.com/@mdhasanpatwaryweb",
-              ],
-              jobTitle: "Front-End Developer",
-              image: "/profile.webp",
-              description:
-                "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
-              knowsAbout: [
-                "React.js",
-                "Next.js",
-                "TypeScript",
-                "JavaScript",
-                "HTML5",
-                "CSS3",
-                "Docker",
-                "AWS",
-                "UI/UX Design",
-                "Web Development",
-                "Front-End Development",
-              ],
-              worksFor: {
-                "@type": "Organization",
-                name: "Freelance/Remote",
-              },
-              hasOccupation: {
-                "@type": "Occupation",
-                name: "Front-End Developer",
-                description:
-                  "Specializing in React, Next.js, and modern web technologies",
-              },
-            }),
+            __html: JSON.stringify(typedMetadata.structuredData.person),
           }}
         />
         <meta
           name="google-site-verification"
           content="mAw4WDufpIlGKITY-HKXUg0YyJqt3H_iUNTUXWDDAA4"
         />
-        <link rel="canonical" href="https://patwary.vercel.app" />
+        <link rel="canonical" href={siteConfig.url} />
         <link
           rel="alternate"
           type="application/rss+xml"

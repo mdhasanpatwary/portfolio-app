@@ -1,0 +1,332 @@
+{
+  "site": {
+    "name": "MD Hasan Patwary Portfolio",
+    "url": "https://patwary.vercel.app",
+    "domain": "patwary.vercel.app",
+    "author": "MD Hasan Patwary",
+    "locale": "en_US",
+    "type": "website"
+  },
+  "defaultImage": {
+    "url": "/profile.webp",
+    "width": 800,
+    "height": 600,
+    "alt": "MD Hasan Patwary - Front-End Developer"
+  },
+  "social": {
+    "twitter": "@md_hasanpatwary",
+    "github": "https://github.com/mdhasanpatwary",
+    "linkedin": "https://www.linkedin.com/in/mdhasanpatwary/"
+  },
+  "structuredData": {
+    "person": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://patwary.vercel.app/#person",
+      "name": "MD Hasan Patwary",
+      "url": "https://patwary.vercel.app",
+      "jobTitle": "Front-End Developer",
+      "image": "/profile.webp",
+      "description": "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
+      "knowsAbout": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Docker",
+        "AWS",
+        "UI/UX Design",
+        "Web Development",
+        "Front-End Development",
+        "CSS Expert",
+        "Responsive CSS Specialist"
+      ],
+      "sameAs": [
+        "https://github.com/mdhasanpatwary",
+        "https://www.linkedin.com/in/mdhasanpatwary/",
+        "https://stackoverflow.com/users/11076109/patwary",
+        "https://www.facebook.com/mdhasanpatwaryweb",
+        "https://dev.to/mdhassanpatwary",
+        "https://app.daily.dev/mdhassanpatwary",
+        "https://codepen.io/MD-Hasan-Patwary",
+        "https://www.upwork.com/freelancers/~01edc329725caf7992",
+        "https://www.youtube.com/@mdhasanpatwary7711",
+        "https://x.com/md_hasanpatwary",
+        "https://www.instagram.com/mdhasanpatwaryweb/",
+        "https://www.threads.com/@mdhasanpatwaryweb"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance/Remote"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Front-End Developer",
+        "description": "Specializing in React, Next.js, CSS, and modern web technologies"
+      }
+    },
+    "website": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://patwary.vercel.app/#website",
+      "name": "MD Hasan Patwary Portfolio",
+      "url": "https://patwary.vercel.app",
+      "description": "Professional portfolio of MD Hasan Patwary, CSS Expert and Responsive CSS Specialist with 6+ years of front-end development experience.",
+      "author": {
+        "@id": "https://patwary.vercel.app/#person"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://patwary.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    "professionalService": {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "MD Hasan Patwary - CSS Expert & Front-End Development Services",
+      "url": "https://patwary.vercel.app",
+      "description": "Professional CSS Expert and Responsive CSS Specialist offering front-end development services, React/Next.js development, and modern web solutions for international clients.",
+      "provider": {
+        "@id": "https://patwary.vercel.app/#person"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "CSS Expert Services",
+        "Responsive CSS Specialist",
+        "Front-End Development",
+        "React Development",
+        "Next.js Development",
+        "TypeScript Development",
+        "Web Performance Optimization",
+        "UI/UX Implementation"
+      ],
+      "availableLanguage": ["en"]
+    },
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MD Hasan Patwary - CSS Expert Services",
+      "url": "https://patwary.vercel.app",
+      "logo": "https://patwary.vercel.app/profile.webp",
+      "foundingDate": "2018",
+      "founder": {
+        "@id": "https://patwary.vercel.app/#person"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BD",
+        "addressLocality": "Dhaka"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["en"]
+      }
+    }
+  },
+  "pages": {
+    "layout": {
+      "title": "MD Hasan Patwary | CSS Expert & Front-End Developer Portfolio",
+      "description": "MD Hasan Patwary - CSS Expert & Responsive CSS Specialist | 6+ Years Exp. | HTML, CSS, JavaScript, React, Next.js, Docker, AWS. International Remote Developer. Available for freelance & collaboration worldwide.",
+      "keywords": [
+        "MD Hasan Patwary",
+        "CSS Expert",
+        "Responsive CSS Specialist",
+        "Portfolio",
+        "Front-End Developer",
+        "Web Developer",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Docker",
+        "AWS",
+        "UI/UX Engineer",
+        "Freelance Developer",
+        "International Remote Work",
+        "Global Front-End Services",
+        "Dhaka",
+        "Bangladesh"
+      ],
+      "openGraph": {
+        "title": "MD Hasan Patwary | CSS Expert & Front-End Developer Portfolio",
+        "description": "CSS Expert & Responsive CSS Specialist (React, Next.js, TypeScript) | UI/UX Engineer | International Remote Developer | Docker & AWS | 6+ Years Exp. | Available for global freelance & collaboration",
+        "siteName": "MD Hasan Patwary Portfolio",
+        "type": "website"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "MD Hasan Patwary | CSS Expert & Front-End Developer Portfolio",
+        "description": "CSS Expert & Responsive CSS Specialist (React, Next.js, TypeScript) | UI/UX Engineer | International Remote Developer | Docker & AWS | 6+ Years Exp. | Available for global freelance & collaboration"
+      }
+    },
+    "home": {
+      "title": "MD Hasan Patwary | CSS Expert & Front-End Developer Portfolio - React, Next.js, TypeScript",
+      "description": "MD Hasan Patwary - CSS Expert & Responsive CSS Specialist with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies. International remote developer serving global clients. View projects, skills, and professional experience.",
+      "keywords": [
+        "MD Hasan Patwary",
+        "CSS Expert",
+        "Responsive CSS Specialist",
+        "Front-End Developer",
+        "React Developer",
+        "Next.js Developer",
+        "TypeScript",
+        "Web Development",
+        "Portfolio",
+        "UI/UX Engineer",
+        "International Remote Work",
+        "Global Front-End Services"
+      ],
+      "openGraph": {
+        "title": "MD Hasan Patwary | CSS Expert & Front-End Developer Portfolio",
+        "description": "CSS Expert & Responsive CSS Specialist with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies. Available for international remote work."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app"
+      }
+    },
+    "about": {
+      "title": "About MD Hasan Patwary | CSS Expert & Front-End Developer Portfolio",
+      "description": "Learn about MD Hasan Patwary, a CSS Expert & Responsive CSS Specialist with 6+ years experience in React, Next.js, TypeScript, and modern web technologies. International remote developer available for global collaboration. View education, skills, and professional background.",
+      "keywords": [
+        "MD Hasan Patwary",
+        "CSS Expert",
+        "Responsive CSS Specialist",
+        "Front-End Developer",
+        "React Developer",
+        "Next.js",
+        "TypeScript",
+        "Web Development",
+        "Portfolio",
+        "About",
+        "International Remote Work",
+        "Global Front-End Services"
+      ],
+      "openGraph": {
+        "title": "About MD Hasan Patwary | CSS Expert & Front-End Developer",
+        "description": "Learn about MD Hasan Patwary, a CSS Expert & Responsive CSS Specialist with 6+ years experience in React, Next.js, TypeScript, and modern web technologies. Available for international remote work."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app/about"
+      }
+    },
+    "blog": {
+      "title": "Blog | MD Hasan Patwary - CSS Expert & Web Development Articles",
+      "description": "Read MD Hasan Patwary's web development blog featuring CSS expert tips, articles on React, Next.js, TypeScript, responsive CSS techniques, and modern web development best practices for international developers.",
+      "keywords": [
+        "CSS Expert Blog",
+        "Responsive CSS Tips",
+        "Web Development Blog",
+        "React Blog",
+        "Next.js Blog",
+        "TypeScript Blog",
+        "CSS Tips",
+        "Front-End Development",
+        "MD Hasan Patwary Blog",
+        "International Web Development"
+      ],
+      "openGraph": {
+        "title": "Blog | MD Hasan Patwary - CSS Expert & Web Development Articles",
+        "description": "Read MD Hasan Patwary's web development blog featuring CSS expert tips, articles on React, Next.js, TypeScript, responsive CSS techniques, and modern web development best practices."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app/blog"
+      }
+    },
+    "contact": {
+      "title": "Contact MD Hasan Patwary | CSS Expert & Front-End Developer",
+      "description": "Get in touch with MD Hasan Patwary, CSS Expert & Responsive CSS Specialist, for web development projects, international remote collaboration opportunities, or professional inquiries. Available for global clients across all timezones.",
+      "keywords": [
+        "Contact MD Hasan Patwary",
+        "CSS Expert Contact",
+        "Responsive CSS Specialist",
+        "Front-End Developer Contact",
+        "Web Development Services",
+        "Hire CSS Expert",
+        "International Remote Work",
+        "Global Front-End Services",
+        "Remote Collaboration"
+      ],
+      "openGraph": {
+        "title": "Contact MD Hasan Patwary | CSS Expert & Front-End Developer",
+        "description": "Get in touch with MD Hasan Patwary, CSS Expert & Responsive CSS Specialist, for web development projects, international remote collaboration opportunities, or professional inquiries."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app/contact"
+      }
+    },
+    "projects": {
+      "title": "Projects | MD Hasan Patwary - CSS Expert & Front-End Developer Portfolio",
+      "description": "Explore MD Hasan Patwary's web development projects showcasing CSS expertise, responsive design mastery, and solutions built with React, Next.js, TypeScript, and modern technologies. View live demos, source code, and technical implementations for international clients.",
+      "keywords": [
+        "CSS Expert Projects",
+        "Responsive CSS Projects",
+        "Web Development Projects",
+        "React Projects",
+        "Next.js Projects",
+        "Front-End Developer",
+        "Portfolio Projects",
+        "MD Hasan Patwary",
+        "International Web Projects"
+      ],
+      "openGraph": {
+        "title": "Projects | MD Hasan Patwary - CSS Expert & Front-End Developer",
+        "description": "Explore MD Hasan Patwary's web development projects showcasing CSS expertise, responsive design mastery, and solutions built with React, Next.js, TypeScript, and modern technologies."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app/projects"
+      }
+    },
+    "cssTips": {
+      "title": "CSS Tips & Tricks | MD Hasan Patwary - CSS Expert & Responsive CSS Specialist",
+      "description": "Discover practical CSS tips, tricks, and best practices from CSS Expert MD Hasan Patwary. Learn advanced CSS techniques, responsive design mastery, performance optimization, and modern CSS solutions for international web development.",
+      "keywords": [
+        "CSS Expert Tips",
+        "CSS Tips",
+        "CSS Tricks",
+        "Responsive CSS Techniques",
+        "CSS Best Practices",
+        "Responsive Design",
+        "CSS Performance",
+        "Front-End Development",
+        "Web Design",
+        "Modern CSS",
+        "CSS Specialist"
+      ],
+      "openGraph": {
+        "title": "CSS Tips & Tricks | MD Hasan Patwary - CSS Expert",
+        "description": "Discover practical CSS tips, tricks, and best practices from CSS Expert MD Hasan Patwary. Learn advanced CSS techniques, responsive design mastery, and performance optimization."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app/css-tips"
+      }
+    }
+  },
+  "faq": {
+    "global": [
+      {
+        "question": "What makes you a CSS Expert?",
+        "answer": "I have 6+ years of specialized experience in CSS, responsive design, and modern web technologies. I've mastered advanced CSS techniques, performance optimization, and cross-browser compatibility for international clients."
+      },
+      {
+        "question": "Do you provide international remote CSS services?",
+        "answer": "Yes, I work with clients worldwide across all timezones. I'm experienced in remote collaboration tools and have successfully delivered CSS solutions for international projects."
+      },
+      {
+        "question": "What CSS technologies and frameworks do you specialize in?",
+        "answer": "I specialize in modern CSS, Tailwind CSS, CSS-in-JS, responsive design, CSS Grid, Flexbox, animations, and performance optimization. I also work extensively with React, Next.js, and TypeScript."
+      },
+      {
+        "question": "Are you available for freelance CSS projects?",
+        "answer": "Yes, I'm available for freelance projects focusing on CSS expertise, responsive design, and front-end development. I work with international clients on both short-term and long-term projects."
+      }
+    ]
+  }
+}
