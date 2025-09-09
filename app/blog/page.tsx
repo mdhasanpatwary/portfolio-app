@@ -16,12 +16,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: blogMetadata.openGraph.title,
     description: blogMetadata.openGraph.description,
-    url:
-      blogMetadata.alternates?.canonical || "https://patwary.vercel.app/blog",
+    url: blogMetadata.alternates?.canonical || "https://patwary.vercel.app/blog",
   },
-  alternates: blogMetadata.alternates
-    ? { canonical: blogMetadata.alternates.canonical }
-    : undefined,
+  alternates: blogMetadata.alternates ? { canonical: blogMetadata.alternates.canonical } : undefined,
 };
 
 async function fetchDevToPosts(): Promise<DevToPost[]> {

@@ -17,13 +17,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: projectsMetadata.openGraph.title,
     description: projectsMetadata.openGraph.description,
-    url:
-      projectsMetadata.alternates?.canonical ||
-      "https://patwary.vercel.app/projects",
+    url: projectsMetadata.alternates?.canonical || "https://patwary.vercel.app/projects",
   },
-  alternates: projectsMetadata.alternates
-    ? { canonical: projectsMetadata.alternates.canonical }
-    : undefined,
+  alternates: projectsMetadata.alternates ? { canonical: projectsMetadata.alternates.canonical } : undefined,
 };
 
 export default async function ProjectsPage({

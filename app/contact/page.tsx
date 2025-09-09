@@ -19,13 +19,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: contactMetadata.openGraph.title,
     description: contactMetadata.openGraph.description,
-    url:
-      contactMetadata.alternates?.canonical ||
-      "https://patwary.vercel.app/contact",
+    url: contactMetadata.alternates?.canonical || "https://patwary.vercel.app/contact",
   },
-  alternates: contactMetadata.alternates
-    ? { canonical: contactMetadata.alternates.canonical }
-    : undefined,
+  alternates: contactMetadata.alternates ? { canonical: contactMetadata.alternates.canonical } : undefined,
 };
 
 export default function ContactPage() {

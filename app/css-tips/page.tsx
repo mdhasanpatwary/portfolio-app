@@ -17,13 +17,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: cssTipsMetadata.openGraph.title,
     description: cssTipsMetadata.openGraph.description,
-    url:
-      cssTipsMetadata.alternates?.canonical ||
-      "https://patwary.vercel.app/css-tips",
+    url: cssTipsMetadata.alternates?.canonical || "https://patwary.vercel.app/css-tips",
   },
-  alternates: cssTipsMetadata.alternates
-    ? { canonical: cssTipsMetadata.alternates.canonical }
-    : undefined,
+  alternates: cssTipsMetadata.alternates ? { canonical: cssTipsMetadata.alternates.canonical } : undefined,
 };
 
 export default async function CssTipsPage({

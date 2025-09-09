@@ -35,9 +35,7 @@ export const metadata: Metadata = {
     description: homeMetadata.openGraph.description,
     url: homeMetadata.alternates?.canonical || "https://patwary.vercel.app",
   },
-  alternates: homeMetadata.alternates
-    ? { canonical: homeMetadata.alternates.canonical }
-    : undefined,
+  alternates: homeMetadata.alternates ? { canonical: homeMetadata.alternates.canonical } : undefined,
 };
 
 async function fetchDevToPosts(): Promise<DevToPost[]> {

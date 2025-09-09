@@ -45,6 +45,17 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     type: (layoutMetadata.openGraph.type as "website") || "website",
   },
+  twitter: layoutMetadata.twitter ? {
+    card: layoutMetadata.twitter.card as "summary_large_image",
+    title: layoutMetadata.twitter.title,
+    description: layoutMetadata.twitter.description,
+    images: [defaultImage.url],
+  } : {
+    card: "summary_large_image",
+    title: layoutMetadata.openGraph.title,
+    description: layoutMetadata.openGraph.description,
+    images: [defaultImage.url],
+  },
   twitter: layoutMetadata.twitter
     ? {
         card: layoutMetadata.twitter.card as "summary_large_image",

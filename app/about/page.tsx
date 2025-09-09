@@ -21,12 +21,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: aboutMetadata.openGraph.title,
     description: aboutMetadata.openGraph.description,
-    url:
-      aboutMetadata.alternates?.canonical || "https://patwary.vercel.app/about",
+    url: aboutMetadata.alternates?.canonical || "https://patwary.vercel.app/about",
   },
-  alternates: aboutMetadata.alternates
-    ? { canonical: aboutMetadata.alternates.canonical }
-    : undefined,
+  alternates: aboutMetadata.alternates ? { canonical: aboutMetadata.alternates.canonical } : undefined,
 };
 
 export default function AboutPage() {
