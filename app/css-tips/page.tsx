@@ -4,27 +4,22 @@ import PageTitle from "@/components/global/PageTitle";
 import { FaCode } from "react-icons/fa";
 import type { Metadata } from "next";
 import Pagination from "@/components/global/Pagination";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
+
+const typedMetadata = metadataConfig as MetadataConfig;
+const cssTipsMetadata = typedMetadata.pages.cssTips;
 
 export const metadata: Metadata = {
-  title: "CSS Tips & Tricks | MD Hasan Patwary - Front-End Developer",
-  description:
-    "Discover practical CSS tips, tricks, and best practices for modern web development. Learn advanced CSS techniques, responsive design, and performance optimization.",
-  keywords: [
-    "CSS Tips",
-    "CSS Tricks",
-    "CSS Best Practices",
-    "Responsive Design",
-    "CSS Performance",
-    "Front-End Development",
-    "Web Design",
-  ],
+  title: cssTipsMetadata.title,
+  description: cssTipsMetadata.description,
+  keywords: cssTipsMetadata.keywords,
   openGraph: {
-    title: "CSS Tips & Tricks | MD Hasan Patwary",
-    description:
-      "Discover practical CSS tips, tricks, and best practices for modern web development.",
-    url: "https://patwary.vercel.app/css-tips",
+    title: cssTipsMetadata.openGraph.title,
+    description: cssTipsMetadata.openGraph.description,
+    url: cssTipsMetadata.alternates?.canonical || "https://patwary.vercel.app/css-tips",
   },
-  alternates: { canonical: "https://patwary.vercel.app/css-tips" },
+  alternates: cssTipsMetadata.alternates ? { canonical: cssTipsMetadata.alternates.canonical } : undefined,
 };
 
 export default async function CssTipsPage({ searchParams }: { searchParams: Promise<{ page?: string; tipId?: string }> }) {

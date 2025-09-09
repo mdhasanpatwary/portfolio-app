@@ -13,6 +13,7 @@ import footerData from './footer.json';
 import cssTipsData from './css-tips.json';
 import aboutData from './about.json';
 import faqsData from './faqs.json';
+import metadataData from './metadata.json';
 
 // Export individual sections for better tree-shaking
 export const education = educationData;
@@ -30,3 +31,4 @@ export const footer = footerData;
 export const cssTips = cssTipsData;
 export const about = aboutData;
 export const faqs = faqsData;
+export const metadata = metadataData;
