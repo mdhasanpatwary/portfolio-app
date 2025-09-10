@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customization Guide - Modern Portfolio Template</title>
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -90,6 +93,28 @@
             font-size: 0.9rem;
             margin: 1rem 0;
             overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+        }
+        
+        /* Prism.js syntax highlighting styles */
+        pre[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        code[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: transparent;
+            color: inherit;
         }
         
         .warning {
@@ -127,6 +152,8 @@
             font-family: 'Monaco', 'Courier New', monospace;
             font-size: 0.9rem;
             margin: 1rem 0;
+            white-space: pre;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -149,7 +176,7 @@
             <h3>1. Site Configuration (config/site.config.ts)</h3>
             <p>This is your main customization hub. Update the following sections:</p>
 
-            <div class="code">export const siteConfig = {
+            <pre><code class="language-typescript">export const siteConfig = {
   // Your basic information
   siteName: "Your Portfolio",
   author: {
@@ -175,7 +202,7 @@
     enableContact: true,
     // ... other feature toggles
   }
-};</div>
+};</code></pre>
 
             <div class="info">
                 <strong>💡 Pro Tip:</strong> You can disable any section you don't need by setting the corresponding feature flag to <code>false</code>.
@@ -186,21 +213,27 @@
             <p>All content is stored in JSON files in the <code>data/</code> directory. Here's what each file contains:</p>
 
             <div class="file-tree">data/
-├── about.json          # Personal information and bio
-├── banner.json         # Hero section content
-├── contact.json        # Contact information and form
-├── education.json      # Education history
-├── experiences.json    # Work experience
-├── footer.json         # Footer content
-├── header.json         # Navigation menu
-├── hobbies.json       # Personal interests
-├── projects.json      # Portfolio projects
-├── services.json      # Services offered
-├── skills.json        # Technical skills
-└── testimonials.json  # Client testimonials</div>
+|-- about.json          # Personal information and bio
+|-- banner.json         # Hero section content
+|-- blog.json           # Blog posts data
+|-- contact.json        # Contact information and form
+|-- css-tips.json       # CSS tips and tricks content
+|-- education.json      # Education history
+|-- experiences.json    # Work experience
+|-- faqs.json           # Frequently asked questions
+|-- footer.json         # Footer content
+|-- funFacts.json       # Fun facts and statistics
+|-- header.json         # Navigation menu
+|-- hobbies.json        # Personal interests
+|-- index.ts            # Data exports (centralized)
+|-- metadata.json       # SEO and page metadata
+|-- projects.json       # Portfolio projects
+|-- services.json       # Services offered
+|-- skills.json         # Technical skills
+`-- testimonials.json   # Client testimonials</div>
 
             <h3>Personal Information (data/about.json)</h3>
-            <div class="code">{
+            <pre><code class="language-json">{
   "name": "Your Name",
   "title": "About Me",
   "subtitle": "Your Professional Title",
@@ -223,11 +256,11 @@
     "src": "/your-profile-image.jpg",
     "alt": "Your Name"
   }
-}</div>
+}</code></pre>
 
             <h3>Projects (data/projects.json)</h3>
             <p>Add your portfolio projects here:</p>
-            <div class="code">{
+            <pre><code class="language-json">{
   "title": "My Projects",
   "subtitle": "Showcase of my recent work",
   "projects": [
@@ -249,12 +282,11 @@
       ]
     }
   ]
-}</div>
+}</code></pre>
 
             <h3>Skills (data/skills.json)</h3>
             <p>Organize your skills by categories:</p>
-            <div class="code">{
-  "title": "Skills",
+            <pre><code class="language-json">{"Skills",
   "subtitle": "Technologies I use",
   "groups": [
     {
@@ -273,43 +305,37 @@
       ]
     }
   ]
-}</div>
+}</code></pre>
 
             <h2>Visual Customization</h2>
 
             <h3>Colors and Styling</h3>
-            <p>The template uses Tailwind CSS for styling. You can customize colors in several ways:</p>
+            <p>The template uses Tailwind CSS v4 for styling. The framework includes built-in configuration without requiring a separate config file:</p>
 
-            <div class="code">// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: '#eff6ff',
-          500: '#3b82f6',
-          900: '#1e3a8a',
-        },
-        secondary: {
-          50: '#f8fafc',
-          500: '#64748b',
-          900: '#0f172a',
-        }
-      }
-    }
-  }
-}</div>
+            <pre><code class="language-css">/* app/globals.css - Custom properties */
+:root {
+  --primary-50: #eff6ff;
+  --primary-500: #3b82f6;
+  --primary-900: #1e3a8a;
+}
+
+/* Dark mode support */
+[data-theme="dark"] {
+  --primary-50: #1e3a8a;
+  --primary-500: #3b82f6;
+  --primary-900: #eff6ff;
+}</code></pre>
 
             <h3>Fonts</h3>
             <p>Change fonts by updating the font imports in <code>app/layout.tsx</code>:</p>
 
-            <div class="code">import { Inter, Roboto } from 'next/font/google'
+            <pre><code class="language-typescript">import { Inter, Roboto } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 const roboto = Roboto({ 
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'] 
-})</div>
+})</code></pre>
 
             <h3>Images</h3>
             <p>Replace placeholder images in the <code>public/images/</code> directory:</p>
@@ -346,26 +372,27 @@ const roboto = Roboto({
                 <li>Add your credentials to <code>.env.local</code>:</li>
             </ol>
 
-            <div class="code">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+            <pre><code class="language-bash">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</code></pre>
 
             <h3>AI Chat Widget Setup</h3>
             <p>To enable the AI chat widget:</p>
 
             <ol>
-                <li>Get a Google Generative AI API key from <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+                <li>Get a Google Generative AI API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></li>
                 <li>Add it to your <code>.env.local</code> file:</li>
             </ol>
 
-            <div class="code">NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key</div>
+            <pre><code class="language-bash">NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key</code></pre>
 
             <h3>Blog Integration</h3>
-            <p>The template supports Dev.to blog integration. To customize:</p>
+            <p>The template includes a built-in blog system with markdown support. To customize:</p>
 
             <ol>
-                <li>Update your Dev.to username in the blog context</li>
+                <li>Edit <code>data/blog.json</code> to add your blog posts</li>
                 <li>Or disable the blog by setting <code>enableBlog: false</code> in site config</li>
+                <li>Blog posts support markdown content and are displayed with responsive cards</li>
             </ol>
 
             <h2>SEO Customization</h2>
@@ -373,7 +400,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
             <h3>Meta Tags</h3>
             <p>Update SEO settings in <code>config/site.config.ts</code>:</p>
 
-            <div class="code">seo: {
+            <pre><code class="language-typescript">seo: {
   keywords: [
     "your keyword 1",
     "your keyword 2",
@@ -382,17 +409,17 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
   ],
   ogImage: "/your-og-image.jpg",
   twitterCard: "summary_large_image",
-}</div>
+}</code></pre>
 
             <h3>Sitemap</h3>
             <p>The sitemap is automatically generated. Update the configuration in <code>next-sitemap.config.js</code>:</p>
 
-            <div class="code">module.exports = {
+            <pre><code class="language-javascript">module.exports = {
   siteUrl: 'https://yourdomain.com',
   generateRobotsTxt: true,
   changefreq: 'daily',
   priority: 0.7,
-}</div>
+}</code></pre>
 
             <h2>Advanced Customization</h2>
 
@@ -409,7 +436,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
             <h3>Custom Animations</h3>
             <p>The template uses CSS transitions and transforms. You can add custom animations:</p>
 
-            <div class="code">// Example custom animation
+            <pre><code class="language-css">// Example custom animation
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -417,7 +444,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}</div>
+}</code></pre>
 
             <h2>Testing Your Changes</h2>
 
@@ -440,15 +467,203 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
             <p>If you need assistance with customization:</p>
 
             <ul>
-                <li>Check the <a href="troubleshooting.html">Troubleshooting Guide</a> for common issues</li>
-                <li>Review the <a href="features.html">Features Overview</a> for detailed feature explanations</li>
+                <li>Check the troubleshooting section in the <a href="installation.html">Installation Guide</a></li>
                 <li>Contact support through CodeCanyon comments</li>
             </ul>
 
             <div class="info">
                 <strong>💡 Remember:</strong> Always backup your customizations before making major changes. Consider using Git for version control.
             </div>
+            
+            <h2>💡 Step-by-Step Examples</h2>
+            
+            <h3>Example 1: Personalizing Your Portfolio (5 minutes)</h3>
+            <pre><code class="language-json">// 1. Update data/banner.json
+{
+  "name": "Your Name",
+  "title": "Your Professional Title | Technologies | Experience",
+  "summary": "Your professional summary...",
+  "image": "/your-profile-image.jpg"
+}
+
+// 2. Update data/about.json
+{
+  "name": "Your Name",
+  "highlights": [
+    "Your Key Achievement 1",
+    "Your Key Achievement 2",
+    "Years of Experience",
+    "Notable Accomplishment"
+  ],
+  "description": [
+    "Your first paragraph about your background...",
+    "Your second paragraph about your goals..."
+  ]
+}
+
+// 3. Update data/contact.json
+{
+  "email": "your.email@domain.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "Your City, Country"
+}</code></pre>
+
+            <h3>Example 2: Adding Your Projects</h3>
+            <pre><code class="language-json">// Add to data/projects.json items array
+{
+  "id": "unique-project-id",
+  "title": "Your Project Name",
+  "description": "Brief project description for the grid view.",
+  "image": "/images/projects/your-project.jpg",
+  "link": "https://your-project-demo.com",
+  "category": "Web Application",
+  "technologies": ["React", "Node.js", "MongoDB"],
+  "status": "live",
+  "longDescription": "Detailed description for the modal view...",
+  "features": ["Feature 1", "Feature 2", "Feature 3"],
+  "github": "https://github.com/yourusername/project",
+  "demo": "https://your-demo-url.com"
+}</code></pre>
+
+            <div class="warning">
+                <strong>💡 Image Guidelines:</strong>
+                <ul>
+                    <li>Project images: 800x600px (4:3 aspect ratio)</li>
+                    <li>Profile images: 400x400px (square)</li>
+                    <li>Use WebP or JPEG format, under 200KB</li>
+                </ul>
+            </div>
+
+            <h3>Example 3: Customizing Colors</h3>
+            <pre><code class="language-css">/* Method 1: Edit app/globals.css */
+:root {
+  --primary: #your-primary-color;
+  --secondary: #your-secondary-color;
+  --accent: #your-accent-color;
+}
+
+[data-theme="dark"] {
+  --primary: #your-dark-primary;
+  --secondary: #your-dark-secondary;
+}
+
+/* Method 2: Using Tailwind's arbitrary values */
+.custom-bg {
+  background-color: theme('colors.blue.500');
+}</code></pre>
+
+            <h3>Example 4: Setting Up Contact Form</h3>
+            <pre><code class="language-bash"># 1. Create EmailJS account at https://emailjs.com
+# 2. Add service and create template
+# 3. Add to .env.local:
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxxxxxx
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxx
+
+# 4. Test by submitting the contact form</code></pre>
+
+            <h3>Example 5: Enabling AI Chat Widget</h3>
+            <pre><code class="language-bash"># 1. Get Google AI API key from:
+# https://makersuite.google.com/app/apikey
+
+# 2. Add to .env.local:
+NEXT_PUBLIC_GOOGLE_API_KEY=your_google_ai_api_key_here
+
+# 3. Enable in config/site.config.ts:</code></pre>
+            <pre><code class="language-typescript">export const siteConfig = {
+  features: {
+    enableAI: true,
+  },
+  ai: {
+    enableAI: true,
+    googleApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+  },
+}</code></pre>
+
+            <h3>Example 6: Performance Optimization</h3>
+            <pre><code class="language-jsx">// Good: Using Next.js Image component
+import Image from 'next/image'
+
+&lt;Image
+  src="/profile.webp"
+  alt="Profile"
+  width={400}
+  height={400}
+  priority // For above-the-fold images
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,..."
+/&gt;
+
+// Avoid: Regular img tag
+&lt;img src="/profile.webp" alt="Profile" /&gt;</code></pre>
+
+            <h3>Example 7: Adding Custom Fonts</h3>
+            <pre><code class="language-typescript">// app/layout.tsx
+import { Inter, Playfair_Display } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
+const playfair = Playfair_Display({ 
+  weight: ['400', '700'],
+  subsets: ['latin'] 
+})</code></pre>
+            <pre><code class="language-css">/* app/globals.css */
+body {
+  font-family: var(--font-inter);
+}
+
+.heading-font {
+  font-family: var(--font-playfair);
+}</code></pre>
+
+            <h3>Example 8: Creating Custom Section</h3>
+            <pre><code class="language-json">// 1. Create data/certifications.json
+{
+  "title": "Certifications",
+  "subtitle": "Professional certifications and achievements",
+  "items": [
+    {
+      "id": "1",
+      "name": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credentialUrl": "https://credential-url.com"
+    }
+  ]
+}</code></pre>
+            <pre><code class="language-tsx">// 2. Create components/certifications/Certifications.tsx
+import { certifications } from '@/data'
+
+export default function Certifications() {
+  return (
+    &lt;section className="py-16"&gt;
+      &lt;h2 className="text-3xl font-bold mb-8"&gt;{certifications.title}&lt;/h2&gt;
+      &lt;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+        {certifications.items.map((cert) =&gt; (
+          &lt;div key={cert.id} className="bg-white p-6 rounded-lg shadow"&gt;
+            &lt;h3 className="font-semibold"&gt;{cert.name}&lt;/h3&gt;
+            &lt;p className="text-gray-600"&gt;{cert.issuer}&lt;/p&gt;
+            &lt;p className="text-sm"&gt;{cert.date}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/section&gt;
+  )
+}</code></pre>
+            <pre><code class="language-tsx">// 3. Add to app/page.tsx
+import Certifications from '@/components/certifications/Certifications'
+
+export default function HomePage() {
+  return (
+    &lt;main&gt;
+      &lt;Certifications /&gt;
+    &lt;/main&gt;
+  )
+}</code></pre>
         </div>
     </div>
+    <!-- Prism.js JavaScript for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

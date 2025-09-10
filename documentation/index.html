@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Portfolio Template - Documentation</title>
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -153,6 +156,28 @@
             font-size: 0.9rem;
             margin: 1rem 0;
             overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+        }
+        
+        /* Prism.js syntax highlighting styles */
+        pre[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        code[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: transparent;
+            color: inherit;
         }
         
         .feature-grid {
@@ -220,7 +245,7 @@
     <div class="container">
         <div class="header">
             <h1>🚀 Modern Portfolio Template</h1>
-            <p>Complete documentation for your Next.js 15 portfolio template</p>
+            <p>Complete documentation for your Next.js 15 portfolio template with TypeScript and Tailwind CSS v4</p>
         </div>
 
         <div class="quick-start">
@@ -231,7 +256,7 @@
                     <div class="step-content">
                         <h3>Extract & Install</h3>
                         <p>Extract the template files and run npm install to install dependencies</p>
-                        <div class="code">npm install</div>
+                        <pre><code class="language-bash">npm install</code></pre>
                     </div>
                 </div>
                 <div class="step">
@@ -239,7 +264,7 @@
                     <div class="step-content">
                         <h3>Configure Environment</h3>
                         <p>Copy .env.example to .env.local and configure your settings</p>
-                        <div class="code">cp .env.example .env.local</div>
+                        <pre><code class="language-bash">cp .env.example .env.local</code></pre>
                     </div>
                 </div>
                 <div class="step">
@@ -254,7 +279,7 @@
                     <div class="step-content">
                         <h3>Start Development</h3>
                         <p>Run the development server and start customizing</p>
-                        <div class="code">npm run dev</div>
+                        <pre><code class="language-bash">npm run dev</code></pre>
                     </div>
                 </div>
             </div>
@@ -265,89 +290,145 @@
             <div class="nav-grid">
                 <div class="nav-item">
                     <h3><a href="installation.html">🔧 Installation Guide</a></h3>
-                    <p>Step-by-step setup instructions, requirements, and initial configuration</p>
+                    <p>Complete setup instructions, requirements, file structure, and troubleshooting</p>
                 </div>
                 <div class="nav-item">
                     <h3><a href="customization.html">🎨 Customization Guide</a></h3>
-                    <p>How to customize content, styling, and features to match your brand</p>
-                </div>
-                <div class="nav-item">
-                    <h3><a href="api-reference.html">🔗 API Reference</a></h3>
-                    <p>Complete API documentation for AI chat, RSS feeds, and integrations</p>
-                </div>
-                <div class="nav-item">
-                    <h3><a href="browser-support.html">🌐 Browser Support</a></h3>
-                    <p>Browser compatibility matrix and progressive enhancement details</p>
-                </div>
-                <div class="nav-item">
-                    <h3><a href="file-structure.html">📁 File Structure</a></h3>
-                    <p>Detailed breakdown of directories, files, and organization patterns</p>
-                </div>
-                <div class="nav-item">
-                    <h3><a href="examples.html">💡 Examples & Tutorials</a></h3>
-                    <p>Step-by-step guides and practical customization examples</p>
-                </div>
-                <div class="nav-item">
-                    <h3><a href="troubleshooting.html">🔍 Troubleshooting</a></h3>
-                    <p>Common issues and solutions to help you resolve problems quickly</p>
+                    <p>How to customize content, styling, features, and practical examples</p>
                 </div>
                 <div class="nav-item">
                     <h3><a href="deployment.html">🌐 Deployment Guide</a></h3>
                     <p>How to deploy your portfolio to Vercel, Netlify, and other platforms</p>
                 </div>
-                <div class="nav-item">
-                    <h3><a href="changelog.html">📝 Changelog</a></h3>
-                    <p>Version history and updates to keep track of improvements</p>
-                </div>
             </div>
         </div>
 
         <div class="quick-start">
-            <h2>🌟 Template Features</h2>
+            <h2>🌟 Key Features</h2>
             <div class="feature-grid">
                 <div class="feature">
-                    <h4>⚡ Next.js 15</h4>
-                    <p>Latest Next.js with App Router and Turbopack for blazing fast development</p>
-                </div>
-                <div class="feature">
-                    <h4>🎯 TypeScript</h4>
-                    <p>Full TypeScript support with strict typing for better development experience</p>
-                </div>
-                <div class="feature">
-                    <h4>🎨 Tailwind CSS</h4>
-                    <p>Modern utility-first CSS framework for rapid UI development</p>
+                    <h4>⚡ Modern Tech Stack</h4>
+                    <p>Next.js 15, React 19, TypeScript, and Tailwind CSS v4 for cutting-edge performance</p>
                 </div>
                 <div class="feature">
                     <h4>🌗 Dark/Light Mode</h4>
-                    <p>Beautiful theme switching with smooth transitions and user preference persistence</p>
+                    <p>Seamless theme switching with user preference persistence and smooth transitions</p>
                 </div>
                 <div class="feature">
                     <h4>📱 Fully Responsive</h4>
                     <p>Mobile-first design that looks perfect on all devices and screen sizes</p>
                 </div>
                 <div class="feature">
-                    <h4>📊 SEO Optimized</h4>
-                    <p>Built-in SEO best practices with meta tags, structured data, and sitemaps</p>
-                </div>
-                <div class="feature">
-                    <h4>🤖 AI Integration</h4>
-                    <p>Google Generative AI chat widget for interactive user engagement</p>
-                </div>
-                <div class="feature">
-                    <h4>📝 Blog System</h4>
-                    <p>Built-in blog with markdown support and Dev.to integration</p>
+                    <h4>🤖 AI Chat Widget</h4>
+                    <p>Interactive AI-powered chat using Google Generative AI for visitor engagement</p>
                 </div>
                 <div class="feature">
                     <h4>📧 Contact Form</h4>
-                    <p>Working contact form with EmailJS integration and validation</p>
+                    <p>Working contact form with EmailJS integration, validation, and email delivery</p>
                 </div>
                 <div class="feature">
-                    <h4>📈 Analytics</h4>
-                    <p>Vercel Analytics and Google Analytics support for tracking</p>
+                    <h4>📊 SEO Optimized</h4>
+                    <p>Complete SEO setup with meta tags, structured data, sitemaps, and social optimization</p>
+                </div>
+                <div class="feature">
+                    <h4>🎡 Custom Carousel</h4>
+                    <p>Custom-built responsive carousel component with smooth animations and touch support</p>
                 </div>
                 <div class="feature">
                     <h4>⚙️ Easy Configuration</h4>
-                    <p>Centralized configuration system for quick customization</p>
+                    <p>All content stored in JSON files - customize without touching code</p>
+                </div>
+                <div class="feature">
+                    <h4>🚀 Performance</h4>
+                    <p>Lighthouse scores of 95+ across all metrics with optimized loading</p>
+                </div>
+                <div class="feature">
+                    <h4>♿ Accessible</h4>
+                    <p>WCAG 2.1 AA compliant with keyboard navigation and screen reader support</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quick-start">
+            <h2>📄 Portfolio Sections</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h4>🎯 Hero Banner</h4>
+                    <p>Eye-catching introduction with call-to-action buttons and professional image</p>
+                </div>
+                <div class="feature">
+                    <h4>👤 About Section</h4>
+                    <p>Personal bio, highlights, and professional background showcase</p>
+                </div>
+                <div class="feature">
+                    <h4>💼 Skills Showcase</h4>
+                    <p>Technical skills with proficiency levels and categorized organization</p>
+                </div>
+                <div class="feature">
+                    <h4>🚀 Projects Portfolio</h4>
+                    <p>Filterable project gallery with detailed modals and live demos</p>
+                </div>
+                <div class="feature">
+                    <h4>📈 Experience Timeline</h4>
+                    <p>Work experience with achievements, descriptions, and career progression</p>
+                </div>
+                <div class="feature">
+                    <h4>🎓 Education History</h4>
+                    <p>Academic background, certifications, and professional development</p>
+                </div>
+                <div class="feature">
+                    <h4>💬 Client Testimonials</h4>
+                    <p>Social proof with client reviews, ratings, and professional endorsements</p>
+                </div>
+                <div class="feature">
+                    <h4>⚙️ Services Offered</h4>
+                    <p>Professional services with features, pricing, and detailed descriptions</p>
+                </div>
+                <div class="feature">
+                    <h4>🎨 Hobbies & Interests</h4>
+                    <p>Personal interests and activities that showcase personality</p>
+                </div>
+                <div class="feature">
+                    <h4>📊 Fun Facts</h4>
+                    <p>Statistics, achievements, and interesting metrics with counters</p>
+                </div>
+                <div class="feature">
+                    <h4>❓ FAQ Section</h4>
+                    <p>Frequently asked questions with collapsible, searchable answers</p>
+                </div>
+                <div class="feature">
+                    <h4>📞 Contact Information</h4>
+                    <p>Multiple contact methods, social links, and location details</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-start">
+            <h2>🏗️ Technical Architecture</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h4>Next.js 15 & App Router</h4>
+                    <p>Latest framework with server-side rendering and static generation</p>
+                </div>
+                <div class="feature">
+                    <h4>React 19 Components</h4>
+                    <p>Modern React with hooks, context, and component architecture</p>
+                </div>
+                <div class="feature">
+                    <h4>TypeScript Safety</h4>
+                    <p>Full type safety with comprehensive type definitions</p>
+                </div>
+                <div class="feature">
+                    <h4>Tailwind CSS v4</h4>
+                    <p>Utility-first styling with responsive design and dark mode</p>
+                </div>
+                <div class="feature">
+                    <h4>Custom Carousel System</h4>
+                    <p>Custom-built carousel with breakpoint-based responsive design and smooth animations</p>
+                </div>
+                <div class="feature">
+                    <h4>EmailJS Integration</h4>
+                    <p>Contact form handling without backend server requirements</p>
                 </div>
             </div>
         </div>
@@ -358,5 +439,9 @@
             <a href="https://codecanyon.net/" class="support-button">Get Support</a>
         </div>
     </div>
+    <!-- Prism.js JavaScript for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

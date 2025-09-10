@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installation Guide - Modern Portfolio Template</title>
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -90,6 +93,28 @@
             font-size: 0.9rem;
             margin: 1rem 0;
             overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+        }
+        
+        /* Prism.js syntax highlighting styles */
+        pre[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        code[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: transparent;
+            color: inherit;
         }
         
         .warning {
@@ -165,30 +190,30 @@
             <div class="step">
                 <h4>Step 1: Extract Template Files</h4>
                 <p>Extract the downloaded template files to your desired location:</p>
-                <div class="code">cd your-projects-folder
+                <pre><code class="language-bash">cd your-projects-folder
 unzip modern-portfolio-template.zip
-cd modern-portfolio-template</div>
+cd modern-portfolio-template</code></pre>
             </div>
 
             <div class="step">
                 <h4>Step 2: Install Dependencies</h4>
                 <p>Install all required dependencies using npm or yarn:</p>
-                <div class="code"># Using npm
+                <pre><code class="language-bash"># Using npm
 npm install
 
 # Or using yarn
-yarn install</div>
+yarn install</code></pre>
                 <p>This may take a few minutes depending on your internet connection.</p>
             </div>
 
             <div class="step">
                 <h4>Step 3: Environment Configuration</h4>
                 <p>Copy the environment template and configure your settings:</p>
-                <div class="code"># Copy environment template
+                <pre><code class="language-bash"># Copy environment template
 cp .env.example .env.local
 
 # Edit the file with your settings
-nano .env.local  # or use your preferred editor</div>
+nano .env.local  # or use your preferred editor</code></pre>
                 
                 <div class="warning">
                     <strong>⚠️ Important:</strong> The .env.local file contains sensitive information. Never commit it to version control.
@@ -198,11 +223,11 @@ nano .env.local  # or use your preferred editor</div>
             <div class="step">
                 <h4>Step 4: Start Development Server</h4>
                 <p>Start the development server to see your portfolio:</p>
-                <div class="code"># Using npm
+                <pre><code class="language-bash"># Using npm
 npm run dev
 
 # Or using yarn
-yarn dev</div>
+yarn dev</code></pre>
                 <p>Open <strong>http://localhost:3000</strong> in your browser to view the template.</p>
             </div>
 
@@ -215,71 +240,176 @@ yarn dev</div>
             <p>The template uses environment variables for optional features. Here's what each variable does:</p>
 
             <h3>EmailJS (Contact Form)</h3>
-            <div class="code">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+            <pre><code class="language-bash">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</div>
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id</code></pre>
             <p>Required only if you want to use the contact form. Get these keys from <a href="https://emailjs.com" target="_blank">EmailJS</a>.</p>
 
             <h3>Google AI (Chat Widget)</h3>
-            <div class="code">NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key</div>
-            <p>Required only for the AI chat widget. Get your API key from the <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a>.</p>
+            <pre><code class="language-bash">NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key</code></pre>
+            <p>Required only for the AI chat widget. Get your API key from the <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>.</p>
 
-            <h3>Analytics (Optional)</h3>
-            <div class="code">NEXT_PUBLIC_GA_TRACKING_ID=your_google_analytics_id</div>
-            <p>For Google Analytics tracking. Vercel Analytics is automatically configured when deployed to Vercel.</p>
+
 
             <h2>Project Structure</h2>
             
             <p>Understanding the project structure will help you customize the template effectively:</p>
             
-            <div class="code">modern-portfolio-template/
-├── app/                    # Next.js App Router pages
-├── components/             # React components
-├── config/                 # Site configuration
-├── context/                # React Context providers
-├── data/                   # JSON content files
-├── documentation/          # This documentation
-├── hooks/                  # Custom React hooks
-├── public/                 # Static assets
-├── types/                  # TypeScript type definitions
-├── utils/                  # Utility functions
-├── .env.example           # Environment template
-├── next.config.ts         # Next.js configuration
-├── package.json           # Dependencies
-└── tailwind.config.js     # Tailwind CSS config</div>
+            <pre><code class="language-text">modern-portfolio-template/
+|-- app/                    # Next.js App Router pages
+|   |-- about/page.tsx     # About page
+|   |-- blog/              # Blog pages
+|   |-- contact/page.tsx   # Contact page
+|   |-- projects/          # Projects pages
+|   |-- layout.tsx         # Root layout
+|   |-- page.tsx           # Homepage
+|   `-- globals.css        # Global styles
+|-- components/             # React components
+|   |-- about/             # About section components
+|   |-- banner/            # Hero banner components
+|   |-- blog/              # Blog components
+|   |-- contact/           # Contact components
+|   |-- education/         # Education components
+|   |-- experience/        # Experience components
+|   |-- global/            # Reusable UI components
+|   |-- header/            # Navigation header
+|   |-- projects/          # Project components
+|   |-- skills/            # Skills components
+|   `-- testimonial/       # Testimonial components
+|-- config/                 # Site configuration
+|   |-- index.ts           # Config exports
+|   `-- site.config.ts     # Main site config
+|-- context/                # React Context providers
+|   |-- BlogContext.tsx    # Blog state management
+|   `-- ThemeContext.tsx   # Theme state management
+|-- data/                   # JSON content files
+|   |-- about.json         # Personal information
+|   |-- banner.json        # Hero section data
+|   |-- blog.json          # Blog posts
+|   |-- contact.json       # Contact information
+|   |-- css-tips.json      # CSS tips content
+|   |-- education.json     # Education history
+|   |-- experiences.json   # Work experience
+|   |-- faqs.json          # FAQ section data
+|   |-- footer.json        # Footer content
+|   |-- funFacts.json      # Fun facts statistics
+|   |-- header.json        # Navigation header
+|   |-- hobbies.json       # Personal hobbies
+|   |-- metadata.json      # SEO metadata
+|   |-- projects.json      # Portfolio projects
+|   |-- services.json      # Services offered
+|   |-- skills.json        # Technical skills
+|   `-- testimonials.json  # Client testimonials
+|-- documentation/          # This documentation
+|-- hooks/                  # Custom React hooks
+|   `-- useProjectModal.tsx # Project modal hook
+|-- public/                 # Static assets
+|   |-- images/            # Images and media
+|   |-- robots.txt         # SEO robots file
+|   |-- sitemap-0.xml      # Generated sitemap
+|   `-- sitemap.xml        # Main sitemap
+|-- types/                  # TypeScript type definitions
+|   `-- data.ts            # Data type definitions
+|-- utils/                  # Utility functions
+|   |-- errorLogger.ts     # Error logging
+|   |-- imageBlur.ts       # Image blur utilities
+|   |-- index.ts           # Utility exports
+|   |-- metadata.ts        # Metadata utilities
+|   `-- status.tsx         # Status utilities
+|-- .env.example           # Environment template
+|-- next.config.ts         # Next.js configuration
+|-- package.json           # Dependencies
+|-- postcss.config.mjs     # PostCSS config
+`-- tsconfig.json          # TypeScript config</code></pre>
+
+            <div class="info">
+                <strong>📚 Key Directories:</strong>
+                <ul>
+                    <li><strong>data/</strong> - Edit JSON files to customize content</li>
+                    <li><strong>config/</strong> - Update site configuration and settings</li>
+                    <li><strong>public/images/</strong> - Replace with your images</li>
+                    <li><strong>components/</strong> - Modify React components if needed</li>
+                    <li><strong>types/</strong> - TypeScript definitions for data structures</li>
+                </ul>
+            </div>
 
             <h2>Common Installation Issues</h2>
 
             <h3>Node.js Version Error</h3>
             <p>If you get an error about Node.js version:</p>
-            <div class="code"># Check your version
+            <pre><code class="language-bash"># Check your version
 node --version
 
-# Install Node.js 18+ from https://nodejs.org</div>
+# Install Node.js 18+ from https://nodejs.org</code></pre>
 
             <h3>Permission Errors (macOS/Linux)</h3>
             <p>If you encounter permission errors during installation:</p>
-            <div class="code"># Fix npm permissions
-sudo chown -R $(whoami) ~/.npm</div>
+            <pre><code class="language-bash"># Fix npm permissions
+sudo chown -R $(whoami) ~/.npm</code></pre>
 
             <h3>Port Already in Use</h3>
             <p>If port 3000 is already in use:</p>
-            <div class="code"># Use a different port
-npm run dev -- -p 3001</div>
+            <pre><code class="language-bash"># Use a different port
+npm run dev -- -p 3001</code></pre>
+
+            <h3>Build Errors</h3>
+            <p>If you encounter build errors:</p>
+            <pre><code class="language-bash"># Clear Next.js cache
+npm run build -- --no-cache
+
+# Or delete .next folder and rebuild
+rm -rf .next
+npm run build</code></pre>
+
+            <h3>Contact Form Not Working</h3>
+            <p>If the contact form doesn't work:</p>
+            <ul>
+                <li>Check that EmailJS environment variables are set correctly</li>
+                <li>Verify your EmailJS service and template IDs</li>
+                <li>Test with a simple message first</li>
+            </ul>
+
+            <h3>AI Chat Widget Issues</h3>
+            <p>If the AI chat doesn't appear:</p>
+            <ul>
+                <li>Ensure Google API key is set in .env.local</li>
+                <li>Check that enableAI is true in site config</li>
+                <li>Verify API key has proper permissions</li>
+            </ul>
+
+            <h3>Images Not Loading</h3>
+            <p>If images are not displaying:</p>
+            <ul>
+                <li>Check image paths in data JSON files</li>
+                <li>Ensure images are in the public/ directory</li>
+                <li>Verify image file extensions match the references</li>
+            </ul>
+
+            <h3>Dark Mode Not Working</h3>
+            <p>If theme switching doesn't work:</p>
+            <ul>
+                <li>Check browser developer tools for JavaScript errors</li>
+                <li>Ensure ThemeContext is properly imported</li>
+                <li>Clear browser cache and reload</li>
+            </ul>
 
             <h2>Next Steps</h2>
             
             <p>Once installation is complete, you can:</p>
             <ol>
                 <li>Read the <a href="customization.html">Customization Guide</a> to personalize your portfolio</li>
-                <li>Check the <a href="features.html">Features Overview</a> to understand all available features</li>
-                <li>Review the <a href="deployment.html">Deployment Guide</a> when ready to go live</li>
+                <li>Review the key features section in the main documentation</li>
+                <li>Check the <a href="deployment.html">Deployment Guide</a> when ready to go live</li>
             </ol>
 
             <div class="info">
-                <strong>💡 Need Help?</strong> If you encounter any issues during installation, check the <a href="troubleshooting.html">Troubleshooting Guide</a> or contact support through CodeCanyon.
+                <strong>💡 Need Help?</strong> If you encounter any issues during installation, check the troubleshooting section above or contact support through CodeCanyon.
             </div>
         </div>
     </div>
+    <!-- Prism.js JavaScript for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

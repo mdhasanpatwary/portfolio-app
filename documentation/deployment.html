@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Guide - Modern Portfolio Template</title>
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .nav-back {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-back a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .content h2 {
+            color: #2d3748;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .content h3 {
+            color: #4a5568;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .content p {
+            margin: 1rem 0;
+            color: #718096;
+        }
+        
+        .content ul, .content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content li {
+            margin: 0.5rem 0;
+            color: #718096;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+        }
+        
+        /* Prism.js syntax highlighting styles */
+        pre[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.4;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        code[class*="language-"] {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: transparent;
+            color: inherit;
+        }
+        
+        .warning {
+            background: #fef5e7;
+            border: 1px solid #f6e05e;
+            border-left: 4px solid #ed8936;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .info {
+            background: #ebf8ff;
+            border: 1px solid #90cdf4;
+            border-left: 4px solid #4299e1;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-left: 4px solid #48bb78;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .step {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step h4 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .deployment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .deployment-option {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #48bb78;
+            transition: all 0.3s ease;
+        }
+        
+        .deployment-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .deployment-option h4 {
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .deployment-option p {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .pros, .cons {
+            padding: 1rem;
+            border-radius: 6px;
+        }
+        
+        .pros {
+            background: #f0fff4;
+            border-left: 3px solid #48bb78;
+        }
+        
+        .cons {
+            background: #fef5e7;
+            border-left: 3px solid #ed8936;
+        }
+        
+        .pros h5, .cons h5 {
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+        
+        .pros ul, .cons ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pros li:before {
+            content: "✅ ";
+            margin-right: 0.5rem;
+        }
+        
+        .cons li:before {
+            content: "⚠️ ";
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="index.html">← Back to Documentation</a>
+        </div>
+        
+        <div class="header">
+            <h1>🌐 Deployment Guide</h1>
+            <p>Complete deployment instructions for your Modern Portfolio Template</p>
+        </div>
+
+        <div class="content">
+            <h2>🚀 Deployment Options</h2>
+            
+            <p>Your portfolio template can be deployed to various hosting platforms. Here are the most popular and recommended options:</p>
+            
+            <div class="deployment-grid">
+                <div class="deployment-option">
+                    <h4>🔷 Vercel (Recommended)</h4>
+                    <p>Zero-configuration deployment with automatic builds, global CDN, and serverless functions. Perfect for Next.js applications.</p>
+                </div>
+                
+                <div class="deployment-option">
+                    <h4>📦 Netlify</h4>
+                    <p>Static site hosting with form handling, serverless functions, and automatic deployments from Git repositories.</p>
+                </div>
+                
+                <div class="deployment-option">
+                    <h4>🌐 GitHub Pages</h4>
+                    <p>Free static hosting directly from your GitHub repository. Requires static export configuration.</p>
+                </div>
+                
+                <div class="deployment-option">
+                    <h4>☁️ AWS/DigitalOcean</h4>
+                    <p>Cloud platforms offering full control over server configuration and scaling options.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>🔷 Vercel Deployment (Recommended)</h2>
+            
+            <p>Vercel offers the best experience for Next.js applications with zero configuration and optimal performance.</p>
+            
+            <div class="step">
+                <h4>Step 1: Prepare Your Repository</h4>
+                <p>Ensure your code is in a Git repository (GitHub, GitLab, or Bitbucket):</p>
+                <pre><code class="language-bash">git init
+git add .
+git commit -m "Initial commit"
+git remote add origin your-repository-url
+git push -u origin main</code></pre>
+            </div>
+
+            <div class="step">
+                <h4>Step 2: Connect to Vercel</h4>
+                <ol>
+                    <li>Visit <a href="https://vercel.com" target="_blank">vercel.com</a> and sign up/login</li>
+                    <li>Click "New Project" or "Import Project"</li>
+                    <li>Connect your Git provider (GitHub, GitLab, Bitbucket)</li>
+                    <li>Select your portfolio repository</li>
+                    <li>Vercel automatically detects Next.js configuration</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Step 3: Configure Environment Variables</h4>
+                <p>Add your environment variables in the Vercel dashboard:</p>
+                <pre><code class="language-bash">NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com</code></pre>
+            </div>
+
+            <div class="step">
+                <h4>Step 4: Deploy</h4>
+                <p>Click "Deploy" and Vercel will:</p>
+                <ul>
+                    <li>Install dependencies automatically</li>
+                    <li>Build your application</li>
+                    <li>Deploy to global CDN</li>
+                    <li>Provide you with a live URL</li>
+                </ul>
+            </div>
+
+            <div class="success">
+                <strong>🎉 Automatic Deployments:</strong> Any push to your main branch will trigger automatic redeployment!
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>📦 Static Export Deployment</h2>
+            
+            <p>For hosting on static platforms (GitHub Pages, Netlify, traditional web hosts), you can export your site as static files.</p>
+            
+            <div class="step">
+                <h4>Step 1: Configure Static Export</h4>
+                <p>Update your <code>next.config.ts</code> file:</p>
+                <pre><code class="language-typescript">/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  // Disable server-side features for static export
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  }
+}
+
+export default nextConfig</code></pre>
+            </div>
+
+            <div class="step">
+                <h4>Step 2: Add Export Script</h4>
+                <p>Add to your <code>package.json</code> scripts:</p>
+                <pre><code class="language-json">{
+  "scripts": {
+    "build": "next build",
+    "export": "next build && next export",
+    "deploy": "npm run export"
+  }
+}</code></pre>
+            </div>
+
+            <div class="step">
+                <h4>Step 3: Generate Static Files</h4>
+                <pre><code class="language-bash">npm run export</code></pre>
+                <p>This creates an <code>out/</code> directory with all static files.</p>
+            </div>
+
+            <div class="step">
+                <h4>Step 4: Upload to Your Host</h4>
+                <p>Upload the contents of the <code>out/</code> directory to your web server's public directory.</p>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Static Export Limitations:</strong>
+                <ul>
+                    <li>AI chat widget won't work (requires server-side API)</li>
+                    <li>Contact form needs alternative setup (Formspree, Netlify Forms)</li>
+                    <li>No server-side rendering benefits</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>🌐 Platform-Specific Instructions</h2>
+            
+            <h3>GitHub Pages</h3>
+            <div class="step">
+                <h4>Setup GitHub Pages Deployment</h4>
+                <ol>
+                    <li>Configure static export (see above)</li>
+                    <li>Create <code>.github/workflows/deploy.yml</code>:</li>
+                </ol>
+                <pre><code class="language-yaml">name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run export
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out</code></pre>
+            </div>
+
+            <h3>Netlify</h3>
+            <div class="step">
+                <h4>Netlify Configuration</h4>
+                <p>Create <code>netlify.toml</code> in your project root:</p>
+                <pre><code class="language-toml">[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_PRIVATE_TARGET = "server"</code></pre>
+            </div>
+
+            <h3>DigitalOcean App Platform</h3>
+            <div class="step">
+                <h4>DigitalOcean Setup</h4>
+                <ol>
+                    <li>Connect your GitHub repository</li>
+                    <li>Choose "Web Service" type</li>
+                    <li>Set build command: <code>npm run build</code></li>
+                    <li>Set run command: <code>npm start</code></li>
+                    <li>Add environment variables</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>🔧 Pre-Deployment Checklist</h2>
+            
+            <ul>
+                <li>✅ Update all personal information in JSON data files</li>
+                <li>✅ Replace placeholder images with your own</li>
+                <li>✅ Configure environment variables</li>
+                <li>✅ Test contact form functionality</li>
+                <li>✅ Verify all external links work</li>
+                <li>✅ Check mobile responsiveness</li>
+                <li>✅ Test in different browsers</li>
+                <li>✅ Optimize images for web</li>
+                <li>✅ Update SEO meta tags</li>
+                <li>✅ Set up custom domain (optional)</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>🚨 Troubleshooting</h2>
+            
+            <h3>Build Failures</h3>
+            <div class="info">
+                <strong>Common Issues:</strong>
+                <ul>
+                    <li><strong>Node.js Version:</strong> Ensure deployment platform uses Node.js 18+</li>
+                    <li><strong>Environment Variables:</strong> All NEXT_PUBLIC_ variables must be set</li>
+                    <li><strong>Import Paths:</strong> Check for case-sensitive file imports</li>
+                    <li><strong>Dependencies:</strong> Ensure all dependencies are in package.json</li>
+                </ul>
+            </div>
+
+            <h3>Runtime Errors</h3>
+            <div class="warning">
+                <strong>Contact Form Issues:</strong>
+                <ul>
+                    <li>Verify EmailJS credentials are correct</li>
+                    <li>Check CORS settings in EmailJS dashboard</li>
+                    <li>Ensure template ID matches your EmailJS template</li>
+                </ul>
+            </div>
+
+            <h3>Performance Issues</h3>
+            <div class="success">
+                <strong>Optimization Tips:</strong>
+                <ul>
+                    <li>Compress images before uploading</li>
+                    <li>Use WebP format when possible</li>
+                    <li>Enable CDN on your hosting platform</li>
+                    <li>Monitor Core Web Vitals in production</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>🎯 Custom Domain Setup</h2>
+            
+            <h3>Vercel Custom Domain</h3>
+            <div class="step">
+                <h4>Add Custom Domain</h4>
+                <ol>
+                    <li>Go to your Vercel project dashboard</li>
+                    <li>Navigate to "Settings" → "Domains"</li>
+                    <li>Add your domain name</li>
+                    <li>Configure DNS records as instructed</li>
+                    <li>Vercel automatically handles SSL certificates</li>
+                </ol>
+            </div>
+
+            <h3>DNS Configuration</h3>
+            <pre><code class="language-text">Type: CNAME
+Name: www (or @)
+Value: your-vercel-deployment.vercel.app
+
+Type: A
+Name: @
+Value: 76.76.19.61</code></pre>
+
+            <div class="info">
+                <strong>💡 Pro Tip:</strong> Most domain registrars provide DNS management. Popular options include Cloudflare, Namecheap, and GoDaddy.
+            </div>
+        </div>
+
+        <div class="success">
+            <h2>🎉 Deployment Complete!</h2>
+            <p>Congratulations! Your modern portfolio is now live and accessible to the world. Don't forget to:</p>
+            <ul>
+                <li>🔍 Submit your site to search engines</li>
+                <li>📊 Set up monitoring (Google Analytics, etc.)</li>
+                <li>🔄 Schedule regular backups</li>
+                <li>📱 Test on multiple devices and browsers</li>
+                <li>🚀 Share your new portfolio with your network!</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <strong>📧 Need Help?</strong> If you encounter any deployment issues, contact support through CodeCanyon or check the installation guide for troubleshooting tips.
+        </div>
+    </div>
+    <!-- Prism.js JavaScript for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

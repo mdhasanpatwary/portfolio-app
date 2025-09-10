@@ -195,7 +195,6 @@ npm start
 3. **Environment Variables**: Copy `.env.example` to `.env.local` and configure:
    - EmailJS for contact form
    - Google AI for chat widget
-   - Analytics tracking IDs
 
 ### **Content Management**
 
@@ -231,8 +230,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
 # Google AI Configuration (Optional)
 NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key
 
-# Analytics (Optional)
-NEXT_PUBLIC_GA_TRACKING_ID=your_google_analytics_id
+
 ```
 
 ### **Deployment**
