@@ -57,7 +57,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
         {title}
       </h1>
       {subtitle && (
-        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mt-0 mx-auto">
+        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mt-3 mx-auto">
           {subtitle}
         </div>
       )}

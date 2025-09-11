@@ -8,7 +8,11 @@ import { Toaster } from "react-hot-toast";
 import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
 import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
-import { generateMetadata as createMetadata, getPageMetadata, generateStructuredData } from "@/utils/metadata";
+import {
+  generateMetadata as createMetadata,
+  getPageMetadata,
+  generateStructuredData,
+} from "@/utils/metadata";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -57,7 +61,6 @@ export default function RootLayout({
           href="/rss.xml"
         />
 
-
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -98,7 +101,6 @@ export default function RootLayout({
             <PortfolioChatWidget />
           </ErrorBoundary>
         </ThemeProvider>
-
       </body>
     </html>
   );
