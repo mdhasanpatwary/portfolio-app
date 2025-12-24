@@ -4,35 +4,39 @@ import PageTitle from "@/components/global/PageTitle";
 import { FaCode } from "react-icons/fa";
 import type { Metadata } from "next";
 import Pagination from "@/components/global/Pagination";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
+
+const typedMetadata = metadataConfig as MetadataConfig;
+const cssTipsMetadata = typedMetadata.pages.cssTips;
 
 export const metadata: Metadata = {
-  title: "CSS Tips & Tricks | MD Hasan Patwary - Front-End Developer",
-  description:
-    "Discover practical CSS tips, tricks, and best practices for modern web development. Learn advanced CSS techniques, responsive design, and performance optimization.",
-  keywords: [
-    "CSS Tips",
-    "CSS Tricks",
-    "CSS Best Practices",
-    "Responsive Design",
-    "CSS Performance",
-    "Front-End Development",
-    "Web Design",
-  ],
+  title: cssTipsMetadata.title,
+  description: cssTipsMetadata.description,
+  keywords: cssTipsMetadata.keywords,
   openGraph: {
-    title: "CSS Tips & Tricks | MD Hasan Patwary",
-    description:
-      "Discover practical CSS tips, tricks, and best practices for modern web development.",
-    url: "https://patwary.vercel.app/css-tips",
+    title: cssTipsMetadata.openGraph.title,
+    description: cssTipsMetadata.openGraph.description,
+    url: cssTipsMetadata.alternates?.canonical || "https://patwary.vercel.app/css-tips",
   },
-  alternates: { canonical: "https://patwary.vercel.app/css-tips" },
+  alternates: cssTipsMetadata.alternates ? { canonical: cssTipsMetadata.alternates.canonical } : undefined,
 };
 
-export default async function CssTipsPage({ searchParams }: { searchParams: Promise<{ page?: string; tipId?: string }> }) {
+export default async function CssTipsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string; tipId?: string }>;
+}) {
   const sp = await searchParams;
   // cssTips is a JSON array (see data/css-tips.json), not an object with `items`
-  const tips: Array<{ id: number; title: string; description: string }> = Array.isArray(cssTips)
-    ? (cssTips as Array<{ id: number; title: string; description: string }>)
-    : ((cssTips as unknown as { items?: Array<{ id: number; title: string; description: string }> }).items || []);
+  const tips: Array<{ id: number; title: string; description: string }> =
+    Array.isArray(cssTips)
+      ? (cssTips as Array<{ id: number; title: string; description: string }>)
+      : (
+          cssTips as unknown as {
+            items?: Array<{ id: number; title: string; description: string }>;
+          }
+        ).items || [];
   const PAGE_SIZE = 6;
   const page = Math.max(1, Number(sp?.page || 1) || 1);
   const totalPages = Math.max(1, Math.ceil(tips.length / PAGE_SIZE));
@@ -40,7 +44,10 @@ export default async function CssTipsPage({ searchParams }: { searchParams: Prom
   const endIdx = startIdx + PAGE_SIZE;
   const pageTips = tips.slice(startIdx, endIdx);
   const initialTipId = sp?.tipId ? Number(sp.tipId) : undefined;
-  const initialTipData = typeof initialTipId === 'number' ? (tips.find(t => t.id === initialTipId) || null) : null;
+  const initialTipData =
+    typeof initialTipId === "number"
+      ? tips.find((t) => t.id === initialTipId) || null
+      : null;
   const howToCandidates = tips.filter((t) =>
     [
       "scroll-behavior",
@@ -73,7 +80,11 @@ export default async function CssTipsPage({ searchParams }: { searchParams: Prom
         }
         breadcrumb={[{ label: "Home", href: "/" }, { label: "CSS Tips" }]}
       />
-      <CssTipsClient tips={pageTips} initialTipId={initialTipId} initialTipData={initialTipData} />
+      <CssTipsClient
+        tips={pageTips}
+        initialTipId={initialTipId}
+        initialTipData={initialTipData}
+      />
       {/* Wrapper adds consistent bottom spacing from footer */}
       <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24">
         <Pagination
@@ -88,12 +99,13 @@ export default async function CssTipsPage({ searchParams }: { searchParams: Prom
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            itemListElement: pageTips.map((t, i: number) => ({
-              "@type": "CreativeWork",
-              position: startIdx + i + 1,
-              name: t.title,
-              description: t.description,
-            })) || [],
+            itemListElement:
+              pageTips.map((t, i: number) => ({
+                "@type": "CreativeWork",
+                position: startIdx + i + 1,
+                name: t.title,
+                description: t.description,
+              })) || [],
           }),
         }}
       />
@@ -154,7 +166,10 @@ export default async function CssTipsPage({ searchParams }: { searchParams: Prom
                     "Set grid-auto-flow: column|row dense as needed.",
                     "Optionally define grid-auto-columns/rows for sizing.",
                   ];
-                } else if (lower.includes("auto-fit") || lower.includes("auto fill")) {
+                } else if (
+                  lower.includes("auto-fit") ||
+                  lower.includes("auto fill")
+                ) {
                   steps = [
                     "Use repeat(auto-fit|auto-fill, minmax(min, 1fr)) in grid-template-columns.",
                     "Choose auto-fit to stretch items, auto-fill to preserve empty tracks.",
@@ -202,7 +217,10 @@ export default async function CssTipsPage({ searchParams }: { searchParams: Prom
                     "Use min()/max() to bound values without media queries.",
                     "Verify behavior on extreme viewport sizes.",
                   ];
-                } else if (lower.includes("css variable") || lower.includes("custom properties")) {
+                } else if (
+                  lower.includes("css variable") ||
+                  lower.includes("custom properties")
+                ) {
                   steps = [
                     "Declare variables in :root (e.g., --primary-color).",
                     "Reference via var(--primary-color) throughout components.",

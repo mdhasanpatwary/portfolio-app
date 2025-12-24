@@ -20,36 +20,32 @@ import {
   testimonials,
 } from "@/data";
 import type { Metadata } from "next";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
+
+const typedMetadata = metadataConfig as MetadataConfig;
+const homeMetadata = typedMetadata.pages.home;
 
 export const metadata: Metadata = {
-  title:
-    "MD Hasan Patwary | Front-End Developer Portfolio - React, Next.js, TypeScript",
-  description:
-    "MD Hasan Patwary - Experienced Front-End Developer with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies. View projects, skills, and professional experience.",
-  keywords: [
-    "MD Hasan Patwary",
-    "Front-End Developer",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript",
-    "Web Development",
-    "Portfolio",
-    "UI/UX Engineer",
-  ],
+  title: homeMetadata.title,
+  description: homeMetadata.description,
+  keywords: homeMetadata.keywords,
   openGraph: {
-    title: "MD Hasan Patwary | Front-End Developer Portfolio",
-    description:
-      "Experienced Front-End Developer with 6+ years building scalable web applications using React, Next.js, TypeScript, and modern technologies.",
-    url: "https://patwary.vercel.app",
+    title: homeMetadata.openGraph.title,
+    description: homeMetadata.openGraph.description,
+    url: homeMetadata.alternates?.canonical || "https://patwary.vercel.app",
   },
-  alternates: { canonical: "https://patwary.vercel.app" },
+  alternates: homeMetadata.alternates ? { canonical: homeMetadata.alternates.canonical } : undefined,
 };
 
 async function fetchDevToPosts(): Promise<DevToPost[]> {
   try {
-    const res = await fetch("https://dev.to/api/articles?username=mdhassanpatwary", {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      "https://dev.to/api/articles?username=mdhassanpatwary",
+      {
+        next: { revalidate: 3600 },
+      }
+    );
     if (!res.ok) return [];
     return await res.json();
   } catch {

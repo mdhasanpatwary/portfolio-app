@@ -4,29 +4,29 @@ import { projects } from "@/data";
 import type { Metadata } from "next";
 import ProjectsGrid from "./ProjectsGrid";
 import Pagination from "@/components/global/Pagination";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
+
+const typedMetadata = metadataConfig as MetadataConfig;
+const projectsMetadata = typedMetadata.pages.projects;
 
 export const metadata: Metadata = {
-  title: "Projects | MD Hasan Patwary - Front-End Developer Portfolio",
-  description:
-    "Explore MD Hasan Patwary's web development projects built with React, Next.js, TypeScript, and modern technologies. View live demos, source code, and technical implementations.",
-  keywords: [
-    "Web Development Projects",
-    "React Projects",
-    "Next.js Projects",
-    "Front-End Developer",
-    "Portfolio Projects",
-    "MD Hasan Patwary",
-  ],
+  title: projectsMetadata.title,
+  description: projectsMetadata.description,
+  keywords: projectsMetadata.keywords,
   openGraph: {
-    title: "Projects | MD Hasan Patwary - Front-End Developer",
-    description:
-      "Explore MD Hasan Patwary's web development projects built with React, Next.js, TypeScript, and modern technologies.",
-    url: "https://patwary.vercel.app/projects",
+    title: projectsMetadata.openGraph.title,
+    description: projectsMetadata.openGraph.description,
+    url: projectsMetadata.alternates?.canonical || "https://patwary.vercel.app/projects",
   },
-  alternates: { canonical: "https://patwary.vercel.app/projects" },
+  alternates: projectsMetadata.alternates ? { canonical: projectsMetadata.alternates.canonical } : undefined,
 };
 
-export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+export default async function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
   const sp = await searchParams;
   const PAGE_SIZE = 8;
   const page = Math.max(1, Number(sp?.page || 1) || 1);
@@ -70,7 +70,9 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
               programmingLanguage: Array.isArray(p.technologies)
                 ? p.technologies.join(", ")
                 : undefined,
-              image: p.image ? `https://patwary.vercel.app${p.image}` : undefined,
+              image: p.image
+                ? `https://patwary.vercel.app${p.image}`
+                : undefined,
               author: { "@type": "Person", name: "MD Hasan Patwary" },
             })),
           }),

@@ -3,34 +3,32 @@ import { FaPenNib } from "react-icons/fa";
 import BlogList from "./BlogList";
 import type { Metadata } from "next";
 import type { DevToPost } from "@/components/blog/BlogCard";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
+
+const typedMetadata = metadataConfig as MetadataConfig;
+const blogMetadata = typedMetadata.pages.blog;
 
 export const metadata: Metadata = {
-  title: "Blog | MD Hasan Patwary - Web Development Articles",
-  description:
-    "Read MD Hasan Patwary's web development blog featuring articles on React, Next.js, TypeScript, CSS tips, and modern web development best practices.",
-  keywords: [
-    "Web Development Blog",
-    "React Blog",
-    "Next.js Blog",
-    "TypeScript Blog",
-    "CSS Tips",
-    "Front-End Development",
-    "MD Hasan Patwary Blog",
-  ],
+  title: blogMetadata.title,
+  description: blogMetadata.description,
+  keywords: blogMetadata.keywords,
   openGraph: {
-    title: "Blog | MD Hasan Patwary - Web Development Articles",
-    description:
-      "Read MD Hasan Patwary's web development blog featuring articles on React, Next.js, TypeScript, CSS tips, and modern web development best practices.",
-    url: "https://patwary.vercel.app/blog",
+    title: blogMetadata.openGraph.title,
+    description: blogMetadata.openGraph.description,
+    url: blogMetadata.alternates?.canonical || "https://patwary.vercel.app/blog",
   },
-  alternates: { canonical: "https://patwary.vercel.app/blog" },
+  alternates: blogMetadata.alternates ? { canonical: blogMetadata.alternates.canonical } : undefined,
 };
 
 async function fetchDevToPosts(): Promise<DevToPost[]> {
   try {
-    const res = await fetch("https://dev.to/api/articles?username=mdhassanpatwary", {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      "https://dev.to/api/articles?username=mdhassanpatwary",
+      {
+        next: { revalidate: 3600 },
+      }
+    );
     if (!res.ok) return [];
     return await res.json();
   } catch {

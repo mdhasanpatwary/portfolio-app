@@ -6,25 +6,22 @@ import type { Metadata } from "next";
 import FAQ from "@/components/faq/FAQ";
 import { faqs } from "@/data";
 import type { FAQsData } from "@/types/data";
+import metadataConfig from "@/data/metadata.json";
+import type { MetadataConfig } from "@/types/data";
+
+const typedMetadata = metadataConfig as MetadataConfig;
+const contactMetadata = typedMetadata.pages.contact;
 
 export const metadata: Metadata = {
-  title: "Contact MD Hasan Patwary | Front-End Developer",
-  description:
-    "Get in touch with MD Hasan Patwary for web development projects, collaboration opportunities, or professional inquiries. Available for remote work and relocation.",
-  keywords: [
-    "Contact MD Hasan Patwary",
-    "Front-End Developer Contact",
-    "Web Development Services",
-    "Hire Developer",
-    "Remote Work",
-  ],
+  title: contactMetadata.title,
+  description: contactMetadata.description,
+  keywords: contactMetadata.keywords,
   openGraph: {
-    title: "Contact MD Hasan Patwary | Front-End Developer",
-    description:
-      "Get in touch with MD Hasan Patwary for web development projects, collaboration opportunities, or professional inquiries.",
-    url: "https://patwary.vercel.app/contact",
+    title: contactMetadata.openGraph.title,
+    description: contactMetadata.openGraph.description,
+    url: contactMetadata.alternates?.canonical || "https://patwary.vercel.app/contact",
   },
-  alternates: { canonical: "https://patwary.vercel.app/contact" },
+  alternates: contactMetadata.alternates ? { canonical: contactMetadata.alternates.canonical } : undefined,
 };
 
 export default function ContactPage() {
@@ -99,7 +96,10 @@ export default function ContactPage() {
               {
                 "@type": "Question",
                 name: "Are you available for freelance work?",
-                acceptedAnswer: { "@type": "Answer", text: contact.availability },
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: contact.availability,
+                },
               },
             ],
           }),
