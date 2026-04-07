@@ -14,6 +14,7 @@ import cssTipsData from './css-tips.json';
 import aboutData from './about.json';
 import faqsData from './faqs.json';
 import metadataData from './metadata.json';
+import toolsData from './tools.json';
 
 // Export individual sections for better tree-shaking
 export const education = educationData;
@@ -32,3 +33,4 @@ export const cssTips = cssTipsData;
 export const about = aboutData;
 export const faqs = faqsData;
 export const metadata = metadataData;
+export const tools = toolsData;

@@ -101,6 +101,24 @@ export interface Education {
   }>;
 }
 
+export interface Tool {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  technologies: string[];
+  status: string;
+  github?: string;
+  demo?: string;
+}
+
+export interface ToolsData {
+  title: string;
+  subtitle: string;
+  items: Tool[];
+}
+
 export interface Projects {
   title: string;
   subtitle: string;
@@ -201,6 +219,7 @@ export interface FAQsData {
 export interface GlobalData {
   education: Education;
   projects: Projects;
+  tools: ToolsData;
   banner: Banner;
   skills: SkillsData;
   experiences: Experience;
@@ -357,169 +376,7 @@ export interface PagesMetadata {
   contact: PageMetadata;
   projects: PageMetadata;
   cssTips: PageMetadata;
-}
-
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-export interface FAQConfig {
-  global: FAQItem[];
-}
-
-export interface MetadataUtilOptions {
-  pageKey: keyof PagesMetadata;
-  customTitle?: string;
-  customDescription?: string;
-  customImage?: ImageConfig;
-  customUrl?: string;
-}
-
-// Metadata Types for SEO and AEO
-export interface MetadataConfig {
-  site: SiteConfig;
-  defaultImage: ImageConfig;
-  social: SocialConfig;
-  structuredData: StructuredDataConfig;
-  pages: PagesMetadata;
-  faq: FAQConfig;
-}
-
-export interface SiteConfig {
-  name: string;
-  url: string;
-  domain: string;
-  author: string;
-  locale: string;
-  type: string;
-}
-
-export interface ImageConfig {
-  url: string;
-  width: number;
-  height: number;
-  alt: string;
-}
-
-export interface SocialConfig {
-  twitter: string;
-  github: string;
-  linkedin: string;
-}
-
-export interface StructuredDataConfig {
-  person: PersonSchema;
-  website: WebsiteSchema;
-  professionalService: ProfessionalServiceSchema;
-  organization: OrganizationSchema;
-}
-
-export interface PersonSchema {
-  "@context": string;
-  "@type": string;
-  "@id": string;
-  name: string;
-  url: string;
-  jobTitle: string;
-  image: string;
-  description: string;
-  knowsAbout: string[];
-  sameAs: string[];
-  worksFor: {
-    "@type": string;
-    name: string;
-  };
-  hasOccupation: {
-    "@type": string;
-    name: string;
-    description: string;
-  };
-}
-
-export interface WebsiteSchema {
-  "@context": string;
-  "@type": string;
-  "@id": string;
-  name: string;
-  url: string;
-  description: string;
-  author: {
-    "@id": string;
-  };
-  inLanguage: string;
-  potentialAction: {
-    "@type": string;
-    target: string;
-    "query-input": string;
-  };
-}
-
-export interface ProfessionalServiceSchema {
-  "@context": string;
-  "@type": string;
-  name: string;
-  url: string;
-  description: string;
-  provider: {
-    "@id": string;
-  };
-  areaServed: string;
-  serviceType: string[];
-  availableLanguage: string[];
-}
-
-export interface OrganizationSchema {
-  "@context": string;
-  "@type": string;
-  name: string;
-  url: string;
-  logo: string;
-  foundingDate: string;
-  founder: {
-    "@id": string;
-  };
-  address: {
-    "@type": string;
-    addressCountry: string;
-    addressLocality: string;
-  };
-  contactPoint: {
-    "@type": string;
-    contactType: string;
-    areaServed: string;
-    availableLanguage: string[];
-  };
-}
-
-export interface PageMetadata {
-  title: string;
-  description: string;
-  keywords: string[];
-  openGraph: {
-    title: string;
-    description: string;
-    siteName?: string;
-    type?: string;
-  };
-  twitter?: {
-    card: string;
-    title: string;
-    description: string;
-  };
-  alternates?: {
-    canonical: string;
-  };
-}
-
-export interface PagesMetadata {
-  layout: PageMetadata;
-  home: PageMetadata;
-  about: PageMetadata;
-  blog: PageMetadata;
-  contact: PageMetadata;
-  projects: PageMetadata;
-  cssTips: PageMetadata;
+  tools: PageMetadata;
 }
 
 export interface FAQItem {

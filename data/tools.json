@@ -1,0 +1,70 @@
+{
+  "title": "Useful Tools",
+  "subtitle": "A collection of personal projects and tools I've built to solve specific problems and explore new technologies.",
+  "items": [
+    {
+      "id": "word-metrics",
+      "title": "Word Metrics",
+      "description": "A comprehensive text analysis tool that provides real-time statistics including word count, character count, reading time, and more.",
+      "image": "/projects/word-metrics.png",
+      "link": "https://word-metrics-gold.vercel.app/",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "status": "live",
+      "demo": "https://word-metrics-gold.vercel.app/",
+      "github": "https://github.com/mdhasanpatwary/WordMetrics"
+    },
+    {
+      "id": "biye-profile",
+      "title": "Biye Profile",
+      "description": "A modern platform for creating and managing matrimonial profiles with a focus on privacy and user experience.",
+      "image": "/projects/biye-profile.png",
+      "link": "https://biye-profile.vercel.app/",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js"
+      ],
+      "status": "live",
+      "demo": "https://biye-profile.vercel.app/",
+      "github": "https://github.com/mdhasanpatwary/biyeProfile"
+    },
+    {
+      "id": "ignorely",
+      "title": "Ignorely",
+      "description": "A production-ready .gitignore generator with 500+ templates, smart presets, and automatic tech stack detection.",
+      "image": "/projects/ignorely.png",
+      "link": "https://ignorely.vercel.app/",
+      "technologies": [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Lucide React"
+      ],
+      "status": "live",
+      "demo": "https://ignorely.vercel.app/",
+      "github": "https://github.com/mdhasanpatwary/ignorely"
+    },
+    {
+      "id": "json-craft",
+      "title": "JsonCraft",
+      "description": "A professional JSON utility for formatting, minification, validation, and diffing. Supports multiple formats including YAML and XML.",
+      "image": "/projects/jsoncraft.png",
+      "link": "https://prety-json.vercel.app/",
+      "technologies": [
+        "Next.js",
+        "React",
+        "Monaco Editor",
+        "Tailwind CSS"
+      ],
+      "status": "live",
+      "demo": "https://prety-json.vercel.app/",
+      "github": "https://github.com/mdhasanpatwary/pretty-json"
+    }
+  ]
+}

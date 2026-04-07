@@ -80,6 +80,7 @@ export default async function Home() {
       <Projects
         projectsData={{ ...projects, items: projects.items.slice(0, 8) }}
       />
+
       <Services services={services} />
       <Testimonials testimonials={testimonials} />
 

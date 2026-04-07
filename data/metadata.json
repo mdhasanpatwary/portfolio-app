@@ -307,6 +307,27 @@
       "alternates": {
         "canonical": "https://patwary.vercel.app/css-tips"
       }
+    },
+    "tools": {
+      "title": "Useful Tools | MD Hasan Patwary - Personal Projects & Utilities",
+      "description": "Explore personal projects and useful tools built by MD Hasan Patwary, including WordMetrics and Biye Profile. Discover utilities designed to solve real-world problems.",
+      "keywords": [
+        "Personal Projects",
+        "Web Tools",
+        "WordMetrics",
+        "Biye Profile",
+        "MD Hasan Patwary",
+        "Utility Tools",
+        "React Tools",
+        "Next.js Tools"
+      ],
+      "openGraph": {
+        "title": "Useful Tools | MD Hasan Patwary - Personal Projects & Utilities",
+        "description": "Explore personal projects and useful tools built by MD Hasan Patwary, including WordMetrics and Biye Profile."
+      },
+      "alternates": {
+        "canonical": "https://patwary.vercel.app/tools"
+      }
     }
   },
   "faq": {
