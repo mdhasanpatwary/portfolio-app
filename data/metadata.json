@@ -8,10 +8,10 @@
     "type": "website"
   },
   "defaultImage": {
-    "url": "/profile.webp",
-    "width": 800,
-    "height": 600,
-    "alt": "MD Hasan Patwary - Front-End Developer"
+    "url": "/profile.jpeg",
+    "width": 1200,
+    "height": 630,
+    "alt": "MD Hasan Patwary - Senior Front-End Developer, React & Next.js Specialist"
   },
   "social": {
     "twitter": "@md_hasanpatwary",
@@ -26,7 +26,7 @@
       "name": "MD Hasan Patwary",
       "url": "https://patwary.vercel.app",
       "jobTitle": "Front-End Developer",
-      "image": "/profile.webp",
+      "image": "/profile.jpeg",
       "description": "MD Hasan Patwary – Front-End Developer (React, Next.js, TypeScript) with 6+ years experience. Expert in scalable web apps, AWS, Docker. Available for freelance & collaboration.",
       "knowsAbout": [
         "React.js",
@@ -59,7 +59,8 @@
       ],
       "worksFor": {
         "@type": "Organization",
-        "name": "Freelance/Remote"
+        "name": "6amtech",
+        "url": "https://6amtech.com"
       },
       "hasOccupation": {
         "@type": "Occupation",
@@ -104,14 +105,16 @@
         "Web Performance Optimization",
         "UI/UX Implementation"
       ],
-      "availableLanguage": ["en"]
+      "availableLanguage": [
+        "en"
+      ]
     },
     "organization": {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "MD Hasan Patwary - CSS Expert Services",
       "url": "https://patwary.vercel.app",
-      "logo": "https://patwary.vercel.app/profile.webp",
+      "logo": "https://patwary.vercel.app/profile.jpeg",
       "foundingDate": "2018",
       "founder": {
         "@id": "https://patwary.vercel.app/#person"
@@ -125,7 +128,9 @@
         "@type": "ContactPoint",
         "contactType": "sales",
         "areaServed": "Worldwide",
-        "availableLanguage": ["en"]
+        "availableLanguage": [
+          "en"
+        ]
       }
     }
   },

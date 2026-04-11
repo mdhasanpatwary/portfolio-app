@@ -35,11 +35,11 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, openModal }) => {
       </div>
       {/* Card Content */}
       <div className="flex-1 flex flex-col justify-between p-4">
-        <h2
+        <h3
           className="text-base font-semibold text-gray-900 dark:text-white mb-1 truncate"
           title={project.title}>
           {project.title}
-        </h2>
+        </h3>
         {/* Tech stack removed for cleaner card */}
         <p className="text-xs text-gray-600 dark:text-gray-300 line-clamp-2 mb-2">
           {project.description}

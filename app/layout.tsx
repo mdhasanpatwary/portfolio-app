@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -17,6 +17,12 @@ import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const typedMetadata = metadataConfig as MetadataConfig;
@@ -120,7 +126,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
+        className={`${inter.variable} ${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
         <ThemeProvider>
           <ErrorBoundary>
             {/* Skip to content link for keyboard users (inside a navigation landmark) */}

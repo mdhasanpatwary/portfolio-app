@@ -1,56 +1,50 @@
 {
   "title": "Frequently Asked Questions",
-  "subtitle": "Answers based on my real services, skills, and contact details.",
+  "subtitle": "Answers based on my real services, skills, and working style.",
   "items": [
     {
       "question": "What services do you offer?",
-      "answer": "Website Optimization & Performance; Landing Page & Portfolio Development; Headless CMS Integration with React/Next.js; Figma/Adobe XD to HTML & React Conversion; Business Website Development; Interactive UI & Animation Development."
+      "answer": "I offer six core frontend development services: (1) Website Performance Optimization — improving Core Web Vitals, Lighthouse scores, and real-world load times using Next.js, React, and modern tooling; (2) Landing Page & Portfolio Development — high-converting, visually polished pages built for results; (3) Headless CMS Integration — connecting React/Next.js frontends to Strapi, Sanity, or Contentful; (4) Figma/Adobe XD to React Conversion — pixel-perfect, responsive implementations from any design file; (5) Business Website Development — end-to-end frontend for startups and growing businesses; (6) UI Animation Development — adding smooth, purposeful motion using GSAP or Framer Motion."
     },
     {
       "question": "Which technologies do you specialize in?",
-      "answer": "HTML5, CSS3, JavaScript, TypeScript, React.js, Vue.js, Next.js, jQuery, Node.js; Tailwind CSS, SASS, Bootstrap, Material UI, Figma, Adobe XD, Photoshop; Git, GitHub, Gulp, Webpack, Docker, AWS, Linux, Automation, Firebase."
+      "answer": "My core stack is React.js, Next.js, TypeScript, and Tailwind CSS — what I use daily in production. I also have strong experience with HTML5, CSS3, JavaScript (ES2020+), Vue.js, Node.js, SASS, Bootstrap, and Material UI. For design tools: Figma and Adobe XD. For DevOps/infrastructure: Git, GitHub, Docker, AWS, and Linux. I have hands-on experience with Gulp, Webpack, and Firebase. My specialty is clean, well-architected frontend code that teams can maintain long after I've shipped it."
     },
     {
       "question": "Are you available for freelance work?",
-      "answer": "Available for freelance & collaboration."
+      "answer": "Yes — I'm actively available for freelance projects and remote collaboration. I work with clients globally across all timezones, typically handling 1–2 concurrent projects to maintain quality. My services cover React/Next.js development, UI implementation from Figma designs, performance optimization, and headless CMS integration. Engagements range from 1-week landing page builds to 3-month product development projects. Reach out at patwary.dev@gmail.com to discuss your project needs and timeline."
     },
     {
       "question": "How can I contact you?",
-      "answer": "Email: patwary.dev@gmail.com • Phone: +8801783721411"
+      "answer": "The fastest way is email: patwary.dev@gmail.com — I respond within 24 hours on business days. You can also find me on LinkedIn (linkedin.com/in/mdhasanpatwary), GitHub (github.com/mdhasanpatwary), and Upwork for freelance contracts. For a quick intro call, feel free to include your timezone and I'll suggest a time that works. I'm based in Dhaka, Bangladesh (UTC+6) but work with clients across Europe, North America, and Asia."
     },
     {
-      "question": "Where are you located?",
-      "answer": "Dhaka, Bangladesh. Remote-friendly."
-    },
-    {
-      "question": "Do you work remotely or consider relocation?",
-      "answer": "Yes—open to Remote/Relocation."
+      "question": "Where are you located and do you work remotely?",
+      "answer": "I'm based in Dhaka, Bangladesh (UTC+6). I work fully remotely and have done so for the majority of my 6-year career, collaborating with distributed teams across multiple timezones. I use async-first workflows — structured updates, shared documentation, and clear sprint commitments — so timezone gaps rarely affect delivery quality. I'm also open to relocation for the right full-time opportunity."
     },
     {
       "question": "What kinds of projects have you worked on?",
-      "answer": "Projects at ThemeLooks and 6amTech, published on Themeforest and Codecanyon: multi‑vendor eCommerce, delivery systems, POS, SaaS, hosting, VPN, social, admin dashboards, and more."
+      "answer": "I've worked on a wide variety of production projects across two companies: at 6amtech, I built frontend for commercial eCommerce platforms (6valley, 6amMart), on-demand service apps (Demandium), food delivery systems (StackFood), a digital wallet app (6Cash), and a POS system — all published on Codecanyon. At Themelooks, I developed 10+ HTML5 templates, React SPAs, and Vue applications published on Themeforest, covering niches from NFT marketplaces to hosting, SaaS, and beauty services. I've shipped code used by tens of thousands of end users globally."
     },
     {
       "question": "Do you provide performance optimization?",
-      "answer": "Yes—Core Web Vitals, Lighthouse, and real‑world speed improvements using Next.js, React, and modern best practices."
+      "answer": "Yes — web performance optimization is one of my strongest areas. I work with Core Web Vitals (LCP, CLS, FID/INP), Lighthouse scoring, and real-world speed improvements. At Themelooks, I improved Lighthouse performance scores by up to 40% on commercial templates. My approach covers image optimization (WebP/AVIF, lazy loading, responsive sizes), bundle splitting, critical CSS extraction, caching strategies, and Next.js-specific optimizations like ISR, React Server Components, and Edge functions."
     },
     {
       "question": "Do you build with headless CMS?",
-      "answer": "Yes—Strapi, Sanity, Contentful with React/Next.js."
+      "answer": "Yes — I've built with Strapi, Sanity, and Contentful using React/Next.js. My typical approach: Next.js App Router for routing and RSC, the CMS API for content, and ISR for cache invalidation. I set up content models, query patterns, and preview modes so editors can work independently without touching code. This is one of my most requested freelance services and I can typically have a headless CMS project running in days, not weeks."
     },
     {
-      "question": "Can you convert Figma/Adobe XD to code?",
-      "answer": "Yes—responsive, pixel‑perfect HTML/CSS/React implementations."
+      "question": "Can you convert Figma or Adobe XD designs to code?",
+      "answer": "Yes — this is a core strength. I've been converting design files to production code for 6 years, including pixel-perfect implementations for commercial products reviewed by Envato's quality team. I extract design tokens, build responsive layouts with CSS Grid and Flexbox, handle all edge cases the design may not have specified, and deliver components your team can extend without breaking things. If you have a Figma file and need it turned into React/Next.js, this is one of my fastest turnarounds."
     },
     {
       "question": "Do you build business websites?",
-      "answer": "Yes—clean, fast, scalable sites tailored to brand and goals."
+      "answer": "Yes — I build clean, fast, and scalable business websites tailored to your brand and goals. A typical engagement covers: design implementation from Figma (or I can work from a reference site), responsive layout across all devices, performance optimization, SEO technical setup (semantic HTML, meta tags, schema markup), and CMS integration so your team can update content without a developer. Timeline: 1–4 weeks depending on scope and number of pages."
     },
     {
       "question": "Do you implement UI animations and interactions?",
-      "answer": "Yes—CSS animations, GSAP, and modern interaction patterns."
+      "answer": "Yes — purposeful motion is a key part of modern web UX. I use CSS animations for lightweight scroll-triggered effects and hover states, GSAP for complex sequenced animations and scroll-driven storytelling, and Framer Motion for React-based component transitions. I aim for animations that feel natural and non-distracting — not just flashy. Every animation I ship is tested for reduced-motion preferences to ensure accessibility compliance."
     }
   ]
 }
-
-

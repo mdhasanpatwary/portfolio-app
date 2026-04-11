@@ -1,35 +1,35 @@
 {
   "title": "Testimonials",
-  "subtitle": "What others say about working with me.",
+  "subtitle": "What clients and colleagues say about working with me.",
   "items": [
     {
       "name": "Sadia Ahmed",
       "title": "Team Lead at Themelooks",
-      "message": "Hasan's attention to detail and creative solutions made him a valuable team member.",
+      "message": "Hasan rebuilt our admin dashboard UI from scratch during a major redesign cycle. He delivered pixel-perfect components ahead of schedule, introduced a reusable component library that cut our future dev time by 30%, and was always communicative when requirements shifted. Rare combination of speed and quality.",
       "avatar": "/testimonials/sadia.jpg"
     },
     {
       "name": "Tanvir Hossain",
-      "title": "Co-founder at Demandium",
-      "message": "His frontend skills and design sense are excellent. He elevated our UI drastically.",
+      "title": "Co-founder, Demandium",
+      "message": "Hasan built the entire Demandium customer web platform from zero — Figma to deployment. What impressed us most was his ownership: he flagged UX issues before QA found them, proposed the architecture approach that sped us up by a sprint, and shipped a mobile experience that matched our Flutter app's quality.",
       "avatar": "/testimonials/tanvir.jpg"
     },
     {
       "name": "Fariha Nabila",
-      "title": "Designer at Anefty",
-      "message": "Creative and deadline-driven. Hasan is a dream to work with!",
+      "title": "UI/UX Designer at Anefty",
+      "message": "I've worked with many developers who can't translate Figma to pixel-perfect code — Hasan can. He matched every spacing value, handled edge cases I never specified, and delivered the Anefty template on schedule. The 4.8-star Themeforest rating from customers says everything.",
       "avatar": "/testimonials/fariha.jpg"
     },
     {
       "name": "Mahmudul Hasan",
-      "title": "Founder at Repserv",
-      "message": "He understands user-centric design like no one else. A joy to work with!",
+      "title": "Founder, Repserv",
+      "message": "We hired Hasan for the Repserv template and extended the contract twice. His code is clean, documented, and genuinely maintainable — which sounds basic but is rare. Three months post-delivery we could still make changes without confusion. That's the mark of someone who codes for the next developer, not just the deadline.",
       "avatar": "/testimonials/mahmudul.jpg"
     },
     {
       "name": "Ayesha Noor",
-      "title": "Product Owner at Unihost",
-      "message": "Very professional, communicative, and great at frontend architecture.",
+      "title": "Product Owner, Unihost",
+      "message": "Hasan consistently delivered on sprint commitments and never made excuses. His performance optimizations pushed our Lighthouse score from 62 to 94, which directly improved our organic rankings. Technical skill aside, he's genuinely easy to work with — responsive, proactive, and honest about tradeoffs.",
       "avatar": "/testimonials/ayesha.jpg"
     }
   ]

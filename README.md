@@ -113,7 +113,7 @@ portfolio-app/
 ├── public/                       # Static assets
 │   ├── favicon/                  # Favicon icons
 │   ├── testimonials/             # Testimonial images
-│   ├── profile.webp              # Profile images
+│   ├── profile.jpeg              # Profile images
 │   └── resume.pdf                # Downloadable resume
 ├── types/                        # TypeScript type definitions
 │   └── data.ts                   # Data type interfaces

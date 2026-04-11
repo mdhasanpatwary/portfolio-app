@@ -8,10 +8,24 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     remotePatterns: [
+      // Codecanyon / Themeforest marketplace images (project thumbnails)
       {
         protocol: "https",
-        hostname: "**",
-        // pathname: '/**',
+        hostname: "market-resized.envatousercontent.com",
+      },
+      // Dev.to blog post cover images
+      {
+        protocol: "https",
+        hostname: "dev-to-uploads.s3.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      // General dev.to CDN
+      {
+        protocol: "https",
+        hostname: "media2.dev.to",
       },
     ],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],

@@ -3,6 +3,8 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,
+  // Exclude feed URLs — these are not HTML pages and waste crawl budget in a sitemap
+  exclude: ['/projects.xml', '/rss.xml', '/server-sitemap.xml'],
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },

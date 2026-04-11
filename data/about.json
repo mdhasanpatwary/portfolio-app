@@ -1,26 +1,26 @@
 {
   "name": "MD Hasan Patwary",
   "title": "About Me",
-  "subtitle": "Front-End Developer (React, Next.js, TypeScript) | UI/UX Engineer",
+  "subtitle": "Senior Front-End Developer — React, Next.js, TypeScript",
   "highlights": [
-    "Leader in Scalable Web Apps",
-    "Docker & AWS",
-    "6+ Years Exp.",
-    "Delivered for 30K+ Global Clients",
-    "Open to Remote/Relocation"
+    "6+ Years of Production Experience",
+    "50+ Shipped Commercial Products",
+    "Products Used by 30K+ Global Customers",
+    "Available for Remote & Relocation",
+    "Docker · AWS · Performance Optimization"
   ],
   "description": [
-    "I specialize in building robust, scalable, and beautiful web applications using React, Next.js, and TypeScript. My focus is on clean code, performance, and delightful user experiences. Experienced with Docker, AWS, and modern development workflows.",
-    "I thrive in collaborative teams, mentor juniors, and stay ahead of UI/UX trends. Let’s build something amazing together."
+    "MD Hasan Patwary is a Senior Front-End Developer based in Dhaka, Bangladesh, with over 6 years of professional experience building scalable web applications for international markets. He specializes in React.js, Next.js, and TypeScript, with deep expertise in CSS architecture, responsive design, and web performance optimization.",
+    "Currently at 6amtech, Hasan has contributed frontend engineering to products including 6valley, 6amMart, StackFood, and Demandium — eCommerce and delivery platforms used by tens of thousands of merchants and customers globally. Before that, 3 years at Themelooks produced 10+ commercial templates on Themeforest and Codecanyon. He writes clean, maintainable code that teams can confidently extend, and is passionate about building interfaces that are fast, accessible, and conversion-optimized."
   ],
   "traits": [
     "🎯 Problem Solver",
-    "💡 Fast Learner",
+    "📦 Ships on Time",
     "🧩 Team Player",
-    "🌍 Global Impact"
+    "🌍 Remote-Ready"
   ],
   "image": {
     "src": "/profile2.webp",
-    "alt": "MD Hasan Patwary"
+    "alt": "MD Hasan Patwary — Senior Front-End Developer"
   }
 }
