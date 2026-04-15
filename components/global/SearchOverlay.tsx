@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { FaSearch, FaTimes } from "react-icons/fa";
 import { projects as projectsData, cssTips as cssTipsData } from "@/data";
 import { useRouter } from "next/navigation";
@@ -22,10 +23,16 @@ type Tip = {
 export default function SearchOverlay({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const lastActiveRef = useRef<Element | null>(null);
   const router = useRouter();
+
+  // SSR guard: only render portal after mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const projects: Project[] = useMemo(
     () => (projectsData.items as unknown as Project[]) || [],
@@ -169,7 +176,9 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
     setActiveIndex(0);
   }, [q, projectHits.length, tipHits.length]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div
       ref={containerRef}
       className="fixed inset-0 z-[100] bg-white/95 dark:bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-gray-900/80 animate-in fade-in duration-200"
@@ -292,7 +301,8 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
