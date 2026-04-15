@@ -1,27 +1,36 @@
 import React from "react";
 import { FaBriefcase } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
-import ExperienceCard from "./ExperienceCard";
+import ExperienceTimelineItem from "./ExperienceTimelineItem";
 import type { Experience as ExperienceType } from "@/types/data";
 
-const ProfessionalExperience: React.FC<{ experiences: ExperienceType }> = ({ experiences }) => (
+const ProfessionalExperience: React.FC<{ experiences: ExperienceType }> = ({
+  experiences,
+}) => (
   <section
     id="experience"
-    className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 content-visibility-auto">
-    <div className="max-w-7xl mx-auto">
+    className="w-full py-16 md:py-24 px-6 bg-gray-50 dark:bg-gray-950 content-visibility-auto"
+  >
+    <div className="max-w-3xl mx-auto">
       {/* Section Header */}
       <SectionTitle
         title={experiences.title}
         icon={
-          <FaBriefcase className="text-primary-600 dark:text-primary-400 text-3xl" />
-        }>
+          <FaBriefcase className="text-primary-600 dark:text-primary-400 text-2xl" />
+        }
+      >
         {experiences.subtitle}
       </SectionTitle>
 
-      {/* Experience Cards */}
-      <div className="grid lg:grid-cols-2 gap-6">
+      {/* Timeline */}
+      <div className="relative">
         {experiences.items.map((experience, index) => (
-          <ExperienceCard key={index} experience={experience} />
+          <ExperienceTimelineItem
+            key={index}
+            experience={experience}
+            index={index}
+            isLast={index === experiences.items.length - 1}
+          />
         ))}
       </div>
     </div>

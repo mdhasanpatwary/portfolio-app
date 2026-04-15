@@ -4,7 +4,7 @@ import {
   FaCamera,
   FaBookOpen,
   FaGlobe,
-  FaLightbulb,
+  FaHeart,
   FaVideo,
 } from "react-icons/fa";
 import HobbyCard from "./HobbyCard";
@@ -16,7 +16,7 @@ const iconMap = {
   FaCamera,
   FaBookOpen,
   FaGlobe,
-  FaLightbulb,
+  FaHeart,
   FaVideo,
 };
 
@@ -27,11 +27,11 @@ const Hobby: FC<HobbyProps> = ({ hobbiesData }) => {
   return (
     <section
       id="hobby"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      className="w-full py-16 md:py-24 px-6 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto text-center">
         <SectionTitle
           title={title}
-          icon={<FaLightbulb className="text-3xl text-primary-600 dark:text-primary-400" />}>
+          icon={<FaHeart className="text-2xl text-primary-600 dark:text-primary-400" />}>
           {subtitle}
         </SectionTitle>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

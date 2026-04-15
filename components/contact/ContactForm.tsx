@@ -5,6 +5,8 @@ import { FiSend } from "react-icons/fi";
 import { FiRotateCcw } from "react-icons/fi";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import Btn from "@/components/global/Btn";
+import { Card } from "@/components/global";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -123,12 +125,12 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
   };
 
   return (
-    <form
-      ref={form}
-      onSubmit={handleSubmit}
-      onReset={handleReset}
-      className="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700"
-      noValidate>
+    <Card padding="none" hover={false} className="p-4 sm:p-8">
+      <form
+        ref={form}
+        onSubmit={handleSubmit}
+        onReset={handleReset}
+        noValidate>
       <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
         {contact.title}
       </h2>
@@ -246,19 +248,22 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
         </div>
 
         <div className="flex justify-end gap-3 pt-4">
-          <button
+          {/* Reset — neutral, keep compact */}
+          <Btn
+            variant="secondary-sm"
             type="reset"
-            className="px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-            disabled={loading}>
+            disabled={loading}
+          >
             <FiRotateCcw className="text-sm" />
             {contact.formLabels.reset}
-          </button>
+          </Btn>
 
-          <button
+          <Btn
+            variant="primary-sm"
             type="submit"
-            className="px-6 py-3 bg-primary-700 hover:bg-primary-800 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2 disabled:bg-primary-700 disabled:text-white disabled:cursor-not-allowed"
             disabled={loading}
-            aria-busy={loading}>
+            aria-busy={loading}
+          >
             {loading ? (
               <span>{contact.formLabels.sending}</span>
             ) : (
@@ -267,10 +272,11 @@ const ContactForm: FC<ContactFormProps> = ({ contact }) => {
                 {contact.formLabels.sendMessage}
               </>
             )}
-          </button>
+          </Btn>
         </div>
       </div>
-    </form>
+      </form>
+    </Card>
   );
 };
 

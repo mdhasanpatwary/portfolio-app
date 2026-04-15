@@ -3,7 +3,6 @@
 import { FC } from "react";
 import type { ToolsData } from "@/types/data";
 import { FaTools } from "react-icons/fa";
-import SectionTitle from "@/components/global/SectionTitle";
 import ToolCard from "./ToolCard";
 
 interface ToolsProps {
@@ -14,18 +13,10 @@ const Tools: FC<ToolsProps> = ({ toolsData }) => {
   return (
     <section
       id="tools"
-      className="w-full py-16 md:py-24 bg-white dark:bg-gray-950 px-6 content-visibility-auto">
+      className="w-full py-16 md:py-24 bg-white dark:bg-gray-900 px-6 content-visibility-auto">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle
-          title={toolsData.title}
-          icon={
-            <FaTools className="text-primary-600 dark:text-primary-400 text-3xl" aria-hidden="true" focusable="false" />
-          }>
-          {toolsData.subtitle}
-        </SectionTitle>
-
         {/* Tools Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           {toolsData.items.map((tool) => (
             <ToolCard key={tool.id} tool={tool} />
           ))}

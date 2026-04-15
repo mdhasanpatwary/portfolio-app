@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { FaTimes } from "react-icons/fa";
 
 interface ModalProps {
@@ -100,7 +101,15 @@ const Modal: React.FC<ModalProps> = ({
     };
   }, []);
 
-  return isOpen ? (
+  // SSR guard: only render portal after mount
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isOpen || !mounted) return null;
+
+  return createPortal(
     <div
       className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
       onClick={onClose}>
@@ -109,11 +118,11 @@ const Modal: React.FC<ModalProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? "modal-title" : undefined}
-        className={`bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-white/20 dark:border-gray-700/50 transform animate-in zoom-in-95 duration-300 ${sizeClasses[size]} ${className}`}
+        className={`relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-white/20 dark:border-gray-700/50 transform animate-in zoom-in-95 duration-300 flex flex-col ${sizeClasses[size]} ${className}`}
         onClick={(e) => e.stopPropagation()}>
         {/* Modal Header */}
         {(title || showCloseButton) && (
-          <div className="relative p-4 sm:px-8 sm:py-6 border-b border-gray-200/50 dark:border-gray-700/50 bg-gradient-to-r from-gray-50/80 via-white/80 to-gray-50/80 dark:from-gray-800/80 dark:via-gray-900/80 dark:to-gray-800/80 backdrop-blur-sm rounded-t-3xl">
+          <div className="relative flex-shrink-0 p-4 sm:px-8 sm:py-6 border-b border-gray-200/50 dark:border-gray-700/50 bg-gradient-to-r from-gray-50/80 via-white/80 to-gray-50/80 dark:from-gray-800/80 dark:via-gray-900/80 dark:to-gray-800/80 backdrop-blur-sm rounded-t-3xl">
             {showCloseButton && (
               <button
                 onClick={onClose}
@@ -130,12 +139,13 @@ const Modal: React.FC<ModalProps> = ({
         )}
 
         {/* Modal Content */}
-        <div className="p-4 sm:p-8 text-gray-900 dark:text-gray-100 bg-white/95 dark:bg-gray-900/95 overflow-auto max-h-[90vh]">
+        <div className="flex-1 p-6 pb-16 sm:p-10 sm:pb-24 text-gray-900 dark:text-gray-100 bg-white/95 dark:bg-gray-900/95 overflow-y-auto">
           {children}
         </div>
       </div>
-    </div>
-  ) : null;
+    </div>,
+    document.body
+  );
 };
 
 export default Modal;

@@ -1,22 +1,24 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { header, footer } from "@/data";
 import { Toaster } from "react-hot-toast";
-import ErrorBoundary from "@/components/global/ErrorBoundary";
 import { ThemeProvider } from "@/context/ThemeContext";
+import AnimationProvider from "@/components/global/AnimationProvider";
 import metadataConfig from "@/data/metadata.json";
 import type { MetadataConfig } from "@/types/data";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import PortfolioChatWidget from "@/components/ai/PortfolioChatWidget";
+import BackToTop from "@/components/global/BackToTop";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const inter = Inter({
@@ -29,6 +31,15 @@ const typedMetadata = metadataConfig as MetadataConfig;
 const layoutMetadata = typedMetadata.pages.layout;
 const siteConfig = typedMetadata.site;
 const defaultImage = typedMetadata.defaultImage;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -128,7 +139,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300`}>
         <ThemeProvider>
-          <ErrorBoundary>
+          <AnimationProvider>
             {/* Skip to content link for keyboard users (inside a navigation landmark) */}
             <nav aria-label="Skip links">
               <a href="#main-content" className="skip-link">
@@ -145,7 +156,10 @@ export default function RootLayout({
 
             {/* Floating AI Chat Widget */}
             <PortfolioChatWidget />
-          </ErrorBoundary>
+            
+            {/* Floating Back To Top */}
+            <BackToTop />
+          </AnimationProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

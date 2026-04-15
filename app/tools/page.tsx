@@ -4,6 +4,8 @@ import Tools from "@/components/tools/Tools";
 import { tools } from "@/data";
 import metadataConfig from "@/data/metadata.json";
 import type { MetadataConfig } from "@/types/data";
+import PageTitle from "@/components/global/PageTitle";
+import { FaTools } from "react-icons/fa";
 
 const typedMetadata = metadataConfig as MetadataConfig;
 const toolsMetadata = typedMetadata.pages.tools;
@@ -24,9 +26,15 @@ export const metadata: Metadata = {
 
 const ToolsPage: FC = () => {
   return (
-    <div className="pt-20">
+    <>
+      <PageTitle
+        title={tools.title}
+        subtitle={tools.subtitle}
+        icon={<FaTools className="text-primary-600 dark:text-primary-400 text-3xl" />}
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Tools" }]}
+      />
       <Tools toolsData={tools} />
-    </div>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import type { Projects as ProjectsType } from "@/types/data";
 import { FaExternalLinkAlt, FaPlay, FaTimes } from "react-icons/fa";
 import Modal from "@/components/global/Modal";
 import { CustomImage } from "@/components/global";
+import Btn from "@/components/global/Btn";
 
 interface ProjectModalProps {
   project: ProjectsType["items"][number] | null;
@@ -21,7 +22,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
       onClose={onClose}
       size="md"
       showCloseButton={false}
-      className="max-w-3xl rounded-lg">
+      className="max-w-3xl">
       {/* Floating Close Button */}
       <button
         onClick={onClose}
@@ -54,22 +55,28 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
           {project.title}
         </h2>
         <div className="flex flex-wrap gap-2">
-          <a
+          <Btn
+            variant="primary-sm"
+            as="a"
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2 bg-primary-700 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-primary-800 dark:hover:bg-primary-600 transition-colors gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
+          >
             <span>View Project</span>
-            <FaExternalLinkAlt size={15} aria-hidden="true" focusable="false" />
-          </a>
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2 border border-primary-700 text-primary-700 text-sm font-medium rounded-lg hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-800 transition-colors gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
-            <FaPlay size={15} aria-hidden="true" focusable="false" />
-            <span>Live Demo</span>
-          </a>
+            <FaExternalLinkAlt size={13} aria-hidden="true" focusable="false" />
+          </Btn>
+          {project.demo && (
+            <Btn
+              variant="secondary-sm"
+              as="a"
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaPlay size={13} aria-hidden="true" focusable="false" />
+              <span>Live Demo</span>
+            </Btn>
+          )}
         </div>
       </div>
       <div className="border-b border-gray-200 dark:border-gray-700 mb-6" />

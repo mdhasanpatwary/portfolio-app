@@ -260,7 +260,13 @@
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633493754/6amMart%20react.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=29ec78c512ce995b970be4dd4b17fef3907a127690dd6bea7cee5664580fb15f",
       "link": "https://codecanyon.net/item/6ammart-react-user-website/45370351?s_rank=12",
       "category": "React Website",
-      "technologies": ["React", "JavaScript", "HTML", "CSS", "REST API"],
+      "technologies": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "REST API"
+      ],
       "status": "live",
       "longDescription": "6amMart React User Website is a modern, responsive, and feature-rich user-facing web application for the 6amMart multi-vendor delivery system. It provides seamless ordering, real-time tracking, and a smooth user experience.",
       "features": [
@@ -380,7 +386,13 @@
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/635428650/stackfood%20react.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=76dc687b233f000c77f2a603ea1d04a94aa32ce19c6c519a7316d0162c3d2195",
       "link": "https://codecanyon.net/item/stackfood-react-user-website/43218516?s_rank=18",
       "category": "React Website",
-      "technologies": ["React", "JavaScript", "HTML", "CSS", "REST API"],
+      "technologies": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "REST API"
+      ],
       "status": "live",
       "longDescription": "StackFood React User Website is a modern, responsive, and feature-rich user-facing web application for the StackFood multi-restaurant delivery system. It provides seamless ordering, real-time tracking, and a smooth user experience integrated with the StackFood backend.",
       "features": [
@@ -497,7 +509,13 @@
       "image": "https://market-resized.envatousercontent.com/codecanyon.net/files/633493880/6POS.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=a5f8c1edd0092ad3af0946bbab16d9861b89bcd6c24b952c9b5d3f5b5e73c2c0",
       "link": "https://codecanyon.net/item/6pos-the-ultimate-pos-solution/39827011?s_rank=20",
       "category": "Laravel CMS",
-      "technologies": ["Laravel (PHP)", "JavaScript", "MySQL", "HTML", "CSS"],
+      "technologies": [
+        "Laravel (PHP)",
+        "JavaScript",
+        "MySQL",
+        "HTML",
+        "CSS"
+      ],
       "status": "live",
       "longDescription": "6POS is a robust and feature-rich point of sale (POS) solution designed for businesses of all sizes. It offers a Laravel-based admin panel, real-time inventory management, sales tracking, and seamless integration with hardware devices, providing a complete solution for retail and restaurant operations.",
       "features": [
@@ -617,7 +635,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481329998/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=dbb3ba1c92af3c73aab65bc9972b7a7d30584046e49202f2634de7d6e095cc3c",
       "link": "https://themeforest.net/item/anefty-nft-marketplace-html5-template/36419773?s_rank=1",
       "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "status": "live",
       "longDescription": "Anefty is a modern and feature-rich HTML5 template designed for NFT marketplace websites. It offers a wide range of pre-built pages, components, and UI elements tailored for digital asset trading, auctions, and user profiles. The template is fully responsive, customizable, and optimized for performance.",
       "features": [
@@ -652,7 +676,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481329462/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=e40e8ed7cdda3721a2ad21292b826227ce10447b24c2fd8f75c2b32da36e4ac6",
       "link": "https://themeforest.net/item/repserv-multipurpose-servicing-and-repairing-html5-template/35612604?s_rank=2",
       "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "status": "live",
       "longDescription": "Repserv is a modern and versatile HTML5 template designed for servicing, repairing, and maintenance business websites. It features a wide range of pre-built pages, service layouts, and UI components, making it easy to create a professional online presence for any repair or service company. The template is fully responsive, customizable, and optimized for performance.",
       "features": [
@@ -687,7 +717,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479718432/01_dvpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=358b4f165b4211601595e219c33860a6e4a98c3de705991dc81e142c4f101c39",
       "link": "https://themeforest.net/item/dvpn-multipurpose-vpn-react-js-template/35412628?s_rank=3",
       "category": "React Template",
-      "technologies": ["React", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
+      "technologies": [
+        "React",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Bootstrap"
+      ],
       "status": "live",
       "longDescription": "dVPN is a modern and versatile React JS template designed for VPN, proxy, and cybersecurity service websites. It features a wide range of pre-built pages, pricing tables, and UI components, making it easy to launch a professional online presence for VPN providers. The template is fully responsive, customizable, and optimized for performance.",
       "features": [
@@ -721,7 +757,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479718868/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b7b3f81b32c07a41d83b3ec17473d8dc46be91e578b2a9621eb8b04c14ebf10",
       "link": "https://themeforest.net/item/hostpack-responsive-hosting-html-template/31910801?s_rank=4",
       "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "status": "live",
       "longDescription": "Hostpack is a modern and fully responsive HTML template designed for web hosting, domain registration, and server provider websites. It features a wide range of pre-built pages, pricing tables, and UI components, making it easy to create a professional online presence for hosting businesses. The template is customizable, SEO optimized, and built for performance.",
       "features": [
@@ -755,7 +797,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481330818/01_beautain.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=2fb1c56e9bfa9e34ac42e4e726f3065cecda586c07d19a025a46634079ab71f5",
       "link": "https://themeforest.net/item/beautain-multipurpose-beauty-salon-and-spa-html5-template/31210311?s_rank=5",
       "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "status": "live",
       "longDescription": "Beautain is a modern and versatile HTML5 template designed for beauty salons, spas, wellness centers, and related businesses. It features a wide range of pre-built pages, service layouts, and UI components, making it easy to create a professional and inviting online presence. The template is fully responsive, customizable, and optimized for performance.",
       "features": [
@@ -790,7 +838,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/637989114/theme-preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=af8de6dbe28bda8b8a757390947ad1ccf8779b5095fde655a2f8ed6b437a175d",
       "link": "https://themeforest.net/item/unihost-multipurpose-hosting-wordpress-theme/30249102?s_rank=6",
       "category": "WordPress Theme",
-      "technologies": ["WordPress", "PHP", "JavaScript", "HTML5", "CSS3"],
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
       "status": "live",
       "longDescription": "Unihost is a modern and versatile WordPress theme designed for web hosting, domain registration, SaaS, and technology business websites. It features a wide range of pre-built demos, pricing tables, and UI components, making it easy to create a professional online presence. The theme is fully responsive, customizable, and optimized for performance and SEO.",
       "features": [
@@ -824,7 +878,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/481333936/theme-preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=0d70ac6bccaf90e019968e2faca095e2af64fdd9b030f96f2ffe004e9cb4c9e5",
       "link": "https://themeforest.net/item/socibook-multipurpose-social-network-html5-template/30545120?s_rank=7",
       "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "status": "live",
       "longDescription": "Socibook is a modern and versatile HTML5 template designed for social network, community, and forum websites. It features a wide range of pre-built pages, user profile layouts, and interactive UI components, making it easy to create a professional and engaging online community. The template is fully responsive, customizable, and optimized for performance.",
       "features": [
@@ -900,7 +960,13 @@
       "image": "https://market-resized.envatousercontent.com/themeforest.net/files/479751936/01_govpn.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=4d93b963f25dc6c345934a0a483e571ad6344d3cc9cc797562008b8421c0c3b0",
       "link": "https://themeforest.net/item/govpn-responsive-vpn-website-template/29623034?s_rank=10",
       "category": "HTML5 Template",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "status": "live",
       "longDescription": "GoVPN is a modern and fully responsive HTML template designed for VPN, proxy, and cybersecurity service websites. It features a wide range of pre-built pages, pricing tables, and UI components, making it easy to launch a professional online presence for VPN providers. The template is customizable, SEO optimized, and built for performance.",
       "features": [
@@ -975,7 +1041,13 @@
       "link": "https://themeforest.net/item/dvpn-multipurpose-vpn-and-cloud-service-html-template/29282089?s_rank=12",
       "category": "HTML Template",
       "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "features": [
         "Multipurpose design for VPN, cloud, and proxy services",
         "Fully responsive and retina ready",
@@ -1126,7 +1198,13 @@
       "link": "https://themeforest.net/item/dashmin-responsive-admin-dashboard-template/29071668?s_rank=14",
       "category": "HTML Template",
       "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "features": [
         "Responsive design for admin dashboards",
         "Multiple dashboard and UI component layouts",
@@ -1158,7 +1236,13 @@
       "link": "https://themeforest.net/item/docland-multipurpose-saas-tech-startup-landing-page-templates/25638536?s_rank=19",
       "category": "HTML Template",
       "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "features": [
         "Multipurpose design for SaaS, tech, and startup landing pages",
         "Fully responsive and retina ready",
@@ -1229,7 +1313,13 @@
       "link": "https://themeforest.net/item/dentzone-dentist-medical-html5-template/24565457?s_rank=22",
       "category": "HTML Template",
       "status": "live",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "features": [
         "Modern design for dental, medical, and healthcare websites",
         "Fully responsive and retina ready",

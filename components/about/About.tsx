@@ -22,7 +22,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
   return (
     <section
       id="about"
-      className="w-full py-20 md:py-32 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
         {/* Image */}
@@ -33,7 +33,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
               alt={about.image.alt}
               fill
               sizes="(max-width: 768px) 260px, 320px"
-              style={{ objectFit: 'cover', objectPosition: 'top center', transform: 'scaleX(-1)' }}
+              style={{ objectFit: 'cover', objectPosition: 'top center' }}
               className="select-none"
               priority
               blurType="profile"

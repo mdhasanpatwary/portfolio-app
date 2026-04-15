@@ -1,6 +1,7 @@
 import React from "react";
 import { IconType } from "react-icons";
 import { SkillGroup } from "../../types/data";
+import { Card } from "@/components/global";
 
 interface SkillCardProps {
   group: SkillGroup;
@@ -15,8 +16,9 @@ const SkillCard: React.FC<SkillCardProps> = ({
   brandColors,
   index,
 }) => (
-  <div
-    className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-colors duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 p-0 flex flex-col items-stretch rounded-lg overflow-hidden"
+  <Card
+    padding="none"
+    className="group flex flex-col items-stretch"
     style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
     {/* Title as full-width table header */}
     <div className="w-full px-8 py-4 border-b border-gray-200 dark:border-gray-700 rounded-t-lg">
@@ -25,7 +27,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
       </h3>
     </div>
     {/* Skills as grid/table with light borders */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 divide-x divide-y divide-gray-100 dark:divide-gray-700">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-gray-100 dark:bg-gray-700">
       {group.technologies.map((tech, idx) => {
         const Icon = iconMap[tech.icon as keyof typeof iconMap];
         const brandColor = brandColors[tech.icon] || "#888";
@@ -36,7 +38,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Open ${tech.name} documentation in a new tab`}
-            className="flex flex-col items-center justify-center gap-1 px-4 py-6 bg-white dark:bg-gray-800 transition-colors duration-200 cursor-pointer focus:outline-none hover:bg-primary-50 dark:hover:bg-primary-900/40 focus:bg-primary-50 dark:focus:bg-primary-900/40 rounded-none hover:text-primary-600 dark:hover:text-primary-400">
+            className="flex flex-col items-center justify-center gap-1 px-4 py-6 bg-white dark:bg-gray-800 transition-colors duration-200 cursor-pointer focus:outline-none hover:bg-primary-50 dark:hover:bg-primary-900/40 focus:bg-primary-50 dark:focus:bg-primary-900/40 hover:text-primary-600 dark:hover:text-primary-400">
             <div
               className="text-3xl mb-1 drop-shadow-md"
               style={{ color: brandColor }}>
@@ -49,7 +51,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
         );
       })}
     </div>
-  </div>
+  </Card>
 );
 
 export default SkillCard;

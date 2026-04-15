@@ -1,6 +1,6 @@
 import React from "react";
-import { FaQuoteLeft } from "react-icons/fa";
-import { CustomImage } from "@/components/global";
+import { FaQuoteLeft, FaStar } from "react-icons/fa";
+import { CustomImage, Card } from "@/components/global";
 import type { Testimonial } from "@/types/data";
 
 interface TestimonialCardProps {
@@ -8,12 +8,26 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
-  <div className="relative flex flex-col justify-between h-full bg-white/80 dark:bg-gray-800/90 backdrop-blur-xl border border-gray-300 dark:border-gray-700 rounded-3xl p-10 transition-colors duration-300 ease-in-out hover:border-primary-500 group overflow-hidden min-h-[300px] before:absolute before:inset-0 before:pointer-events-none before:select-none before:rounded-3xl before:bg-gradient-to-br before:from-primary-500/7 before:to-white/3">
+  <Card
+    className="relative flex flex-col justify-between h-full bg-white/80 dark:bg-gray-800/90 backdrop-blur-xl p-10 ease-in-out group min-h-[300px] before:absolute before:inset-0 before:pointer-events-none before:select-none before:rounded-2xl before:bg-gradient-to-br before:from-primary-500/7 before:to-white/3"
+    padding="none"
+  >
     <FaQuoteLeft className="absolute top-8 left-8 text-primary-500 text-4xl opacity-30 pointer-events-none select-none drop-shadow-lg" aria-hidden="true" focusable="false" />
-    <p className="text-gray-800 dark:text-gray-200 mb-4 italic text-xl font-serif font-medium leading-relaxed relative z-10">
-      &ldquo;{testimonial.message}&rdquo;
-    </p>
+
+    <div className="relative z-10 flex flex-col flex-grow">
+      <div className="flex gap-1 mb-4 text-yellow-400/90 drop-shadow-sm">
+        {[...Array(5)].map((_, i) => (
+          <FaStar key={i} className="w-4 h-4" />
+        ))}
+      </div>
+
+      <p className="text-gray-800 dark:text-gray-200 mb-4 italic text-xl font-serif font-medium leading-relaxed">
+        &ldquo;{testimonial.message}&rdquo;
+      </p>
+    </div>
+
     <div className="border-t border-gray-100 dark:border-gray-700 my-4" />
+
     <div className="flex items-center gap-5 mt-2">
       <CustomImage
         src={testimonial.avatar}
@@ -33,7 +47,7 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
         </p>
       </div>
     </div>
-  </div>
+  </Card>
 );
 
 export default TestimonialCard;

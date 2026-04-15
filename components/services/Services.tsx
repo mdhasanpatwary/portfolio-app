@@ -1,8 +1,9 @@
 import React from "react";
-import { FaFolderOpen } from "react-icons/fa";
+import { FaLightbulb } from "react-icons/fa";
 import SectionTitle from "../global/SectionTitle";
 import ServiceCard from "./ServiceCard";
 import type { Services as ServicesType } from "../../types/data";
+import { StaggerContainer, StaggerItem } from "../global/AnimateIn";
 
 type ServicesProps = {
   services: ServicesType;
@@ -12,21 +13,27 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
   return (
     <section
       id="services"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 content-visibility-auto">
+      className="w-full py-16 md:py-24 px-6 bg-gray-50 dark:bg-gray-950 content-visibility-auto">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title={services.title}
           icon={
-            <FaFolderOpen className="text-primary-600 dark:text-primary-400 text-3xl" />
+            <FaLightbulb className="text-primary-600 dark:text-primary-400 text-2xl" />
           }>
           {services.subtitle}
         </SectionTitle>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 divide-x divide-y divide-gray-200 dark:divide-gray-700 border border-gray-200 dark:border-gray-700">
+        <StaggerContainer
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          stagger={0.1}
+          delayChildren={0.05}
+        >
           {services.items.map((service, idx) => (
-            <ServiceCard key={idx} service={service} idx={idx} />
+            <StaggerItem key={idx} className="h-full">
+              <ServiceCard service={service} idx={idx} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

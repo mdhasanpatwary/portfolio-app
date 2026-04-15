@@ -48,8 +48,10 @@ export interface Experience {
 export interface Service {
   title: string;
   description: string;
+  highlights: string[];
   tools: string[];
   icon: string;
+  popular?: boolean;
 }
 
 export interface Services {

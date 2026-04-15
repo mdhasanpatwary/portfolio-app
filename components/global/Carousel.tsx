@@ -141,7 +141,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <div className={`relative group ${className}`} ref={containerRef}>
-      <div className="overflow-hidden w-full">
+      <div className="overflow-hidden w-full py-12 -my-12">
         <div
           ref={trackRef}
           className="flex transition-transform duration-300 ease-in-out"

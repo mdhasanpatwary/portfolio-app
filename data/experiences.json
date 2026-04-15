@@ -3,21 +3,23 @@
   "subtitle": "A timeline of my professional growth and achievements in the tech industry.",
   "items": [
     {
-      "company": "6amtech",
-      "role": "Front-End Developer",
-      "duration": "Jul 2022 – Present",
+      "company": "6amTech",
+      "role": "Senior Software Engineer (Front-End Team Lead)",
+      "duration": "07/2025 – 03/2026",
       "location": "Dhaka, Bangladesh",
       "website": "https://6amtech.com",
       "highlights": [
-        "Developed scalable and performant frontend solutions for Demandium and Hexaride from scratch.",
-        "Redesigned core UI/UX for flagship products like 6valley and 6amMart based on customer feedback and user testing.",
-        "Built responsive layouts using Tailwind CSS and React components, ensuring accessibility and mobile-first designs.",
-        "Collaborated with backend team to optimize API performance and UI data handling using Axios and React hooks.",
-        "Integrated CI/CD pipelines and GitHub workflows for automatic linting and build checks.",
-        "Contributed to Docker-based local development environment setup for faster onboarding.",
-        "Worked with AWS services to deploy frontend builds and manage assets efficiently.",
-        "Participated in code reviews and introduced reusable component patterns to improve maintainability.",
-        "Wrote documentation and developer onboarding guides for internal use."
+        "Led development and maintenance of large-scale SaaS and marketplace applications including Demandium, Hexaride, 6valley, and 6amMart.",
+        "Designed and implemented scalable frontend architecture using React, Next.js, Tailwind CSS, and modern state management.",
+        "Spearheaded complete UI/UX redesign of flagship products, significantly improving usability and design consistency.",
+        "Migrated legacy codebases to modern React architecture, improving performance, maintainability, and developer experience.",
+        "Optimized Core Web Vitals (LCP, CLS, FCP) and reduced unnecessary API calls, contributing to 3K+ product sales on CodeCanyon.",
+        "Led and mentored a team of junior front-end developers, improving code quality and development efficiency.",
+        "Managed task planning, sprint distribution, and delivery tracking in an Agile workflow.",
+        "Conducted code reviews and enforced best practices for scalable and maintainable code.",
+        "Employee of the Month – Recognized at 6amTech and Themelooks for outstanding performance, ownership, and consistent high-quality delivery.",
+        "High-Impact Product Contribution – Played a key role in developing and scaling multiple commercial products across marketplaces like ThemeForest and CodeCanyon.",
+        "Coordinated with product managers, designers, and backend engineers to ensure smooth delivery."
       ],
       "techStack": [
         {
@@ -78,21 +80,72 @@
       ]
     },
     {
+      "company": "6amTech",
+      "role": "Software Engineer (Grade II) (Front-End)",
+      "duration": "07/2022 – 06/2025",
+      "location": "Dhaka, Bangladesh",
+      "website": "https://6amtech.com",
+      "highlights": [
+        "Contributed to all products on Codecanyon profile, boosting market presence and product offerings.",
+        "Played a pivotal role in developing high-impact projects including '6valley' 'Demandium,' 'Hexaride,' and '6amMart.'",
+        "Developed 'Demandium' and 'Hexaride' from inception, demonstrating project management and technical execution expertise.",
+        "Led comprehensive UI updates across multiple projects, enhancing user experience and modernizing designs.",
+        "Structured codebases for long-term maintainability and scalability, simplifying future updates and enhancements.",
+        "Delivered high-quality work consistently, driving success and growth of product portfolio at 6amTech."
+      ],
+      "techStack": [
+        {
+          "icon": "SiReact",
+          "name": "React",
+          "docUrl": "https://react.dev/learn"
+        },
+        {
+          "icon": "SiNextdotjs",
+          "name": "Next.js",
+          "docUrl": "https://nextjs.org/docs"
+        },
+        {
+          "icon": "SiMaterialdesignicons",
+          "name": "Material UI",
+          "docUrl": "https://mui.com/material-ui/getting-started/overview/"
+        },
+        {
+          "icon": "SiTailwindcss",
+          "name": "Tailwind CSS",
+          "docUrl": "https://tailwindcss.com/docs"
+        },
+        {
+          "icon": "FaGitAlt",
+          "name": "Git",
+          "docUrl": "https://git-scm.com/doc"
+        },
+        {
+          "icon": "SiGithub",
+          "name": "GitHub",
+          "docUrl": "https://docs.github.com/en"
+        },
+        {
+          "icon": "SiFigma",
+          "name": "Figma",
+          "docUrl": "https://help.figma.com/hc/en-us"
+        }
+      ]
+    },
+    {
       "company": "Themelooks",
-      "role": "Front-End Developer",
-      "duration": "Aug 2019 – Jul 2022",
+      "role": "Software Engineer (Front-End)",
+      "duration": "03/2019 – 07/2022",
       "location": "Dhaka, Bangladesh",
       "website": "https://themelooks.com",
       "highlights": [
-        "Developed over 10+ ThemeForest templates and Codecanyon web applications.",
+        "Contributed to over 10 items on ThemeForest under Themelooks profile.",
+        "Developed several plugins featured on Codecanyon to enhance functionality of web projects.",
+        "Managed multiple projects simultaneously, ensuring timely delivery and adherence to quality standards.",
         "Created responsive multipurpose admin dashboards such as Dashmin and commercial landing pages.",
-        "Rewritten legacy jQuery projects using modern JavaScript and Bootstrap 5.",
+        "Rewrote legacy jQuery projects using modern JavaScript and Bootstrap 5.",
         "Implemented modern design systems and reusable UI kits using SASS and Gulp.",
         "Collaborated with designers using Figma to translate design into pixel-perfect UI.",
-        "Worked on Vue and React-based single-page applications (SPAs).",
-        "Optimized assets and improved Lighthouse performance score by up to 40%.",
-        "Ensured full cross-browser support and maintained W3C-compliant markup.",
-        "Provided after-sale support and customization help to clients."
+        "Optimized assets and improved Lighthouse performance score by up to 40%."
       ],
       "techStack": [
         {

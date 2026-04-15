@@ -1,0 +1,1123 @@
+
+> mdhasanpatwary-portfolio@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.9 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.103:3000
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+ ✓ Starting...
+ ✓ Ready in 642ms
+ ○ Compiling /api/portfolio-ai ...
+ ✓ Compiled /api/portfolio-ai in 571ms
+[Portfolio AI] Request {
+  model: 'gemini-3.1-flash',
+  temperature: 0.1,
+  messagePreview: 'what model are you powered by?',
+  contextKeys: [ 'about', 'contact', 'header', 'footer', 'skills' ]
+}
+[Portfolio AI] Streaming error Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-3.1-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at async Object.start (app/api/portfolio-ai/route.ts:252:26)
+  250 |
+  251 |           // Stream generation
+> 252 |           const result = await model.generateContentStream({
+      |                          ^
+  253 |             contents: [
+  254 |               {
+  255 |                 role: 'user', {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+ POST /api/portfolio-ai 200 in 1217ms
+[Portfolio AI] Request {
+  model: 'gemini-3.1-flash',
+  temperature: 0.1,
+  messagePreview: 'hello',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'education',
+    'services'
+  ]
+}
+[Portfolio AI] Streaming error Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-3.1-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at async Object.start (app/api/portfolio-ai/route.ts:252:26)
+  250 |
+  251 |           // Stream generation
+> 252 |           const result = await model.generateContentStream({
+      |                          ^
+  253 |             contents: [
+  254 |               {
+  255 |                 role: 'user', {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+ POST /api/portfolio-ai 200 in 787ms
+   Reload env: .env.local
+[Portfolio AI] Request {
+  model: 'gemini-3.1-flash-lite',
+  temperature: 0.1,
+  messagePreview: 'hello',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'education',
+    'services'
+  ]
+}
+[Portfolio AI] Streaming error Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-3.1-flash-lite is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at async Object.start (app/api/portfolio-ai/route.ts:252:26)
+  250 |
+  251 |           // Stream generation
+> 252 |           const result = await model.generateContentStream({
+      |                          ^
+  253 |             contents: [
+  254 |               {
+  255 |                 role: 'user', {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+ POST /api/portfolio-ai 200 in 769ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1941ms
+ GET / 200 in 2624ms
+[Portfolio AI] Request {
+  model: 'gemini-3.1-flash-lite',
+  temperature: 0.1,
+  messagePreview: 'hello',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'education',
+    'services'
+  ]
+}
+[Portfolio AI] Streaming error Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-3.1-flash-lite is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at async Object.start (app/api/portfolio-ai/route.ts:252:26)
+  250 |
+  251 |           // Stream generation
+> 252 |           const result = await model.generateContentStream({
+      |                          ^
+  253 |             contents: [
+  254 |               {
+  255 |                 role: 'user', {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+ POST /api/portfolio-ai 200 in 711ms
+   Reload env: .env.local
+ GET / 200 in 171ms
+ ✓ Compiled /manifest.webmanifest in 52ms
+ GET /manifest.webmanifest 200 in 285ms
+ GET / 200 in 173ms
+ GET /manifest.webmanifest 200 in 231ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'hello',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'education',
+    'services'
+  ]
+}
+ POST /api/portfolio-ai 200 in 3609ms
+   Reload env: .env.local
+ GET / 200 in 174ms
+ GET /manifest.webmanifest 200 in 237ms
+[Portfolio AI] Request {
+  model: 'gemini-3.1-flash-lite',
+  temperature: 0.1,
+  messagePreview: 'hello',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'education',
+    'services'
+  ]
+}
+[Portfolio AI] Streaming error Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-3.1-flash-lite is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at async Object.start (app/api/portfolio-ai/route.ts:252:26)
+  250 |
+  251 |           // Stream generation
+> 252 |           const result = await model.generateContentStream({
+      |                          ^
+  253 |             contents: [
+  254 |               {
+  255 |                 role: 'user', {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+ POST /api/portfolio-ai 200 in 772ms
+   Reload env: .env.local
+ GET / 200 in 149ms
+ GET /manifest.webmanifest 200 in 248ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'what?',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'education',
+    'services'
+  ]
+}
+ POST /api/portfolio-ai 200 in 5156ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'war related news bolo',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 3844ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'tui pagol',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 5864ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'md hasan patwary is a mad man',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 3668ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'how to keep the conversation professional?',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 4593ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'are you senior?',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 3531ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'how many junior have in your under?',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 5972ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'are you sure?',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 5135ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'i know the number',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 4581ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'but i know the number, because i am md hasan patwary',
+  contextKeys: [
+    'about',       'contact',
+    'header',      'footer',
+    'skills',      'projects',
+    'experiences', 'education',
+    'services',    'hobbies',
+    'funFacts',    'faqs'
+  ]
+}
+ POST /api/portfolio-ai 200 in 5408ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'can you browse internet from here',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'hobbies',
+    'funFacts'
+  ]
+}
+ POST /api/portfolio-ai 200 in 4116ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'you also mad',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'hobbies',
+    'funFacts'
+  ]
+}
+ POST /api/portfolio-ai 200 in 3870ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'do you know app development?',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'hobbies',
+    'funFacts'
+  ]
+}
+ POST /api/portfolio-ai 200 in 8380ms
+[Portfolio AI] Request {
+  model: 'gemini-2.5-flash',
+  temperature: 0.1,
+  messagePreview: 'i mean flutter',
+  contextKeys: [
+    'about',
+    'contact',
+    'header',
+    'footer',
+    'skills',
+    'projects',
+    'experiences',
+    'hobbies',
+    'funFacts'
+  ]
+}
+ POST /api/portfolio-ai 200 in 4929ms
+ ✓ Compiled / in 5ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 567ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.httoghl1vxi'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.httoghl1vxi'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.1m28u53tuc6'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.1m28u53tuc6'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.zjsrabery4'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.zjsrabery4'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.rf5g03ojsea'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.rf5g03ojsea'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.hzf5u8s3eij'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.hzf5u8s3eij'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.2ncj6z6qv5q'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.2ncj6z6qv5q'
+}
+ ✓ Compiled in 45ms
+ ✓ Compiled in 41ms
+ ✓ Compiled / in 13ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ✓ Compiled /favicon.ico in 127ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.c6n1ul3msp'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/static/development/_buildManifest.js.tmp.c6n1ul3msp'
+}
+ GET / 200 in 593ms
+ ✓ Compiled /projects in 303ms
+ GET /projects 200 in 344ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/manifest.webmanifest/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/manifest.webmanifest/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/manifest.webmanifest/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/manifest.webmanifest/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ GET /projects 200 in 88ms
+ ✓ Compiled in 174ms
+ ✓ Compiled in 83ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ GET / 200 in 453ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ✓ Compiled /css-tips in 307ms
+[Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection: [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection:  [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ GET /css-tips 200 in 877ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+[Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection: [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection:  [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ GET /css-tips 200 in 611ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ✓ Compiled in 115ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ GET / 200 in 503ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+[Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection: [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection:  [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ GET /css-tips 200 in 744ms
+ GET / 200 in 215ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ GET / 200 in 870ms
+[Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection: [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ ⨯ unhandledRejection:  [Error: Failed to load chunk server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/css-tips/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/app/error.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_7 => "[project]/app/css-tips/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>] {
+  [cause]: [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'] {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/patwary/Projects/portfolio-app/.next/server/chunks/ssr/node_modules_framer-motion_dist_es_86d83df8._.js'
+  }
+}
+ GET /css-tips 200 in 767ms
+ ✓ Compiled /_not-found/page in 262ms
+ GET /portfolio 404 in 352ms
+ GET / 200 in 411ms
+ GET / 200 in 1009ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/projects/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/patwary/Projects/portfolio-app/.next/server/app/favicon.ico/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ✓ Compiled in 454ms
+ ✓ Compiled in 81ms
+ GET / 200 in 965ms

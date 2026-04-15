@@ -10,16 +10,18 @@ const FunFact: FC<FunFactProps> = ({ funFacts }) => {
   return (
     <section
       id="funfact"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 content-visibility-auto">
+      className="w-full py-16 md:py-24 px-6 bg-primary-700 content-visibility-auto">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle
-          title={funFacts.title}
-          icon={
-            <FaChessKing className="text-primary-600 dark:text-primary-400 text-3xl" />
-          }>
-          {funFacts.subtitle}
-        </SectionTitle>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:overflow-x-auto">
+        <div className="[&_h2]:!text-white [&_p]:!text-primary-100 [&_.bg-primary-50]:!bg-white/10 [&_.text-primary-600]:!text-white [&_.bg-primary-500]:!bg-white">
+          <SectionTitle
+            title={funFacts.title}
+            icon={
+              <FaChessKing className="text-white text-2xl" />
+            }>
+            {funFacts.subtitle}
+          </SectionTitle>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:overflow-x-auto py-8 -my-8 px-4 -mx-4 sm:px-0 sm:-mx-0">
           {funFacts.items.map((fact, index) => (
             <FunfactCard key={index} fact={fact} />
           ))}

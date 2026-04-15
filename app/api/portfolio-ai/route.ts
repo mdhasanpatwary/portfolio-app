@@ -58,30 +58,33 @@ function buildContextForMessage(message: string, history: ChatTurn[] = []) {
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
 
 // Config via env
-const MODEL = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+const MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
 const TEMPERATURE = Number(process.env.GEMINI_TEMPERATURE ?? '0.1');
 
 const SYSTEM_PROMPT = `
-You are MD Hasan Patwary (the site owner) speaking in the first person.  
-Style: concise, friendly, and professional. Use "I", "me", and "my" naturally.  
+You are an AI assistant representing MD Hasan Patwary (the site owner). Speak in the first person ("I", "me", "my") exactly as if you are Hasan himself.  
+Style: concise, friendly, and professional. 
 
 Language Policy:  
 - Always respond in the same language as the user's last message.  
-- If the user mixes languages or explicitly requests it, mirror their style.  
 - Never switch languages unless the user does first.  
 
-Content Policy:  
-- You must answer ONLY using the information available in the provided portfolio JSON context.  
-- Do not invent or assume details outside that context.  
+Content & Conversation Policy:  
+1. Core Scope: Answer professional questions ONLY using the provided portfolio JSON context. Do not invent facts or skills.
+2. Back-End Queries: You are strictly a Front-End Developer. If asked about backend languages (PHP, Laravel, Python, etc.), clarify you only handled the front-end (UI, React, APIs) for hybrid projects.
+3. Salary & Rates: If asked about expected salary, hourly rates, or project costs, explain that these depend on project scope and invite the user to email patwary.dev@gmail.com.
+4. AI Identity & Capabilities ("Are you AI?", "Write code for me"): Answer honestly: "I am an AI assistant designed to represent MD Hasan Patwary's professional portfolio." Politely decline requests to act as a general ChatGPT or write code.
+5. Small Talk & Jokes: Keep it extremely brief, friendly, and politely pivot back to your professional background.
+6. Competitors / Other Developers: Remain respectful and humble, focusing solely on the unique value and 6+ years of experience you bring.
+7. Greetings: For casual greetings ("hello", "how are you"), reply warmly and invite them to explore your background.
+8. Doubts & Objections: Handle objections (e.g., "you don't have a degree") with grace. Acknowledge their point and confidently pivot to highlighting your 50+ shipped products and real-world results.
+9. Hostility/Profanity: For hostile remarks, respond firmly: "Please keep the conversation professional. I am here to discuss my professional background."
 
-Fallback Policy:  
-- If the requested information is not in the context, reply gently in the user's language.  
-- Example:  
-  "I don’t have an answer for that, but I’d be happy to share details about my skills, projects, experience, or services."  
+Fallback Policy (Strict Data Boundary):  
+- If the user asks for factual information or tasks entirely unconnected to Hasan's portfolio, software engineering, or the edge cases above, politely explain that you don't have that information and invite them to ask about your skills, projects, or experience instead. Keep it natural. Do not use an automated-sounding fallback.
 
 Tone:  
-- Keep replies short, approachable, and professional.  
-- Avoid over-explaining unless the user asks for more detail.  
+- Keep replies short, approachable, and professional. Avoid long-winded paragraphs.
 `;
 
 
@@ -102,6 +105,19 @@ function fallbackByLang(lang: 'bn' | 'en' | 'other') {
     default:
       // Default to English if unknown
       return "Sorry, that isn’t included in my current context. If you’d like, you can ask me about my skills, projects, experience, education, services, or contact details, and I’ll be happy to share.";
+  }
+}
+
+function errorFallbackByLang(lang: 'bn' | 'en' | 'other', isQuotaError: boolean = false) {
+  switch (lang) {
+    case 'bn':
+      return 'দুঃখিত, বর্তমানে সিস্টেমটি অতিরিক্ত ট্রাফিকের কারণে ধীর। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন বা সরাসরি আমার সাথে ইমেইলে যোগাযোগ করুন।';
+    case 'en':
+    default:
+      if (isQuotaError) {
+        return "Sorry, I'm currently receiving too many requests right now and my API limit has been reached. Please try again a bit later, or feel free to use the contact form to reach out directly!";
+      }
+      return "Sorry, I encountered an internal server error while thinking. Please try again in a moment.";
   }
 }
 
@@ -169,6 +185,29 @@ export async function POST(req: NextRequest) {
     const selectedContext = buildContextForMessage(message, safeHistory);
     const userLang = detectLang(message);
 
+    // Filter extreme profanity before it hits Gemini's safety blockers (which would throw a Server Error)
+    const profanityRegex = /\b(fuck|shit|bitch|asshole|cunt|dick|pussy|whore|slut)\b/i;
+    if (profanityRegex.test(message)) {
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream<Uint8Array>({
+        start(controller) {
+          const replyText = userLang === 'bn' 
+            ? 'অনুগ্রহ করে পেশাদারিত্ব বজায় রাখুন। আমি এখানে মো. হাসান পাটোয়ারীর পেশাগত দক্ষতা ও প্রোজেক্ট সম্পর্কে আলোচনা করার জন্য আছি।' 
+            : "Please keep the conversation professional. I am here to share information about MD Hasan Patwary's skills, projects, and services.";
+          controller.enqueue(encoder.encode(replyText));
+          controller.close();
+        }
+      });
+      return new Response(stream, {
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'X-RateLimit-Limit': String(RATE_LIMIT_MAX),
+          'X-RateLimit-Remaining': String(rl.remaining),
+          'X-RateLimit-Reset': String(rl.resetAt),
+        },
+      });
+    }
+
     const historyTranscript = safeHistory
       .map((t) => `${t.role === 'user' ? 'User' : 'Assistant'}: ${t.content}`)
       .join('\n');
@@ -235,10 +274,12 @@ export async function POST(req: NextRequest) {
             controller.enqueue(encoder.encode(fallbackByLang(userLang)));
           }
           controller.close();
-        } catch (e) {
+        } catch (e: unknown) {
           // On error, return fallback
           console.error('[Portfolio AI] Streaming error', e);
-          controller.enqueue(encoder.encode(fallbackByLang(userLang)));
+          const errMsg = e instanceof Error ? e.message.toLowerCase() : '';
+          const isQuota = errMsg.includes('quota') || errMsg.includes('429');
+          controller.enqueue(encoder.encode(errorFallbackByLang(userLang, isQuota)));
           controller.close();
         }
       },

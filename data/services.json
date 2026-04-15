@@ -3,40 +3,83 @@
   "subtitle": "What I offer: modern frontend solutions, performance, and integrations.",
   "items": [
     {
-      "title": "Website Optimization & Performance",
-      "description": "Boost site speed, Core Web Vitals, and Lighthouse scores for better UX and SEO.",
-      "tools": ["Lighthouse", "WebPageTest", "Next.js", "React"],
-      "icon": "FaChartLine"
-    },
-    {
-      "title": "Landing Page & Portfolio Development",
-      "description": "Design and build high-converting landing pages and personal portfolios with modern UI/UX.",
+      "title": "Figma to React / Next.js Development",
+      "description": "Convert your Figma designs into pixel-perfect, production-ready React or Next.js applications with clean and scalable code.",
+      "highlights": [
+        "Pixel-perfect UI implementation",
+        "Fully responsive (mobile-first)",
+        "Reusable component structure",
+        "SEO-friendly markup",
+        "Optimized performance"
+      ],
       "tools": ["React", "Next.js", "Tailwind CSS", "Figma"],
-      "icon": "FaPaintBrush"
-    },
-    {
-      "title": "Headless CMS Integration with React/Next.js",
-      "description": "Connect and build dynamic sites using headless CMSs like Strapi, Sanity, or Contentful.",
-      "tools": ["Strapi", "Sanity", "Contentful", "Next.js"],
-      "icon": "FaCogs"
-    },
-    {
-      "title": "Figma/Adobe XD to HTML & React Conversion",
-      "description": "Transforming modern UI designs into responsive, pixel-perfect code using HTML, CSS, and React.js.",
-      "tools": ["Figma", "Adobe XD", "HTML5", "CSS3", "React.js"],
       "icon": "FaFigma"
     },
     {
-      "title": "Business Website Development",
-      "description": "Building clean, fast, and scalable business websites tailored to your brand and goals.",
-      "tools": ["React", "Next.js", "Tailwind CSS", "SEO"],
-      "icon": "FaRocket"
+      "title": "High-Converting Landing Pages",
+      "description": "Build fast, modern landing pages designed to convert visitors into customers.",
+      "highlights": [
+        "Conversion-focused layout",
+        "Fast loading speed",
+        "Mobile optimized design",
+        "Clean UI/UX experience",
+        "SEO-friendly structure"
+      ],
+      "tools": ["React", "Next.js", "Tailwind CSS"],
+      "icon": "FaRocket",
+      "popular": true
     },
     {
-      "title": "Interactive UI & Animation Development",
-      "description": "Enhancing user experience with smooth, engaging animations using CSS, GSAP, or libraries like Framer Motion.",
-      "tools": ["CSS Animations", "GSAP", "Framer Motion", "React"],
-      "icon": "FaMagic"
+      "title": "Website Speed & Performance Optimization",
+      "description": "Improve loading speed and Core Web Vitals to enhance user experience and SEO rankings.",
+      "highlights": [
+        "Lighthouse score improvement",
+        "Fix LCP, CLS issues",
+        "Reduce unused CSS/JS",
+        "Image optimization",
+        "Performance audit"
+      ],
+      "tools": ["Lighthouse", "WebPageTest", "Next.js"],
+      "icon": "FaChartLine"
+    },
+    {
+      "title": "Frontend Bug Fix & Issue Resolution",
+      "description": "Fix UI bugs, layout issues, and JavaScript errors quickly and efficiently.",
+      "highlights": [
+        "Responsive fixes",
+        "Layout corrections",
+        "React / Next.js debugging",
+        "Cross-browser fixes",
+        "Clean code improvements"
+      ],
+      "tools": ["JavaScript", "React", "Next.js"],
+      "icon": "FaTools"
+    },
+    {
+      "title": "Website Deployment & Hosting Setup",
+      "description": "Deploy your React or Next.js application to a live server with proper configuration.",
+      "highlights": [
+        "Vercel deployment",
+        "AWS setup",
+        "cPanel hosting",
+        "Domain & SSL setup",
+        "Build optimization"
+      ],
+      "tools": ["Vercel", "AWS", "cPanel"],
+      "icon": "FaAws"
+    },
+    {
+      "title": "SEO & AI Search Optimization",
+      "description": "Optimize your website for search engines and AI-driven platforms like ChatGPT.",
+      "highlights": [
+        "Semantic HTML structure",
+        "Meta & schema basics",
+        "AI-friendly content structure",
+        "Page speed optimization",
+        "Accessibility improvements"
+      ],
+      "tools": ["SEO", "AEO", "GEO"],
+      "icon": "FaSearch"
     }
   ]
 }

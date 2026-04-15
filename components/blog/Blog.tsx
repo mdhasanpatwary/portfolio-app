@@ -2,7 +2,7 @@ import { FC } from "react";
 import { FaPenNib, FaExternalLinkAlt } from "react-icons/fa";
 import BlogCard, { DevToPost } from "./BlogCard";
 import SectionTitle from "../global/SectionTitle";
-import Link from "next/link";
+import Btn from "@/components/global/Btn";
 import Carousel from "@/components/global/Carousel";
 
 const MAX_POSTS = 9; // limit posts to 9 for slider
@@ -17,14 +17,14 @@ const Blog: FC<BlogProps> = ({ posts }) => {
   return (
     <section
       id="blog"
-      className="w-full py-16 md:py-24 px-6 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 content-visibility-auto"
+      className="w-full py-16 md:py-24 px-6 bg-gray-50 dark:bg-gray-950 content-visibility-auto"
     >
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           title="Latest Blog Posts"
           icon={
             <FaPenNib
-              className="text-primary-600 dark:text-primary-400 text-3xl"
+              className="text-primary-600 dark:text-primary-400 text-2xl"
               aria-hidden="true"
               focusable="false"
             />
@@ -51,15 +51,11 @@ const Blog: FC<BlogProps> = ({ posts }) => {
           ))}
         </Carousel>
 
-        {/* View All Button */}
         <div className="text-center mt-6">
-          <Link
-            href="/blog"
-            className="inline-flex items-center px-6 py-2 bg-primary-700 text-white text-sm font-medium rounded hover:bg-primary-800 dark:hover:bg-primary-600 transition flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary-500"
-          >
+          <Btn variant="primary-sm" as="link" href="/blog">
             <span>View All Posts</span>
-            <FaExternalLinkAlt size={14} aria-hidden="true" focusable="false" />
-          </Link>
+            <FaExternalLinkAlt size={12} aria-hidden="true" focusable="false" />
+          </Btn>
         </div>
       </div>
     </section>

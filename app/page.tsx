@@ -5,7 +5,9 @@ import Projects from "@/components/projects/Projects";
 import Testimonials from "@/components/testimonial/Testimonial";
 import Blog from "@/components/blog/Blog";
 import type { DevToPost } from "@/components/blog/BlogCard";
+import { Suspense } from "react";
 import FAQ from "@/components/faq/FAQ";
+import FAQSchema from "@/components/faq/FAQSchema";
 import { faqs } from "@/data";
 import type { FAQsData } from "@/types/data";
 import FunFact from "@/components/funfact/Funfact";
@@ -46,31 +48,28 @@ async function fetchDevToPosts(): Promise<DevToPost[]> {
         next: { revalidate: 3600 },
       }
     );
-    if (!res.ok) return [];
+    if (!res.ok) {
+      console.error(`Dev.to API fetch failed with status: ${res.status}`);
+      return [];
+    }
     return await res.json();
-  } catch {
+  } catch (error) {
+    console.error("Error fetching Dev.to posts:", error);
     return [];
   }
+}
+
+async function BlogSection() {
+  const posts = await fetchDevToPosts();
+  return <Blog posts={posts} />;
 }
 
 export default async function Home() {
   const homeFaqs: FAQsData = {
     title: faqs.title,
     subtitle: faqs.subtitle,
-    items: faqs.items.filter((i) =>
-      [
-        "services",
-        "technolog",
-        "projects",
-        "performance",
-        "headless",
-        "figma",
-        "business",
-        "animation",
-      ].some((k) => (i.question + i.answer).toLowerCase().includes(k))
-    ),
+    items: faqs.items.slice(0, 6),
   };
-  const posts = await fetchDevToPosts();
   return (
     <div className="flex flex-col row-start-2 items-center sm:items-start">
       <Banner banner={banner} />
@@ -85,34 +84,11 @@ export default async function Home() {
       <Testimonials testimonials={testimonials} />
 
       <FunFact funFacts={funFacts} />
-      <Blog posts={posts} />
+      <Suspense fallback={<div className="py-20 flex justify-center text-gray-500">Loading blog posts...</div>}>
+        <BlogSection />
+      </Suspense>
       <FAQ faqData={homeFaqs} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              ...homeFaqs.items.map((i) => ({
-                "@type": "Question",
-                name: i.question,
-                acceptedAnswer: { "@type": "Answer", text: i.answer },
-              })),
-              {
-                "@type": "Question",
-                name: "What services do you offer?",
-                acceptedAnswer: { "@type": "Answer", text: services.subtitle },
-              },
-              {
-                "@type": "Question",
-                name: "What technologies do you specialize in?",
-                acceptedAnswer: { "@type": "Answer", text: skills.subtitle },
-              },
-            ],
-          }),
-        }}
-      />
+      <FAQSchema homeFaqs={homeFaqs} services={services} skills={skills} />
     </div>
   );
 }

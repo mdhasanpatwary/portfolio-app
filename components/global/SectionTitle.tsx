@@ -1,4 +1,5 @@
 import React from "react";
+import AnimateIn from "@/components/global/AnimateIn";
 
 interface SectionTitleProps {
   title: string;
@@ -13,19 +14,29 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   children,
   className = "",
 }) => (
-  <div className={`text-center mb-8 sm:mb-10 ${className}`}>
-    <div className="flex items-center justify-center gap-3 mb-4">
+  <AnimateIn className={`text-center mb-12 sm:mb-16 ${className}`}>
+    {/* Icon — centered above title in a pill container */}
+    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 mb-5 text-2xl shadow-sm">
       {icon}
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
-        {title}
-      </h2>
     </div>
+
+    {/* Title */}
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight mb-3">
+      {title}
+    </h2>
+
+    {/* Accent line */}
+    <div className="flex justify-center mb-4">
+      <span className="block w-16 h-1 bg-primary-500 rounded-full" />
+    </div>
+
+    {/* Optional subtitle */}
     {children && (
-      <div className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-center">
+      <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-base leading-relaxed">
         {children}
-      </div>
+      </p>
     )}
-  </div>
+  </AnimateIn>
 );
 
 export default SectionTitle;

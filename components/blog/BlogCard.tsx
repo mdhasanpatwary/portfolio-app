@@ -44,7 +44,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
   return (
     loading ? (
       <div
-        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-colors duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
+        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
         tabIndex={0}
       >
         {/* Image at top with overlay */}
@@ -77,7 +77,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, loading = false }) => {
     ) : (
       <Link
         href={post ? `/blog/${post.id}` : "#"}
-        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-colors duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
+        className="group flex flex-col min-h-[22rem] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-500 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden focus:outline-none focus:ring-1 focus:ring-primary-400"
       >
         {/* Image at top with overlay */}
         <div className="relative w-full aspect-[5/2.3] overflow-hidden">

@@ -17,7 +17,7 @@ const Education: FC<EducationProps> = ({ educationData }) => {
         <SectionTitle
           title={educationData.title}
           icon={
-            <FaGraduationCap className="text-primary-600 dark:text-primary-400 text-3xl" />
+            <FaGraduationCap className="text-primary-600 dark:text-primary-400 text-2xl" />
           }>
           {educationData.subtitle}
         </SectionTitle>

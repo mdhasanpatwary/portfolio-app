@@ -2,10 +2,11 @@
 
 import { FC } from "react";
 import type { Projects as ProjectsType } from "@/types/data";
-import Link from "next/link";
-import { FaExternalLinkAlt, FaFolderOpen } from "react-icons/fa";
+import { FaExternalLinkAlt, FaRocket } from "react-icons/fa";
 import SectionTitle from "@/components/global/SectionTitle";
 import ProjectsClient from "./ProjectsClient";
+import Btn from "@/components/global/Btn";
+import AnimateIn from "@/components/global/AnimateIn";
 
 interface ProjectsProps {
   projectsData: ProjectsType;
@@ -16,12 +17,12 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
     <>
       <section
         id="projects"
-        className="w-full py-16 md:py-24 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6 content-visibility-auto">
+        className="w-full py-16 md:py-24 bg-white dark:bg-gray-900 px-6 content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             title={projectsData.title}
             icon={
-              <FaFolderOpen className="text-primary-600 dark:text-primary-400 text-3xl" aria-hidden="true" focusable="false" />
+              <FaRocket className="text-primary-600 dark:text-primary-400 text-2xl" aria-hidden="true" focusable="false" />
             }>
             {projectsData.subtitle}
           </SectionTitle>
@@ -29,15 +30,12 @@ const Projects: FC<ProjectsProps> = ({ projectsData }) => {
           {/* Projects Grid */}
           <ProjectsClient items={projectsData.items} />
 
-          {/* View All Projects Button */}
-          <div className="text-center mt-12">
-            <Link
-              href="/projects"
-              className="inline-flex items-center px-6 py-2 bg-primary-700 text-white text-sm font-medium rounded hover:bg-primary-800 dark:hover:bg-primary-600 transition-colors gap-2 focus-visible:ring-2 focus-visible:ring-primary-500">
+          <AnimateIn delay={0.3} className="text-center mt-12">
+            <Btn variant="primary-sm" as="link" href="/projects">
               <span>View All Projects</span>
-              <FaExternalLinkAlt size={14} aria-hidden="true" focusable="false" />
-            </Link>
-          </div>
+              <FaExternalLinkAlt size={12} aria-hidden="true" focusable="false" />
+            </Btn>
+          </AnimateIn>
         </div>
       </section>
     </>
